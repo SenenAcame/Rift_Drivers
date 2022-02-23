@@ -10,7 +10,7 @@ Debe ser el mismo que figura en el github classroom
 
 
 # Nombre del juego
-Breve resumen del mismo (10 líneas)
+Breve resumen del mismo (10 líneas)a
 
 # Carátula del juego
 
