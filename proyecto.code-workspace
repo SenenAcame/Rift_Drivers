@@ -9,6 +9,14 @@
 			"name": "PROT: plantilla_fv",
 			"path": "src/pro/plantilla_fv"
 		},
+		{
+			"name": "PROT: IA",
+			"path": "src/pro/IA"
+		},
+		{
+			"name": "PROT: mejoras",
+			"path": "src/pro/mejoras"
+		},
 
 	],
 	"settings": {
