@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/ej_modulos/mimodulo.h
+
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/include/config.h
+
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/main.cpp
+SFML/Graphics.hpp
+-
+iostream
+-
+include/config.h
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/include/config.h
+ej_modulos/mimodulo.h
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/ej_modulos/mimodulo.h
+

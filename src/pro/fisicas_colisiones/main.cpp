@@ -22,14 +22,18 @@ int main() {
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
+  sf::Sprite sprite2(tex);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
+  sprite2.setOrigin(75 / 2, 75 / 2);
   //Cojo el sprite que me interesa por defecto del sheet
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+  sprite2.setTextureRect(sf::IntRect(4.5 * 75, 0 * 75, 75, 75));
 
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(320, 240);
+  sprite2.setPosition(100, 200);
 
   //Bucle del juego
   while (window.isOpen()) {
@@ -53,25 +57,31 @@ int main() {
         //Mapeo del cursor
         case sf::Keyboard::Right:
           sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
+          sprite2.setTextureRect(sf::IntRect(1 * 75, 2 * 75, 75, 75));
           //Escala por defecto
           sprite.setScale(1, 1);
+          sprite2.setScale(1, 1);
           sprite.move(kVel, 0);
           break;
 
         case sf::Keyboard::Left:
           sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
+          sprite2.setTextureRect(sf::IntRect(1 * 75, 2 * 75, 75, 75));
           //Reflejo vertical
           sprite.setScale(-1, 1);
+          sprite2.setScale(-1, 1);
           sprite.move(-kVel, 0);
           break;
 
         case sf::Keyboard::Up:
           sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
+          sprite2.setTextureRect(sf::IntRect(1 * 75, 3 * 75, 75, 75));
           sprite.move(0, -kVel);
           break;
 
         case sf::Keyboard::Down:
           sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+          sprite2.setTextureRect(sf::IntRect(4.5 * 75, 0 * 75, 75, 75));
           sprite.move(0, kVel);
           break;
 
@@ -90,6 +100,7 @@ int main() {
 
     window.clear();
     window.draw(sprite);
+    window.draw(sprite2);
     window.display();
   }
 
