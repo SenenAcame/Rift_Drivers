@@ -31,6 +31,9 @@ int main() {
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
   sprite2.setTextureRect(sf::IntRect(4.5 * 75, 0 * 75, 75, 75));
 
+  //prueba de poner hitbox
+  
+
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(320, 240);
   sprite2.setPosition(100, 200);
