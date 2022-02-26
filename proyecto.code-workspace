@@ -9,6 +9,10 @@
 			"name": "PROT: plantilla_fv",
 			"path": "src/pro/plantilla_fv"
 		},
+		{
+			"name": "PROT: fisicas_colisiones",
+			"path": "src/pro/fisicas_colisiones"
+		},
 
 	],
 	"settings": {
