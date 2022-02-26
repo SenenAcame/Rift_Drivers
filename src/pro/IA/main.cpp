@@ -5,13 +5,14 @@
 #include "ej_modulos/mimodulo.h"
 
 #define kVel 5
+#define kVel2 0.01
 
 int main() {
 
   MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
+  sf::RenderWindow window(sf::VideoMode(1080, 720), "Prototipo de IA");
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
@@ -22,19 +23,34 @@ int main() {
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
+  sf::Sprite sprite2(tex);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
   //Cojo el sprite que me interesa por defecto del sheet
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(320, 240);
+
+
+  //Creo un segundo sprite para probar el movimiento de la IA
+  //Le pongo el centroide donde corresponde
+  sprite2.setOrigin(75 / 2, 75 / 2);
+  //Cojo el sprite que me interesa por defecto del sheet
+  sprite2.setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
+  // Lo dispongo en la esquina de la pantalla
+  sprite2.setPosition(160, 120);
+
 
   //Bucle del juego
   while (window.isOpen()) {
     //Bucle de obtención de eventos
     sf::Event event;
+    //Movimiento del NPC
+    /*
+    sprite2.move(0, kVel2);
+    sprite2.move(kVel2, 0);
+    */
     while (window.pollEvent(event)) {
 
       switch (event.type) {
@@ -90,6 +106,7 @@ int main() {
 
     window.clear();
     window.draw(sprite);
+    window.draw(sprite2);
     window.display();
   }
 

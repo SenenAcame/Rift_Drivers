@@ -6,3 +6,6 @@ Debe contener un sub item como el anterior, con la fecha de la entrada y las cue
 
 ## 24/2/2022 Senén Martínez Acame @(1h)
 Me he dedicado a buscar informacion por internet sobre el desarrollo e implementacion de una IA en juegos de carrera. Tambien le he preguntado a Fidel sobre fuentes o recursos con los que poder trabajar.
+
+## 26/2/2022 Senén Martínez Acame @(2h)
+He modificado el CMakeCache para que cree el ejexcutable del Prototipo IA, he modificado el main.cpp para crear otro sprite y ver su funcionamiento, y he empezado a crear una clase NPC.
