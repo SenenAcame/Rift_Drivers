@@ -1,0 +1,11 @@
+
+*** Modified files in JOE when it aborted on Tue Mar  1 14:40:18 2022
+*** JOE was aborted by signal 1
+
+*** File '/home/sma79/fv/proyectoabp-grupo-c04/.git/MERGE_MSG'
+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Merge branch 'experimental' of https://github.com/UA-EPS-GIM-FV-2022/proyectoabp-grupo-c04 into experimental
+# Por favor ingrese un mensaje de commit que explique por qué es necesaria esta fusión,
+# especialmente si esto fusiona un upstream actualizado en una rama de tópico.
+#
+# Líneas comenzando con '#' serán ignoradas, y un mensaje vacío aborta
+#  el commit.
