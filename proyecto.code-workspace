@@ -10,17 +10,20 @@
 			"path": "src/pro/plantilla_fv"
 		},
 		{
-<<<<<<< HEAD
 			"name": "PROT: IA",
 			"path": "src/pro/IA"
 		},
 		{
 			"name": "PROT: mejoras",
 			"path": "src/pro/mejoras"
-=======
+		},
+		{
 			"name": "PROT: fisicas_colisiones",
 			"path": "src/pro/fisicas_colisiones"
->>>>>>> origin/fisicas-y-colisiones
+		},
+		{
+			"name": "PROT: circuito,
+			"path": "src/pro/circuito"
 		},
 
 	],
