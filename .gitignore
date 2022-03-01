@@ -30,3 +30,4 @@
 *.exe
 *.out
 *.app
+./src/pro/fisicas_colisiones/build/*
