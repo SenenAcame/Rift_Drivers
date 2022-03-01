@@ -21,6 +21,11 @@
 			"name": "PROT: fisicas_colisiones",
 			"path": "src/pro/fisicas_colisiones"
 		},
+		{
+			"name": "PROT: menu",
+			"path": "src/pro/menu"
+		},
+
 
 	],
 	"settings": {
