@@ -1,5 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <vector>
+#include <cstdlib>
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
@@ -7,21 +9,22 @@
 #define kVel 5
 
 int main() {
-
+//intento de menu
+//////////////////termino intento de menu
   MiModulo *mod = new MiModulo();
-
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
+  sf::RenderWindow window(sf::VideoMode(1080, 720), "P0. Fundamentos de los Videojuegos. DCCIA");
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  if (!tex.loadFromFile("resources/sprites.png")) {
+  if (!tex.loadFromFile("resources/sprites.jpg")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
-
+  
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
+  sf::Vector2f tamano {3,3};
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -29,7 +32,7 @@ int main() {
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
 
   // Lo dispongo en el centro de la pantalla
-  sprite.setPosition(320, 240);
+  sprite.setPosition(window.getSize().x/2, window.getSize().y/2);
 
   //Bucle del juego
   while (window.isOpen()) {
