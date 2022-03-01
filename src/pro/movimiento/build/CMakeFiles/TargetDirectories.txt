@@ -1,0 +1,6 @@
+/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/build/CMakeFiles/rebuild_cache.dir
+/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/build/CMakeFiles/edit_cache.dir
+/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/build/CMakeFiles/MiJuego.dir
+/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/build/CMakeFiles/libModulos.dir
+/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/build/ej_modulos/CMakeFiles/rebuild_cache.dir
+/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/build/ej_modulos/CMakeFiles/edit_cache.dir
