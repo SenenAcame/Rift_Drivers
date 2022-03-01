@@ -18,6 +18,10 @@
 			"path": "src/pro/mejoras"
 		},
 		{
+			"name": "PROT: movimiento",
+			"path": "src/pro/movimiento"
+		},
+		{
 			"name": "PROT: fisicas_colisiones",
 			"path": "src/pro/fisicas_colisiones"
 		},

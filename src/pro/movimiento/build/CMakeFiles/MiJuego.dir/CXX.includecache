@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/ej_modulos/mimodulo.h
+
+/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/include/config.h
+
+/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/main.cpp
+SFML/Graphics.hpp
+-
+iostream
+-
+math.h
+-
+include/config.h
+/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/include/config.h
+ej_modulos/mimodulo.h
+/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/ej_modulos/mimodulo.h
+
