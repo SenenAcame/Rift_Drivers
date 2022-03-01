@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/build",
+  "command": "/bin/c++   -I/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/MiJuego.dir/main.cpp.o -c /home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/main.cpp",
+  "file": "/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/main.cpp"
+},
+{
+  "directory": "/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/build",
+  "command": "/bin/c++   -I/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o -c /home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/ej_modulos/mimodulo.cpp",
+  "file": "/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/ej_modulos/mimodulo.cpp"
+},
+{
+  "directory": "/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/build",
+  "command": "/bin/c++   -I/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o -c /home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/ej_modulos/mimodulo2.cpp",
+  "file": "/home/miguel/fv/proyectoabp-grupo-c04/src/pro/movimiento/ej_modulos/mimodulo2.cpp"
+}
+]

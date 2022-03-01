@@ -17,6 +17,10 @@
 			"name": "PROT: mejoras",
 			"path": "src/pro/mejoras"
 		},
+		{
+			"name": "PROT: movimiento",
+			"path": "src/pro/movimiento"
+		}
 
 	],
 	"settings": {
