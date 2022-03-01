@@ -30,4 +30,6 @@
 *.exe
 *.out
 *.app
-./src/pro/fisicas_colisiones/build/*
+src/pro/fisicas_colisiones/build/*
+
+src/pro/plantilla_fv/build/*
