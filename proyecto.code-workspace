@@ -30,8 +30,8 @@
 			"path": "src/pro/menu"
 		},
 		{
-			"name": "PROT: circuito",
-			"path": "src/pro/circuito"
+			"name": "PROT: circuitos",
+			"path": "src/pro/circuitos"
 		},
 
 	],
