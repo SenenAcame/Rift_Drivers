@@ -26,8 +26,12 @@
 			"path": "src/pro/fisicas_colisiones"
 		},
 		{
-			"name": "PROT: circuitos",
-			"path": "src/pro/circuitos"
+			"name": "PROT: menu",
+			"path": "src/pro/menu"
+		},
+		{
+			"name": "PROT: circuito",
+			"path": "src/pro/circuito"
 		},
 
 	],
