@@ -25,6 +25,10 @@
 			"name": "PROT: fisicas_colisiones",
 			"path": "src/pro/fisicas_colisiones"
 		},
+		{
+			"name": "PROT: circuito",
+			"path": "src/pro/circuito"
+		},
 
 	],
 	"settings": {
