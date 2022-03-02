@@ -21,7 +21,7 @@ int main() {
   }
 
   //Probando el menu
-
+  sf::Keyboard opcion;
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
 
