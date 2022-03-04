@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ai.cpp
+iostream
+-
+ai.h
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ai.h
+
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ai.h
+iostream
+-
+SFML/Graphics.hpp
+-
+
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/mimodulo.h
 
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/include/config.h
@@ -19,4 +31,6 @@ include/config.h
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/include/config.h
 ej_modulos/mimodulo.h
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/mimodulo.h
+ai.cpp
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ai.cpp
 

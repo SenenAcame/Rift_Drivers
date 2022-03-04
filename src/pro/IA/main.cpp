@@ -3,6 +3,7 @@
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
+#include "ai.cpp"
 
 #define kVel 5
 #define kVel2 0.01
@@ -23,7 +24,8 @@ int main() {
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
-  sf::Sprite sprite2(tex);
+  //sf::Sprite sprite2(tex);
+  ai *npc = new ai("resources/sprites.png",1,0,0,0);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -35,11 +37,11 @@ int main() {
 
   //Creo un segundo sprite para probar el movimiento de la IA
   //Le pongo el centroide donde corresponde
-  sprite2.setOrigin(75 / 2, 75 / 2);
+  //sprite2.setOrigin(75 / 2, 75 / 2);
   //Cojo el sprite que me interesa por defecto del sheet
-  sprite2.setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
+  //sprite2.setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
   // Lo dispongo en la esquina de la pantalla
-  sprite2.setPosition(160, 120);
+  //sprite2.setPosition(160, 120);
 
 
   //Bucle del juego
@@ -106,7 +108,8 @@ int main() {
 
     window.clear();
     window.draw(sprite);
-    window.draw(sprite2);
+    //window.draw(sprite2);
+    window.draw(npc->getSpr());
     window.display();
   }
 
