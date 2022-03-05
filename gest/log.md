@@ -14,3 +14,6 @@ Realizado el prototipo, añadido un segundo sprite y he intentado encontrar la i
 
 ## 4/3/2022 Senén Martínez Acame @(2h)
 He creado la clase ai con intencion de poder usarla para la inteligencia artificial, he descargado y probado el programa Tiled para ver su funcionamiento, como guarda los archivos en formato xml/tsx, y como usarlos para hacer un recorrido en los mapas.
+
+## 5/3/2022 Senén Martínez Acame @(1h 30min)
+Creado y guardado los archivos xml/tsx del mapa, tiles y su imagen; pruebas de movimiento de la ia e investigacion acerca del uso de los archivos XML en VSCode.

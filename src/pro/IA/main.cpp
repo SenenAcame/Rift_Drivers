@@ -1,12 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <math.h>
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
 #include "ai.cpp"
 
 #define kVel 5
-#define kVel2 0.01
+#define Pi 3.14159265
 
 int main() {
 
@@ -24,8 +25,8 @@ int main() {
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
-  //sf::Sprite sprite2(tex);
-  ai *npc = new ai("resources/sprites.png",1,0,0,0);
+  sf::Sprite sprite2(tex);
+  ai *npc = new ai(3,100,100,20);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -34,25 +35,21 @@ int main() {
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(320, 240);
 
-
   //Creo un segundo sprite para probar el movimiento de la IA
   //Le pongo el centroide donde corresponde
-  //sprite2.setOrigin(75 / 2, 75 / 2);
+  sprite2.setOrigin(75 / 2, 75 / 2);
   //Cojo el sprite que me interesa por defecto del sheet
-  //sprite2.setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
+  sprite2.setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
   // Lo dispongo en la esquina de la pantalla
-  //sprite2.setPosition(160, 120);
+  sprite2.setPosition(npc->getX(), npc->getY());
 
+  
 
   //Bucle del juego
   while (window.isOpen()) {
     //Bucle de obtención de eventos
     sf::Event event;
     //Movimiento del NPC
-    /*
-    sprite2.move(0, kVel2);
-    sprite2.move(kVel2, 0);
-    */
     while (window.pollEvent(event)) {
 
       switch (event.type) {
@@ -74,6 +71,7 @@ int main() {
           //Escala por defecto
           sprite.setScale(1, 1);
           sprite.move(kVel, 0);
+          //sprite2.move(npc->getVel()*sin(npc->getAngle()*Pi/180), npc->getVel()*cos(npc->getAngle()*Pi/180));
           break;
 
         case sf::Keyboard::Left:
@@ -108,9 +106,10 @@ int main() {
 
     window.clear();
     window.draw(sprite);
-    //window.draw(sprite2);
-    window.draw(npc->getSpr());
+    window.draw(sprite2);
     window.display();
+
+    //npc->setAngle(npc->getAngle()-0.001);
   }
 
   return 0;
