@@ -6,7 +6,8 @@
 #include "ej_modulos/mimodulo.h"
 #include "ai.cpp"
 
-#define kVel 5
+#define kVel 6
+#define kVel2 0.01
 #define Pi 3.14159265
 
 int main() {
@@ -50,6 +51,24 @@ int main() {
     //Bucle de obtención de eventos
     sf::Event event;
     //Movimiento del NPC
+    
+    if(sprite2.getPosition().x<sprite.getPosition().x){
+      if(sprite2.getPosition().y<sprite.getPosition().y){
+        sprite2.move(kVel2,kVel2);
+      }
+      else{
+        sprite2.move(kVel2,-kVel2);
+      }
+    }
+    else{
+      if(sprite2.getPosition().y<sprite.getPosition().y){
+        sprite2.move(-kVel2,kVel2);
+      }
+      else{
+        sprite2.move(-kVel2,-kVel2);
+      }
+    }
+    
     while (window.pollEvent(event)) {
 
       switch (event.type) {
@@ -103,6 +122,8 @@ int main() {
         }
       }
     }
+
+
 
     window.clear();
     window.draw(sprite);

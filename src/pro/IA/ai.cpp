@@ -2,24 +2,15 @@
 
 #include "ai.h"
 
-ai::ai(float v, float exi, float eyi, float ang){
+ai::ai(/*sf::Sprite sprite, */float v, float exi, float eyi, float ang){
     setVel(v);
     setX(exi);
     setY(eyi);
     setAngle(ang);
-    //setSpr(tex);
 }
 /*
-void ai::setSpr(string load){
-    sf::Texture tx;
-    if (!tx.loadFromFile(load)) {
-        std::cerr << "Error cargando la imagen sprites.png";
-        exit(0);
-    }
-    spr = sf::Sprite(tx);
-    spr.setOrigin(75 / 2, 75 / 2);
-    spr.setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
-    spr.setPosition(160, 120);
+void ai::setSpr(sf::Sprite s){
+    spr=s;
 }
 
 sf::Sprite ai::getSpr(){
@@ -57,3 +48,8 @@ void ai::setAngle(float angu){
 float ai::getAngle(){
     return angle;
 }
+/*
+void movement(float x, float y){
+
+}
+*/

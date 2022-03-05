@@ -5,15 +5,15 @@ using namespace std;
 class ai
 {
     private:
-        //sf::Sprite spr;
+        //sf::Sprite &spr;
         float vel, x, y, angle;
 
     public: 
-        ai(float vel, float x, float y, float angle);
-/*
-        void setSpr(string path);
+        ai(/*sf::Sprite spr, */float vel, float x, float y, float angle);
+        /*
+        void setSpr(sf::Sprite s);
         sf::Sprite getSpr();
-*/
+        */
         void setVel(float vel);
         float getVel();
         void setX(float x);
