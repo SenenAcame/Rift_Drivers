@@ -27,6 +27,8 @@ SFML/Graphics.hpp
 -
 iostream
 -
+math.h
+-
 include/config.h
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/include/config.h
 ej_modulos/mimodulo.h

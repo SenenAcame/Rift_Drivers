@@ -2,14 +2,14 @@
 
 #include "ai.h"
 
-ai::ai(string tex, float v, float exi, float eyi, float ang){
+ai::ai(float v, float exi, float eyi, float ang){
     setVel(v);
     setX(exi);
     setY(eyi);
     setAngle(ang);
-    setSpr(tex);
+    //setSpr(tex);
 }
-
+/*
 void ai::setSpr(string load){
     sf::Texture tx;
     if (!tx.loadFromFile(load)) {
@@ -25,7 +25,7 @@ void ai::setSpr(string load){
 sf::Sprite ai::getSpr(){
     return spr;
 }
-
+*/
 void ai::setVel(float v){
     vel=v;
 }
@@ -43,7 +43,7 @@ float ai::getX(){
 }
 
 void ai::setY(float coory){
-    x=coory;
+    y=coory;
 }
 
 float ai::getY(){
