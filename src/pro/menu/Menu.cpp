@@ -9,7 +9,7 @@ Menu::Menu(float width, float heigth)
         // error...
     }
     menu[0].setFont(font);
-    menu[0].setFillColor(sf::Color::Magenta);
+    menu[0].setFillColor(sf::Color::Green);
     //menu[0].setColor(sf::Color::Red);
     menu[0].setString("Empezar");
     menu[0].setPosition(sf::Vector2f(width/2, heigth/(MAX_NUMBER_OF_ITEMS+1)*1));
@@ -37,7 +37,7 @@ void Menu::draw(sf::RenderWindow &window)
 {
     for(int i = 0; i < MAX_NUMBER_OF_ITEMS; i++)
     {
-        window.draw(menu[1]);
+        window.draw(menu[i]);
     }
 }
 
@@ -47,7 +47,7 @@ void Menu::MoveUp()
     {
         menu[selectedItemIdex].setFillColor(sf::Color::White);
         selectedItemIdex--;
-        menu[selectedItemIdex].setFillColor(sf::Color::Magenta);
+        menu[selectedItemIdex].setFillColor(sf::Color::Green);
     }
 }
 
@@ -57,6 +57,6 @@ void Menu::MoveDown()
     {
         menu[selectedItemIdex].setFillColor(sf::Color::White);
         selectedItemIdex++;
-        menu[selectedItemIdex].setFillColor(sf::Color::Magenta);
+        menu[selectedItemIdex].setFillColor(sf::Color::Green);
     }
 }

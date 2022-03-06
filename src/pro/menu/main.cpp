@@ -11,7 +11,7 @@
 int main() 
 {
   //creo la ventana
-  sf::RenderWindow window(sf::VideoMode(600, 600), "VENTANA MENU");
+  sf::RenderWindow window(sf::VideoMode(640, 680), "VENTANA MENU");
 
   Menu menu(window.getSize().x, window.getSize().y);
   while(window.isOpen())
