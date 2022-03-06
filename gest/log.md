@@ -24,3 +24,6 @@ Búsqueda de información acerca de colisiones e inmplementación de éstas (no 
 
 ## 5/3/2022 Senén Martínez Acame @(50min)
 He conseguido que la IA persiga al jugador, intento de usar la clase Sprite como propiedad de la clase ai.
+
+## 6/3/2022 Senén Martínez Acame @(1h)
+Implementada la clase ai correctamente con la funcion de perseguir al jugador.

@@ -7,7 +7,6 @@
 #include "ai.cpp"
 
 #define kVel 6
-#define kVel2 0.01
 #define Pi 3.14159265
 
 int main() {
@@ -27,7 +26,7 @@ int main() {
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
   sf::Sprite sprite2(tex);
-  ai *npc = new ai(3,100,100,20);
+  ai npc = ai(sprite2,0.02,200,100,20);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -38,37 +37,20 @@ int main() {
 
   //Creo un segundo sprite para probar el movimiento de la IA
   //Le pongo el centroide donde corresponde
-  sprite2.setOrigin(75 / 2, 75 / 2);
+  //npc.getSpr().setOrigin(75 / 2, 75 / 2);
   //Cojo el sprite que me interesa por defecto del sheet
-  sprite2.setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
+  //npc.getSpr().setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
   // Lo dispongo en la esquina de la pantalla
-  sprite2.setPosition(npc->getX(), npc->getY());
-
-  
+  //npc.getSpr().setPosition(npc.getX(), npc.getY());
 
   //Bucle del juego
   while (window.isOpen()) {
     //Bucle de obtención de eventos
     sf::Event event;
+    
     //Movimiento del NPC
-    
-    if(sprite2.getPosition().x<sprite.getPosition().x){
-      if(sprite2.getPosition().y<sprite.getPosition().y){
-        sprite2.move(kVel2,kVel2);
-      }
-      else{
-        sprite2.move(kVel2,-kVel2);
-      }
-    }
-    else{
-      if(sprite2.getPosition().y<sprite.getPosition().y){
-        sprite2.move(-kVel2,kVel2);
-      }
-      else{
-        sprite2.move(-kVel2,-kVel2);
-      }
-    }
-    
+    npc.perseguir(sprite);
+
     while (window.pollEvent(event)) {
 
       switch (event.type) {
@@ -123,14 +105,10 @@ int main() {
       }
     }
 
-
-
     window.clear();
     window.draw(sprite);
-    window.draw(sprite2);
+    window.draw(npc.getSpr());
     window.display();
-
-    //npc->setAngle(npc->getAngle()-0.001);
   }
 
   return 0;

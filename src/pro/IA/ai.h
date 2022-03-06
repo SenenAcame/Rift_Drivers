@@ -5,15 +5,13 @@ using namespace std;
 class ai
 {
     private:
-        //sf::Sprite &spr;
+        sf::Sprite spr;
         float vel, x, y, angle;
 
     public: 
-        ai(/*sf::Sprite spr, */float vel, float x, float y, float angle);
-        /*
-        void setSpr(sf::Sprite s);
+        ai(sf::Sprite &spr, float vel, float x, float y, float angle);
+        void setSpr(sf::Sprite &s);
         sf::Sprite getSpr();
-        */
         void setVel(float vel);
         float getVel();
         void setX(float x);
@@ -22,8 +20,6 @@ class ai
         float getY();
         void setAngle(float angle);
         float getAngle();
-
-        
-        void movement(float x, float y);
-        void calcuAngle(float x, float y);
+        void perseguir(sf::Sprite &jugador);
+        //void calcuAngle(float x, float y);
 };
