@@ -4,9 +4,12 @@
 
 Menu::Menu(float width, float heigth)
 {
-    if(!font.loadFromFile("../resources/MontserratAlternates-Bold.otf"))
+     //sf::Font font;
+    if(!font.loadFromFile("/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/resources/MontserratAlternates-Bold.otf"))
     {
-        // error...
+       std::cout << "No se ha cargado la fuente" << std::endl;
+    } else{
+      std::cout << "cargado" << std::endl;
     }
     menu[0].setFont(font);
     menu[0].setFillColor(sf::Color::Green);

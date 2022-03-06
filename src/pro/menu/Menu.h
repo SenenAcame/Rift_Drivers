@@ -13,7 +13,7 @@ class Menu
         int GetPressedItem() {return selectedItemIdex; }
 
     private:
-        int selectedItemIdex;
+        int selectedItemIdex = 0;
         sf::Font font;
         sf::Text menu[MAX_NUMBER_OF_ITEMS];
 };
