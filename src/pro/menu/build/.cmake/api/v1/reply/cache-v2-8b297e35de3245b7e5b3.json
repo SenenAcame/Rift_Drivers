@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/addr2line"
+			"value" : "/bin/addr2line"
 		},
 		{
 			"name" : "CMAKE_AR",
@@ -31,7 +31,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/ar"
+			"value" : "/bin/ar"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/sma79/fv/proyectoabp-grupo-c04/src/pro/menu/build"
+			"value" : "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -92,6 +92,22 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "3"
+		},
+		{
+			"name" : "CMAKE_COLOR_MAKEFILE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable/Disable color output during build."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -143,7 +159,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/c++"
+			"value" : "/bin/c++"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -155,11 +171,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+					"value" : "LLVM archiver"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcc-ar-9"
+			"value" : "/usr/lib/llvm-10/bin/llvm-ar"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -171,11 +187,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+					"value" : "Generate index for LLVM archive"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcc-ranlib-9"
+			"value" : "/usr/lib/llvm-10/bin/llvm-ranlib"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -267,11 +283,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "C compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/cc"
+			"value" : "/bin/x86_64-linux-gnu-gcc-9"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -287,7 +303,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcc-ar-9"
+			"value" : "/bin/gcc-ar-9"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_RANLIB",
@@ -303,7 +319,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcc-ranlib-9"
+			"value" : "/bin/gcc-ranlib-9"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -503,11 +519,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Enable/Disable output of compile commands during generation."
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "BOOL",
-			"value" : "OFF"
+			"value" : "TRUE"
 		},
 		{
 			"name" : "CMAKE_EXTRA_GENERATOR",
@@ -531,7 +547,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Ninja"
+			"value" : "Unix Makefiles"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_INSTANCE",
@@ -579,7 +595,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/sma79/fv/proyectoabp-grupo-c04/src/pro/menu"
+			"value" : "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -619,7 +635,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/ld"
+			"value" : "/bin/ld"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -631,11 +647,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Program used to build from build.ninja files."
+					"value" : "Path to a program."
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/ninja"
+			"value" : "/usr/bin/make"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -731,7 +747,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/nm"
+			"value" : "/bin/nm"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -759,7 +775,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/objcopy"
+			"value" : "/bin/objcopy"
 		},
 		{
 			"name" : "CMAKE_OBJDUMP",
@@ -775,7 +791,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/objdump"
+			"value" : "/bin/objdump"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -839,7 +855,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/ranlib"
+			"value" : "/bin/ranlib"
 		},
 		{
 			"name" : "CMAKE_READELF",
@@ -855,7 +871,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/readelf"
+			"value" : "/bin/readelf"
 		},
 		{
 			"name" : "CMAKE_ROOT",
@@ -1075,7 +1091,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/strip"
+			"value" : "/bin/strip"
 		},
 		{
 			"name" : "CMAKE_UNAME",
@@ -1115,7 +1131,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/sma79/fv/proyectoabp-grupo-c04/src/pro/menu/build"
+			"value" : "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build"
 		},
 		{
 			"name" : "MiJuego_SOURCE_DIR",
@@ -1127,7 +1143,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/sma79/fv/proyectoabp-grupo-c04/src/pro/menu"
+			"value" : "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu"
 		},
 		{
 			"name" : "SFML_AUDIO_LIBRARY",

@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build",
+  "command": "/bin/c++   -I/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/MiJuego.dir/main.cpp.o -c /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/main.cpp",
+  "file": "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/main.cpp"
+},
+{
+  "directory": "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build",
+  "command": "/bin/c++   -I/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/MiJuego.dir/Menu.cpp.o -c /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp",
+  "file": "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp"
+},
+{
+  "directory": "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build",
+  "command": "/bin/c++   -I/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o -c /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/ej_modulos/mimodulo.cpp",
+  "file": "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/ej_modulos/mimodulo.cpp"
+},
+{
+  "directory": "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build",
+  "command": "/bin/c++   -I/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o -c /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/ej_modulos/mimodulo2.cpp",
+  "file": "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/ej_modulos/mimodulo2.cpp"
+}
+]
