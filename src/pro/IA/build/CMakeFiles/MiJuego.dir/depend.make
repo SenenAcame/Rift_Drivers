@@ -4,6 +4,7 @@
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ai.cpp
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ai.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/mimodulo.h
+CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/tinyxml2.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../include/config.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../main.cpp
 

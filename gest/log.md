@@ -30,3 +30,6 @@ Implementada la clase ai correctamente con la funcion de perseguir al jugador.
 
 ## 7/3/2022 Senén Martínez Acame @(1h)
 La IA persigue al jugador de forma un poco mas eficiente, pero da problemas para seguirlo en movimiento.
+
+## 7/3/2022 Senén Martínez Acame @(1h)
+Agregado en ej_modulos los archivos de TinyXML2 (.h y .cpp) para poder leer y usar los archivos xml de los mapas y las rutas de los npc. He comprobado que no me diesen conflicto y que al compilar y agregar al CMake no diesen problema.

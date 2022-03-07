@@ -13,5 +13,10 @@
   "directory": "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build",
   "command": "/bin/c++   -I/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o -c /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/mimodulo2.cpp",
   "file": "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/mimodulo2.cpp"
+},
+{
+  "directory": "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build",
+  "command": "/bin/c++   -I/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.o -c /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/tinyxml2.cpp",
+  "file": "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/tinyxml2.cpp"
 }
 ]

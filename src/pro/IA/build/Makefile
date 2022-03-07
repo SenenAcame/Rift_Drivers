@@ -190,6 +190,33 @@ ej_modulos/mimodulo2.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.s
 .PHONY : ej_modulos/mimodulo2.cpp.s
 
+ej_modulos/tinyxml2.o: ej_modulos/tinyxml2.cpp.o
+
+.PHONY : ej_modulos/tinyxml2.o
+
+# target to build an object file
+ej_modulos/tinyxml2.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.o
+.PHONY : ej_modulos/tinyxml2.cpp.o
+
+ej_modulos/tinyxml2.i: ej_modulos/tinyxml2.cpp.i
+
+.PHONY : ej_modulos/tinyxml2.i
+
+# target to preprocess a source file
+ej_modulos/tinyxml2.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.i
+.PHONY : ej_modulos/tinyxml2.cpp.i
+
+ej_modulos/tinyxml2.s: ej_modulos/tinyxml2.cpp.s
+
+.PHONY : ej_modulos/tinyxml2.s
+
+# target to generate assembly for a file
+ej_modulos/tinyxml2.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.s
+.PHONY : ej_modulos/tinyxml2.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -233,6 +260,9 @@ help:
 	@echo "... ej_modulos/mimodulo2.o"
 	@echo "... ej_modulos/mimodulo2.i"
 	@echo "... ej_modulos/mimodulo2.s"
+	@echo "... ej_modulos/tinyxml2.o"
+	@echo "... ej_modulos/tinyxml2.i"
+	@echo "... ej_modulos/tinyxml2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -22,6 +22,36 @@ SFML/Graphics.hpp
 
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/mimodulo.h
 
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/tinyxml2.h
+ctype.h
+-
+limits.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stddef.h
+-
+cctype
+-
+climits
+-
+cstdio
+-
+cstdlib
+-
+cstring
+-
+stdint.h
+-
+android/log.h
+-
+assert.h
+-
+
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/include/config.h
 
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/main.cpp
@@ -31,6 +61,8 @@ iostream
 -
 include/config.h
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/include/config.h
+ej_modulos/tinyxml2.h
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/tinyxml2.h
 ej_modulos/mimodulo.h
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/mimodulo.h
 ai.cpp
