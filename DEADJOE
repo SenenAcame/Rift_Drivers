@@ -9,3 +9,24 @@ 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Merge branch 'experimental' of https://g
 #
 # Líneas comenzando con '#' serán ignoradas, y un mensaje vacío aborta
 #  el commit.
+
+*** These modified files were found in JOE when it aborted on Mon Mar  7 11:17:43 2022
+*** JOE was aborted because the terminal closed
+
+*** File '/home/osboxes/FV/proyectoabp-grupo-c04/.git/MERGE_MSG'
+Merge branch 'experimental' of github.com:UA-EPS-GIM-FV-2022/proyectoabp-grupo-c04 into experimental
+# Por favor ingrese un mensaje de commit que explique por qué es necesaria esta fusión,
+# especialmente si esto fusiona un upstream actualizado en una rama de tópico.
+#
+# Líneas comenzando con '#' serán ignoradas, y un mensaje vacío aborta
+#  el commit.
+
+*** File '(Unnamed)'
+/home/osboxes/FV/proyectoabp-grupo-c04/.git/MERGE_MSG
+/home/osboxes/FV/proyectoabp-grupo-c04/.git/MERGE_MSG
+
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc
