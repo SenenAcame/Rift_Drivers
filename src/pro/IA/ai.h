@@ -10,7 +10,7 @@ class ai
         float angle;
 
     public: 
-        ai(sf::Sprite &spr, float vel, float x, float y /*float angle*/);
+        ai(sf::Sprite &spr, float vel, float x, float y);
         void setSpr(sf::Sprite &s);
         sf::Sprite getSpr();
         void setVel(float vel);
