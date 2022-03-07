@@ -9,6 +9,8 @@
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ai.cpp
 iostream
 -
+math.h
+-
 ai.h
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ai.h
 
@@ -26,8 +28,6 @@ SFML/Graphics.hpp
 SFML/Graphics.hpp
 -
 iostream
--
-math.h
 -
 include/config.h
 /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/include/config.h

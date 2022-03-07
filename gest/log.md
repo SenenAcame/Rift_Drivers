@@ -27,3 +27,6 @@ He conseguido que la IA persiga al jugador, intento de usar la clase Sprite como
 
 ## 6/3/2022 Senén Martínez Acame @(1h)
 Implementada la clase ai correctamente con la funcion de perseguir al jugador.
+
+## 7/3/2022 Senén Martínez Acame @(1h)
+La IA persigue al jugador de forma un poco mas eficiente, pero da problemas para seguirlo en movimiento.

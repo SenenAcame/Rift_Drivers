@@ -6,10 +6,11 @@ class ai
 {
     private:
         sf::Sprite spr;
-        float vel, x, y, angle;
+        float vel, x, y;
+        float angle;
 
     public: 
-        ai(sf::Sprite &spr, float vel, float x, float y, float angle);
+        ai(sf::Sprite &spr, float vel, float x, float y /*float angle*/);
         void setSpr(sf::Sprite &s);
         sf::Sprite getSpr();
         void setVel(float vel);
@@ -21,5 +22,5 @@ class ai
         void setAngle(float angle);
         float getAngle();
         void perseguir(sf::Sprite &jugador);
-        //void calcuAngle(float x, float y);
+        void calcuAngle(sf::Sprite &s);
 };

@@ -1,13 +1,12 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include <math.h>
+
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
 #include "ai.cpp"
 
-#define kVel 6
-#define Pi 3.14159265
+#define kVel 10
 
 int main() {
 
@@ -26,14 +25,14 @@ int main() {
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
   sf::Sprite sprite2(tex);
-  ai npc = ai(sprite2,0.02,200,100,20);
+  ai npc = ai(sprite2,0.01,100,100);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
   //Cojo el sprite que me interesa por defecto del sheet
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
   // Lo dispongo en el centro de la pantalla
-  sprite.setPosition(320, 240);
+  sprite.setPosition(540, 360);
 
   //Creo un segundo sprite para probar el movimiento de la IA
   //Le pongo el centroide donde corresponde
@@ -50,7 +49,7 @@ int main() {
     
     //Movimiento del NPC
     npc.perseguir(sprite);
-
+    //std::cout << npc.getX() << std::endl;
     while (window.pollEvent(event)) {
 
       switch (event.type) {
