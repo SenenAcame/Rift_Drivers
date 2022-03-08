@@ -5,6 +5,7 @@ CMakeFiles/MiJuego.dir/Menu.cpp.o: ../Menu.cpp
 CMakeFiles/MiJuego.dir/Menu.cpp.o: ../Menu.h
 
 CMakeFiles/MiJuego.dir/main.cpp.o: ../Menu.h
+CMakeFiles/MiJuego.dir/main.cpp.o: ../Menu_empezar.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/mimodulo.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../include/config.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../main.cpp

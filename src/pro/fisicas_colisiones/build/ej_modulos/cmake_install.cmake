@@ -1,4 +1,4 @@
-# Install script for directory: /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/ej_modulos
+# Install script for directory: /home/alu/node/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/ej_modulos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()

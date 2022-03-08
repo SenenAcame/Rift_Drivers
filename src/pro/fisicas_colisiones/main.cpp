@@ -21,10 +21,18 @@ bool collision(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, int
   }
   return collision;
 }
+bool colision(sf::Sprite sprite, sf::Sprite sprite2){
+  sf::Vector2f pos1=sprite.getPosition();
+  sf::Vector2f pos2=sprite2.getPosition();
+  if((pos1.x+75)>pos2.x && (pos1.y+75)>pos2.y && (pos2.x+75)>pos1.x && (pos2.y+75)>pos1.y){
+    return true;
+  }
+  return false;
+}
 
 int main() {
 
-  MiModulo *mod = new MiModulo();
+  //MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
@@ -76,40 +84,40 @@ int main() {
 
         //Mapeo del cursor
         case sf::Keyboard::Right:
-        if((pos1.x+width)>pos2.x){
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-          sprite2.setTextureRect(sf::IntRect(1 * 75, 2 * 75, 75, 75));
-          //Escala por defecto
-          sprite.setScale(1, 1);
-          sprite2.setScale(1, 1);
-          sprite.move(kVel, 0);
+          if(!colision(sprite, sprite2)){
+            sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
+            sprite2.setTextureRect(sf::IntRect(1 * 75, 2 * 75, 75, 75));
+            //Escala por defecto
+            sprite.setScale(1, 1);
+            sprite2.setScale(1, 1);
+            sprite.move(kVel, 0);
           }
           break;
 
         case sf::Keyboard::Left:
-          if((pos1.x)<(pos2.x+width)){
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-          sprite2.setTextureRect(sf::IntRect(1 * 75, 2 * 75, 75, 75));
-          //Reflejo vertical
-          sprite.setScale(-1, 1);
-          sprite2.setScale(-1, 1);
-          sprite.move(-kVel, 0);
+          if(!colision(sprite, sprite2)){
+            sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
+            sprite2.setTextureRect(sf::IntRect(1 * 75, 2 * 75, 75, 75));
+            //Reflejo vertical
+            sprite.setScale(-1, 1);
+            sprite2.setScale(-1, 1);
+            sprite.move(-kVel, 0);
           }
           break;
 
         case sf::Keyboard::Up:
-          if((pos1.y+heigth)>pos2.y){
-          sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
-          sprite2.setTextureRect(sf::IntRect(1 * 75, 3 * 75, 75, 75));
-          sprite.move(0, -kVel);
+          if(!colision(sprite, sprite2)){
+            sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
+            sprite2.setTextureRect(sf::IntRect(1 * 75, 3 * 75, 75, 75));
+            sprite.move(0, -kVel);
           }
           break;
 
         case sf::Keyboard::Down:
-        if((pos2.y+heigth)>pos1.y){
-          sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-          sprite2.setTextureRect(sf::IntRect(4.5 * 75, 0 * 75, 75, 75));
-          sprite.move(0, kVel);
+          if(!colision(sprite, sprite2)){
+            sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+            sprite2.setTextureRect(sf::IntRect(4.5 * 75, 0 * 75, 75, 75));
+            sprite.move(0, kVel);
           }
           break;
 
