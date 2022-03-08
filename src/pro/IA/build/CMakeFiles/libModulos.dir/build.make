@@ -83,19 +83,34 @@ CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.s"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/mimodulo2.cpp -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.s
 
+CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.o: ../ej_modulos/tinyxml2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.o -c /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/tinyxml2.cpp
+
+CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.i"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/tinyxml2.cpp > CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.i
+
+CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.s"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/tinyxml2.cpp -o CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.s
+
 # Object files for target libModulos
 libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o" \
-"CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o"
+"CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o" \
+"CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.o"
 
 # External object files for target libModulos
 libModulos_EXTERNAL_OBJECTS =
 
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/build.make
 liblibModulos.a: CMakeFiles/libModulos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library liblibModulos.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library liblibModulos.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/libModulos.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libModulos.dir/link.txt --verbose=$(VERBOSE)
 

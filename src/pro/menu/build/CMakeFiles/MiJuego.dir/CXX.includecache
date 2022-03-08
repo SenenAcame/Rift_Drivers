@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp
+SFML/Graphics.hpp
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/SFML/Graphics.hpp
+iostream
+-
+Menu.h
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.h
+
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.h
+SFML/Graphics.hpp
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/SFML/Graphics.hpp
+

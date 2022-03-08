@@ -7,3 +7,6 @@ CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o: ../ej_modulos/mimodulo.h
 CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o: ../ej_modulos/mimodulo2.cpp
 CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o: ../ej_modulos/mimodulo2.h
 
+CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.o: ../ej_modulos/tinyxml2.cpp
+CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.o: ../ej_modulos/tinyxml2.h
+

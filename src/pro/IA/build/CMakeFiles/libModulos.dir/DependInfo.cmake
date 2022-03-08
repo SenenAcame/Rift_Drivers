@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/mimodulo.cpp" "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o"
   "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/mimodulo2.cpp" "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o"
+  "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/ej_modulos/tinyxml2.cpp" "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles/libModulos.dir/ej_modulos/tinyxml2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

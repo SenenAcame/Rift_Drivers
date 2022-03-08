@@ -5,7 +5,7 @@
 MiModulo::MiModulo() {
     std::cout << "Creando mi modulo..."; 
 }
-
+/*
 NPC::NPC(float v, float exi, float eyi, float ang){
     setVel(v);
     setX(exi);
@@ -44,3 +44,4 @@ void NPC::setAngle(float angu){
 float NPC::getAngle(){
     return angle;
 }
+*/

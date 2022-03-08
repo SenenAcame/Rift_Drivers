@@ -6,7 +6,7 @@ class MiModulo{
      MiModulo();
 
 };
-
+/*
 class NPC{
     float vel;
     float x, y, angle;
@@ -22,3 +22,4 @@ class NPC{
         void setAngle(float angle);
         float getAngle();
 };
+*/
