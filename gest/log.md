@@ -33,3 +33,9 @@ La IA persigue al jugador de forma un poco mas eficiente, pero da problemas para
 
 ## 7/3/2022 Senén Martínez Acame @(1h)
 Agregado en ej_modulos los archivos de TinyXML2 (.h y .cpp) para poder leer y usar los archivos xml de los mapas y las rutas de los npc. He comprobado que no me diesen conflicto y que al compilar y agregar al CMake no diesen problema.
+
+## 7/3/2022 Miguel Ángel Ferrer García de la Reina @(2h)
+Implementado un reloj que mejora la sensacion de movimiento pero no es el reloj que se explicó en clase.
+
+## 8/3/2022 Miguel Ángel Ferrer García de la Reina @(1h:37min)
+Reloj en funcionamiento pero aún hay problemas con la rotación

@@ -6,7 +6,7 @@
 #include "ej_modulos/mimodulo.h"
 
 #define kVel 20.0f
-
+#define UPDATE_TICK_TIME 1
 
 
 int main() {
@@ -45,14 +45,22 @@ int main() {
   position.y = 240;
 
   float prev = 0;
+  float rot = sprite.getRotation();
 
   const float speed = kVel;
 
   sf::Clock clock;
+  sf::Clock updateClock;
+
+
+
+  
+
   float accumulator = 0;
-  const float timestep = 1.0f / 10.0f; 
+  const float timestep = 1.0f / 15.0f; 
   while (window.isOpen())
   {
+
           sf::Event e;
           while (window.pollEvent(e))
                   if (e.type == sf::Event::Closed)
@@ -64,14 +72,14 @@ int main() {
                   accumulator -= timestep;
 
                   previous = position;
-
-                  prev = sprite.getRotation();
+                sprite.setRotation(rot);
+                  prev = rot;
 
                   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-                          sprite.setRotation(sprite.getRotation()-15.0f);
+                          rot = sprite.getRotation()-15.0f;
 
                   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-                          sprite.setRotation(sprite.getRotation()+15.0f);
+                          rot = sprite.getRotation()+15.0f;
 
                   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
                           position.x += cos(sprite.getRotation()*M_PI/180)*speed;
@@ -85,13 +93,13 @@ int main() {
                   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
                       window.close();
                   }
-                          
+
 
           }
 
           window.clear();
           sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
-          
+          sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));
           
 
           window.draw(sprite);
@@ -102,8 +110,3 @@ int main() {
   return 0;
 }
 
-class State
-{
-private:
-        
-};
