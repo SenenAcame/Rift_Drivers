@@ -2,6 +2,7 @@
 #include <iostream>
 //incluyo mi menu
 #include "Menu.h"
+#include "Menu_empezar.h"
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
@@ -17,6 +18,8 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 
 }
   Menu menu(window.getSize().x, window.getSize().y);
+  //para el menu de la seleccion de tipos de circuito
+  //Menu_empezar menu_empezar(window.getSize().x, window.getSize().y);
   while(window.isOpen())
   {
     sf::Event event;
@@ -45,6 +48,9 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
           switch (menu.GetPressedItem()){
             case 0:
               std::cout <<"Has seleccionado emmpezar" << std::endl;
+              //Menu_empezar.draw(window);
+              //dibujo el otro menu
+                  //window.clear();
               break;
             case 1:
               std::cout <<"Has seleccionado las opciones" << std::endl;
