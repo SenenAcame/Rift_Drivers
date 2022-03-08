@@ -49,6 +49,14 @@ float ai::getY(){
     return y;
 }
 
+void ai::setRad(float radius){
+    rad=radius;
+}
+
+float ai::getRad(){
+    return rad;
+}
+
 void ai::setAngle(float angu){
     angle=angu;
 }
@@ -59,7 +67,7 @@ float ai::getAngle(){
 
 void ai::perseguir(sf::Sprite &jug){
     calcuAngle(jug);
-    spr.move(vel*cos(angle),vel*sin(angle));
+    spr.move(vel*rad*cos(angle),vel*rad*sin(angle));
     setX(spr.getPosition().x);
     setY(spr.getPosition().y);
 }
@@ -67,10 +75,18 @@ void ai::perseguir(sf::Sprite &jug){
 void ai::calcuAngle(sf::Sprite &jug){
     float xj = jug.getPosition().x-x;
     float yj = jug.getPosition().y-y;
+    std::cout << jug.getPosition().x << ","<< jug.getPosition().y << endl;
+    /*
     float resu = xj/sqrt(pow(xj,2)+(pow(yj,2)));
     float angu = acos(resu)*180/Pi;
-    if(yj<1){
+    if(yj<0){
         angu*=(-1);
     }
+    */
+    //float resu = sqrt(xj*xj+yj*yj);
+    float resu = 1;
+    float angu = atan(yj/xj)*180/Pi;
     setAngle(angu);
+    setRad(resu);
+    std::cout << angu << endl;
 }
