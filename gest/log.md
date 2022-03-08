@@ -33,3 +33,20 @@ La IA persigue al jugador de forma un poco mas eficiente, pero da problemas para
 
 ## 7/3/2022 Senén Martínez Acame @(1h)
 Agregado en ej_modulos los archivos de TinyXML2 (.h y .cpp) para poder leer y usar los archivos xml de los mapas y las rutas de los npc. He comprobado que no me diesen conflicto y que al compilar y agregar al CMake no diesen problema.
+
+## 26/2/2022 Angelica Quaranta Barba @(1h)
+Creado Menu.h y Menu.cpp para mostrar 3 opciones por pantalla. Estructura creada.
+
+## 2/3/2022 Angelica Quaranta Barba @(5h)
+Problema para incluir la fuente del texto. Solucionado y probado 3 fuentes disitintas, mostrando las 3 opciones centradas en la ventana. Añadido color a los textos. Problemas para cambiar entre las opciones con el teclado.
+
+## 6/3/2022 Angelica Quaranta Barba @(30min)
+Cambiado los setColor por setFillColor y pruebas para la selección de la opción con Enter.
+
+## 7/3/2022 Angelica Quaranta Barba @(1h)
+Funciona la selección de las opciones (por terminal se indica que has seleccionado), y al seleccionar "Salir" se cierra la ventana.
+Creado Menu_empezar.h, Menu_empezar.cpp, Menu_opciones-h y Menu_opciones. Estructura creada en el menu de empezar para que muestre las opciones de los tipos de circuitos.
+
+## 8/3/2022 Angelica Quaranta Barba @(30min)
+Intento de cambiar de menú al seleccionar "empezar".
+

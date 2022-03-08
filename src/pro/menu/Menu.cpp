@@ -5,7 +5,7 @@
 Menu::Menu(float width, float heigth)
 {
      //sf::Font font;
-    if(!font.loadFromFile("/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/resources/MontserratAlternates-Bold.otf"))
+    if(!font.loadFromFile("../resources/Barbarian NS.ttf"))
     {
        std::cout << "No se ha cargado la fuente" << std::endl;
     } else{
@@ -15,7 +15,9 @@ Menu::Menu(float width, float heigth)
     menu[0].setFillColor(sf::Color::Green);
     //menu[0].setColor(sf::Color::Red);
     menu[0].setString("Empezar");
+    //menu[0].setCharacterSize(100);
     menu[0].setPosition(sf::Vector2f(width/2, heigth/(MAX_NUMBER_OF_ITEMS+1)*1));
+    //menu[0].setOrigin(sf::Vector2f(width/2, heigth/((MAX_NUMBER_OF_ITEMS+1)*1)));
 
     menu[1].setFont(font);
     menu[1].setFillColor(sf::Color::White);
