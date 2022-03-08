@@ -5,8 +5,8 @@
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
 
-#define kVel 8
-#define UPDATE_TICK_TIME 1000/50
+#define kVel 20.0f
+
 
 
 int main() {
@@ -14,7 +14,12 @@ int main() {
   MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
+  sf::RenderWindow window(sf::VideoMode(640, 480), "Movimiento");
+
+  //Limite de FPS
+  window.setFramerateLimit(60);
+
+
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
@@ -34,67 +39,71 @@ int main() {
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(320, 240);
 
-  //Bucle del juego
-  while (window.isOpen()) {
-    //Bucle de obtención de eventos
-    sf::Event event;
-    while (window.pollEvent(event)) {
+  sf::Vector2f position, previous;
 
-      switch (event.type) {
+  position.x = 320;
+  position.y = 240;
 
-      //Si se recibe el evento de cerrar la ventana la cierro
-      case sf::Event::Closed:
-        window.close();
-        break;
+  float prev = 0;
 
-      //Se pulsó una tecla, imprimo su codigo
-      case sf::Event::KeyPressed:
+  const float speed = kVel;
 
-        //Verifico si se pulsa alguna tecla de movimiento
-        switch (event.key.code) {
+  sf::Clock clock;
+  float accumulator = 0;
+  const float timestep = 1.0f / 10.0f; 
+  while (window.isOpen())
+  {
+          sf::Event e;
+          while (window.pollEvent(e))
+                  if (e.type == sf::Event::Closed)
+                          window.close();
 
-        //Mapeo del cursor
-        case sf::Keyboard::Right:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
-          //Escala por defecto
+          accumulator += clock.restart().asSeconds();
+          while (accumulator >= timestep)
+          {
+                  accumulator -= timestep;
+
+                  previous = position;
+
+                  prev = sprite.getRotation();
+
+                  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+                          sprite.setRotation(sprite.getRotation()-15.0f);
+
+                  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+                          sprite.setRotation(sprite.getRotation()+15.0f);
+
+                  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+                          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+                          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+                  }
+
+                  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+                      
+                  }
+
+                  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+                      window.close();
+                  }
+                          
+
+          }
+
+          window.clear();
+          sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
           
-          sprite.setRotation(sprite.getRotation()+2);
-          break;
-
-        case sf::Keyboard::Left:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
-          //Reflejo vertical
           
-          sprite.setRotation(sprite.getRotation()-2);
-          break;
 
-        case sf::Keyboard::Up:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
-          sprite.move(cos(sprite.getRotation()*M_PI/180)*kVel, sin(sprite.getRotation()*M_PI/180)*kVel);
-          break;
+          window.draw(sprite);
 
-        case sf::Keyboard::Down:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-          sprite.move(0, kVel);
-          break;
-
-        //Tecla ESC para salir
-        case sf::Keyboard::Escape:
-          window.close();
-          break;
-
-        //Cualquier tecla desconocida se imprime por pantalla su código
-        default:
-          std::cout << event.key.code << std::endl;
-          break;
-        }
-      }
-    }
-
-    window.clear();
-    window.draw(sprite);
-    window.display();
+          window.display();
   }
 
   return 0;
 }
+
+class State
+{
+private:
+        
+};
