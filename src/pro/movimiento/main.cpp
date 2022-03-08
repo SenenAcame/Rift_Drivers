@@ -6,6 +6,8 @@
 #include "ej_modulos/mimodulo.h"
 
 #define kVel 8
+#define UPDATE_TICK_TIME 1000/50
+
 
 int main() {
 
