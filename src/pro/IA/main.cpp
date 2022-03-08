@@ -27,7 +27,8 @@ int main() {
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
   sf::Sprite sprite2(tex);
-  ai npc = ai(sprite2,0.01,100,100);
+
+  ai npc = ai(sprite2,0.02,100,100);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -36,20 +37,26 @@ int main() {
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(540, 360);
 
+  /*
   XMLDocument doc;
   doc.LoadFile("../resources/mapa_prueba.xml");
   XMLElement *map = doc.FirstChildElement("map");
-  
+  */
+
   //Bucle del juego
   while (window.isOpen()) {
     //Bucle de obtención de eventos
     sf::Event event;
     
     //Movimiento del NPC
+    //npc.perseguir(sprite);
+    //npc.calcuAngle(sprite);
     npc.perseguir(sprite);
-    
-    while (window.pollEvent(event)) {
 
+    //std::cout << npc.getAngle() << " , " << npc.getRad()<< endl;
+
+    while (window.pollEvent(event)) {
+      
       switch (event.type) {
         //Si se recibe el evento de cerrar la ventana la cierro
         case sf::Event::Closed:
@@ -59,6 +66,7 @@ int main() {
         //Se pulsó una tecla, imprimo su codigo
         case sf::Event::KeyPressed:
           //Verifico si se pulsa alguna tecla de movimiento
+          
           switch (event.key.code) {
 
             //Mapeo del cursor

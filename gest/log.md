@@ -50,3 +50,5 @@ Creado Menu_empezar.h, Menu_empezar.cpp, Menu_opciones-h y Menu_opciones. Estruc
 ## 8/3/2022 Angelica Quaranta Barba @(30min)
 Intento de cambiar de menú al seleccionar "empezar".
 
+## 8/3/2022 Senén Martínez Acame @(2h)
+He intentado arreglar el problema de que la IA no persigue al jugador cuando este se mueve, pero no he podido. A priori los calculos estan bien y no parece que haya nada raro.
