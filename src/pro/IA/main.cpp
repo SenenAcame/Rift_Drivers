@@ -19,7 +19,7 @@ int main() {
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  if (!tex.loadFromFile("resources/sprites.png")) {
+  if (!tex.loadFromFile("../resources/sprites.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
@@ -27,7 +27,7 @@ int main() {
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
   sf::Sprite sprite2(tex);
-  ai npc = ai(sprite2,0.02,100,100);
+  ai npc = ai(sprite2,0.01,100,100);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -37,7 +37,7 @@ int main() {
   sprite.setPosition(540, 360);
 
   XMLDocument doc;
-  doc.LoadFile("resources/mapa_prueba.xml");
+  doc.LoadFile("../resources/mapa_prueba.xml");
   XMLElement *map = doc.FirstChildElement("map");
   
   //Bucle del juego
