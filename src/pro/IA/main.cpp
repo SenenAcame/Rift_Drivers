@@ -28,7 +28,7 @@ int main() {
   sf::Sprite sprite(tex);
   sf::Sprite sprite2(tex);
 
-  ai npc = ai(sprite2,0.02,100,100);
+  ai npc = ai(sprite2,0.02,700,390);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -37,23 +37,40 @@ int main() {
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(540, 360);
 
-  /*
+  
   XMLDocument doc;
-  doc.LoadFile("../resources/mapa_prueba.xml");
-  XMLElement *map = doc.FirstChildElement("map");
-  */
+  doc.LoadFile("../resources/mapa_prueba2.xml");
+  XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
 
+  int num=0;
+  for(XMLNode *child = grupo->FirstChild(); child; child = child->NextSibling()){
+    num++;
+  }
+
+  float **list = new float*[num];
+  for(int i=0; i<num;i++){
+    list[i] = new float[2];
+    XMLNode *nd = grupo->FirstChild();
+    list[i][0] = grupo->FirstChildElement("object")->FloatAttribute("x");
+    list[i][1] = grupo->FirstChildElement("object")->FloatAttribute("y");
+    grupo->DeleteChild(nd);
+  }
+
+  int cap = 0;
   //Bucle del juego
   while (window.isOpen()) {
     //Bucle de obtención de eventos
     sf::Event event;
-    
-    //Movimiento del NPC
-    //npc.perseguir(sprite);
-    //npc.calcuAngle(sprite);
-    npc.perseguir(sprite);
 
-    //std::cout << npc.getAngle() << " , " << npc.getRad()<< endl;
+    //Movimiento del NPC
+    if(cap<num){
+      npc.seguirNodo(list[cap][0], list[cap][1]);
+      if(abs(npc.getX()-list[cap][0])<1 && abs(npc.getY()-list[cap][1])<1){
+        cap++;
+      }
+    }
+    
+    //npc.perseguir(sprite);
 
     while (window.pollEvent(event)) {
       

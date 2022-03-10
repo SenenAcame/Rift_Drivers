@@ -76,8 +76,6 @@ void ai::perseguir(sf::Sprite &jug){
     
     setX(spr.getPosition().x);
     setY(spr.getPosition().y);
-    
-    
 }
 
 void ai::calcuAngle(sf::Sprite &jug){
@@ -97,4 +95,26 @@ void ai::calcuAngle(sf::Sprite &jug){
     setAngle(angu);
     setRad(resu);
     //std::cout << angu << endl;
+}
+
+void ai::calcuAngle(float ex, float ey){
+    float xj = ex-x;
+    float yj = ey-y;
+
+    float resu = 1;
+    float angu = atan(yj/xj)*180/Pi;
+    setAngle(angu);
+    setRad(resu);
+}
+
+void ai::seguirNodo(float ex, float ey){
+    calcuAngle(ex, ey);
+
+    float vx = vel*rad*cos(angle);
+    float vy = vel*rad*sin(angle);
+
+    spr.move(vx,vy);
+    
+    setX(spr.getPosition().x);
+    setY(spr.getPosition().y);
 }

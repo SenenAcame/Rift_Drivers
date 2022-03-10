@@ -52,3 +52,6 @@ Intento de cambiar de menú al seleccionar "empezar".
 
 ## 8/3/2022 Senén Martínez Acame @(2h)
 He intentado arreglar el problema de que la IA no persigue al jugador cuando este se mueve, pero no he podido. A priori los calculos estan bien y no parece que haya nada raro.
+
+## 9/3/2022 Senén Martínez Acame @(2h)
+He podido implementar correctamente que la IA siga la ruta establecida a traves de un archivo XML que se le pasa.

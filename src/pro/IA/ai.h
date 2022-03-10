@@ -32,4 +32,6 @@ class ai
         
         void perseguir(sf::Sprite &jugador);
         void calcuAngle(sf::Sprite &s);
+        void calcuAngle(float x, float y);
+        void seguirNodo(float x, float y);
 };
