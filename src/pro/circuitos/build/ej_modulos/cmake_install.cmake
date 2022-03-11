@@ -1,4 +1,4 @@
-# Install script for directory: /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/ej_modulos
+# Install script for directory: /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -15,13 +15,19 @@ int main() {
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  if (!tex.loadFromFile("resources/sprites.png")) {
+  sf::Texture texm;
+  if (!tex.loadFromFile("../resources/sprites.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!texm.loadFromFile("../resources/curva_derecha.png")) {
+    std::cerr << "Error cargando la imagen curva_derecha.png";
     exit(0);
   }
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
+  sf::Sprite spritem(texm);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -89,6 +95,15 @@ int main() {
     }
 
     window.clear();
+    for (int i = 0; i < 10; i++){
+      for (int j = 0; j < 10; j++){
+        spritem.setPosition(i*32,j*32);
+        spritem.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+        window.draw(spritem);
+      }
+    }
+    
+
     window.draw(sprite);
     window.display();
   }
