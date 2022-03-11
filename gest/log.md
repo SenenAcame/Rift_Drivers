@@ -61,3 +61,9 @@ Seguimos probando con hitboxes (no actualicé el log en su momento)
 
 ## 9/3/2022 Joan Pascual Izquierdo (30min)
 busqué información de por que no me funcionaba bien y era porque compobaba si el sprite1 colisionaba con sigo mismo, así que daba que sí y, por eso, no se movía (soy muy tonto).
+
+## 11/03/2022 Sergio Tortajada Santonja (2h)
+Me he visto muchos videos de como pintar mapas con sfml (no se si cuenta para el log)
+
+## 11/03/2022 Sergio Tortajada Santonja (2h 30 min)
+Hay un trozo de circuto y se pinta en el juego, desde el main
