@@ -34,12 +34,3 @@ src/pro/fisicas_colisiones/build/*
 src/pro/circuito/build/*
 src/pro/IA/build/*
 src/pro/plantilla_fv/build/*
-src/pro/fisicas_colisiones/build/cmake_install.cmake
-src/pro/fisicas_colisiones/build/CMakeCache.txt
-src/pro/fisicas_colisiones/build/MiJuego
-src/pro/fisicas_colisiones/build/CMakeFiles/CMakeOutput.log
-src/pro/fisicas_colisiones/build/CMakeFiles/TargetDirectories.txt
-src/pro/fisicas_colisiones/build/CMakeFiles/3.16.3/CMakeDetermineCompilerABI_C.bin
-src/pro/fisicas_colisiones/build/CMakeFiles/3.16.3/CMakeDetermineCompilerABI_CXX.bin
-src/pro/fisicas_colisiones/build/CMakeFiles/3.16.3/CMakeSystem.cmake
-src/pro/fisicas_colisiones/build/ej_modulos/cmake_install.cmake
