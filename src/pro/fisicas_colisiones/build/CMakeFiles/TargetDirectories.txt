@@ -1,6 +1,6 @@
-/home/alu/node/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/CMakeFiles/rebuild_cache.dir
-/home/alu/node/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/CMakeFiles/edit_cache.dir
-/home/alu/node/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/CMakeFiles/MiJuego.dir
-/home/alu/node/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/CMakeFiles/libModulos.dir
-/home/alu/node/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/ej_modulos/CMakeFiles/rebuild_cache.dir
-/home/alu/node/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/ej_modulos/CMakeFiles/edit_cache.dir
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/CMakeFiles/rebuild_cache.dir
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/CMakeFiles/edit_cache.dir
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/CMakeFiles/MiJuego.dir
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/CMakeFiles/libModulos.dir
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/ej_modulos/CMakeFiles/rebuild_cache.dir
+/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/fisicas_colisiones/build/ej_modulos/CMakeFiles/edit_cache.dir
