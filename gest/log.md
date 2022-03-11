@@ -57,4 +57,7 @@ He intentado arreglar el problema de que la IA no persigue al jugador cuando est
 He podido implementar correctamente que la IA siga la ruta establecida a traves de un archivo XML que se le pasa.
 
 ## 9/3/2022 Joan Pascual Izquierdo (1h 30min)
-Seguimos probando con hitboxes (no actualicé el log en su monemto)
+Seguimos probando con hitboxes (no actualicé el log en su momento)
+
+## 9/3/2022 Joan Pascual Izquierdo (30min)
+busqué información de por que no me funcionaba bien y era porque compobaba si el sprite1 colisionaba con sigo mismo, así que daba que sí y, por eso, no se movía (soy muy tonto).
