@@ -17,7 +17,7 @@ std::vector<sf::Sprite> Mapa::CrearMapa(){
     //std::vector<std::vector<sf::Sprite> > spritesmapa;
     std::string cacho=BuscaCacho(0);
     int buscar=stoi(cacho.substr(2));
-    cacho="../resources/1"+BuscaCacho(0)+".png";
+    cacho="../resources/"+BuscaCacho(0)+".png";
     texm.loadFromFile(cacho);
     circuito.at(fila).at(col)=cacho;
     while(!final){
@@ -30,7 +30,7 @@ std::vector<sf::Sprite> Mapa::CrearMapa(){
             }
         }
         //spritesmapa.push_back(sprites);
-        cacho="../resources/1"+BuscaCacho(buscar)+".png";
+        cacho="../resources/"+BuscaCacho(buscar)+".png";
         texm.loadFromFile(cacho);
         circuito.at(fila).at(col)=cacho;
         buscar=stoi(cacho.substr(2));
