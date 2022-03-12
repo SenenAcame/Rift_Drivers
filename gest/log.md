@@ -76,3 +76,6 @@ Creación de los proyectos "poderes" y "personajes", y hacer un poder que es el 
 
 ## 12/03/2022 Joan Pascual Izquierdo (1h 10min)
 Creación de un sprite de un personaje y cagandose en todo, de lo detallado que lo he hecho para el mal rollo que da
+
+## 12/03/2022 Sergio Tortajada Santonja (3h)
+Procedural hecho(aun no lo he probado) y pintar mas de un trozo de mapa
