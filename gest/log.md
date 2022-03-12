@@ -70,3 +70,9 @@ Hay un trozo de circuto y se pinta en el juego, desde el main
 
 ## 12/03/2022 Senén Martínez Acame (1h 30min)
 He empezado a implementar la primera clase vehiculo para desarrollar el prototipo de las mejoras.
+
+## 12/03/2022 Joan Pascual Izquierdo (40min)
+Creación de los proyectos "poderes" y "personajes", y hacer un poder que es el de más velocidad (sólo lo he hecho hacia arriba porque si no lo hacía así, tenía que poner diferentes botones para hacer ese boost de velocidad en las demás direcciones)
+
+## 12/03/2022 Joan Pascual Izquierdo (1h 10min)
+Creación de un sprite de un personaje y cagandose en todo, de lo detallado que lo he hecho para el mal rollo que da
