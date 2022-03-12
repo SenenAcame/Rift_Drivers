@@ -1,35 +1,43 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <ctime>
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
+#include "vehiculo.cpp"
 
 #define kVel 5
 
 int main() {
 
-  MiModulo *mod = new MiModulo();
+  //MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
+  sf::RenderWindow window(sf::VideoMode(1080, 720), "Prototipo de Mejoras");
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  if (!tex.loadFromFile("resources/sprites.png")) {
+  if (!tex.loadFromFile("../resources/sprites.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
+  vehiculo jug = vehiculo(sprite,5,10,0);
 
-  //Le pongo el centroide donde corresponde
+  /*
   sprite.setOrigin(75 / 2, 75 / 2);
-  //Cojo el sprite que me interesa por defecto del sheet
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-
-  // Lo dispongo en el centro de la pantalla
   sprite.setPosition(320, 240);
+  */
+
+  /*
+  sf::Clock clock;
+  sf::Time time = clock.getElapsedTime();
+  clock.getElapsedTime().asSeconds();
+  clock.restart();
+  */
 
   //Bucle del juego
   while (window.isOpen()) {
@@ -52,27 +60,39 @@ int main() {
 
         //Mapeo del cursor
         case sf::Keyboard::Right:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
+          jug.rotar(1);
+          /*
+          jug.getSpr().setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
           //Escala por defecto
-          sprite.setScale(1, 1);
-          sprite.move(kVel, 0);
+          jug.getSpr().setScale(1, 1);
+          jug.getSpr().move(kVel, 0);
+          */
           break;
 
         case sf::Keyboard::Left:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
+          jug.rotar(-1);
+          /*
+          jug.getSpr().setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
           //Reflejo vertical
-          sprite.setScale(-1, 1);
-          sprite.move(-kVel, 0);
+          jug.getSpr().setScale(-1, 1);
+          jug.getSpr().move(-kVel, 0);
+          */
           break;
 
         case sf::Keyboard::Up:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
-          sprite.move(0, -kVel);
+          jug.mover(-1);
+          /*
+          jug.getSpr().setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
+          jug.getSpr().move(0, -kVel);
+          */
           break;
 
         case sf::Keyboard::Down:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-          sprite.move(0, kVel);
+          jug.mover(1);
+          /*
+          jug.getSpr().setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+          jug.getSpr().move(0, kVel);
+          */
           break;
 
         //Tecla ESC para salir
@@ -89,7 +109,7 @@ int main() {
     }
 
     window.clear();
-    window.draw(sprite);
+    window.draw(jug.getSpr());
     window.display();
   }
 

@@ -67,3 +67,6 @@ Me he visto muchos videos de como pintar mapas con sfml (no se si cuenta para el
 
 ## 11/03/2022 Sergio Tortajada Santonja (2h 30 min)
 Hay un trozo de circuto y se pinta en el juego, desde el main
+
+## 12/03/2022 Senén Martínez Acame (1h 30min)
+He empezado a implementar la primera clase vehiculo para desarrollar el prototipo de las mejoras.
