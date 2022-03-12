@@ -13,6 +13,10 @@ int main() {
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
 
+  sf::View camara;
+  camara=sf::View(sf::FloatRect(0,0,640,480));
+  window.setView(camara);
+
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
   sf::Texture texm;
@@ -36,6 +40,7 @@ int main() {
 
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(320, 240);
+  camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
   //Bucle del juego
   while (window.isOpen()) {
@@ -96,21 +101,23 @@ int main() {
     window.clear();
     for (int i = 0; i < 10; i++){
       for (int j = 0; j < 10; j++){
-        spritem.setPosition(i*32,j*32);
-        spritem.setTextureRect(sf::IntRect(i*32,j*32,128,128));
+        spritem.setPosition(i*64,j*64);
+        spritem.setTextureRect(sf::IntRect(i*64,j*64,64,64));
         window.draw(spritem);
       }
     }
     for (int i = 0; i < 10; i++){
       for (int j = 0; j < 10; j++){
-        spritem.setPosition(i*32+320,j*32);
-        spritem.setTextureRect(sf::IntRect(i*32,j*32,128,128));
+        spritem.setPosition(i*64,j*64+640);
+        spritem.setTextureRect(sf::IntRect(i*64,j*64,64,64));
         window.draw(spritem);
       }
     }
     
 
     window.draw(sprite);
+    camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
+    window.setView(camara);
     window.display();
   }
 

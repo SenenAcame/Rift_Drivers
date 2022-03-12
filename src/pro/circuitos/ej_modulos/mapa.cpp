@@ -8,6 +8,9 @@ Mapa::Mapa(){
         }
         circuito.push_back(linea);
     }
+    fila=5;
+    col=5;
+    final=false;
 }
 
 std::vector<sf::Sprite> Mapa::CrearMapa(){
@@ -17,7 +20,7 @@ std::vector<sf::Sprite> Mapa::CrearMapa(){
     //std::vector<std::vector<sf::Sprite> > spritesmapa;
     std::string cacho=BuscaCacho(0);
     int buscar=stoi(cacho.substr(2));
-    cacho="../resources/"+BuscaCacho(0)+".png";
+    cacho="../resources/"+cacho+".png";
     texm.loadFromFile(cacho);
     circuito.at(fila).at(col)=cacho;
     while(!final){
@@ -31,10 +34,13 @@ std::vector<sf::Sprite> Mapa::CrearMapa(){
         }
         //spritesmapa.push_back(sprites);
         cacho="../resources/"+BuscaCacho(buscar)+".png";
-        texm.loadFromFile(cacho);
-        circuito.at(fila).at(col)=cacho;
-        buscar=stoi(cacho.substr(2));
+        if(!final){
+            texm.loadFromFile(cacho);
+            circuito.at(fila).at(col)=cacho;
+            buscar=stoi(cacho.substr(2));
+        }
     }
+    return sprites;
 }
 
 std::string Mapa::BuscaCacho(int entrada){
@@ -43,7 +49,7 @@ std::string Mapa::BuscaCacho(int entrada){
     int num2,num;
     bool pasa=false;
     if(entrada==0){
-        srand(time(NULL));
+        /*srand(time(NULL));
         num=1+rand()%4;
         num2=num;
         switch (num)
@@ -61,7 +67,8 @@ std::string Mapa::BuscaCacho(int entrada){
             num2=1;
             break;
         }
-        cacho=num+","+num2;
+        cacho=num+","+num2;*/
+        cacho="1,4";
     }
     else{
         num2=entrada;
@@ -74,6 +81,7 @@ std::string Mapa::BuscaCacho(int entrada){
             carriles.push_back(num2);
         }
     }
+    return cacho;
 }
 
 bool Mapa::CompruebaCacho(std::string cacho){
@@ -110,6 +118,7 @@ bool Mapa::CompruebaCacho(std::string cacho){
         break;
     
     }
+    return pasa;
 }
 
 void Mapa::CompruebaFinal(std::vector<int> carriles){
