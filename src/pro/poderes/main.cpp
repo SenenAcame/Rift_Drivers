@@ -5,6 +5,7 @@
 #include "ej_modulos/mimodulo.h"
 
 #define kVel 5
+#define kTurbo 15
 
 int main() {
 
@@ -15,7 +16,7 @@ int main() {
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  if (!tex.loadFromFile("resources/sprites.png")) {
+  if (!tex.loadFromFile("../resources/sprites.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
@@ -56,24 +57,30 @@ int main() {
           //Escala por defecto
           sprite.setScale(1, 1);
           sprite.move(kVel, 0);
+            sprite.move(kVel, 0);
           break;
 
         case sf::Keyboard::Left:
           sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
           //Reflejo vertical
           sprite.setScale(-1, 1);
-          sprite.move(-kVel, 0);
+            sprite.move(-kVel, 0);
           break;
 
         case sf::Keyboard::Up:
           sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
-          sprite.move(0, -kVel);
+            sprite.move(0, -kVel);
+
           break;
 
         case sf::Keyboard::Down:
           sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-          sprite.move(0, kVel);
+            sprite.move(0, kVel);
           break;
+        case sf::Keyboard::Space:
+          sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
+          sprite.move(0, -kTurbo);
+        break;
 
         //Tecla ESC para salir
         case sf::Keyboard::Escape:
