@@ -20,7 +20,7 @@ int main() {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
-  if (!texm.loadFromFile("../resources/curva_derecha.png")) {
+  if (!texm.loadFromFile("../resources/1,2.png")) {
     std::cerr << "Error cargando la imagen curva_derecha.png";
     exit(0);
   }
@@ -93,12 +93,18 @@ int main() {
         }
       }
     }
-
     window.clear();
     for (int i = 0; i < 10; i++){
       for (int j = 0; j < 10; j++){
         spritem.setPosition(i*32,j*32);
-        spritem.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+        spritem.setTextureRect(sf::IntRect(i*32,j*32,128,128));
+        window.draw(spritem);
+      }
+    }
+    for (int i = 0; i < 10; i++){
+      for (int j = 0; j < 10; j++){
+        spritem.setPosition(i*32+320,j*32);
+        spritem.setTextureRect(sf::IntRect(i*32,j*32,128,128));
         window.draw(spritem);
       }
     }
