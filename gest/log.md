@@ -67,3 +67,6 @@ Me he visto muchos videos de como pintar mapas con sfml (no se si cuenta para el
 
 ## 11/03/2022 Sergio Tortajada Santonja (2h 30 min)
 Hay un trozo de circuto y se pinta en el juego, desde el main
+
+## 12/03/2022 Joan Pascual Izquierdo (40min)
+Creación de los proyectos "poderes" y "personajes", y hacer un poder que es el de más velocidad (sólo lo he hecho hacia arriba porque si no lo hacía así, tenía que poner diferentes botones para hacer ese boost de velocidad en las demás direcciones)
