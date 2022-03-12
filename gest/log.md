@@ -79,3 +79,6 @@ Creación de un sprite de un personaje y cagandose en todo, de lo detallado que 
 
 ## 12/03/2022 Sergio Tortajada Santonja (3h)
 Procedural hecho(aun no lo he probado) y pintar mas de un trozo de mapa
+
+## 12/03/2022 Sergio Tortajada Santonja (40min)
+La camara sigue al personaje y un par de arreglos al procedural(aun no lo he probado)
