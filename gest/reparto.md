@@ -24,7 +24,7 @@ Sergio
 ### Cámara 
 Miguel Ángel
 
-### Impementar poderes
+### Implementar poderes
 Joan
 
 ### Implementar mejoras

@@ -1,4 +1,4 @@
-# Install script for directory: /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv
+# Install script for directory: /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/ej_modulos/cmake_install.cmake")
+  include("/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/build/ej_modulos/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

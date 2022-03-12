@@ -4,4 +4,6 @@
 CMakeFiles/MiJuego.dir/main.cpp.o: ../ej_modulos/mimodulo.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../include/config.h
 CMakeFiles/MiJuego.dir/main.cpp.o: ../main.cpp
+CMakeFiles/MiJuego.dir/main.cpp.o: ../vehiculo.cpp
+CMakeFiles/MiJuego.dir/main.cpp.o: ../vehiculo.h
 

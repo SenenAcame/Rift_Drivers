@@ -33,7 +33,14 @@
 			"name": "PROT: circuitos",
 			"path": "src/pro/circuitos"
 		},
-
+		{
+			"name": "PROT: poderes",
+			"path": "src/pro/poderes"
+		},
+		{
+			"name": "PROT: personajes",
+			"path": "src/pro/personajes"
+		},
 	],
 	"settings": {
 		"editor.wordWrap": "on",
@@ -83,7 +90,8 @@
 			"sstream": "cpp",
 			"stdexcept": "cpp",
 			"streambuf": "cpp",
-			"typeinfo": "cpp"
+			"typeinfo": "cpp",
+			"cstring": "cpp"
 		}
 	}
 }

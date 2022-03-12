@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/ej_modulos/mimodulo.cpp" "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o"
-  "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/ej_modulos/mimodulo2.cpp" "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o"
+  "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos/mimodulo.cpp" "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o"
+  "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos/mimodulo2.cpp" "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
