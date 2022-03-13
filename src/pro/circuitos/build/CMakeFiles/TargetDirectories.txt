@@ -1,6 +1,6 @@
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/CMakeFiles/rebuild_cache.dir
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/CMakeFiles/edit_cache.dir
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/CMakeFiles/MiJuego.dir
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/CMakeFiles/libModulos.dir
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/ej_modulos/CMakeFiles/rebuild_cache.dir
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/ej_modulos/CMakeFiles/edit_cache.dir
+/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/CMakeFiles/rebuild_cache.dir
+/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/CMakeFiles/edit_cache.dir
+/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/CMakeFiles/MiJuego.dir
+/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/CMakeFiles/libModulos.dir
+/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/ej_modulos/CMakeFiles/rebuild_cache.dir
+/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/ej_modulos/CMakeFiles/edit_cache.dir

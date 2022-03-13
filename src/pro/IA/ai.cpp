@@ -10,13 +10,14 @@ ai::ai(sf::Sprite &spri, float v, float exi, float eyi){
     setVel(v);
     setX(exi);
     setY(eyi);
-    angle=0;
+    setAngle(0);
+    setRad(0);
     setSpr(spri);
 }
 
 void ai::setSpr(sf::Sprite &s){
     spr=s;
-    spr.setOrigin(75 / 2, 75 / 2);
+    spr.setOrigin(3 * 75 / 4, 75 / 2);
     spr.setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
     spr.setPosition(x, y);
 }
@@ -49,6 +50,14 @@ float ai::getY(){
     return y;
 }
 
+void ai::setRad(float radius){
+    rad=radius;
+}
+
+float ai::getRad(){
+    return rad;
+}
+
 void ai::setAngle(float angu){
     angle=angu;
 }
@@ -59,7 +68,12 @@ float ai::getAngle(){
 
 void ai::perseguir(sf::Sprite &jug){
     calcuAngle(jug);
-    spr.move(vel*cos(angle),vel*sin(angle));
+
+    float vx = vel*rad*cos(angle);
+    float vy = vel*rad*sin(angle);
+
+    spr.move(vx,vy);
+    
     setX(spr.getPosition().x);
     setY(spr.getPosition().y);
 }
@@ -67,10 +81,40 @@ void ai::perseguir(sf::Sprite &jug){
 void ai::calcuAngle(sf::Sprite &jug){
     float xj = jug.getPosition().x-x;
     float yj = jug.getPosition().y-y;
+    //std::cout << jug.getPosition().x << ","<< jug.getPosition().y << endl;
+    /*
     float resu = xj/sqrt(pow(xj,2)+(pow(yj,2)));
     float angu = acos(resu)*180/Pi;
-    if(yj<1){
+    if(yj<0){
         angu*=(-1);
     }
+    */
+    //float resu = sqrt(xj*xj+yj*yj);
+    float resu = 1;
+    float angu = atan(yj/xj)*180/Pi;
     setAngle(angu);
+    setRad(resu);
+    //std::cout << angu << endl;
+}
+
+void ai::calcuAngle(float ex, float ey){
+    float xj = ex-x;
+    float yj = ey-y;
+
+    float resu = 1;
+    float angu = atan(yj/xj)*180/Pi;
+    setAngle(angu);
+    setRad(resu);
+}
+
+void ai::seguirNodo(float ex, float ey){
+    calcuAngle(ex, ey);
+
+    float vx = vel*rad*cos(angle);
+    float vy = vel*rad*sin(angle);
+
+    spr.move(vx,vy);
+    
+    setX(spr.getPosition().x);
+    setY(spr.getPosition().y);
 }

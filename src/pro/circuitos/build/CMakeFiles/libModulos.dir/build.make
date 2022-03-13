@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv
+CMAKE_SOURCE_DIR = /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build
+CMAKE_BINARY_DIR = /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/libModulos.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/libModulos.dir/flags.make
 
 CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o: ../ej_modulos/mimodulo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o -c /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/ej_modulos/mimodulo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o -c /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mimodulo.cpp
 
 CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/ej_modulos/mimodulo.cpp > CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mimodulo.cpp > CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.i
 
 CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/ej_modulos/mimodulo.cpp -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mimodulo.cpp -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.s
 
 CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o: ../ej_modulos/mimodulo2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o -c /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/ej_modulos/mimodulo2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o -c /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mimodulo2.cpp
 
 CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/ej_modulos/mimodulo2.cpp > CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mimodulo2.cpp > CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.i
 
 CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/ej_modulos/mimodulo2.cpp -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mimodulo2.cpp -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.s
 
 # Object files for target libModulos
 libModulos_OBJECTS = \
@@ -95,7 +95,7 @@ liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/build.make
 liblibModulos.a: CMakeFiles/libModulos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library liblibModulos.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library liblibModulos.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/libModulos.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libModulos.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/libModulos.dir/clean:
 .PHONY : CMakeFiles/libModulos.dir/clean
 
 CMakeFiles/libModulos.dir/depend:
-	cd /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/plantilla_fv/build/CMakeFiles/libModulos.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/CMakeFiles/libModulos.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/libModulos.dir/depend
 

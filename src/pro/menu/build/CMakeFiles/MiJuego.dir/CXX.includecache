@@ -6,15 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.h
 SFML/Graphics.hpp
 /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/SFML/Graphics.hpp
+
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu_empezar.h
+SFML/Graphics.hpp
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/SFML/Graphics.hpp
+
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/ej_modulos/mimodulo.h
+
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/include/config.h
+
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/main.cpp
+SFML/Graphics.hpp
+-
 iostream
 -
 Menu.h
 /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.h
-
-/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.h
-SFML/Graphics.hpp
-/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/SFML/Graphics.hpp
+Menu_empezar.h
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu_empezar.h
+include/config.h
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/include/config.h
+ej_modulos/mimodulo.h
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/ej_modulos/mimodulo.h
 

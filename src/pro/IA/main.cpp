@@ -19,7 +19,7 @@ int main() {
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  if (!tex.loadFromFile("resources/sprites.png")) {
+  if (!tex.loadFromFile("../resources/sprites.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
@@ -27,7 +27,8 @@ int main() {
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
   sf::Sprite sprite2(tex);
-  ai npc = ai(sprite2,0.02,100,100);
+
+  ai npc = ai(sprite2,0.02,700,390);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -36,20 +37,43 @@ int main() {
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(540, 360);
 
-  XMLDocument doc;
-  doc.LoadFile("resources/mapa_prueba.xml");
-  XMLElement *map = doc.FirstChildElement("map");
   
+  XMLDocument doc;
+  doc.LoadFile("../resources/mapa_prueba2.xml");
+  XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
+
+  int num=0;
+  for(XMLNode *child = grupo->FirstChild(); child; child = child->NextSibling()){
+    num++;
+  }
+
+  float **list = new float*[num];
+  for(int i=0; i<num;i++){
+    list[i] = new float[2];
+    XMLNode *nd = grupo->FirstChild();
+    list[i][0] = grupo->FirstChildElement("object")->FloatAttribute("x");
+    list[i][1] = grupo->FirstChildElement("object")->FloatAttribute("y");
+    grupo->DeleteChild(nd);
+  }
+
+  int cap = 0;
   //Bucle del juego
   while (window.isOpen()) {
     //Bucle de obtención de eventos
     sf::Event event;
-    
-    //Movimiento del NPC
-    npc.perseguir(sprite);
-    
-    while (window.pollEvent(event)) {
 
+    //Movimiento del NPC
+    if(cap<num){
+      npc.seguirNodo(list[cap][0], list[cap][1]);
+      if(abs(npc.getX()-list[cap][0])<1 && abs(npc.getY()-list[cap][1])<1){
+        cap++;
+      }
+    }
+    
+    //npc.perseguir(sprite);
+
+    while (window.pollEvent(event)) {
+      
       switch (event.type) {
         //Si se recibe el evento de cerrar la ventana la cierro
         case sf::Event::Closed:
@@ -59,6 +83,7 @@ int main() {
         //Se pulsó una tecla, imprimo su codigo
         case sf::Event::KeyPressed:
           //Verifico si se pulsa alguna tecla de movimiento
+          
           switch (event.key.code) {
 
             //Mapeo del cursor
