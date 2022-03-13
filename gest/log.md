@@ -82,3 +82,6 @@ Procedural hecho(aun no lo he probado) y pintar mas de un trozo de mapa
 
 ## 12/03/2022 Sergio Tortajada Santonja (40min)
 La camara sigue al personaje y un par de arreglos al procedural(aun no lo he probado)
+
+## 13/03/2022 Sergio Tortajada Santonja (20min)
+Segmentos del circuitos creados en png
