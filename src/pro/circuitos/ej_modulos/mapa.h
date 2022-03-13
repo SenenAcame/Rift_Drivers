@@ -11,7 +11,7 @@ class Mapa{
         int col;
         bool final=false;
         Mapa();
-        std::vector<sf::Sprite> CrearMapa();
+        void CrearMapa();
         std::string BuscaCacho(int);
         bool CompruebaCacho(std::string);
         void CompruebaFinal();

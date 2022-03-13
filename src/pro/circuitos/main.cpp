@@ -40,7 +40,7 @@ int main() {
   camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
     Mapa mapa=Mapa();
-    std::vector<sf::Sprite> circuito=mapa.CrearMapa();
+    mapa.CrearMapa();
     
 
   //Bucle del juego
@@ -73,7 +73,7 @@ int main() {
         case sf::Keyboard::Left:
           sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
           //Reflejo vertical
-          sprite.setScale(-1, 1);
+          sprite.setScale(-0.5, 0.5);
           sprite.move(-kVel, 0);
           break;
 
@@ -100,7 +100,6 @@ int main() {
       }
     }
     window.clear();
-    mapa.getCircuito();
     for(int k=0;k<mapa.getCircuito().size();k++){
       for (int l = 0; l < mapa.getCircuito().at(k).size(); l++){
         if(mapa.getCircuito().at(k).at(l)!="0"){

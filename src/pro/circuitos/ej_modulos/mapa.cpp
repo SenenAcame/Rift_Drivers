@@ -14,31 +14,15 @@ Mapa::Mapa(){
     final=false;
 }
 
-std::vector<sf::Sprite> Mapa::CrearMapa(){
-    sf::Texture texm;
-    std::vector<sf::Sprite> sprites;
-    //std::vector<std::vector<sf::Sprite> > spritesmapa;
+void Mapa::CrearMapa(){
     std::string cacho=BuscaCacho(0);
     int buscar=1;
     cacho="../resources/"+cacho+".png";
-    texm.loadFromFile(cacho);
     circuito.at(fila).at(col)=cacho;
     fila=fila-1;
     while(!final){
-        sf::Sprite spritem(texm);
-        std::cerr << "fila:"<<fila<<"\n";
-        std::cerr << "columna:"<<col<<"\n";
-        for (int i = 0; i < 10; i++){
-            for (int j = 0; j < 10; j++){
-                spritem.setPosition(i*64+640*fila,j*64+640*col);
-                spritem.setTextureRect(sf::IntRect(i*64,j*64,64,64));
-                sprites.push_back(spritem);
-            }
-        }
-        //spritesmapa.push_back(sprites);
         cacho="../resources/"+BuscaCacho(buscar)+".png";
         if(!final){
-            texm.loadFromFile(cacho);
             circuito.at(fila).at(col)=cacho;
             buscar=stoi(cacho.substr(cacho.length()-5,cacho.length()-4));
 
@@ -62,37 +46,15 @@ std::vector<sf::Sprite> Mapa::CrearMapa(){
                 fila--;
                 break;
             }
-            std::cerr << "esto es cacho"<<cacho<<"\n";
-            std::cerr << "esto es buscar"<<buscar<<"\n";
         }
     }
-    return sprites;
 }
 
 std::string Mapa::BuscaCacho(int entrada){
     std::string cacho;
-    int num2,num;
+    int num2;
     bool pasa=false;
     if(entrada==0){
-        /*srand(time(NULL));
-        num=1+rand()%4;
-        num2=num;
-        switch (num)
-        {
-        case 1:
-            num2=4;
-            break;
-        case 2:
-            num2=3;
-            break;
-        case 3:
-            num2=2;
-            break;
-        case 4:
-            num2=1;
-            break;
-        }
-        cacho=num+","+num2;*/
         cacho="1,4";
     }
     else{
@@ -104,9 +66,7 @@ std::string Mapa::BuscaCacho(int entrada){
                 break;
             CompruebaFinal();
             num2=1+rand()%4;
-            std::cerr << "esto es num2"<<num2<<"\n";
             cacho=std::to_string(entrada)+","+std::to_string(num2);
-            std::cerr << "esto es cacho"<<cacho<<"\n";
             pasa=CompruebaCacho(cacho);
         }
     }
