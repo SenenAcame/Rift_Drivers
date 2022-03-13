@@ -45,6 +45,7 @@ int main() {
 
   //Bucle del juego
   while (window.isOpen()) {
+    sprite.setScale(0.5, 0.5);
     //Bucle de obtención de eventos
     sf::Event event;
     while (window.pollEvent(event)) {
@@ -66,7 +67,7 @@ int main() {
         case sf::Keyboard::Right:
           sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
           //Escala por defecto
-          sprite.setScale(1, 1);
+          sprite.setScale(0.5, 0.5);
           sprite.move(kVel, 0);
           break;
 
