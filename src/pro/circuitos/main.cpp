@@ -3,6 +3,7 @@
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
+#include "ej_modulos/mapa.cpp"
 
 #define kVel 5
 
@@ -24,14 +25,10 @@ int main() {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
-  if (!texm.loadFromFile("../resources/1,2.png")) {
-    std::cerr << "Error cargando la imagen curva_derecha.png";
-    exit(0);
-  }
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
-  sf::Sprite spritem(texm);
+
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -39,8 +36,12 @@ int main() {
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
 
   // Lo dispongo en el centro de la pantalla
-  sprite.setPosition(320, 240);
+  sprite.setPosition(5*320+320/2, 5*320+320/2);
   camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
+
+    Mapa mapa=Mapa();
+    std::vector<sf::Sprite> circuito=mapa.CrearMapa();
+    
 
   //Bucle del juego
   while (window.isOpen()) {
@@ -99,18 +100,20 @@ int main() {
       }
     }
     window.clear();
-    for (int i = 0; i < 10; i++){
-      for (int j = 0; j < 10; j++){
-        spritem.setPosition(i*64,j*64);
-        spritem.setTextureRect(sf::IntRect(i*64,j*64,64,64));
-        window.draw(spritem);
-      }
-    }
-    for (int i = 0; i < 10; i++){
-      for (int j = 0; j < 10; j++){
-        spritem.setPosition(i*64,j*64+640);
-        spritem.setTextureRect(sf::IntRect(i*64,j*64,64,64));
-        window.draw(spritem);
+    mapa.getCircuito();
+    for(int k=0;k<mapa.getCircuito().size();k++){
+      for (int l = 0; l < mapa.getCircuito().at(k).size(); l++){
+        if(mapa.getCircuito().at(k).at(l)!="0"){
+          texm.loadFromFile(mapa.getCircuito().at(k).at(l));
+          sf::Sprite spritem(texm);
+          for (int i = 0; i < 10; i++){
+            for (int j = 0; j < 10; j++){
+                spritem.setPosition(i*32+32*10*l,j*32+32*10*k);
+                spritem.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                window.draw(spritem);
+            }
+        }
+        }
       }
     }
     

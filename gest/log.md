@@ -94,3 +94,6 @@ Intentando arreglar el problema del giro pero aún no he podido. Aceleracion y f
 
 ## 13/03/2022 Sergio Tortajada Santonja (20min)
 Segmentos del circuitos creados en png
+
+## 13/03/2022 Sergio Tortajada Santonja (3h)
+Procedural hecho

@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mapa.cpp
+mapa.h
+/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mapa.h
+
+/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mapa.h
+SFML/Graphics.hpp
+-
+vector
+-
+
 /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mimodulo.h
 
 /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/include/config.h
@@ -19,4 +29,6 @@ include/config.h
 /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/include/config.h
 ej_modulos/mimodulo.h
 /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mimodulo.h
+ej_modulos/mapa.cpp
+/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mapa.cpp
 
