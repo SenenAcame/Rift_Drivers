@@ -34,8 +34,63 @@ La IA persigue al jugador de forma un poco mas eficiente, pero da problemas para
 ## 7/3/2022 Senén Martínez Acame @(1h)
 Agregado en ej_modulos los archivos de TinyXML2 (.h y .cpp) para poder leer y usar los archivos xml de los mapas y las rutas de los npc. He comprobado que no me diesen conflicto y que al compilar y agregar al CMake no diesen problema.
 
+## 26/2/2022 Angelica Quaranta Barba @(1h)
+Creado Menu.h y Menu.cpp para mostrar 3 opciones por pantalla. Estructura creada.
+
+## 2/3/2022 Angelica Quaranta Barba @(5h)
+Problema para incluir la fuente del texto. Solucionado y probado 3 fuentes disitintas, mostrando las 3 opciones centradas en la ventana. Añadido color a los textos. Problemas para cambiar entre las opciones con el teclado.
+
+## 6/3/2022 Angelica Quaranta Barba @(30min)
+Cambiado los setColor por setFillColor y pruebas para la selección de la opción con Enter.
+
+## 7/3/2022 Angelica Quaranta Barba @(1h)
+Funciona la selección de las opciones (por terminal se indica que has seleccionado), y al seleccionar "Salir" se cierra la ventana.
+Creado Menu_empezar.h, Menu_empezar.cpp, Menu_opciones-h y Menu_opciones. Estructura creada en el menu de empezar para que muestre las opciones de los tipos de circuitos.
+
 ## 7/3/2022 Miguel Ángel Ferrer García de la Reina @(2h)
 Implementado un reloj que mejora la sensacion de movimiento pero no es el reloj que se explicó en clase.
 
 ## 8/3/2022 Miguel Ángel Ferrer García de la Reina @(1h:37min)
 Reloj en funcionamiento pero aún hay problemas con la rotación
+
+## 8/3/2022 Angelica Quaranta Barba @(30min)
+Intento de cambiar de menú al seleccionar "empezar".
+
+## 8/3/2022 Senén Martínez Acame @(2h)
+He intentado arreglar el problema de que la IA no persigue al jugador cuando este se mueve, pero no he podido. A priori los calculos estan bien y no parece que haya nada raro.
+
+## 9/3/2022 Senén Martínez Acame @(2h)
+He podido implementar correctamente que la IA siga la ruta establecida a traves de un archivo XML que se le pasa.
+
+## 9/3/2022 Joan Pascual Izquierdo (1h 30min)
+Seguimos probando con hitboxes (no actualicé el log en su momento)
+
+## 9/3/2022 Joan Pascual Izquierdo (30min)
+busqué información de por que no me funcionaba bien y era porque compobaba si el sprite1 colisionaba con sigo mismo, así que daba que sí y, por eso, no se movía (soy muy tonto).
+
+## 11/03/2022 Sergio Tortajada Santonja (2h)
+Me he visto muchos videos de como pintar mapas con sfml (no se si cuenta para el log)
+
+## 11/03/2022 Sergio Tortajada Santonja (2h 30 min)
+Hay un trozo de circuto y se pinta en el juego, desde el main
+
+## 12/03/2022 Senén Martínez Acame (1h 30min)
+He empezado a implementar la primera clase vehiculo para desarrollar el prototipo de las mejoras.
+
+## 12/03/2022 Joan Pascual Izquierdo (40min)
+Creación de los proyectos "poderes" y "personajes", y hacer un poder que es el de más velocidad (sólo lo he hecho hacia arriba porque si no lo hacía así, tenía que poner diferentes botones para hacer ese boost de velocidad en las demás direcciones)
+
+## 12/03/2022 Joan Pascual Izquierdo (1h 10min)
+Creación de un sprite de un personaje y cagandose en todo, de lo detallado que lo he hecho para el mal rollo que da
+
+## 12/03/2022 Sergio Tortajada Santonja (3h)
+Procedural hecho(aun no lo he probado) y pintar mas de un trozo de mapa
+
+## 12/03/2022 Sergio Tortajada Santonja (40min)
+La camara sigue al personaje y un par de arreglos al procedural(aun no lo he probado)
+
+## 12/03/2022 Miguel Ángel Ferrer García de la Reina @(2h)
+Intentando arreglar el problema del giro pero aún no he podido. Aceleracion y freno conseguidas;
+
+## 13/03/2022 Sergio Tortajada Santonja (20min)
+Segmentos del circuitos creados en png
