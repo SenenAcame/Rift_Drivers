@@ -14,7 +14,7 @@ int main() {
   MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(640, 480), "Movimiento");
+  sf::RenderWindow window(sf::VideoMode(1280, 720), "Movimiento");
 
   //Limite de FPS
   window.setFramerateLimit(60);
@@ -47,7 +47,7 @@ int main() {
   float prev = 0;
   float rot = sprite.getRotation();
 
-  const float speed = kVel;
+   float speed = 0.0f;
 
   sf::Clock clock;
   sf::Clock updateClock;
@@ -75,24 +75,46 @@ int main() {
                 sprite.setRotation(rot);
                   prev = rot;
 
-                  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-                          rot = sprite.getRotation()-15.0f;
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+                rot = sprite.getRotation()-15.0f;
+                }
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+                rot = sprite.getRotation()+15.0f;
+                }
+                
 
-                  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-                          rot = sprite.getRotation()+15.0f;
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+                if(speed<=50.0f){
+                speed += 1.0f;
+                }
+                
+                position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+                position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+                }else{
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)==false){
 
-                  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-                          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
-                          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
-                  }
+                
+                if(speed>0.0f){
+                speed -= 1.0f;
+                }
+                
+                position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+                position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+                }       
+                }
 
-                  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-                      
-                  }
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+                if(speed>0.0f && speed-5.0f>=0){
+                speed -= 5.0f;
+                }
+                
+                position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+                position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+                }
 
-                  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-                      window.close();
-                  }
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+                window.close();
+                }
 
 
           }
