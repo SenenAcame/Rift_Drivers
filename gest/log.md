@@ -97,3 +97,6 @@ Segmentos del circuitos creados en png
 
 ## 13/03/2022 Sergio Tortajada Santonja (3h)
 Procedural hecho
+
+## 14/03/2022 Sergio Tortajada Santonja (15min)
+Cambiado una cosa de los randoms porque hacia casi todo rectas
