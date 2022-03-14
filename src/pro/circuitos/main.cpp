@@ -112,7 +112,7 @@ int main() {
                 spritem.setTextureRect(sf::IntRect(i*32,j*32,32,32));
                 window.draw(spritem);
             }
-        }
+          }
         }
       }
     }

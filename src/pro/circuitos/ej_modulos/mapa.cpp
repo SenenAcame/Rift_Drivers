@@ -1,6 +1,4 @@
 #include "mapa.h"
-#include <cstdlib>
-#include <ctime>
 
 Mapa::Mapa(){
     
