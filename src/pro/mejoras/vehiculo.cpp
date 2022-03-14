@@ -50,18 +50,9 @@ float vehiculo::getAcel(){
 }
 
 void vehiculo::mover(float s){
-    /*
-    int dir = s*vel;
-    int vx = dir*sin(posi*180/Pi);
-    int vy = dir*cos(posi*180/Pi);
-    spr.move(vx, vy);
-    */
+    spr.move(0, vel*s);
 }
 
 void vehiculo::rotar(int s){
-    /*
-    int ang = s*giro;
-    spr.rotate(ang);
-    posi+=ang;
-    */
+    spr.rotate(s*giro);
 }

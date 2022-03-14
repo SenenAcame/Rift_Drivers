@@ -97,3 +97,6 @@ Segmentos del circuitos creados en png
 
 ## 13/03/2022 Sergio Tortajada Santonja (3h)
 Procedural hecho
+
+## 14/03/2022 Senén Martínez Acame (30 min)
+He implementado un sistema de mejora de velocidad y giro muy basico. Falta poder estructurar y organizar las mejoras (crear su propia clase) y mejorar los controles del vehiculo para tener un mejor resultado.
