@@ -9,6 +9,10 @@
 /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mapa.cpp
 mapa.h
 /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mapa.h
+cstdlib
+-
+ctime
+-
 
 /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/ej_modulos/mapa.h
 SFML/Graphics.hpp

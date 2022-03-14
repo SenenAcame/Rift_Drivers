@@ -5,7 +5,7 @@
 #include "ej_modulos/mimodulo.h"
 #include "ej_modulos/mapa.cpp"
 
-#define kVel 5
+#define kVel 15
 
 int main() {
 
@@ -36,16 +36,16 @@ int main() {
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
 
   // Lo dispongo en el centro de la pantalla
-  sprite.setPosition(5*320+320/2, 5*320+320/2);
+  sprite.setPosition(10*320+320/2, 10*320+320/2);
   camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
     Mapa mapa=Mapa();
     mapa.CrearMapa();
-    
+    sprite.setScale(0.5, 0.5);
 
   //Bucle del juego
   while (window.isOpen()) {
-    sprite.setScale(0.5, 0.5);
+    
     //Bucle de obtención de eventos
     sf::Event event;
     while (window.pollEvent(event)) {
