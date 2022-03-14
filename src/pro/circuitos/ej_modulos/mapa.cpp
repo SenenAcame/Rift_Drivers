@@ -1,17 +1,20 @@
 #include "mapa.h"
+#include <cstdlib>
+#include <ctime>
 
 Mapa::Mapa(){
     
-    for(int i=0;i<10;i++){
+    for(int i=0;i<20;i++){
         std::vector<std::string> linea;
-        for(int j=0;j<10;j++){
+        for(int j=0;j<20;j++){
             linea.push_back("0");
         }
         circuito.push_back(linea);
     }
-    fila=5;
-    col=5;
+    fila=10;
+    col=10;
     final=false;
+    srand(time(0));
 }
 
 void Mapa::CrearMapa(){
@@ -59,16 +62,20 @@ std::string Mapa::BuscaCacho(int entrada){
     }
     else{
         num2=entrada;
-        srand(time(NULL));
+        
         while(num2==entrada||!pasa){
+            
             cacho="";
             if(final)
                 break;
             CompruebaFinal();
             num2=1+rand()%4;
+
             cacho=std::to_string(entrada)+","+std::to_string(num2);
+            std::cerr << cacho<<"\n";
             pasa=CompruebaCacho(cacho);
         }
+
     }
     return cacho;
 }
