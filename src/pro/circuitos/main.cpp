@@ -12,10 +12,13 @@ int main() {
   MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(1080, 720), "P0. Fundamentos de los Videojuegos. DCCIA");
+  sf::RenderWindow window(sf::VideoMode(720, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
 
   sf::View camara;
-  camara=sf::View(sf::FloatRect(0,0,1080,720));
+  sf::View minimapa;
+  camara=sf::View(sf::FloatRect(0,0,720,480));
+  minimapa.setViewport(sf::FloatRect(0.75f,0,0.25f,0.25f));
+  minimapa.setSize(2732,1536);
   window.setView(camara);
 
   //Cargo la imagen donde reside la textura del sprite
@@ -110,6 +113,9 @@ int main() {
       }
     }
     window.clear();
+    camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
+    minimapa.setCenter(sprite.getPosition());
+    window.setView(camara);
     if(pista){
       for(int k=0;k<mapa.getCircuito().size();k++){
         for (int l = 0; l < mapa.getCircuito().at(k).size(); l++){
@@ -128,10 +134,32 @@ int main() {
       }
     }
     
-
+    
     window.draw(sprite);
-    camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
-    window.setView(camara);
+    window.setView(minimapa);
+    if(pista){
+      for(int k=0;k<mapa.getCircuito().size();k++){
+        for (int l = 0; l < mapa.getCircuito().at(k).size(); l++){
+          if(mapa.getCircuito().at(k).at(l)!="0"){
+            texm.loadFromFile(mapa.getCircuito().at(k).at(l));
+            sf::Sprite spritem(texm);
+            for (int i = 0; i < 10; i++){
+              for (int j = 0; j < 10; j++){
+                  spritem.setPosition(i*32+32*10*l,j*32+32*10*k);
+                  spritem.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                  window.draw(spritem);
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    
+    window.draw(sprite);
+    
+    
+    
     window.display();
   }
 
