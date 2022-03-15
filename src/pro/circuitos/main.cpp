@@ -40,7 +40,7 @@ int main() {
   camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
     Mapa mapa=Mapa();
-    mapa.CrearMapa();
+    bool pista=false;
     sprite.setScale(0.5, 0.5);
 
   //Bucle del juego
@@ -92,6 +92,15 @@ int main() {
         case sf::Keyboard::Escape:
           window.close();
           break;
+        
+        case sf::Keyboard::L:
+          if(pista){
+            sprite.setPosition(10*320+320/2, 10*320+320/2);
+            mapa.vaciaMapa();
+            mapa=Mapa();
+          }
+          mapa.CrearMapa();
+          pista=true;
 
         //Cualquier tecla desconocida se imprime por pantalla su código
         default:
@@ -101,16 +110,18 @@ int main() {
       }
     }
     window.clear();
-    for(int k=0;k<mapa.getCircuito().size();k++){
-      for (int l = 0; l < mapa.getCircuito().at(k).size(); l++){
-        if(mapa.getCircuito().at(k).at(l)!="0"){
-          texm.loadFromFile(mapa.getCircuito().at(k).at(l));
-          sf::Sprite spritem(texm);
-          for (int i = 0; i < 10; i++){
-            for (int j = 0; j < 10; j++){
-                spritem.setPosition(i*32+32*10*l,j*32+32*10*k);
-                spritem.setTextureRect(sf::IntRect(i*32,j*32,32,32));
-                window.draw(spritem);
+    if(pista){
+      for(int k=0;k<mapa.getCircuito().size();k++){
+        for (int l = 0; l < mapa.getCircuito().at(k).size(); l++){
+          if(mapa.getCircuito().at(k).at(l)!="0"){
+            texm.loadFromFile(mapa.getCircuito().at(k).at(l));
+            sf::Sprite spritem(texm);
+            for (int i = 0; i < 10; i++){
+              for (int j = 0; j < 10; j++){
+                  spritem.setPosition(i*32+32*10*l,j*32+32*10*k);
+                  spritem.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                  window.draw(spritem);
+              }
             }
           }
         }

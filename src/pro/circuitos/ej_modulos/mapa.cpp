@@ -16,12 +16,14 @@ Mapa::Mapa(){
 }
 
 void Mapa::CrearMapa(){
+    int cachos=0;
     std::string cacho=BuscaCacho(0);
     int buscar=1;
     cacho="../resources/"+cacho+".png";
     circuito.at(fila).at(col)=cacho;
     fila=fila-1;
     while(!final){
+        cachos++;
         cacho="../resources/"+BuscaCacho(buscar)+".png";
         if(!final){
             circuito.at(fila).at(col)=cacho;
@@ -48,6 +50,22 @@ void Mapa::CrearMapa(){
                 break;
             }
         }
+    }
+    if(cachos<30){
+        vaciaMapa();
+        for(int i=0;i<20;i++){
+            std::vector<std::string> linea;
+            for(int j=0;j<20;j++){
+                linea.push_back("0");
+            }
+            circuito.push_back(linea);
+        }
+        fila=10;
+        col=10;
+        final=false;
+        srand(time(0));
+        std::cerr<<std::to_string(cachos)<<"Repite\n";
+        CrearMapa();
     }
 }
 
@@ -134,4 +152,11 @@ void Mapa::CompruebaFinal(){
 
 std::vector<std::vector<std::string> > Mapa::getCircuito(){
     return circuito;
+}
+
+void Mapa::vaciaMapa(){
+    for(int i=19;i>=0;i--){
+        circuito.at(i).clear();
+    }
+    circuito.clear();
 }

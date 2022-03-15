@@ -16,7 +16,7 @@ class Mapa{
         bool CompruebaCacho(std::string);
         void CompruebaFinal();
         std::vector<std::vector<std::string> > getCircuito();
-        
+        void vaciaMapa();
 
 };
 
