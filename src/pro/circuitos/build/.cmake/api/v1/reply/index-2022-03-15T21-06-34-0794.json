@@ -3,7 +3,7 @@
 	{
 		"generator" : 
 		{
-			"name" : "Ninja"
+			"name" : "Unix Makefiles"
 		},
 		"paths" : 
 		{
@@ -25,7 +25,7 @@
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-e0ec1e58a5677418544b.json",
+			"jsonFile" : "codemodel-v2-996d5d8922ac7bfd5f6a.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
@@ -34,59 +34,17 @@
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-7a977081b54f9dd843ad.json",
+			"jsonFile" : "cache-v2-8022520607de74bb7632.json",
 			"kind" : "cache",
 			"version" : 
 			{
 				"major" : 2,
 				"minor" : 0
 			}
-		},
-		{
-			"jsonFile" : "cmakeFiles-v1-f781b1182a8fc1beeac6.json",
-			"kind" : "cmakeFiles",
-			"version" : 
-			{
-				"major" : 1,
-				"minor" : 0
-			}
 		}
 	],
 	"reply" : 
 	{
-		"client-integration-vscode" : 
-		{
-			"cache-v2" : 
-			{
-				"jsonFile" : "cache-v2-7a977081b54f9dd843ad.json",
-				"kind" : "cache",
-				"version" : 
-				{
-					"major" : 2,
-					"minor" : 0
-				}
-			},
-			"cmakeFiles-v1" : 
-			{
-				"jsonFile" : "cmakeFiles-v1-f781b1182a8fc1beeac6.json",
-				"kind" : "cmakeFiles",
-				"version" : 
-				{
-					"major" : 1,
-					"minor" : 0
-				}
-			},
-			"codemodel-v2" : 
-			{
-				"jsonFile" : "codemodel-v2-e0ec1e58a5677418544b.json",
-				"kind" : "codemodel",
-				"version" : 
-				{
-					"major" : 2,
-					"minor" : 0
-				}
-			}
-		},
 		"client-vscode" : 
 		{
 			"query.json" : 
@@ -109,7 +67,7 @@
 				"responses" : 
 				[
 					{
-						"jsonFile" : "cache-v2-7a977081b54f9dd843ad.json",
+						"jsonFile" : "cache-v2-8022520607de74bb7632.json",
 						"kind" : "cache",
 						"version" : 
 						{
@@ -118,7 +76,7 @@
 						}
 					},
 					{
-						"jsonFile" : "codemodel-v2-e0ec1e58a5677418544b.json",
+						"jsonFile" : "codemodel-v2-996d5d8922ac7bfd5f6a.json",
 						"kind" : "codemodel",
 						"version" : 
 						{

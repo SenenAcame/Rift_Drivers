@@ -1,4 +1,4 @@
-# Install script for directory: /home/sma79/fv/proyectoabp-grupo-c04/src/pro/circuitos
+# Install script for directory: /home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/sma79/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/ej_modulos/cmake_install.cmake")
+  include("/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/ej_modulos/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sma79/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/osboxes/Desktop/fv/proyectoabp-grupo-c04/src/pro/circuitos/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
