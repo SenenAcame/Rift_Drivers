@@ -28,7 +28,7 @@ int main() {
   sf::Sprite sprite(tex);
   sf::Sprite sprite2(tex);
 
-  ai npc = ai(sprite2,0.02,700,390);
+  ai npc = ai(sprite2,0.02,125,90);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);

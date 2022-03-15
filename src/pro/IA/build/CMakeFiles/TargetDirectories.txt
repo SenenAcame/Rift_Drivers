@@ -1,6 +1,6 @@
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles/rebuild_cache.dir
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles/edit_cache.dir
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles/MiJuego.dir
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles/libModulos.dir
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/ej_modulos/CMakeFiles/rebuild_cache.dir
-/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/IA/build/ej_modulos/CMakeFiles/edit_cache.dir
+/home/sma79/fv/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles/rebuild_cache.dir
+/home/sma79/fv/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles/edit_cache.dir
+/home/sma79/fv/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles/MiJuego.dir
+/home/sma79/fv/proyectoabp-grupo-c04/src/pro/IA/build/CMakeFiles/libModulos.dir
+/home/sma79/fv/proyectoabp-grupo-c04/src/pro/IA/build/ej_modulos/CMakeFiles/rebuild_cache.dir
+/home/sma79/fv/proyectoabp-grupo-c04/src/pro/IA/build/ej_modulos/CMakeFiles/edit_cache.dir

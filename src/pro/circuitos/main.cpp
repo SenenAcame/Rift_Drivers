@@ -12,10 +12,10 @@ int main() {
   MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
+  sf::RenderWindow window(sf::VideoMode(1080, 720), "P0. Fundamentos de los Videojuegos. DCCIA");
 
   sf::View camara;
-  camara=sf::View(sf::FloatRect(0,0,640,480));
+  camara=sf::View(sf::FloatRect(0,0,1080,720));
   window.setView(camara);
 
   //Cargo la imagen donde reside la textura del sprite
