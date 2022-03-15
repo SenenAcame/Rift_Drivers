@@ -1,3 +1,4 @@
+/*
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <ctime>
@@ -112,3 +113,183 @@ int main() {
 
   return 0;
 }
+*/
+#include <SFML/Graphics.hpp>
+#include <iostream>
+#include <math.h>
+
+#include "include/config.h"
+#include "ej_modulos/mimodulo.h"
+
+#define kVel 20.0f
+#define UPDATE_TICK_TIME 1
+
+
+int main() {
+
+  MiModulo *mod = new MiModulo();
+
+  //Creamos una ventana
+  sf::RenderWindow window(sf::VideoMode(1920, 1080), "Movimiento");
+
+  //Limite de FPS
+  window.setFramerateLimit(60);
+
+
+
+  //Cargo la imagen donde reside la textura del sprite
+  sf::Texture tex;
+  if (!tex.loadFromFile("../resources/sprites.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+
+  //Y creo el spritesheet a partir de la imagen anterior
+  sf::Sprite sprite(tex);
+
+  //Le pongo el centroide donde corresponde
+  sprite.setOrigin(75 / 2, 75 / 2);
+  //Cojo el sprite que me interesa por defecto del sheet
+  sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+
+  // Lo dispongo en el centro de la pantalla
+  sprite.setPosition(320, 240);
+
+  sf::Vector2f position, previous;
+
+  position.x = 320;
+  position.y = 240;
+
+  float prev = 0;
+  float rot = sprite.getRotation();
+  float speed = 0.0f;
+
+  sf::Clock clock;
+  sf::Clock updateClock;
+
+  sf::Clock clock_m1;
+  sf::Clock clock_m2;
+  sf::Clock clock_m3;
+
+  float vel=50.0f;
+  float ace=1.0f;
+  float gir=15.0f;
+
+  bool check = false;
+  bool check2 = false;
+  bool check3 = false;
+
+  float accumulator = 0;
+  const float timestep = 1.0f / 15.0f; 
+  while (window.isOpen())
+  {
+          sf::Event e;
+          if(check & clock_m1.getElapsedTime().asSeconds()>10){
+            vel=50.0f;
+            std::cout << "Velocidad restaurada" << std::endl;
+            check = false;
+          }
+
+          if(check2 & clock_m2.getElapsedTime().asSeconds()>10){
+            gir=15.0f;
+            std::cout << "Giro restaurado" << std::endl;
+            check2 = false;
+          }
+
+          if(check3 & clock_m3.getElapsedTime().asSeconds()>10){
+            ace=1.0f;
+            std::cout << "Aceleracion restaurada" << std::endl;
+            check3 = false;
+          }
+
+          while (window.pollEvent(e))
+                  if (e.type == sf::Event::Closed)
+                          window.close();
+
+          accumulator += clock.restart().asSeconds();
+          while (accumulator >= timestep)
+          {
+                  accumulator -= timestep;
+
+                  previous = position;
+                  sprite.setRotation(rot);
+                  prev = rot;
+
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)){
+                  check = true;
+                  clock_m1.restart();
+                  vel=100.0f;
+                  std::cout << "Velocidad aumentada" << std::endl;
+                }
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)){
+                  check2 = true;
+                  clock_m2.restart();
+                  gir=30.0f;
+                  std::cout << "Giro aumentado" << std::endl;
+                }
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)){
+                  check3 = true;
+                  clock_m3.restart();
+                  ace=2.0f;
+                  std::cout << "Aceleracion aumentada" << std::endl;
+                }
+
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+                rot = sprite.getRotation()-gir;
+                }
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+                rot = sprite.getRotation()+gir;
+                }
+                
+
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+                if(speed<=vel){
+                speed += ace;
+                }
+                if(speed>vel){
+                  speed-=ace;
+                }
+                position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+                position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+                }else{
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)==false){
+
+                
+                if(speed>0.0f){
+                speed -= ace;
+                }
+                
+                position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+                position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+                }       
+                }
+
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+                if(speed>0.0f && speed-5.0f>=0){
+                speed -= 5.0f;
+                }
+                
+                position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+                position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+                }
+
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+                window.close();
+                }
+
+
+          }
+
+          window.clear();
+          sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
+          sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));
+          
+
+          window.draw(sprite);
+
+          window.display();
+  }
+
+  return 0;
+}
+

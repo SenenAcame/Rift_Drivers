@@ -1,17 +1,19 @@
 [
 {
-  "directory": "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/build",
-  "command": "/bin/c++   -I/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/MiJuego.dir/main.cpp.o -c /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/main.cpp",
-  "file": "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/main.cpp"
+  "directory": "/home/sma79/fv/proyectoabp-grupo-c04/src/pro/mejoras/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I../ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/MiJuego.dir/main.cpp.o -c /home/sma79/fv/proyectoabp-grupo-c04/src/pro/mejoras/main.cpp",
+  "file": "/home/sma79/fv/proyectoabp-grupo-c04/src/pro/mejoras/main.cpp"
 },
+
 {
-  "directory": "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/build",
-  "command": "/bin/c++   -I/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o -c /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos/mimodulo.cpp",
-  "file": "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos/mimodulo.cpp"
+  "directory": "/home/sma79/fv/proyectoabp-grupo-c04/src/pro/mejoras/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I../ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o -c /home/sma79/fv/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos/mimodulo.cpp",
+  "file": "/home/sma79/fv/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos/mimodulo.cpp"
 },
+
 {
-  "directory": "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/build",
-  "command": "/bin/c++   -I/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o -c /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos/mimodulo2.cpp",
-  "file": "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos/mimodulo2.cpp"
+  "directory": "/home/sma79/fv/proyectoabp-grupo-c04/src/pro/mejoras/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I../ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o -c /home/sma79/fv/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos/mimodulo2.cpp",
+  "file": "/home/sma79/fv/proyectoabp-grupo-c04/src/pro/mejoras/ej_modulos/mimodulo2.cpp"
 }
 ]
