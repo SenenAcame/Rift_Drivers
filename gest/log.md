@@ -103,3 +103,6 @@ He implementado un sistema de mejora de velocidad y giro muy basico. Falta poder
 
 ## 14/03/2022 Sergio Tortajada Santonja (15min)
 Cambiado una cosa de los randoms porque hacia casi todo rectas
+
+## 15/03/2022 Sergio Tortajada Santonja (1h 20min)
+Minimapa, segmentos minimos para el procedural y seguramente otra cosa que no me acuerdo
