@@ -17,7 +17,7 @@ int main() {
   sf::View camara;
   sf::View minimapa;
   camara=sf::View(sf::FloatRect(0,0,720,480));
-  minimapa.setViewport(sf::FloatRect(0.75f,0,0.25f,0.25f));
+  minimapa.setViewport(sf::FloatRect(0.85f,0,0.15f,0.25f));
   minimapa.setSize(2732,1536);
   window.setView(camara);
 
