@@ -112,3 +112,6 @@ Con ayuda del prototipo de los controles de Miguel he podido implementar las mej
 
 # 16/03/2022 Senén Martínez Acame (1h 15min)
 Implementada una clase mejora donde guarda los valores y las funciones de esta para una mejor estructuracion.
+
+# 17/03/2022 Senén Martínez Acame (2h)
+Se ha podido implementar que se la IA pueda recorrer varios fragmentos de ruta seguidos.

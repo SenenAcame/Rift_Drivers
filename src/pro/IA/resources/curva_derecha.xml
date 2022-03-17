@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="43">
+ <tileset firstgid="1" source="tiles.tsx"/>
+ <layer id="1" name="Capa de patrones 1" width="20" height="20">
+  <data encoding="csv">
+902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,
+902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,
+902,902,913,913,913,913,913,913,913,913,913,913,913,913,913,913,913,913,902,902,
+902,902,913,913,913,913,913,913,913,913,913,913,913,913,913,913,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,902,902,902,902,902,902,902,902,902,902,902,902,913,913,902,902,
+902,902,913,913,913,913,913,913,913,913,913,913,913,913,913,913,913,913,902,902,
+902,902,913,913,913,913,913,913,913,913,913,913,913,913,913,913,913,913,902,902,
+902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,
+902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902,902
+</data>
+ </layer>
+ <objectgroup id="4" name="ruta">
+  <object id="28" x="43" y="303.5">
+   <properties>
+    <property name="path" type="object" value="29"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="29" x="45.5" y="263.5">
+   <properties>
+    <property name="path" type="object" value="30"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="30" x="48" y="221">
+   <properties>
+    <property name="path" type="object" value="31"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="31" x="53" y="183.5">
+   <properties>
+    <property name="path" type="object" value="32"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="32" x="58.5" y="155">
+   <properties>
+    <property name="path" type="object" value="33"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="33" x="72.5" y="124.5">
+   <properties>
+    <property name="path" type="object" value="34"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="34" x="89" y="97">
+   <properties>
+    <property name="path" type="object" value="35"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="35" x="110.5" y="77.5">
+   <properties>
+    <property name="path" type="object" value="36"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="36" x="133" y="66.5">
+   <properties>
+    <property name="path" type="object" value="37"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="37" x="157.5" y="60">
+   <properties>
+    <property name="path" type="object" value="38"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="38" x="182.5" y="57.5">
+   <properties>
+    <property name="path" type="object" value="39"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="39" x="210" y="54.5">
+   <properties>
+    <property name="path" type="object" value="40"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="40" x="239.5" y="53">
+   <properties>
+    <property name="path" type="object" value="41"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="41" x="269" y="52">
+   <properties>
+    <property name="path" type="object" value="42"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="42" x="300" y="51">
+   <properties>
+    <property name="path" type="object" value="0"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>
