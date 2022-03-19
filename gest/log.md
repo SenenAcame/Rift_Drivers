@@ -118,3 +118,6 @@ Implementada una clase mejora donde guarda los valores y las funciones de esta p
 
 # 17/03/2022 Senén Martínez Acame (2h)
 Se ha podido implementar que se la IA pueda recorrer varios fragmentos de ruta seguidos.
+
+# 17/03/2022 Senén Martínez Acame (45min)
+He optimizado el metodo de obtencion de las rutas.

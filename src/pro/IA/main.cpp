@@ -37,10 +37,10 @@ int main() {
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(540, 360);
 
-  string mapas[2] = {"../resources/curva_derecha.xml","../resources/curva_abajo.xml"};
+  string mapas[3] = {"../resources/curva_derecha.xml","../resources/curva_abajo.xml","../resources/zigzag.xml"};
   int cont=0; 
   
-  for(int i=0; i<(sizeof(mapas)/sizeof(*mapas)); i++){
+  for(int i=0; i<(int)(sizeof(mapas)/sizeof(*mapas)); i++){
     const char* fichero = mapas[i].c_str();
     XMLDocument doc;
     doc.LoadFile(fichero);
@@ -54,35 +54,23 @@ int main() {
 
   float **list = new float*[cont];
   int global=0;
-  int local=0;
-  for(int i=0; i<(sizeof(mapas)/sizeof(*mapas)); i++){
+
+  for(int i=0; i<(int)(sizeof(mapas)/sizeof(*mapas)); i++){
     const char* frag = mapas[i].c_str();
     XMLDocument doc;
     doc.LoadFile(frag);
     XMLElement *group = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
-    for(XMLNode *child = group->FirstChild(); child; child = child->NextSibling()){
-      /*
+    for(XMLElement *son = group->FirstChildElement("object"); son; son = son->NextSiblingElement("object")){
       list[global] = new float[2];
-      XMLNode *nd = group->FirstChild();
-      list[global][0] = group->FirstChildElement("object")->FloatAttribute("x")+320*i;
-      list[global][1] = group->FirstChildElement("object")->FloatAttribute("y");
-      group->DeleteChild(nd);
-      cout << list[global][0] << "," << list[global][1] << endl;
-      */
+      list[global][0] = son->FloatAttribute("x")+320*i;
+      list[global][1] = son->FloatAttribute("y");
       global++;
-      //nd=NULL;
-    }
-    for(local;local<global;local++){
-      list[local] = new float[2];
-      XMLNode *nd = group->FirstChild();
-      list[local][0] = group->FirstChildElement("object")->FloatAttribute("x")+320*i;
-      list[local][1] = group->FirstChildElement("object")->FloatAttribute("y");
-      group->DeleteChild(nd);
-      //cout << list[local][0] << "," << list[local][1] << endl;
     }
     frag=NULL;
     group=NULL;
   }
+
+  
   /*
   XMLDocument doc;
   doc.LoadFile("../resources/curva_abajo.xml");
@@ -178,6 +166,14 @@ int main() {
     window.draw(npc.getSpr());
     window.display();
   }
-
+  /*
+  for(int i=0; i<cont; i++){
+    for(int j=0; j<2; j++){
+      delete [] list[i][j];
+    }
+    delete [] list[i];
+  }
+  delete [] list;
+  */
   return 0;
 }
