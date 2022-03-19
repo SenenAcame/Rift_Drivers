@@ -110,6 +110,9 @@ Minimapa, segmentos minimos para el procedural y cargar y descargar mapa con la 
 # 15/03/2022 Senén Martinez Acame (1h)
 Con ayuda del prototipo de los controles de Miguel he podido implementar las mejoras para los valores de velocida, giro y aceleracion.
 
+## 15/03/2022 Miguel Ángel Ferrer García de la Reina @(2h)
+Ya no hay giros erraticos al pasar por 0 o 360 angulos, pero aún no es perfecto
+
 # 16/03/2022 Senén Martínez Acame (1h 15min)
 Implementada una clase mejora donde guarda los valores y las funciones de esta para una mejor estructuracion.
 
