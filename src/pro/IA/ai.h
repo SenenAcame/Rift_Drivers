@@ -11,8 +11,10 @@ class ai
 
     public: 
         ai(sf::Sprite &spr, float vel, float x, float y);
+        ai(sf::Sprite &spr, float vel, float x, float y, int i);
 
         void setSpr(sf::Sprite &s);
+        void setSpr(sf::Sprite &s, int i);
         sf::Sprite getSpr();
 
         void setVel(float vel);

@@ -106,3 +106,21 @@ Cambiado una cosa de los randoms porque hacia casi todo rectas
 
 ## 15/03/2022 Sergio Tortajada Santonja (1h 20min)
 Minimapa, segmentos minimos para el procedural y cargar y descargar mapa con la l
+
+# 15/03/2022 Senén Martinez Acame (1h)
+Con ayuda del prototipo de los controles de Miguel he podido implementar las mejoras para los valores de velocida, giro y aceleracion.
+
+## 15/03/2022 Miguel Ángel Ferrer García de la Reina @(2h)
+Ya no hay giros erraticos al pasar por 0 o 360 angulos, pero aún no es perfecto
+
+# 16/03/2022 Senén Martínez Acame (1h 15min)
+Implementada una clase mejora donde guarda los valores y las funciones de esta para una mejor estructuracion.
+
+# 17/03/2022 Senén Martínez Acame (2h)
+Se ha podido implementar que se la IA pueda recorrer varios fragmentos de ruta seguidos.
+
+# 19/03/2022 Senén Martínez Acame (45min)
+He optimizado el metodo de obtencion de las rutas.
+
+# 20/03/2022 Senén Martínez Acame (1h)
+He realizado pruebas con un factor de varianza en los nodos de la ruta, para ver como se comporta la IA al hacer el recorrido, tambien aumentando el margen de aproximacion al proximo nodo para pasar al siguiente. Aumentar mucho el margen hace que el recorrido sea erratico. La varianza puede servir para que el recorrido tenga un margen de maniobra. Corregido que las mejoras de un mismo tipo no se solapen.

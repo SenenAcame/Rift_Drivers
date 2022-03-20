@@ -15,7 +15,7 @@ int main() {
   //MiModulo *mod = new MiModulo();
   
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(1080, 720), "Prototipo de IA");
+  sf::RenderWindow window(sf::VideoMode(1920, 1080), "Prototipo de IA");
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
@@ -28,7 +28,8 @@ int main() {
   sf::Sprite sprite(tex);
   sf::Sprite sprite2(tex);
 
-  ai npc = ai(sprite2,0.02,125,90);
+  ai npc = ai(sprite2,0.03,100,400);
+  ai npc2 = ai(sprite2,0.03,100,400,1);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -37,17 +38,62 @@ int main() {
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(540, 360);
 
+  string mapas[3] = {"../resources/curva_derecha.xml","../resources/curva_abajo.xml","../resources/zigzag.xml"};
+  int cont=0; 
   
-  XMLDocument doc;
-  doc.LoadFile("../resources/mapa_prueba2.xml");
-  XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
+  for(int i=0; i<(int)(sizeof(mapas)/sizeof(*mapas)); i++){
+    const char* fichero = mapas[i].c_str();
+    XMLDocument doc;
+    doc.LoadFile(fichero);
+    XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
+    for(XMLNode *hijo = grupo->FirstChild(); hijo; hijo = hijo->NextSibling()){
+      cont++;
+    }
+    fichero=NULL;
+    grupo=NULL;
+  }
 
+  float **list = new float*[cont];
+  int global=0;
+  int vari = 0;
+  for(int i=0; i<(int)(sizeof(mapas)/sizeof(*mapas)); i++){
+    const char* frag = mapas[i].c_str();
+    XMLDocument doc;
+    doc.LoadFile(frag);
+    XMLElement *group = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
+    for(XMLElement *son = group->FirstChildElement("object"); son; son = son->NextSiblingElement("object")){
+      
+      int v = rand() % 11-5;
+      vari += v;
+      //cout << vari << endl;
+      list[global] = new float[2];
+      if(i==2){
+        list[global][0] = son->FloatAttribute("x")+320+vari;
+        list[global][1] = son->FloatAttribute("y")+320+vari;
+      }
+      else{
+        list[global][0] = son->FloatAttribute("x")+320*i+vari;
+        list[global][1] = son->FloatAttribute("y")+vari;
+      }
+      global++;
+    }
+    frag=NULL;
+    group=NULL;
+  }
+  /*
+  XMLDocument doc;
+  doc.LoadFile("../resources/curva_abajo.xml");
+  XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
+  */
+  /*
   int num=0;
   for(XMLNode *child = grupo->FirstChild(); child; child = child->NextSibling()){
     num++;
   }
+  */
 
-  float **list = new float*[num];
+  //float **list = new float*[num];
+  /*
   for(int i=0; i<num;i++){
     list[i] = new float[2];
     XMLNode *nd = grupo->FirstChild();
@@ -55,18 +101,23 @@ int main() {
     list[i][1] = grupo->FirstChildElement("object")->FloatAttribute("y");
     grupo->DeleteChild(nd);
   }
-
+  */
   int cap = 0;
+  int cap2 = 0;
   //Bucle del juego
   while (window.isOpen()) {
     //Bucle de obtención de eventos
     sf::Event event;
 
     //Movimiento del NPC
-    if(cap<num){
+    if(cap<cont && cap2<cont){
       npc.seguirNodo(list[cap][0], list[cap][1]);
+      npc2.seguirNodo(list[cap2][0], list[cap2][1]);
       if(abs(npc.getX()-list[cap][0])<1 && abs(npc.getY()-list[cap][1])<1){
         cap++;
+      }
+      if(abs(npc2.getX()-list[cap2][0])<50 && abs(npc2.getY()-list[cap2][1])<50){
+        cap2++;
       }
     }
     
@@ -127,8 +178,17 @@ int main() {
     window.clear();
     window.draw(sprite);
     window.draw(npc.getSpr());
+    window.draw(npc2.getSpr());
     window.display();
   }
-
+  /*
+  for(int i=0; i<cont; i++){
+    for(int j=0; j<2; j++){
+      delete [] list[i][j];
+    }
+    delete [] list[i];
+  }
+  delete [] list;
+  */
   return 0;
 }

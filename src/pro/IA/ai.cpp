@@ -15,10 +15,26 @@ ai::ai(sf::Sprite &spri, float v, float exi, float eyi){
     setSpr(spri);
 }
 
+ai::ai(sf::Sprite &spri, float v, float exi, float eyi, int i){
+    setVel(v);
+    setX(exi);
+    setY(eyi);
+    setAngle(0);
+    setRad(0);
+    setSpr(spri,i);
+}
+
 void ai::setSpr(sf::Sprite &s){
     spr=s;
     spr.setOrigin(3 * 75 / 4, 75 / 2);
     spr.setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
+    spr.setPosition(x, y);
+}
+
+void ai::setSpr(sf::Sprite &s, int pos){
+    spr=s;
+    spr.setOrigin(3 * 75 / 4, 75 / 2);
+    spr.setTextureRect(sf::IntRect(1 * 75, pos * 75, 75, 75));
     spr.setPosition(x, y);
 }
 
