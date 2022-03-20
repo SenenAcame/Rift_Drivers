@@ -131,7 +131,7 @@ int main() {
   //MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(1080, 720), "Movimiento");
+  sf::RenderWindow window(sf::VideoMode(1920, 1080), "Movimiento");
 
   //Limite de FPS
   window.setFramerateLimit(60);
@@ -211,21 +211,21 @@ int main() {
       sprite.setRotation(rot);
       prev = rot;
 
-      if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)){
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1) && !veloc.getCheck()){
         veloc.setCheck(true);
         veloc.setReloj();
         vel+=veloc.getBonus();
         std::cout << "Velocidad aumentada" << std::endl;
       }
 
-      if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)){
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) && !acele.getCheck()){
         acele.setCheck(true);
         acele.setReloj();
         ace+=acele.getBonus();
         std::cout << "Aceleracion aumentada" << std::endl;
       }
 
-      if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)){
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num3) && !girar.getCheck()){
         girar.setCheck(true);
         girar.setReloj();
         gir+=girar.getBonus();

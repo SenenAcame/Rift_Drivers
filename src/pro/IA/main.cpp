@@ -28,7 +28,8 @@ int main() {
   sf::Sprite sprite(tex);
   sf::Sprite sprite2(tex);
 
-  ai npc = ai(sprite2,0.05,100,400);
+  ai npc = ai(sprite2,0.03,100,400);
+  ai npc2 = ai(sprite2,0.03,100,400,1);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -54,23 +55,31 @@ int main() {
 
   float **list = new float*[cont];
   int global=0;
-
+  int vari = 0;
   for(int i=0; i<(int)(sizeof(mapas)/sizeof(*mapas)); i++){
     const char* frag = mapas[i].c_str();
     XMLDocument doc;
     doc.LoadFile(frag);
     XMLElement *group = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
     for(XMLElement *son = group->FirstChildElement("object"); son; son = son->NextSiblingElement("object")){
+      
+      int v = rand() % 11-5;
+      vari += v;
+      //cout << vari << endl;
       list[global] = new float[2];
-      list[global][0] = son->FloatAttribute("x")+320*i;
-      list[global][1] = son->FloatAttribute("y");
+      if(i==2){
+        list[global][0] = son->FloatAttribute("x")+320+vari;
+        list[global][1] = son->FloatAttribute("y")+320+vari;
+      }
+      else{
+        list[global][0] = son->FloatAttribute("x")+320*i+vari;
+        list[global][1] = son->FloatAttribute("y")+vari;
+      }
       global++;
     }
     frag=NULL;
     group=NULL;
   }
-
-  
   /*
   XMLDocument doc;
   doc.LoadFile("../resources/curva_abajo.xml");
@@ -94,16 +103,21 @@ int main() {
   }
   */
   int cap = 0;
+  int cap2 = 0;
   //Bucle del juego
   while (window.isOpen()) {
     //Bucle de obtención de eventos
     sf::Event event;
 
     //Movimiento del NPC
-    if(cap<cont){
+    if(cap<cont && cap2<cont){
       npc.seguirNodo(list[cap][0], list[cap][1]);
+      npc2.seguirNodo(list[cap2][0], list[cap2][1]);
       if(abs(npc.getX()-list[cap][0])<1 && abs(npc.getY()-list[cap][1])<1){
         cap++;
+      }
+      if(abs(npc2.getX()-list[cap2][0])<50 && abs(npc2.getY()-list[cap2][1])<50){
+        cap2++;
       }
     }
     
@@ -164,6 +178,7 @@ int main() {
     window.clear();
     window.draw(sprite);
     window.draw(npc.getSpr());
+    window.draw(npc2.getSpr());
     window.display();
   }
   /*

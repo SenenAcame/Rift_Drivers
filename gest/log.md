@@ -119,5 +119,8 @@ Implementada una clase mejora donde guarda los valores y las funciones de esta p
 # 17/03/2022 Senén Martínez Acame (2h)
 Se ha podido implementar que se la IA pueda recorrer varios fragmentos de ruta seguidos.
 
-# 17/03/2022 Senén Martínez Acame (45min)
+# 19/03/2022 Senén Martínez Acame (45min)
 He optimizado el metodo de obtencion de las rutas.
+
+# 20/03/2022 Senén Martínez Acame (1h)
+He realizado pruebas con un factor de varianza en los nodos de la ruta, para ver como se comporta la IA al hacer el recorrido, tambien aumentando el margen de aproximacion al proximo nodo para pasar al siguiente. Aumentar mucho el margen hace que el recorrido sea erratico. La varianza puede servir para que el recorrido tenga un margen de maniobra. Corregido que las mejoras de un mismo tipo no se solapen.
