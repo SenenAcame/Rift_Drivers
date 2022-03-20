@@ -4,13 +4,21 @@
 
 Menu::Menu(float width, float heigth)
 {
-     //sf::Font font;
+    //cargo la textura para el fondo, con la imagen
+    if(!textura.loadFromFile("../resources/carrera2.jpeg"))
+    {
+        std::cout << "No se ha cargado la textura del fondo" << std::endl;
+    } else{
+        std::cout << "cargado el fondo" << std::endl;
+    }
+     //cargo la fuente para el texto de las opciones
     if(!font.loadFromFile("../resources/Barbarian NS.ttf"))
     {
        std::cout << "No se ha cargado la fuente" << std::endl;
     } else{
-      std::cout << "cargado" << std::endl;
+      std::cout << "cargado la fuente" << std::endl;
     }
+    //defino texto de las 3 opciones
     menu[0].setFont(font);
     menu[0].setFillColor(sf::Color::Green);
     //menu[0].setColor(sf::Color::Red);
