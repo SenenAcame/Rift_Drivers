@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+
 src/pro/fisicas_colisiones/build/*
 src/pro/circuitos/build/*
 src/pro/IA/build/*
