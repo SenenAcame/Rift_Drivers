@@ -1,0 +1,6 @@
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/build/CMakeFiles/rebuild_cache.dir
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/build/CMakeFiles/edit_cache.dir
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/build/CMakeFiles/MiJuego.dir
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/build/CMakeFiles/libModulos.dir
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/build/ej_modulos/CMakeFiles/rebuild_cache.dir
+/home/angie/Escritorio/fv/proyectoabp-grupo-c04/build/ej_modulos/CMakeFiles/edit_cache.dir

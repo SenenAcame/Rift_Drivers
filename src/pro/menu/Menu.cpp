@@ -3,7 +3,8 @@
 #include "Menu.h"
 
 Menu::Menu(float width, float heigth)
-{
+{   
+    /*
     //cargo la textura para el fondo, con la imagen
     if(!textura.loadFromFile("../resources/carrera2.jpeg"))
     {
@@ -11,6 +12,7 @@ Menu::Menu(float width, float heigth)
     } else{
         std::cout << "cargado el fondo" << std::endl;
     }
+    */
      //cargo la fuente para el texto de las opciones
     if(!font.loadFromFile("../resources/Barbarian NS.ttf"))
     {

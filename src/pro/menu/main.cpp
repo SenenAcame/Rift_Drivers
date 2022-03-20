@@ -2,7 +2,6 @@
 #include <iostream>
 //incluyo mi menu
 #include "Menu.h"
-#include "Menu_empezar.h"
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"

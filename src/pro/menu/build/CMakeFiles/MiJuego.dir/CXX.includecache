@@ -18,10 +18,6 @@ Menu.h
 SFML/Graphics.hpp
 /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/SFML/Graphics.hpp
 
-/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu_empezar.h
-SFML/Graphics.hpp
-/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/SFML/Graphics.hpp
-
 /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/ej_modulos/mimodulo.h
 
 /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/include/config.h
@@ -33,8 +29,6 @@ iostream
 -
 Menu.h
 /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.h
-Menu_empezar.h
-/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu_empezar.h
 include/config.h
 /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/include/config.h
 ej_modulos/mimodulo.h
