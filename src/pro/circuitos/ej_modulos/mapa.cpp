@@ -2,15 +2,15 @@
 
 Mapa::Mapa(){
     
-    for(int i=0;i<20;i++){
+    for(int i=0;i<50;i++){
         std::vector<std::string> linea;
-        for(int j=0;j<20;j++){
+        for(int j=0;j<50;j++){
             linea.push_back("0");
         }
         circuito.push_back(linea);
     }
-    fila=10;
-    col=10;
+    fila=25;
+    col=25;
     final=false;
     srand(time(0));
 }
@@ -53,15 +53,15 @@ void Mapa::CrearMapa(){
     }
     if(cachos<30){
         vaciaMapa();
-        for(int i=0;i<20;i++){
+        for(int i=0;i<50;i++){
             std::vector<std::string> linea;
-            for(int j=0;j<20;j++){
+            for(int j=0;j<50;j++){
                 linea.push_back("0");
             }
             circuito.push_back(linea);
         }
-        fila=10;
-        col=10;
+        fila=25;
+        col=25;
         final=false;
         srand(time(0));
         std::cerr<<std::to_string(cachos)<<"Repite\n";
@@ -155,7 +155,7 @@ std::vector<std::vector<std::string> > Mapa::getCircuito(){
 }
 
 void Mapa::vaciaMapa(){
-    for(int i=19;i>=0;i--){
+    for(int i=49;i>=0;i--){
         circuito.at(i).clear();
     }
     circuito.clear();
