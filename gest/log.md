@@ -124,3 +124,6 @@ He optimizado el metodo de obtencion de las rutas.
 
 # 20/03/2022 Senén Martínez Acame (1h)
 He realizado pruebas con un factor de varianza en los nodos de la ruta, para ver como se comporta la IA al hacer el recorrido, tambien aumentando el margen de aproximacion al proximo nodo para pasar al siguiente. Aumentar mucho el margen hace que el recorrido sea erratico. La varianza puede servir para que el recorrido tenga un margen de maniobra. Corregido que las mejoras de un mismo tipo no se solapen.
+
+## 21/03/2022 Sergio Tortajada Santonja (20min)
+Optimizado el mapa
