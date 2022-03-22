@@ -15,7 +15,7 @@ int main() {
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  if (!tex.loadFromFile("resources/sprites.png")) {
+  if (!tex.loadFromFile("/home/jpi9/node/proyectoabp-grupo-c04/src/pro/personajes/resources/hernando.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
@@ -24,9 +24,9 @@ int main() {
   sf::Sprite sprite(tex);
 
   //Le pongo el centroide donde corresponde
-  sprite.setOrigin(75 / 2, 75 / 2);
+  sprite.setOrigin(200 / 2, 200 / 2);
   //Cojo el sprite que me interesa por defecto del sheet
-  sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+  sprite.setTextureRect(sf::IntRect(0 * 200, 0 * 200, 200, 200));
 
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(320, 240);
@@ -48,43 +48,7 @@ int main() {
       case sf::Event::KeyPressed:
 
         //Verifico si se pulsa alguna tecla de movimiento
-        switch (event.key.code) {
-
-        //Mapeo del cursor
-        case sf::Keyboard::Right:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-          //Escala por defecto
-          sprite.setScale(1, 1);
-          sprite.move(kVel, 0);
-          break;
-
-        case sf::Keyboard::Left:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-          //Reflejo vertical
-          sprite.setScale(-1, 1);
-          sprite.move(-kVel, 0);
-          break;
-
-        case sf::Keyboard::Up:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
-          sprite.move(0, -kVel);
-          break;
-
-        case sf::Keyboard::Down:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-          sprite.move(0, kVel);
-          break;
-
-        //Tecla ESC para salir
-        case sf::Keyboard::Escape:
-          window.close();
-          break;
-
-        //Cualquier tecla desconocida se imprime por pantalla su código
-        default:
-          std::cout << event.key.code << std::endl;
-          break;
-        }
+      break;
       }
     }
 
