@@ -21,7 +21,6 @@ ia::ia(string maps[]){
         grupo=NULL;
     }
 
-    //float **list = new float*[cont];
     list = new float*[cont];
     int global=0;
     int vari = 0;
@@ -32,8 +31,10 @@ ia::ia(string maps[]){
         doc.LoadFile(frag);
         XMLElement *group = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
         for(XMLElement *son = group->FirstChildElement("object"); son; son = son->NextSiblingElement("object")){
+            /*
             int v = rand() % 11-5;
             vari += v;
+            */
             list[global] = new float[2];
             if(i==2){
                 list[global][0] = son->FloatAttribute("x")+320+vari;
