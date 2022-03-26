@@ -181,14 +181,11 @@ int main() {
     window.draw(npc2.getSpr());
     window.display();
   }
-  /*
+
   for(int i=0; i<cont; i++){
-    for(int j=0; j<2; j++){
-      delete [] list[i][j];
-    }
     delete [] list[i];
   }
   delete [] list;
-  */
+  
   return 0;
 }
