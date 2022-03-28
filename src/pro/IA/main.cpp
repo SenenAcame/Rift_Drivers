@@ -9,13 +9,15 @@
 using namespace tinyxml2;
 
 #define kVel 10
+#define MARGEN 50
 
 int main() {
-
+  //int margen = 50;
+  srand(time(NULL));
   //MiModulo *mod = new MiModulo();
   
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(1920, 1080), "Prototipo de IA");
+  sf::RenderWindow window(sf::VideoMode(1080, 720), "Prototipo de IA");
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
@@ -29,7 +31,7 @@ int main() {
   sf::Sprite sprite2(tex);
 
   ai npc = ai(sprite2,0.03,100,400);
-  ai npc2 = ai(sprite2,0.03,100,400,1);
+  //ai npc2 = ai(sprite2,0.03,100,400,1);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -56,6 +58,11 @@ int main() {
   float **list = new float*[cont];
   int global=0;
   int vari = 0;
+
+  sf::Vertex line[cont];
+  sf::Vertex line2[cont];
+  sf::Vertex line3[cont];
+
   for(int i=0; i<(int)(sizeof(mapas)/sizeof(*mapas)); i++){
     const char* frag = mapas[i].c_str();
     XMLDocument doc;
@@ -65,6 +72,7 @@ int main() {
       
       int v = rand() % 11-5;
       vari += v;
+      
       //cout << vari << endl;
       list[global] = new float[2];
       if(i==2){
@@ -75,6 +83,16 @@ int main() {
         list[global][0] = son->FloatAttribute("x")+320*i+vari;
         list[global][1] = son->FloatAttribute("y")+vari;
       }
+
+      line[global].position = sf::Vector2f(list[global][0],list[global][1]);
+      line[global].color = sf::Color::Red;
+
+      line2[global].position = sf::Vector2f(list[global][0]+MARGEN,list[global][1]);
+      line2[global].color = sf::Color::Blue;
+
+      line3[global].position = sf::Vector2f(list[global][0]-MARGEN,list[global][1]);
+      line3[global].color = sf::Color::Green;
+
       global++;
     }
     frag=NULL;
@@ -103,22 +121,28 @@ int main() {
   }
   */
   int cap = 0;
-  int cap2 = 0;
+  //int cap2 = 0;
   //Bucle del juego
+  sf::Vertex line4[cont];
   while (window.isOpen()) {
     //Bucle de obtención de eventos
     sf::Event event;
 
     //Movimiento del NPC
-    if(cap<cont && cap2<cont){
+    if(cap<cont){
       npc.seguirNodo(list[cap][0], list[cap][1]);
-      npc2.seguirNodo(list[cap2][0], list[cap2][1]);
-      if(abs(npc.getX()-list[cap][0])<1 && abs(npc.getY()-list[cap][1])<1){
+      //npc2.seguirNodo(list[cap2][0], list[cap2][1]);
+      if(abs(npc.getX()-list[cap][0])<MARGEN && abs(npc.getY()-list[cap][1])<MARGEN){
+        
+        line4[cap].position = sf::Vector2f(npc.getX(),npc.getY());
+        line4[cap].color = sf::Color::White;
         cap++;
       }
+      /*
       if(abs(npc2.getX()-list[cap2][0])<50 && abs(npc2.getY()-list[cap2][1])<50){
         cap2++;
       }
+      */
     }
     
     //npc.perseguir(sprite);
@@ -178,10 +202,15 @@ int main() {
     window.clear();
     window.draw(sprite);
     window.draw(npc.getSpr());
-    window.draw(npc2.getSpr());
+    //window.draw(npc2.getSpr());
+    window.draw(line,cont,sf::LinesStrip);
+    window.draw(line2,cont,sf::LinesStrip);
+    window.draw(line3,cont,sf::LinesStrip);
+    window.draw(line4,cont,sf::LinesStrip);
+    
     window.display();
   }
-
+  
   for(int i=0; i<cont; i++){
     delete [] list[i];
   }
