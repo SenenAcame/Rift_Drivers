@@ -127,3 +127,6 @@ He realizado pruebas con un factor de varianza en los nodos de la ruta, para ver
 
 # 26/03/2022 Senén Martínez Acame (2h)
 En la rama developer se han creado los primeros archivos y carpetas donde se almacenaran los componentes de los prototipos de cada uno. No son definitivos, pueden ir variando con el desarrollo. En la rama experimental se ha implementado un metodo para visualizar el la ruta que tiene que recorrer, un margen con distancia maxima y minima, y el trazado de la ruta que hace la IA.
+
+# 30/03/2022 Senén Martínez Acame (35min)
+Ligera modificacion del prototipo de mejora, ahora el cambio de valor lo hace la propia clase y en vez de sumar un valor, lo multiplica. Tambien restaura el valor por su cuenta. He trasladado el prototipo al proyecto grupal.

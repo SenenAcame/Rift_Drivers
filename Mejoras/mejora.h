@@ -9,6 +9,7 @@ class mejora{
         int tipo, duracion;
         float bonus;
         sf::Clock reloj;
+        
     public:
         mejora(int type, float bon, int dur);
 

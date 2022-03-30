@@ -169,9 +169,9 @@ int main() {
   float ace=1.0f;
   float gir=15.0f;
 
-  mejora veloc = mejora(1,50,5);
-  mejora acele = mejora(2,1,5);
-  mejora girar = mejora(3,15,5);
+  mejora veloc = mejora(1,1.5,5);
+  mejora acele = mejora(2,1.5,5);
+  mejora girar = mejora(3,1.5,5);
 
   float accumulator = 0;
   const float timestep = 1.0f / 15.0f;
@@ -180,21 +180,18 @@ int main() {
     sf::Event e;
 
     if(veloc.getCheck() && veloc.getReloj()>veloc.getDuracion()){
-      vel-=veloc.getBonus();
-      std::cout << "Velocidad restaurada" << std::endl;
-      veloc.setCheck(false);
+      vel = veloc.restaurarMejora(vel);
+      std::cout << "Velocidad restaurada " <<  vel << std::endl;
     }
     
     if(acele.getCheck() && acele.getReloj()>acele.getDuracion()){
-      ace-=acele.getBonus();
-      std::cout << "Aceleracion restaurada" << std::endl;
-      acele.setCheck(false);
+      ace = acele.restaurarMejora(ace);
+      std::cout << "Aceleracion restaurada " << ace << std::endl;
     }
 
     if(girar.getCheck() && girar.getReloj()>girar.getDuracion()){
-      gir-=girar.getBonus();
-      std::cout << "Giro restaurado" << std::endl;
-      girar.setCheck(false);
+      gir = girar.restaurarMejora(gir);
+      std::cout << "Giro restaurado " << gir << std::endl;
     }
 
     while (window.pollEvent(e)){
@@ -212,24 +209,18 @@ int main() {
       prev = rot;
 
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1) && !veloc.getCheck()){
-        veloc.setCheck(true);
-        veloc.setReloj();
-        vel+=veloc.getBonus();
-        std::cout << "Velocidad aumentada" << std::endl;
+        vel = veloc.aplicarMejora(vel);
+        std::cout << "Velocidad aumentada " << vel << std::endl;
       }
 
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) && !acele.getCheck()){
-        acele.setCheck(true);
-        acele.setReloj();
-        ace+=acele.getBonus();
-        std::cout << "Aceleracion aumentada" << std::endl;
+        ace = acele.aplicarMejora(ace);
+        std::cout << "Aceleracion aumentada " << ace << std::endl;
       }
 
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num3) && !girar.getCheck()){
-        girar.setCheck(true);
-        girar.setReloj();
-        gir+=girar.getBonus();
-        std::cout << "Giro aumentado" << std::endl;
+        gir = girar.aplicarMejora(gir);
+        std::cout << "Giro aumentado " << gir << std::endl;
       }
 
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
