@@ -49,12 +49,21 @@ ia::ia(string maps[]){
         frag=NULL;
         group=NULL;
     }
+
+    size = cont;
 }
 
 float ** ia::getList(){
     return list;
 }
 
+ia::~ia(){
+    for(int i=0; i<size; i++){
+        delete[] list[i];
+    }
+    delete[] list;
+    size=0;
+}
 /*
 ai::ai(sf::Sprite &spri, float v, float exi, float eyi){
     setVel(v);

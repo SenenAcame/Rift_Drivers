@@ -130,3 +130,6 @@ En la rama developer se han creado los primeros archivos y carpetas donde se alm
 
 # 30/03/2022 Senén Martínez Acame (35min)
 Ligera modificacion del prototipo de mejora, ahora el cambio de valor lo hace la propia clase y en vez de sumar un valor, lo multiplica. Tambien restaura el valor por su cuenta. He trasladado el prototipo al proyecto grupal.
+
+# 31/03/2022 Senén Martínez Acame (40min)
+He intentado probar el build desde el proyecto para poder ejecutar el juego, pero da problemas. Es algo relacionado con los directorios del CMake, le he preguntado a Fidel para que me pueda decir como poder resolverlo.

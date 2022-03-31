@@ -3,9 +3,9 @@
 
 using namespace std;
 
-class ia
-{
+class ia{
     private:
+        int size;
         float **list;
     /*
         sf::Sprite spr;
@@ -16,6 +16,7 @@ class ia
     public: 
         ia(string mapas[]);
         float **getList();
+        ~ia();
     /*
         ai(sf::Sprite &spr, float vel, float x, float y);
         ai(sf::Sprite &spr, float vel, float x, float y, int i);
