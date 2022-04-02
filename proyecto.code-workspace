@@ -41,6 +41,10 @@
 			"name": "PROT: personajes",
 			"path": "src/pro/personajes"
 		},
+		{
+			"name": "PROT: proyecto_final",
+			"path": "src/pro/proyecto_final"
+		},
 	],
 	"settings": {
 		"editor.wordWrap": "on",

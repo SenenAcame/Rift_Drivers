@@ -78,8 +78,8 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-//#include "include/config.h"
-//#include "ej_modulos/mimodulo.h"
+#include "include/config.h"
+#include "ej_modulos/mimodulo.h"
 
 #define kVel 5
 
@@ -92,7 +92,7 @@ int main() {
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  if (!tex.loadFromFile("resources/sprites.png")) {
+  if (!tex.loadFromFile("../resources/sprites.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
