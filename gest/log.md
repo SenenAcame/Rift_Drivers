@@ -134,5 +134,5 @@ Ligera modificacion del prototipo de mejora, ahora el cambio de valor lo hace la
 # 31/03/2022 Senén Martínez Acame (40min)
 He intentado probar el build desde el proyecto para poder ejecutar el juego, pero da problemas. Es algo relacionado con los directorios del CMake, le he preguntado a Fidel para que me pueda decir como poder resolverlo.
 
-# 2/04/2022 Senén Martínez Acame (1h40min)
+# 2/04/2022 Senén Martínez Acame (1h30min)
 Adaptado la clase IA al proyecto, el constructor crea y procesa los archivos xml.
