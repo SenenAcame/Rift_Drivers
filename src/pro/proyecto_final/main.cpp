@@ -80,6 +80,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
+#include "IA/ia.h"
 
 #define kVel 5
 
@@ -99,14 +100,24 @@ int main() {
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
-
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
   //Cojo el sprite que me interesa por defecto del sheet
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(320, 240);
+
+  string mapas[3] = {"../resources/curva_derecha.xml","../resources/curva_abajo.xml","../resources/zigzag.xml"};
+  
+  //int tam =(int)(sizeof(mapas)/sizeof(*mapas));
+
+  string *dir = mapas;
+
+  ia *ene = new ia(&dir);
+
+  cout << ene->getSize() << endl;
+
+  //ene->~ia();
 
   //Bucle del juego
   while (window.isOpen()) {

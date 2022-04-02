@@ -14,8 +14,9 @@ class ia{
     */
 
     public: 
-        ia(string mapas[]);
+        ia(string *mapas[]);
         float **getList();
+        int getSize();
         ~ia();
     /*
         ai(sf::Sprite &spr, float vel, float x, float y);
