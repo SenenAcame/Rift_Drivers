@@ -81,6 +81,13 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
 #include "IA/ia.h"
+//incluir nuestras carpetas
+#include "Mejoras/mejora.h"
+#include "IA/ia.h"
+#include "Juego/juego.h"
+#include "Menu/menu.h"
+#include "Poderes/poderes.h"
+#include "Vehiculo/vehiculo.h"
 
 #define kVel 5
 
@@ -109,6 +116,9 @@ int main() {
 
   string mapas[3] = {"../resources/curva_derecha.xml","../resources/curva_abajo.xml","../resources/zigzag.xml"};
   
+
+  //inicio un menu
+  Menu menu(window.getSize().x, window.getSize().y);
 
   ia *ene = new ia(mapas,sizeof(mapas)/sizeof(*mapas));
   cout << ene->getSize() << endl;

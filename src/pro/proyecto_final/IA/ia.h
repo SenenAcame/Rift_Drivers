@@ -1,6 +1,5 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-
 using namespace std;
 
 class ia{
