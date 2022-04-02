@@ -22,16 +22,17 @@ int main() {
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  sf::Texture tex12;
+  if (!tex.loadFromFile("../resources/sprites.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  /*sf::Texture tex12;
   sf::Texture tex13;
   sf::Texture tex14;
   sf::Texture tex23;
   sf::Texture tex24;
   sf::Texture tex34;
-  if (!tex.loadFromFile("../resources/sprites.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
+  
   if (!tex12.loadFromFile("../resources/1,2.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
@@ -55,7 +56,7 @@ int main() {
   if (!tex34.loadFromFile("../resources/3,4.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
-  }
+  }*/
 
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
@@ -74,7 +75,7 @@ int main() {
     Mapa mapa=Mapa();
     bool pista=false;
     sprite.setScale(0.5, 0.5);
-    std::vector<sf::Sprite> cachos;
+    //std::vector<sf::Sprite> cachos;
 
   //Bucle del juego
   while (window.isOpen()) {
@@ -131,10 +132,11 @@ int main() {
             sprite.setPosition(25*320+320/2, 25*320+320/2);
             mapa.vaciaMapa();
             mapa=Mapa();
-            cachos.clear();
+            //cachos.clear();
+
           }
           mapa.CrearMapa();
-          for(int k=0;k<mapa.getCircuito().size();k++){
+          /*for(int k=0;k<mapa.getCircuito().size();k++){
             for (int l = 0; l < mapa.getCircuito().at(k).size(); l++){
               if(mapa.getCircuito().at(k).at(l)!="0"){
                 if(mapa.getCircuito().at(k).at(l)=="../resources/1,2.png"||mapa.getCircuito().at(k).at(l)=="../resources/2,1.png"){
@@ -199,7 +201,8 @@ int main() {
                 }
               }
             }
-          }
+          }*/
+          mapa.montaMapa();
           pista=true;
           break;
 
@@ -215,9 +218,10 @@ int main() {
     minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
     window.setView(camara);
     if(pista){
-      for(int i=0;i<cachos.size();i++){
+      /*for(int i=0;i<cachos.size();i++){
         window.draw(cachos.at(i));
-      }
+      }*/
+      mapa.dibujaMapa(&window);
     }
     
 
@@ -225,9 +229,10 @@ int main() {
     
     window.setView(minimapa);
     if(pista){
-      for(int i=0;i<cachos.size();i++){
+      /*for(int i=0;i<cachos.size();i++){
         window.draw(cachos.at(i));
-      }
+      }*/
+      mapa.dibujaMapa(&window);
     }
     window.draw(sprite);
     window.display();

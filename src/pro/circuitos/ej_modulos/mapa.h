@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-#include <vector>
 
 #ifndef MAPA_H
 #define MAPA_H
@@ -10,6 +9,13 @@ class Mapa{
         int fila;
         int col;
         bool final=false;
+        std::vector<sf::Sprite> cachos;
+        sf::Texture tex12;
+        sf::Texture tex13;
+        sf::Texture tex14;
+        sf::Texture tex23;
+        sf::Texture tex24;
+        sf::Texture tex34;
         Mapa();
         void CrearMapa();
         std::string BuscaCacho(int);
@@ -17,6 +23,9 @@ class Mapa{
         void CompruebaFinal();
         std::vector<std::vector<std::string> > getCircuito();
         void vaciaMapa();
+        void dibujaMapa(sf::RenderWindow *);
+        void montaMapa();
+
 
 };
 
