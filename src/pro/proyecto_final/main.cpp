@@ -88,6 +88,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 #include "Menu/menu.h"
 #include "Poderes/poderes.h"
 #include "Vehiculo/vehiculo.h"
+#include "Circuito/circuito.h"
 
 #define kVel 5
 
