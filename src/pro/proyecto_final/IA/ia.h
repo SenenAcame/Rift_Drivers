@@ -14,7 +14,7 @@ class ia{
     */
 
     public: 
-        ia(string *mapas[]);
+        ia(string mapas[], int longi);
         float **getList();
         int getSize();
         ~ia();

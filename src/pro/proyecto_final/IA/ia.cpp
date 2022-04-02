@@ -6,11 +6,10 @@
 
 using namespace tinyxml2;
 
-ia::ia(string *maps[]){
+ia::ia(string maps[],int leng){
     int cont=0; 
-     
-    for(int i=0; i<(int)(sizeof(*maps[0])/sizeof(maps)); i++){
-        const char* fichero = maps[i]->c_str();
+    for(int i=0; i<leng; i++){
+        const char* fichero = maps[i].c_str();
         XMLDocument doc;
         doc.LoadFile(fichero);
         XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
@@ -25,8 +24,8 @@ ia::ia(string *maps[]){
     int global=0;
     int vari = 0;
 
-    for(int i=0; i<(int)(sizeof(*maps[0])/sizeof(maps)); i++){
-        const char* frag = maps[i]->c_str();
+    for(int i=0; i<leng; i++){
+        const char* frag = maps[i].c_str();
         XMLDocument doc;
         doc.LoadFile(frag);
         XMLElement *group = doc.FirstChildElement("map")->FirstChildElement("objectgroup");

@@ -109,15 +109,10 @@ int main() {
 
   string mapas[3] = {"../resources/curva_derecha.xml","../resources/curva_abajo.xml","../resources/zigzag.xml"};
   
-  //int tam =(int)(sizeof(mapas)/sizeof(*mapas));
 
-  string *dir = mapas;
-
-  ia *ene = new ia(&dir);
-
+  ia *ene = new ia(mapas,sizeof(mapas)/sizeof(*mapas));
   cout << ene->getSize() << endl;
-
-  //ene->~ia();
+  ene->~ia();
 
   //Bucle del juego
   while (window.isOpen()) {
