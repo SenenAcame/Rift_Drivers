@@ -22,7 +22,7 @@ Joan
 Sergio
 
 ### Cámara 
-Miguel Ángel
+Sergio
 
 ### Implementar poderes
 Joan

@@ -136,3 +136,9 @@ He intentado probar el build desde el proyecto para poder ejecutar el juego, per
 
 # 2/04/2022 Senén Martínez Acame (1h30min)
 Adaptado la clase IA al proyecto, el constructor crea y procesa los archivos xml.
+
+# 2/04/2022 Sergio Tortajada Santonja(20min)
+Mapas en blanco y negro hechos
+
+# 2/04/2022 Sergio Tortajada Santonja(1h 30min)
+Dibujado del mapa desde la clase circuito y pasado a developer
