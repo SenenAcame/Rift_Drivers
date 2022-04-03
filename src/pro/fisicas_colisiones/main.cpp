@@ -22,13 +22,27 @@ bool collision(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, int
   return collision;
 }
 */
-
+bool colisionMapa(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, int y2){
+  sf::Color color[2];
+  bool colision;
+  int i, j;
+  colision=false;
+  for(i=0; (i<40) && (!colision); i++){
+    for(j=0; (j<40) && (!colision); j++){
+      color[0]=image1.getPixel(x1+j, y1+i);
+      color[1]=image2.getPixel(x2+j, y2+j);
+      if((color[0].r==0) && (color[0].g==0) && (color[0].b==0))
+        colision=true;
+    }
+  }
+  return colision;
+}
 int main() {
 
-  //MiModulo *mod = new MiModulo();
+  MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
+  sf::RenderWindow window(sf::VideoMode(1080, 720), "P0. Fundamentos de los Videojuegos. DCCIA");
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
@@ -37,6 +51,18 @@ int main() {
     exit(0);
   }
 
+  sf::Texture mp;
+  sf::Texture durmp;
+  if (!mp.loadFromFile("../resources/1,2.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!durmp.loadFromFile("../resources/1,2bw.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Image dbw=durmp.copyToImage();
+  sf::Image sp=tex.copyToImage();
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
   sf::Sprite sprite2(tex);
@@ -53,7 +79,7 @@ int main() {
   //sf::Rect pos2=sprite2.getGlobalBounds();
 
   // Lo dispongo en el centro de la pantalla
-  sprite.setPosition(320, 240);
+  sprite.setPosition(240, 240);
 
   sprite2.setPosition(100, 200);
 
@@ -87,6 +113,9 @@ int main() {
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
               sprite.move(-kVel, 0);
             }
+            if(colisionMapa(dbw, sp, 320, 75, 320, 75)){
+              sprite.move(-kVel, 0);
+            }
           break;
 
         case sf::Keyboard::Left:
@@ -99,6 +128,9 @@ int main() {
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
               sprite.move(kVel, 0);
             }
+             if(colisionMapa(dbw, sp, 320, 75, 320, 75)){
+              sprite.move(kVel, 0);
+            }
           break;
 
         case sf::Keyboard::Up:
@@ -107,6 +139,9 @@ int main() {
             sprite.move(0, -kVel);
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
                 sprite.move(0, kVel);
+            }
+            if(colisionMapa(dbw, sp, 320, 75, 320, 75)){
+              sprite.move(0, kVel);
             }
           break;
 
@@ -117,6 +152,9 @@ int main() {
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
                 sprite.move(0, -kVel);
             }
+             if(colisionMapa(dbw, sp, 320, 75, 320, 75)){
+              sprite.move(0, -kVel);
+             }
           break;
 
         //Tecla ESC para salir
@@ -133,6 +171,24 @@ int main() {
     }
 
     window.clear();
+
+    for(int i=0; i<10; i++){
+      for(int j=0;j<10; j++){
+        sf::Sprite roadbw (durmp);
+        roadbw.setPosition(i*32,j*32);
+        roadbw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+        window.draw(roadbw);
+      }
+    }
+
+    for(int i=0; i<10; i++){
+      for(int j=0;j<10; j++){
+        sf::Sprite road (mp);
+        road.setPosition(i*32,j*32);
+        road.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+        window.draw(road);
+      }
+    }
     window.draw(sprite);
     window.draw(sprite2);
     window.display();
