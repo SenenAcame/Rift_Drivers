@@ -142,3 +142,6 @@ Mapas en blanco y negro hechos
 
 # 2/04/2022 Sergio Tortajada Santonja(1h 30min)
 Dibujado del mapa desde la clase circuito y pasado a developer
+
+# 3/04/2022 Miguel Ángel Ferrer García de la Reina @(1h)
+He creado las variables en la clase vehiculo
