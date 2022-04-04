@@ -12,19 +12,10 @@ ia::ia(string maps[],int leng, vehiculo *car){
 }
 
 void ia::setList(string maps[], int leng){
-    int cont=0; 
-    for(int i=0; i<leng; i++){
-        const char* fichero = maps[i].c_str();
-        XMLDocument doc;
-        doc.LoadFile(fichero);
-        XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
-        for(XMLNode *hijo = grupo->FirstChild(); hijo; hijo = hijo->NextSibling()){
-            cont++;
-        }
-        fichero=NULL;
-        grupo=NULL;
+    if(list!=0){
+        deleteList();
     }
-
+    int cont=contarPuntos(maps, leng); 
     list = new float*[cont];
     int global=0;
     int vari = 0;
@@ -77,131 +68,32 @@ vehiculo * ia::getVehi(){
     return vehi;
 }
 
-ia::~ia(){
+int ia::contarPuntos(string maps[], int leng){
+    int cont=0; 
+    for(int i=0; i<leng; i++){
+        const char* fichero = maps[i].c_str();
+        XMLDocument doc;
+        doc.LoadFile(fichero);
+        XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
+        for(XMLNode *hijo = grupo->FirstChild(); hijo; hijo = hijo->NextSibling()){
+            cont++;
+        }
+        fichero=NULL;
+        grupo=NULL;
+    }
+
+    return cont;
+}
+
+void ia::deleteList(){
     for(int i=0; i<size; i++){
         delete[] list[i];
     }
     delete[] list;
-    size=0;
-    vehi=NULL;
-}
-/*
-ai::ai(sf::Sprite &spri, float v, float exi, float eyi){
-    setVel(v);
-    setX(exi);
-    setY(eyi);
-    setAngle(0);
-    setRad(0);
-    setSpr(spri);
 }
 
-ai::ai(sf::Sprite &spri, float v, float exi, float eyi, int i){
-    setVel(v);
-    setX(exi);
-    setY(eyi);
-    setAngle(0);
-    setRad(0);
-    setSpr(spri,i);
+ia::~ia(){
+    deleteList();
+    setSize(0);
+    setVehi(NULL);
 }
-
-void ai::setSpr(sf::Sprite &s){
-    spr=s;
-    spr.setOrigin(3 * 75 / 4, 75 / 2);
-    spr.setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
-    spr.setPosition(x, y);
-}
-
-void ai::setSpr(sf::Sprite &s, int pos){
-    spr=s;
-    spr.setOrigin(3 * 75 / 4, 75 / 2);
-    spr.setTextureRect(sf::IntRect(1 * 75, pos * 75, 75, 75));
-    spr.setPosition(x, y);
-}
-
-sf::Sprite ai::getSpr(){
-    return spr;
-}
-
-void ai::setVel(float v){
-    vel=v;
-}
-
-float ai::getVel(){
-    return vel;
-}
-
-void ai::setX(float coorx){
-    x=coorx;
-}
-
-float ai::getX(){
-    return x;
-}
-
-void ai::setY(float coory){
-    y=coory;
-}
-
-float ai::getY(){
-    return y;
-}
-
-void ai::setRad(float radius){
-    rad=radius;
-}
-
-float ai::getRad(){
-    return rad;
-}
-
-void ai::setAngle(float angu){
-    angle=angu;
-}
-
-float ai::getAngle(){
-    return angle;
-}
-
-void ai::perseguir(sf::Sprite &jug){
-    calcuAngle(jug);
-
-    float vx = vel*rad*cos(angle);
-    float vy = vel*rad*sin(angle);
-
-    spr.move(vx,vy);
-    
-    setX(spr.getPosition().x);
-    setY(spr.getPosition().y);
-}
-
-void ai::calcuAngle(sf::Sprite &jug){
-    float xj = jug.getPosition().x-x;
-    float yj = jug.getPosition().y-y;
-    float resu = 1;
-    float angu = atan(yj/xj)*180/Pi;
-    setAngle(angu);
-    setRad(resu);
-}
-
-void ai::calcuAngle(float ex, float ey){
-    float xj = ex-x;
-    float yj = ey-y;
-
-    float resu = 1;
-    float angu = atan(yj/xj)*180/Pi;
-    setAngle(angu);
-    setRad(resu);
-}
-
-void ai::seguirNodo(float ex, float ey){
-    calcuAngle(ex, ey);
-
-    float vx = vel*rad*cos(angle);
-    float vy = vel*rad*sin(angle);
-
-    spr.move(vx,vy);
-    
-    setX(spr.getPosition().x);
-    setY(spr.getPosition().y);
-}
-*/

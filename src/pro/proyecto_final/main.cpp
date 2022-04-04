@@ -115,16 +115,21 @@ int main() {
   sprite.setPosition(320, 240);
 
   string mapas[3] = {"../resources/curva_derecha.xml","../resources/curva_abajo.xml","../resources/zigzag.xml"};
+  string mapa[1] = {"../resources/curva_abajo.xml"};
 
   //inicio un menu
   //Menu menu(window.getSize().x, window.getSize().y);
 
   vehiculo *coche = new vehiculo(1,2,3,"sprite");
   ia *ene = new ia(mapas,sizeof(mapas)/sizeof(*mapas),coche);
-/*
+
   cout << ene->getSize() << endl;
   cout << ene->getList()[0][0] << " , " << ene->getList()[0][1] << endl;
-*/
+
+  ene->setList(mapa,sizeof(mapa)/sizeof(*mapa));
+
+  cout << ene->getSize() << endl;
+  cout << ene->getList()[0][0] << " , " << ene->getList()[0][1] << endl;
   
   ene->~ia();
   //cout << "Enemigo eliminado" << endl;
