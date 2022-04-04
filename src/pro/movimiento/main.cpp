@@ -23,7 +23,7 @@ int main() {
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  if (!tex.loadFromFile("resources/sprites.png")) {
+  if (!tex.loadFromFile("resources/f1rot.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
@@ -32,10 +32,10 @@ int main() {
   sf::Sprite sprite(tex);
 
   //Le pongo el centroide donde corresponde
-  sprite.setOrigin(75 / 2, 75 / 2);
+  sprite.setOrigin(13, 8);
   //Cojo el sprite que me interesa por defecto del sheet
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-
+  sprite.setScale(+4.0f, +4.0f);
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(320, 240);
 
