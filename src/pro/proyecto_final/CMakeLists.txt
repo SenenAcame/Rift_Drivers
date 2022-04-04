@@ -7,6 +7,7 @@ project(MiJuego)
 add_library(libModulos STATIC)
 add_subdirectory(ej_modulos)
 add_subdirectory(IA)
+add_subdirectory(Vehiculo)
 add_subdirectory(tinyxml)
 
 #Opciones a pasar al compilador de C++

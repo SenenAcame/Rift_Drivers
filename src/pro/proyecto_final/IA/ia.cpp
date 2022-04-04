@@ -6,7 +6,12 @@
 
 using namespace tinyxml2;
 
-ia::ia(string maps[],int leng){
+ia::ia(string maps[],int leng, vehiculo *car){
+    setList(maps,leng);
+    setVehi(car);
+}
+
+void ia::setList(string maps[], int leng){
     int cont=0; 
     for(int i=0; i<leng; i++){
         const char* fichero = maps[i].c_str();
@@ -49,15 +54,27 @@ ia::ia(string maps[],int leng){
         group=NULL;
     }
 
-    size = cont;
+    setSize(cont);
 }
 
 float ** ia::getList(){
     return list;
 }
 
+void ia::setSize(int num){
+    size = num;
+}
+
 int ia::getSize(){
     return size;
+}
+
+void ia::setVehi(vehiculo *car){
+    vehi = car;
+}
+
+vehiculo * ia::getVehi(){
+    return vehi;
 }
 
 ia::~ia(){
@@ -66,6 +83,7 @@ ia::~ia(){
     }
     delete[] list;
     size=0;
+    vehi=NULL;
 }
 /*
 ai::ai(sf::Sprite &spri, float v, float exi, float eyi){

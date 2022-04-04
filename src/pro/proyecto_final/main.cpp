@@ -80,14 +80,13 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
-#include "IA/ia.h"
 //incluir nuestras carpetas
 #include "Mejoras/mejora.h"
 #include "IA/ia.h"
 #include "Juego/juego.h"
 #include "Menu/menu.h"
 #include "Poderes/poderes.h"
-#include "Vehiculo/vehiculo.h"
+//#include "Vehiculo/vehiculo.h"
 #include "Circuito/circuito.h"
 
 #define kVel 5
@@ -116,14 +115,19 @@ int main() {
   sprite.setPosition(320, 240);
 
   string mapas[3] = {"../resources/curva_derecha.xml","../resources/curva_abajo.xml","../resources/zigzag.xml"};
-  
 
   //inicio un menu
-  Menu menu(window.getSize().x, window.getSize().y);
+  //Menu menu(window.getSize().x, window.getSize().y);
 
-  ia *ene = new ia(mapas,sizeof(mapas)/sizeof(*mapas));
+  vehiculo *coche = new vehiculo(1,2,3,"sprite");
+  ia *ene = new ia(mapas,sizeof(mapas)/sizeof(*mapas),coche);
+/*
   cout << ene->getSize() << endl;
+  cout << ene->getList()[0][0] << " , " << ene->getList()[0][1] << endl;
+*/
+  
   ene->~ia();
+  //cout << "Enemigo eliminado" << endl;
 
   //Bucle del juego
   while (window.isOpen()) {

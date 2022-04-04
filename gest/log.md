@@ -145,3 +145,6 @@ Dibujado del mapa desde la clase circuito y pasado a developer
 
 # 3/04/2022 Miguel Ángel Ferrer García de la Reina @(1h)
 He creado las variables en la clase vehiculo
+
+# 4/04/2022 Senén Martinez Acame (45min)
+Actualizar IA: añadiendirle un atributo Vehiculo para acceder a sus funciones y agregarle setters a IA.
