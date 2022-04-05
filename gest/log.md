@@ -157,3 +157,6 @@ Ya sé como funciona la función de las colisiones con mapas de dureza, ya funci
 
 # 5/04/2022 Senén Martinez Acame (1h 15min)
 IA adaptada para que traze la ruta que se crea en Circuito. Me falta que Circuito este implementado del todo para poder hacer las pruebas de que funcione correctamente.
+
+# 5/04/2022 Joan Pascual Izquierdo (1h)
+He intentado que se compruebe la colisión con todos los píxeles del sprite y no funcionaban las colisiones en un lado y cuando colisionabas con el borde negro de arriba, se producía un fallo de violación del segmento (`core'); así que lo he quitado y he hecho que en la zona grisa vaya más lento.
