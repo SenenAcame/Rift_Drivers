@@ -152,5 +152,5 @@ Actualizar IA, añadiendirle un atributo Vehiculo para acceder a sus funciones y
 # 4/04/2022 Joan Pascual Izquierdo (1h 30min)
 He probado el hacer las colisiones con los mapas de dureza, todavía no funciona
 
-# 5/04/2022 Joan Pascual Izquierdo (10 minutos)
-Ya sé como funciona la función de las colisiones con mapas de dureza, ya funciona.
+# 5/04/2022 Joan Pascual Izquierdo (20 minutos)
+Ya sé como funciona la función de las colisiones con mapas de dureza, ya funciona. Ahora funciona con todos los píxeles del sprite.
