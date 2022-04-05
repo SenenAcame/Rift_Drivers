@@ -87,9 +87,9 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 #include "Menu/menu.h"
 #include "Poderes/poderes.h"
 //#include "Vehiculo/vehiculo.h"
-//#include "Circuito/circuito.h"
+#include "Circuito/circuito.h"
 
-#define kVel 5
+#define kVel 15
 
 int main() {
 
@@ -97,6 +97,13 @@ int main() {
 
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
+
+  //camara y minimapa
+  sf::View camara;
+  sf::View minimapa;
+  camara=sf::View(sf::FloatRect(0,0,640,480));
+  minimapa.setViewport(sf::FloatRect(0.85f,0,0.15f,0.25f));
+  window.setView(camara);
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
@@ -112,7 +119,8 @@ int main() {
   //Cojo el sprite que me interesa por defecto del sheet
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
   // Lo dispongo en el centro de la pantalla
-  sprite.setPosition(320, 240);
+  sprite.setPosition(25*320+320/2, 25*320+320/2);
+  camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
   string mapas[3] = {"../resources/curva_derecha.xml","../resources/curva_abajo.xml","../resources/zigzag.xml"};
   string mapa[1] = {"../resources/curva_abajo.xml"};
@@ -145,6 +153,10 @@ int main() {
   cout << num2 << endl;
   */
   
+ //Creamos clase circuito
+    Circuito circuito=Circuito();
+    bool pista=false;
+
   //Bucle del juego
   while (window.isOpen()) {
     //Bucle de obtención de eventos
@@ -189,6 +201,17 @@ int main() {
           sprite.move(0, kVel);
           break;
 
+        case sf::Keyboard::L:
+          if(pista){
+            sprite.setPosition(25*320+320/2, 25*320+320/2);
+            circuito.vaciaMapa();
+            circuito=Circuito();
+          }
+          circuito.CrearMapa();
+          circuito.montaMapa();
+          pista=true;
+          break;
+
         //Tecla ESC para salir
         case sf::Keyboard::Escape:
           window.close();
@@ -203,6 +226,17 @@ int main() {
     }
 
     window.clear();
+    camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
+    minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
+    window.setView(camara);
+    if(pista){
+      circuito.dibujaMapa(&window);
+    }
+    window.draw(sprite);
+    window.setView(minimapa);
+    if(pista){
+      circuito.dibujaMapa(&window);
+    }
     window.draw(sprite);
     window.display();
   }

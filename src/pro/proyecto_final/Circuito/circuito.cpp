@@ -44,13 +44,16 @@ Circuito::Circuito(){
 void Circuito::CrearMapa(){
     int cachos=0;
     std::string cacho=BuscaCacho(0);
+    mapas.push_back(cacho);
     int buscar=1;
     cacho="../resources/"+cacho+".png";
     circuito.at(fila).at(col)=cacho;
     fila=fila-1;
     while(!final){
         cachos++;
-        cacho="../resources/"+BuscaCacho(buscar)+".png";
+        cacho=BuscaCacho(buscar);
+        mapas.push_back(cacho);
+        cacho="../resources/"+cacho+".png";
         if(!final){
             circuito.at(fila).at(col)=cacho;
             buscar=stoi(cacho.substr(cacho.length()-5,cacho.length()-4));
@@ -185,7 +188,7 @@ void Circuito::vaciaMapa(){
         circuito.at(i).clear();
     }
     circuito.clear();
-    //delete cachos;
+    cachos.clear();
 }
 
 void Circuito::dibujaMapa(sf::RenderWindow *window){

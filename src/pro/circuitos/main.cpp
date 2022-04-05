@@ -18,7 +18,6 @@ int main() {
   sf::View minimapa;
   camara=sf::View(sf::FloatRect(0,0,720,480));
   minimapa.setViewport(sf::FloatRect(0.85f,0,0.15f,0.25f));
-  minimapa.setSize(2732,1536);
   window.setView(camara);
 
   //Cargo la imagen donde reside la textura del sprite

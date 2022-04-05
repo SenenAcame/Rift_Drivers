@@ -4,7 +4,7 @@
 #define CIRCUITO_H
 class Circuito{
     
-    public:
+    private:
         std::vector<std::vector<std::string> > circuito;
         int fila;
         int col;
@@ -19,16 +19,18 @@ class Circuito{
 
         std::vector<std::string> mapas;
 
-        Circuito();
-        void CrearMapa();
+        
         std::string BuscaCacho(int);
         bool CompruebaCacho(std::string);
         void CompruebaFinal();
+
+    public:
+        Circuito();
+        void CrearMapa();
         std::vector<std::vector<std::string> > getCircuito();
         void vaciaMapa();
         void dibujaMapa(sf::RenderWindow *);
         void montaMapa();
-
         std::vector<std::string> getMapas();
 };
 
