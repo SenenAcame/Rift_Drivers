@@ -154,3 +154,6 @@ He probado el hacer las colisiones con los mapas de dureza, todavía no funciona
 
 # 5/04/2022 Joan Pascual Izquierdo (20 minutos)
 Ya sé como funciona la función de las colisiones con mapas de dureza, ya funciona. Ahora funciona con todos los píxeles del sprite.
+
+# 5/04/2022 Senén Martinez Acame (1h 15min)
+IA adaptada para que traze la ruta que se crea en Circuito. Me falta que Circuito este implementado del todo para poder hacer las pruebas de que funcione correctamente.
