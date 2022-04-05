@@ -16,6 +16,9 @@ class Circuito{
         sf::Texture tex23;
         sf::Texture tex24;
         sf::Texture tex34;
+
+        std::vector<std::string> mapas;
+
         Circuito();
         void CrearMapa();
         std::string BuscaCacho(int);
@@ -26,7 +29,7 @@ class Circuito{
         void dibujaMapa(sf::RenderWindow *);
         void montaMapa();
 
-
+        std::vector<std::string> getMapas();
 };
 
 #endif

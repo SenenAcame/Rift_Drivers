@@ -1,3 +1,4 @@
+#include <iostream>
 #include "circuito.h"
 
 Circuito::Circuito(){
@@ -260,4 +261,8 @@ void Circuito::montaMapa(){
             }
         }
     }
+}
+
+std::vector<std::string> Circuito::getMapas(){
+    return mapas;
 }

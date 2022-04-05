@@ -87,7 +87,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 #include "Menu/menu.h"
 #include "Poderes/poderes.h"
 //#include "Vehiculo/vehiculo.h"
-#include "Circuito/circuito.h"
+//#include "Circuito/circuito.h"
 
 #define kVel 5
 
@@ -133,7 +133,18 @@ int main() {
   
   ene->~ia();
   //cout << "Enemigo eliminado" << endl;
+  /*
+  string letra = "3,2";
+  char let = letra.at(0);
+  int num = let-48;
+  cout << num << endl;
 
+
+  char let2 = letra.at(2);
+  int num2 = let2-48;
+  cout << num2 << endl;
+  */
+  
   //Bucle del juego
   while (window.isOpen()) {
     //Bucle de obtención de eventos
