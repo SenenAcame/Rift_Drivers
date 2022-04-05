@@ -148,3 +148,9 @@ He creado las variables en la clase vehiculo
 
 # 4/04/2022 Senén Martinez Acame (1h)
 Actualizar IA, añadiendirle un atributo Vehiculo para acceder a sus funciones y agregarle setters a IA.
+
+# 4/04/2022 Joan Pascual Izquierdo (1h 30min)
+He probado el hacer las colisiones con los mapas de dureza, todavía no funciona
+
+# 5/04/2022 Joan Pascual Izquierdo (10 minutos)
+Ya sé como funciona la función de las colisiones con mapas de dureza, ya funciona.

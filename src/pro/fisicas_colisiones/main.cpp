@@ -27,14 +27,10 @@ bool colisionMapa(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, 
   bool colision;
   int i, j;
   colision=false;
-  for(i=0; (i<40) && (!colision); i++){
-    for(j=0; (j<40) && (!colision); j++){
-      color[0]=image1.getPixel(x1+j, y1+i);
-      color[1]=image2.getPixel(x2+j, y2+j);
-      if((color[0].r==0) && (color[0].g==0) && (color[0].b==0))
-        colision=true;
-    }
-  }
+  color[0]=image1.getPixel(x1, y1);
+  color[1]=image2.getPixel(x2, y2);
+  if((color[0].r==0) && (color[0].g==0) && (color[0].b==0))
+    colision=true;
   return colision;
 }
 int main() {
@@ -113,7 +109,7 @@ int main() {
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
               sprite.move(-kVel, 0);
             }
-            if(colisionMapa(dbw, sp, 320, 75, 320, 75)){
+            if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)){
               sprite.move(-kVel, 0);
             }
           break;
@@ -128,7 +124,7 @@ int main() {
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
               sprite.move(kVel, 0);
             }
-             if(colisionMapa(dbw, sp, 320, 75, 320, 75)){
+             if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)){
               sprite.move(kVel, 0);
             }
           break;
@@ -140,7 +136,7 @@ int main() {
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
                 sprite.move(0, kVel);
             }
-            if(colisionMapa(dbw, sp, 320, 75, 320, 75)){
+            if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)){
               sprite.move(0, kVel);
             }
           break;
@@ -152,7 +148,7 @@ int main() {
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
                 sprite.move(0, -kVel);
             }
-             if(colisionMapa(dbw, sp, 320, 75, 320, 75)){
+              if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)){
               sprite.move(0, -kVel);
              }
           break;
