@@ -4,7 +4,7 @@
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
 
-#define kVel 5
+#define kVel 10
 /*
 bool collision(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, int y2){
   sf::Color color[2];
@@ -22,18 +22,17 @@ bool collision(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, int
   return collision;
 }
 */
-bool colisionMapa(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, int y2, int tx, int ty){
+int colisionMapa(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, int y2, int tx, int ty){
   sf::Color color[2];
-  bool colision;
+  int colision=0;
   int i, j;
-  colision=false;
-  for(int i=0; i<tx; i++){
-    for(int j=0; j<ty; j++){
-      color[0]=image1.getPixel(x1+i-tx/2, y1+j-ty/2);
+      color[0]=image1.getPixel(x1, y1);
       color[1]=image2.getPixel(x2, y2);
-      if((color[0].r==0) && (color[0].g==0) && (color[0].b==0))
-        colision=true;
-    }  
+      if((color[0].r==0) && (color[0].g==0) && (color[0].b==0)){
+        colision=2;
+      }  
+      else if((color[0].r==204) && (color[0].g==204) && (color[0].b==204)){
+        colision=1;
   }  
   return colision;
 }
@@ -113,8 +112,11 @@ int main() {
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
               sprite.move(-kVel, 0);
             }
-            if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)){
+            if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){
               sprite.move(-kVel, 0);
+            }
+            else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){
+              sprite.move(-kVel/2, 0);
             }
           break;
 
@@ -128,8 +130,11 @@ int main() {
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
               sprite.move(kVel, 0);
             }
-             if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)){
+             if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){
               sprite.move(kVel, 0);
+            }
+            else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){
+              sprite.move(kVel/2, 0);
             }
           break;
 
@@ -140,8 +145,11 @@ int main() {
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
                 sprite.move(0, kVel);
             }
-           if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)){
+           if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){
              sprite.move(0, kVel);
+            }
+            else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){
+             sprite.move(0, kVel/2);
             }
           break;
 
@@ -152,8 +160,11 @@ int main() {
             if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
                 sprite.move(0, -kVel);
             }
-              if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)){ 
+              if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){ 
               sprite.move(0, -kVel);
+             }
+              else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){ 
+              sprite.move(0, -kVel/2);
              }
           break;
 
