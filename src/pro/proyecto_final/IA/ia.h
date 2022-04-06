@@ -29,7 +29,7 @@ class ia{
         int contarPuntos(string mapas[], int num);
         int contarPuntos(Circuito *mundo);
 
-        int **posicionesMapa(Circuito *mundo);
+        int *posicionesMapa(Circuito *mundo);
 
         void deleteList();
 

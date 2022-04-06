@@ -129,8 +129,13 @@ int main() {
   //Menu menu(window.getSize().x, window.getSize().y);
 
   vehiculo *coche = new vehiculo(1,2,3,"sprite");
-  ia *ene = new ia(mapas,sizeof(mapas)/sizeof(*mapas),coche);
-
+  //ia *ene = new ia(mapas,sizeof(mapas)/sizeof(*mapas),coche);
+  Circuito *cir = new Circuito();
+  cir->CrearMapa();
+  
+  ia *ene = new ia(cir,coche);
+  
+  /*
   cout << ene->getSize() << endl;
   cout << ene->getList()[0][0] << " , " << ene->getList()[0][1] << endl;
 
@@ -138,8 +143,10 @@ int main() {
 
   cout << ene->getSize() << endl;
   cout << ene->getList()[0][0] << " , " << ene->getList()[0][1] << endl;
-  
+  */
+
   ene->~ia();
+
   //cout << "Enemigo eliminado" << endl;
   /*
   string letra = "3,2";

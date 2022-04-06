@@ -4,6 +4,7 @@
 #include "ia.h"
 #include "../tinyxml/tinyxml2.h"
 
+#define TamTile 320
 using namespace tinyxml2;
 
 ia::ia(string maps[],int leng, vehiculo *car){
@@ -62,21 +63,24 @@ void ia::setList(Circuito *world){
     list = new float*[cont];
     int global=0;
     int vari = 0;
-    int **posiciones = posicionesMapa(world);
+    int *posiciones = posicionesMapa(world);
     int x=0,y=0;
 
     for(int i=0; i<world->getMapas().size(); i++){
-        string nom = "../resources/"+world->getMapas().at(i)+".xml";
-        const char* fichero = nom.c_str();
-        XMLDocument doc;
-        doc.LoadFile(fichero);
-        XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
-        for(XMLElement *son = grupo->FirstChildElement("object"); son; son = son->NextSiblingElement("object")){
-            list[global] = new float[2];
-            list[global][0] = son->FloatAttribute("x")+320*x;
-            list[global][1] = son->FloatAttribute("y")+320*y;
-            
-            switch(posiciones[global][1]){
+        if(world->getMapas().at(i).size()>0){
+            string nom = "../resources/"+world->getMapas().at(i)+".xml";
+            const char* fichero = nom.c_str();
+            XMLDocument doc;
+            doc.LoadFile(fichero);
+            XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
+            for(XMLElement *son = grupo->FirstChildElement("object"); son; son = son->NextSiblingElement("object")){
+                list[global] = new float[2];
+                list[global][0] = son->FloatAttribute("x")+TamTile*x;
+                list[global][1] = son->FloatAttribute("y")+TamTile*y;
+                global++;
+            }
+            int value = posiciones[i];
+            switch(value){
                 case 1:
                     y--;
                 break;
@@ -93,11 +97,11 @@ void ia::setList(Circuito *world){
                     y++;
                 break;
             }
-            global++;
+            fichero=NULL;
+            grupo=NULL;
         }
-        fichero=NULL;
-        grupo=NULL;
     }
+    setSize(cont);
     /*
     for(int i=0; i<leng; i++){
         const char* frag = maps[i].c_str();
@@ -164,16 +168,18 @@ int ia::contarPuntos(string maps[], int leng){
 int ia::contarPuntos(Circuito *world){
     int cont=0; 
     for(int i=0; i<world->getMapas().size(); i++){
-        string nom = "../resources/"+world->getMapas().at(i)+".xml";
-        const char* fichero = nom.c_str();
-        XMLDocument doc;
-        doc.LoadFile(fichero);
-        XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
-        for(XMLNode *hijo = grupo->FirstChild(); hijo; hijo = hijo->NextSibling()){
-            cont++;
+        if(world->getMapas().at(i).size()>0){
+            string nom = "../resources/"+world->getMapas().at(i)+".xml";
+            const char* fichero = nom.c_str();
+            XMLDocument doc;
+            doc.LoadFile(fichero);
+            XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
+            for(XMLNode *hijo = grupo->FirstChild(); hijo; hijo = hijo->NextSibling()){
+                cont++;
+            }
+            fichero=NULL;
+            grupo=NULL;
         }
-        fichero=NULL;
-        grupo=NULL;
     }
     /*
     for(int i=0; i<leng; i++){
@@ -191,14 +197,16 @@ int ia::contarPuntos(Circuito *world){
     return cont;
 }
 
-int **ia::posicionesMapa(Circuito *world){
-    int **posis = new int*[world->getMapas().size()];
+int *ia::posicionesMapa(Circuito *world){
+    int *posis = new int[world->getMapas().size()];
     for(int i=0; i<world->getMapas().size();i++){
-        char x = world->getMapas().at(i).at(0);
-        char y = world->getMapas().at(i).at(2);
-        posis[i] = new int[2];
-        posis[i][0] = x-48;
-        posis[i][1] = y-48;
+        if(world->getMapas().at(i).size()>0){
+            //char x = world->getMapas().at(i).at(0);
+            char y = world->getMapas().at(i).at(2);
+            //posis[i] = new int[2];
+            //posis[i][0] = x-48;
+            posis[i] = y-48;
+        }
     }
 
     return posis;

@@ -160,3 +160,6 @@ IA adaptada para que traze la ruta que se crea en Circuito. Me falta que Circuit
 
 # 5/04/2022 Joan Pascual Izquierdo (1h)
 He intentado que se compruebe la colisión con todos los píxeles del sprite y no funcionaban las colisiones en un lado y cuando colisionabas con el borde negro de arriba, se producía un fallo de violación del segmento (`core'); así que lo he quitado y he hecho que en la zona grisa vaya más lento.
+
+# 6/04/2022 Senén Martinez Acame (50min)
+He estado probando que la IA genere bien los puntos de ruta con la generacion de Circuito. A veces al ejecutar el juego, se queda colgado, es posible que sea por la generacion de la IA a partir del mapa del circuito, tendre que seguir probando y mirando a ver.
