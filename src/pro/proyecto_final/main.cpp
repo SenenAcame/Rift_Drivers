@@ -77,6 +77,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 */
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <math.h>
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
@@ -165,75 +166,88 @@ int main() {
     //Circuito circuito=Circuito();
     //bool pista=false;
 
+  sf::Vector2f position, previous;
+
+  position.x = 25*320+320/2;
+  position.y = 25*320+320/2;
+
+  float prev = 0;
+  float rot = sprite.getRotation();
+
+   float speed = 0.0f;
+
+  sf::Clock clock;
+  sf::Clock updateClock;
+
+  float accumulator = 0;
+  const float timestep = 1.0f / 15.0f; 
   //Bucle del juego
-  while (window.isOpen()) {
-    //Bucle de obtención de eventos
-    sf::Event event;
-    while (window.pollEvent(event)) {
+  while (window.isOpen())
+  {
 
-      switch (event.type) {
-        //Si se recibe el evento de cerrar la ventana la cierro
-        case sf::Event::Closed:
+        sf::Event e;
+        while (window.pollEvent(e))
+                if (e.type == sf::Event::Closed)
+                        window.close();
+
+        accumulator += clock.restart().asSeconds();
+        while (accumulator >= timestep)
+        {
+          accumulator -= timestep;
+
+          previous = position;
+          sprite.setRotation(rot);
+          prev = rot;
+
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+          sprite.rotate(-15.0f);
+          rot = sprite.getRotation();
+          }
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+          sprite.rotate(+15.0f);
+          rot = sprite.getRotation();
+          }
+          
+
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+          if(speed<=50.0f){
+          speed += 1.0f;
+          }
+          
+          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+          }else{
+          if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)==false){
+
+          
+          if(speed>0.0f){
+          speed -= 1.0f;
+          }
+          
+          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+          }       
+          }
+
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)==false){
+          if(speed>0.0f && speed-5.0f>=0){
+          speed -= 5.0f;
+          }
+          if(speed>5.0f){
+          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+          }
+          }
+
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
           window.close();
-          break;
-
-        //Se pulsó una tecla, imprimo su codigo
-        case sf::Event::KeyPressed:
-
-          //Verifico si se pulsa alguna tecla de movimiento
-          switch (event.key.code) {
-
-          //Mapeo del cursor
-          case sf::Keyboard::Right:
-            sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-            //Escala por defecto
-            sprite.setScale(1, 1);
-            sprite.move(kVel, 0);
-            break;
-
-          case sf::Keyboard::Left:
-            sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-            //Reflejo vertical
-            sprite.setScale(-1, 1);
-            sprite.move(-kVel, 0);
-            break;
-
-          case sf::Keyboard::Up:
-            sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
-            sprite.move(0, -kVel);
-            break;
-
-          case sf::Keyboard::Down:
-            sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-            sprite.move(0, kVel);
-            break;
-          /*
-          case sf::Keyboard::L:
-            if(pista){
-              sprite.setPosition(25*320+320/2, 25*320+320/2);
-              circuito.vaciaMapa();
-              circuito=Circuito();
-            }
-            circuito.CrearMapa();
-            circuito.montaMapa();
-            pista=true;
-            break;
-          */
-          //Tecla ESC para salir
-          case sf::Keyboard::Escape:
-            window.close();
-            break;
-
-          //Cualquier tecla desconocida se imprime por pantalla su código
-          default:
-            std::cout << event.key.code << std::endl;
-            break;
+          }
         }
-        //cout << "Posicion actual: "<<sprite.getPosition().x << " , " << sprite.getPosition().y << endl;
-      }
-    }
+
+       
 
     window.clear();
+    
     camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
     minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
@@ -249,6 +263,10 @@ int main() {
       cir->dibujaMapa(&window);
     //}
     ene->dibujaRecorrido(&window);
+    sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
+     if( sprite.getRotation()<345 && sprite.getRotation()>0){
+        sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));
+        }
     window.draw(sprite);
 
     window.display();
