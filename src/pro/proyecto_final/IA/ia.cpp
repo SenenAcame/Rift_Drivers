@@ -64,7 +64,7 @@ void ia::setList(Circuito *world){
     int global=0;
     int vari = 0;
     int *posiciones = posicionesMapa(world);
-    int x=0,y=0;
+    int x=25,y=25;
 
     for(int i=0; i<world->getMapas().size(); i++){
         if(world->getMapas().at(i).size()>0){
@@ -82,7 +82,7 @@ void ia::setList(Circuito *world){
             int value = posiciones[i];
             switch(value){
                 case 1:
-                    y--;
+                    y++;
                 break;
 
                 case 2:
@@ -94,7 +94,7 @@ void ia::setList(Circuito *world){
                 break;
                     
                 case 4:
-                    y++;
+                    y--;
                 break;
             }
             fichero=NULL;
@@ -102,30 +102,6 @@ void ia::setList(Circuito *world){
         }
     }
     setSize(cont);
-    /*
-    for(int i=0; i<leng; i++){
-        const char* frag = maps[i].c_str();
-        XMLDocument doc;
-        doc.LoadFile(frag);
-        XMLElement *group = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
-        for(XMLElement *son = group->FirstChildElement("object"); son; son = son->NextSiblingElement("object")){
-            list[global] = new float[2];
-            if(i==2){
-                list[global][0] = son->FloatAttribute("x")+320+vari;
-                list[global][1] = son->FloatAttribute("y")+320+vari;
-            }
-            else{
-                list[global][0] = son->FloatAttribute("x")+320*i+vari;
-                list[global][1] = son->FloatAttribute("y")+vari;
-            }
-            global++;
-        }
-        frag=NULL;
-        group=NULL;
-    }
-    
-    setSize(cont);
-    */
 }
 
 float ** ia::getList(){
@@ -181,19 +157,6 @@ int ia::contarPuntos(Circuito *world){
             grupo=NULL;
         }
     }
-    /*
-    for(int i=0; i<leng; i++){
-        const char* fichero = maps[i].c_str();
-        XMLDocument doc;
-        doc.LoadFile(fichero);
-        XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
-        for(XMLNode *hijo = grupo->FirstChild(); hijo; hijo = hijo->NextSibling()){
-            cont++;
-        }
-        fichero=NULL;
-        grupo=NULL;
-    }
-    */
     return cont;
 }
 
@@ -201,15 +164,21 @@ int *ia::posicionesMapa(Circuito *world){
     int *posis = new int[world->getMapas().size()];
     for(int i=0; i<world->getMapas().size();i++){
         if(world->getMapas().at(i).size()>0){
-            //char x = world->getMapas().at(i).at(0);
             char y = world->getMapas().at(i).at(2);
-            //posis[i] = new int[2];
-            //posis[i][0] = x-48;
             posis[i] = y-48;
         }
     }
 
     return posis;
+}
+
+void ia::dibujaRecorrido(sf::RenderWindow *vent){
+    sf::Vertex lineas[size];
+    for(int i=0; i<size; i++){
+        lineas[i].position = sf::Vector2f(list[i][0],list[i][1]);
+        lineas[i].color = sf::Color::Red;
+    }
+    vent->draw(lineas,size,sf::LinesStrip);
 }
 
 void ia::deleteList(){

@@ -163,3 +163,6 @@ He intentado que se compruebe la colisión con todos los píxeles del sprite y n
 
 # 6/04/2022 Senén Martinez Acame (50min)
 He estado probando que la IA genere bien los puntos de ruta con la generacion de Circuito. A veces al ejecutar el juego, se queda colgado, es posible que sea por la generacion de la IA a partir del mapa del circuito, tendre que seguir probando y mirando a ver.
+
+# 7/04/2022 Senén Martinez Acame (1h 30min)
+La IA crea el recorrido en funcion del circuito creado correctamente. Sigue dando problemas a veces al cargar.

@@ -96,7 +96,7 @@ int main() {
   //MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
+  sf::RenderWindow window(sf::VideoMode(1080, 720), "P0. Fundamentos de los Videojuegos. DCCIA");
 
   //camara y minimapa
   sf::View camara;
@@ -132,6 +132,7 @@ int main() {
   //ia *ene = new ia(mapas,sizeof(mapas)/sizeof(*mapas),coche);
   Circuito *cir = new Circuito();
   cir->CrearMapa();
+  cir->montaMapa();
   
   ia *ene = new ia(cir,coche);
   
@@ -145,7 +146,7 @@ int main() {
   cout << ene->getList()[0][0] << " , " << ene->getList()[0][1] << endl;
   */
 
-  ene->~ia();
+  //ene->~ia();
 
   //cout << "Enemigo eliminado" << endl;
   /*
@@ -161,8 +162,8 @@ int main() {
   */
   
  //Creamos clase circuito
-    Circuito circuito=Circuito();
-    bool pista=false;
+    //Circuito circuito=Circuito();
+    //bool pista=false;
 
   //Bucle del juego
   while (window.isOpen()) {
@@ -171,80 +172,85 @@ int main() {
     while (window.pollEvent(event)) {
 
       switch (event.type) {
-
-      //Si se recibe el evento de cerrar la ventana la cierro
-      case sf::Event::Closed:
-        window.close();
-        break;
-
-      //Se pulsó una tecla, imprimo su codigo
-      case sf::Event::KeyPressed:
-
-        //Verifico si se pulsa alguna tecla de movimiento
-        switch (event.key.code) {
-
-        //Mapeo del cursor
-        case sf::Keyboard::Right:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-          //Escala por defecto
-          sprite.setScale(1, 1);
-          sprite.move(kVel, 0);
-          break;
-
-        case sf::Keyboard::Left:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-          //Reflejo vertical
-          sprite.setScale(-1, 1);
-          sprite.move(-kVel, 0);
-          break;
-
-        case sf::Keyboard::Up:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
-          sprite.move(0, -kVel);
-          break;
-
-        case sf::Keyboard::Down:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-          sprite.move(0, kVel);
-          break;
-
-        case sf::Keyboard::L:
-          if(pista){
-            sprite.setPosition(25*320+320/2, 25*320+320/2);
-            circuito.vaciaMapa();
-            circuito=Circuito();
-          }
-          circuito.CrearMapa();
-          circuito.montaMapa();
-          pista=true;
-          break;
-
-        //Tecla ESC para salir
-        case sf::Keyboard::Escape:
+        //Si se recibe el evento de cerrar la ventana la cierro
+        case sf::Event::Closed:
           window.close();
           break;
 
-        //Cualquier tecla desconocida se imprime por pantalla su código
-        default:
-          std::cout << event.key.code << std::endl;
-          break;
+        //Se pulsó una tecla, imprimo su codigo
+        case sf::Event::KeyPressed:
+
+          //Verifico si se pulsa alguna tecla de movimiento
+          switch (event.key.code) {
+
+          //Mapeo del cursor
+          case sf::Keyboard::Right:
+            sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
+            //Escala por defecto
+            sprite.setScale(1, 1);
+            sprite.move(kVel, 0);
+            break;
+
+          case sf::Keyboard::Left:
+            sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
+            //Reflejo vertical
+            sprite.setScale(-1, 1);
+            sprite.move(-kVel, 0);
+            break;
+
+          case sf::Keyboard::Up:
+            sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
+            sprite.move(0, -kVel);
+            break;
+
+          case sf::Keyboard::Down:
+            sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+            sprite.move(0, kVel);
+            break;
+          /*
+          case sf::Keyboard::L:
+            if(pista){
+              sprite.setPosition(25*320+320/2, 25*320+320/2);
+              circuito.vaciaMapa();
+              circuito=Circuito();
+            }
+            circuito.CrearMapa();
+            circuito.montaMapa();
+            pista=true;
+            break;
+          */
+          //Tecla ESC para salir
+          case sf::Keyboard::Escape:
+            window.close();
+            break;
+
+          //Cualquier tecla desconocida se imprime por pantalla su código
+          default:
+            std::cout << event.key.code << std::endl;
+            break;
         }
+        //cout << "Posicion actual: "<<sprite.getPosition().x << " , " << sprite.getPosition().y << endl;
       }
     }
 
     window.clear();
     camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
     minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
+
     window.setView(camara);
-    if(pista){
-      circuito.dibujaMapa(&window);
-    }
+    //if(pista){
+      cir->dibujaMapa(&window);
+    //}
+    ene->dibujaRecorrido(&window);
     window.draw(sprite);
+
     window.setView(minimapa);
-    if(pista){
-      circuito.dibujaMapa(&window);
-    }
+    //if(pista){
+      cir->dibujaMapa(&window);
+    //}
+    ene->dibujaRecorrido(&window);
     window.draw(sprite);
+
     window.display();
   }
 

@@ -30,6 +30,7 @@ class ia{
         int contarPuntos(Circuito *mundo);
 
         int *posicionesMapa(Circuito *mundo);
+        void dibujaRecorrido(sf::RenderWindow *wind);
 
         void deleteList();
 
