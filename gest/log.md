@@ -169,3 +169,6 @@ La IA crea el recorrido en funcion del circuito creado correctamente. Sigue dand
 
 # 7/04/2022 Sergio Tortajada Santonja (1h)
 Arreglado lo de repetir, he vuelto a poner que pulsando un botón se genere un mapa distinto, arreglado que le pasaba a Senén por parámetro dos mapas cuando repetía, sprite puesto para que empiece recto y cuando se crea otro mapa la velocidad aceleración cambia a 0 y vuelve a estar recto.
+
+# 7/04/2022 Sergio Tortajada Santonja (10min)
+El pendejo de Joan no sabe como funciona la velocidad negativa.
