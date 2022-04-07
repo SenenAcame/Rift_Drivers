@@ -16,29 +16,29 @@ Circuito::Circuito(){
     //cachos=new std::vector<sf::Sprite>;
     srand(time(0));
     if (!tex12.loadFromFile("../resources/1,2.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
-  if (!tex13.loadFromFile("../resources/1,3.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
-  if (!tex14.loadFromFile("../resources/1,4.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
-  if (!tex23.loadFromFile("../resources/2,3.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
-  if (!tex24.loadFromFile("../resources/2,4.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
-  if (!tex34.loadFromFile("../resources/3,4.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
+    if (!tex13.loadFromFile("../resources/1,3.png")) {
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
+    if (!tex14.loadFromFile("../resources/1,4.png")) {
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
+    if (!tex23.loadFromFile("../resources/2,3.png")) {
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
+    if (!tex24.loadFromFile("../resources/2,4.png")) {
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
+    if (!tex34.loadFromFile("../resources/3,4.png")) {
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
 }
 
 void Circuito::CrearMapa(){
@@ -93,7 +93,7 @@ void Circuito::CrearMapa(){
         col=25;
         final=false;
         srand(time(0));
-        std::cerr<<std::to_string(cachos)<<"Repite\n";
+        std::cerr<<std::to_string(cachos)<<" Repite\n";
         CrearMapa();
     }
 }
@@ -117,7 +117,7 @@ std::string Circuito::BuscaCacho(int entrada){
             num2=1+rand()%4;
 
             cacho=std::to_string(entrada)+","+std::to_string(num2);
-            std::cerr << cacho<<"\n";
+            //std::cerr << cacho<<"\n";
             pasa=CompruebaCacho(cacho);
         }
 
