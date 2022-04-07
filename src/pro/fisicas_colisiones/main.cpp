@@ -116,7 +116,7 @@ int main() {
               sprite.move(-kVel, 0);
             }
             else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){
-              sprite.move(-kVel/2, 0);
+              sprite.move(-kVel/1.3, 0);
             }
           break;
 
@@ -134,7 +134,7 @@ int main() {
               sprite.move(kVel, 0);
             }
             else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){
-              sprite.move(kVel/2, 0);
+              sprite.move(kVel/1.3, 0);
             }
           break;
 
@@ -149,7 +149,7 @@ int main() {
              sprite.move(0, kVel);
             }
             else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){
-             sprite.move(0, kVel/2);
+             sprite.move(0, kVel/1.3);
             }
           break;
 
@@ -164,7 +164,7 @@ int main() {
               sprite.move(0, -kVel);
              }
               else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){ 
-              sprite.move(0, -kVel/2);
+              sprite.move(0, -kVel/1.3);
              }
           break;
 
