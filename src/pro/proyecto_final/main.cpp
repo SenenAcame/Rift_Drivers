@@ -90,7 +90,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 //#include "Vehiculo/vehiculo.h"
 #include "Circuito/circuito.h"
 
-#define kVel 15
+#define kVel 5
 
 int main() {
 
@@ -102,7 +102,7 @@ int main() {
   //camara y minimapa
   sf::View camara;
   sf::View minimapa;
-  camara=sf::View(sf::FloatRect(0,0,640,480));
+  camara=sf::View(sf::FloatRect(0,0,1080,720));
   minimapa.setViewport(sf::FloatRect(0.85f,0,0.15f,0.25f));
   window.setView(camara);
 
@@ -134,8 +134,9 @@ int main() {
   Circuito *cir = new Circuito();
   cir->CrearMapa();
   cir->montaMapa();
-  
+  bool pista=true;
   ia *ene = new ia(cir,coche);
+  
   
   /*
   cout << ene->getSize() << endl;
@@ -172,7 +173,9 @@ int main() {
   position.y = 25*320+320/2;
 
   float prev = 0;
-  float rot = sprite.getRotation();
+  //float rot = sprite.getRotation();
+  float rot = -90.00f;
+  sprite.setRotation(rot);
 
    float speed = 0.0f;
 
@@ -239,6 +242,21 @@ int main() {
           }
           }
 
+          if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
+            if(pista){
+              sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
+              cir->vaciaMapa();
+              cir=new Circuito();
+              rot=-90.00f;
+              sprite.setRotation(rot);
+            }
+            cir->CrearMapa();
+            cir->montaMapa();
+            pista=true;
+            ene = new ia(cir,coche);
+            speed=0;
+          }
+
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
           window.close();
           }
@@ -252,17 +270,17 @@ int main() {
     minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
     window.setView(camara);
-    //if(pista){
+    if(pista){
       cir->dibujaMapa(&window);
-    //}
-    ene->dibujaRecorrido(&window);
+      ene->dibujaRecorrido(&window);
+    }
     window.draw(sprite);
 
     window.setView(minimapa);
-    //if(pista){
+    if(pista){
       cir->dibujaMapa(&window);
-    //}
-    ene->dibujaRecorrido(&window);
+      ene->dibujaRecorrido(&window);
+    }
     sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
      if( sprite.getRotation()<345 && sprite.getRotation()>0){
         sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));

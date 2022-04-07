@@ -166,3 +166,6 @@ He estado probando que la IA genere bien los puntos de ruta con la generacion de
 
 # 7/04/2022 Senén Martinez Acame (1h 30min)
 La IA crea el recorrido en funcion del circuito creado correctamente. Sigue dando problemas a veces al cargar.
+
+# 7/04/2022 Sergio Tortajada Santonja (1h)
+Arreglado lo de repetir, he vuelto a poner que pulsando un botón se genere un mapa distinto, arreglado que le pasaba a Senén por parámetro dos mapas cuando repetía, sprite puesto para que empiece recto y cuando se crea otro mapa la velocidad aceleración cambia a 0 y vuelve a estar recto.

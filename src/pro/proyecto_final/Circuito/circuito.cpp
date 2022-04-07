@@ -92,7 +92,6 @@ void Circuito::CrearMapa(){
         fila=25;
         col=25;
         final=false;
-        srand(time(0));
         std::cerr<<std::to_string(cachos)<<" Repite\n";
         CrearMapa();
     }
@@ -120,7 +119,7 @@ std::string Circuito::BuscaCacho(int entrada){
             //std::cerr << cacho<<"\n";
             pasa=CompruebaCacho(cacho);
         }
-
+        std::cerr << cacho<<"\n";
     }
     return cacho;
 }
@@ -189,6 +188,7 @@ void Circuito::vaciaMapa(){
     }
     circuito.clear();
     cachos.clear();
+    mapas.clear();
 }
 
 void Circuito::dibujaMapa(sf::RenderWindow *window){
