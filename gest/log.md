@@ -172,3 +172,6 @@ Arreglado lo de repetir, he vuelto a poner que pulsando un botón se genere un m
 
 # 7/04/2022 Sergio Tortajada Santonja (10min)
 El pendejo de Joan no sabe como funciona la velocidad negativa.
+
+# 8/04/2022 Senén Martinez Acame (30min)
+He creado el setup.sh con los comando para descargar y guardar las imagenes que usamos.

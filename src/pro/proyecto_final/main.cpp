@@ -185,84 +185,81 @@ int main() {
   float accumulator = 0;
   const float timestep = 1.0f / 15.0f; 
   //Bucle del juego
-  while (window.isOpen())
-  {
+  while (window.isOpen()){
 
-        sf::Event e;
-        while (window.pollEvent(e))
-                if (e.type == sf::Event::Closed)
-                        window.close();
+    sf::Event e;
 
-        accumulator += clock.restart().asSeconds();
-        while (accumulator >= timestep)
-        {
-          accumulator -= timestep;
+    while (window.pollEvent(e))
+      if (e.type == sf::Event::Closed)
+        window.close();
 
-          previous = position;
-          sprite.setRotation(rot);
-          prev = rot;
+    accumulator += clock.restart().asSeconds();
 
-          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-          sprite.rotate(-15.0f);
-          rot = sprite.getRotation();
-          }
-          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-          sprite.rotate(+15.0f);
-          rot = sprite.getRotation();
-          }
-          
+    while (accumulator >= timestep){
+      accumulator -= timestep;
 
-          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-          if(speed<=50.0f){
+      previous = position;
+      sprite.setRotation(rot);
+      prev = rot;
+
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+        sprite.rotate(-15.0f);
+        rot = sprite.getRotation();
+      }
+
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+        sprite.rotate(+15.0f);
+        rot = sprite.getRotation();
+      }
+      
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+        if(speed<=50.0f){
           speed += 1.0f;
-          }
-          
-          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
-          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
-          }else{
-          if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)==false){
-
-          
-          if(speed>0.0f){
-          speed -= 1.0f;
-          }
-          
-          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
-          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
-          }       
-          }
-
-          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)==false){
-          if(speed>0.0f && speed-5.0f>=0){
-          speed -= 5.0f;
-          }
-          if(speed>5.0f){
-          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
-          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
-          }
-          }
-
-          if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
-            if(pista){
-              sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
-              cir->vaciaMapa();
-              cir=new Circuito();
-              rot=-90.00f;
-              sprite.setRotation(rot);
-            }
-            cir->CrearMapa();
-            cir->montaMapa();
-            pista=true;
-            ene = new ia(cir,coche);
-            speed=0;
-          }
-
-          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-          window.close();
-          }
         }
+      
+        position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+        position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+      }
+      else{
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)==false){
+          if(speed>0.0f){
+            speed -= 1.0f;
+          }
+          
+          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+        }       
+      }
 
-       
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)==false){
+        if(speed>0.0f && speed-5.0f>=0){
+          speed -= 5.0f;
+        }
+        if(speed>5.0f){
+          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+        }
+      }
+
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
+        if(pista){
+          sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
+          cir->vaciaMapa();
+          cir=new Circuito();
+          rot=-90.00f;
+          sprite.setRotation(rot);
+        }
+        cir->CrearMapa();
+        cir->montaMapa();
+        pista=true;
+        ene = new ia(cir,coche);
+        speed=0;
+      }
+
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+        window.close();
+      }
+    }
 
     window.clear();
     
@@ -282,9 +279,9 @@ int main() {
       ene->dibujaRecorrido(&window);
     }
     sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
-     if( sprite.getRotation()<345 && sprite.getRotation()>0){
-        sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));
-        }
+    if(sprite.getRotation()<345 && sprite.getRotation()>0){
+      sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));
+    }
     window.draw(sprite);
 
     window.display();
