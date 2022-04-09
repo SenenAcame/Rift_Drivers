@@ -142,3 +142,42 @@ Mapas en blanco y negro hechos
 
 # 2/04/2022 Sergio Tortajada Santonja(1h 30min)
 Dibujado del mapa desde la clase circuito y pasado a developer
+
+# 3/04/2022 Miguel Ángel Ferrer García de la Reina @(1h)
+He creado las variables en la clase vehiculo
+
+# 4/04/2022 Senén Martinez Acame (1h)
+Actualizar IA, añadiendirle un atributo Vehiculo para acceder a sus funciones y agregarle setters a IA.
+
+# 4/04/2022 Joan Pascual Izquierdo (1h 30min)
+He probado el hacer las colisiones con los mapas de dureza, todavía no funciona
+
+# 5/04/2022 Joan Pascual Izquierdo (20 minutos)
+Ya sé como funciona la función de las colisiones con mapas de dureza, ya funciona. Ahora funciona con todos los píxeles del sprite.
+
+# 5/04/2022 Senén Martinez Acame (1h 15min)
+IA adaptada para que traze la ruta que se crea en Circuito. Me falta que Circuito este implementado del todo para poder hacer las pruebas de que funcione correctamente.
+
+# 5/04/2022 Joan Pascual Izquierdo (1h)
+He intentado que se compruebe la colisión con todos los píxeles del sprite y no funcionaban las colisiones en un lado y cuando colisionabas con el borde negro de arriba, se producía un fallo de violación del segmento (`core'); así que lo he quitado y he hecho que en la zona grisa vaya más lento.
+
+# 6/04/2022 Senén Martinez Acame (50min)
+He estado probando que la IA genere bien los puntos de ruta con la generacion de Circuito. A veces al ejecutar el juego, se queda colgado, es posible que sea por la generacion de la IA a partir del mapa del circuito, tendre que seguir probando y mirando a ver.
+
+# 7/04/2022 Senén Martinez Acame (1h 30min)
+La IA crea el recorrido en funcion del circuito creado correctamente. Sigue dando problemas a veces al cargar.
+
+# 7/04/2022 Sergio Tortajada Santonja (1h)
+Arreglado lo de repetir, he vuelto a poner que pulsando un botón se genere un mapa distinto, arreglado que le pasaba a Senén por parámetro dos mapas cuando repetía, sprite puesto para que empiece recto y cuando se crea otro mapa la velocidad aceleración cambia a 0 y vuelve a estar recto.
+
+# 7/04/2022 Sergio Tortajada Santonja (10min)
+El pendejo de Joan no sabe como funciona la velocidad negativa.
+
+# 8/04/2022 Senén Martinez Acame (30min)
+He creado el setup.sh con los comandos para descargar y guardar las imagenes que usemos.
+
+# 9/04/2022 Senén Martinez Acame (1h)
+He modificado Vehiculo para que tenga un sprite y asi poder hacer pruebas de movimiento con la IA.
+
+# 9/04/2022 Joan Pascual Izquierdo (45 min)
+He estado probando para que calcule la colisión con el mapa de textura con los pixeles de los 4 extremos y no consigo que funcione. Lo otro que he hecho es que las colisiones entre otros coches se comprueben en un método aparte, sólo hay que llamar a colision(sprite1, sprite2) y ya estaría

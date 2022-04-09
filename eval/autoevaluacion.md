@@ -9,5 +9,7 @@ El desarrollo de los prototipos va bien. El problema que tenia era que no tenia 
 ## Miembro : Sergio Tortajada Santonja
 Al principio iba perdido porque no sabía por donde empezar pero después de ver videos y entender como funcionaba el draw he podido trabajar sin problema.(he trabajado con png porque es como lo hacían todos y no he encontrado mucha información sobre xml)
 
+## Miembro : Joan Pascual Izquierdo
+Empecé bastante perdido porque hacía varios años que no programaba en c++ o similares, pero ahora ya voy empezando a entender como va todo(salvo en cunado utilizar punteros porque todavía no los he utilizado). Lo único es que me estoy quedando demasiado enganchado en solucionar algunos detalles que pueden ser importantes, como el de colisiones con mapas de dureza.
 # Autoevaluación general
 Requiere añadir una propuesta de nota sobre 10

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "circuito.h"
 
 Circuito::Circuito(){
@@ -15,41 +16,44 @@ Circuito::Circuito(){
     //cachos=new std::vector<sf::Sprite>;
     srand(time(0));
     if (!tex12.loadFromFile("../resources/1,2.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
-  if (!tex13.loadFromFile("../resources/1,3.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
-  if (!tex14.loadFromFile("../resources/1,4.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
-  if (!tex23.loadFromFile("../resources/2,3.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
-  if (!tex24.loadFromFile("../resources/2,4.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
-  if (!tex34.loadFromFile("../resources/3,4.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
+    if (!tex13.loadFromFile("../resources/1,3.png")) {
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
+    if (!tex14.loadFromFile("../resources/1,4.png")) {
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
+    if (!tex23.loadFromFile("../resources/2,3.png")) {
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
+    if (!tex24.loadFromFile("../resources/2,4.png")) {
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
+    if (!tex34.loadFromFile("../resources/3,4.png")) {
+        std::cerr << "Error cargando la imagen sprites.png";
+        exit(0);
+    }
 }
 
 void Circuito::CrearMapa(){
     int cachos=0;
     std::string cacho=BuscaCacho(0);
+    mapas.push_back(cacho);
     int buscar=1;
     cacho="../resources/"+cacho+".png";
     circuito.at(fila).at(col)=cacho;
     fila=fila-1;
     while(!final){
         cachos++;
-        cacho="../resources/"+BuscaCacho(buscar)+".png";
+        cacho=BuscaCacho(buscar);
+        mapas.push_back(cacho);
+        cacho="../resources/"+cacho+".png";
         if(!final){
             circuito.at(fila).at(col)=cacho;
             buscar=stoi(cacho.substr(cacho.length()-5,cacho.length()-4));
@@ -88,8 +92,7 @@ void Circuito::CrearMapa(){
         fila=25;
         col=25;
         final=false;
-        srand(time(0));
-        std::cerr<<std::to_string(cachos)<<"Repite\n";
+        std::cerr<<std::to_string(cachos)<<" Repite\n";
         CrearMapa();
     }
 }
@@ -113,10 +116,10 @@ std::string Circuito::BuscaCacho(int entrada){
             num2=1+rand()%4;
 
             cacho=std::to_string(entrada)+","+std::to_string(num2);
-            std::cerr << cacho<<"\n";
+            //std::cerr << cacho<<"\n";
             pasa=CompruebaCacho(cacho);
         }
-
+        //std::cerr << cacho<<"\n";
     }
     return cacho;
 }
@@ -184,7 +187,8 @@ void Circuito::vaciaMapa(){
         circuito.at(i).clear();
     }
     circuito.clear();
-    //delete cachos;
+    cachos.clear();
+    mapas.clear();
 }
 
 void Circuito::dibujaMapa(sf::RenderWindow *window){
@@ -260,4 +264,8 @@ void Circuito::montaMapa(){
             }
         }
     }
+}
+
+std::vector<std::string> Circuito::getMapas(){
+    return mapas;
 }

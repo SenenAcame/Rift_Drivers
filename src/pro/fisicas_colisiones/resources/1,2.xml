@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="9">
+ <tileset firstgid="1" source="../../tile_atlas.tsx"/>
+ <layer id="1" name="Capa de patrones 1" width="10" height="10">
+  <data encoding="csv">
+27,27,28,43,58,57,58,43,28,28,
+42,42,43,58,73,72,73,58,43,28,
+27,57,58,73,1,3,2,3,4,5,
+42,72,73,1,39,17,18,19,20,20,
+57,58,1,39,17,18,19,20,35,35,
+72,73,16,33,32,33,34,35,50,50,
+42,43,31,17,47,48,49,50,65,65,
+57,58,46,32,62,63,64,65,23,80,
+72,73,61,47,48,49,50,23,81,73,
+72,72,61,62,63,64,65,66,43,44
+</data>
+ </layer>
+ <objectgroup id="2" name="Capa de Objetos 1">
+  <object id="1" x="161.333" y="318.667">
+   <properties>
+    <property name="path" type="object" value="2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2" x="124" y="213.333">
+   <properties>
+    <property name="path" type="object" value="3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3" x="160" y="149.333">
+   <properties>
+    <property name="path" type="object" value="4"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="4" x="236" y="125.333">
+   <properties>
+    <property name="path" type="object" value="5"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="5" x="316" y="161.333">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

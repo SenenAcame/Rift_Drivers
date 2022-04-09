@@ -41,7 +41,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
   while(window.isOpen())
   {
     sf::Event event;
-
+  juego->circuito->CrearMapa();
     while(window.pollEvent(event))
     {
       /*
@@ -96,9 +96,21 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 /*
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <math.h>
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
+<<<<<<< HEAD
+=======
+//incluir nuestras carpetas
+#include "Mejoras/mejora.h"
+#include "IA/ia.h"
+#include "Juego/juego.h"
+#include "Menu/menu.h"
+#include "Poderes/poderes.h"
+//#include "Vehiculo/vehiculo.h"
+#include "Circuito/circuito.h"
+>>>>>>> c75a7add677ea04b257d94b6ac66793bad1423f8
 
 
 //#define kVel 5
@@ -108,7 +120,14 @@ int main() {
   //MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
+  sf::RenderWindow window(sf::VideoMode(1080, 720), "P0. Fundamentos de los Videojuegos. DCCIA");
+
+  //camara y minimapa
+  sf::View camara;
+  sf::View minimapa;
+  camara=sf::View(sf::FloatRect(0,0,1080,720));
+  minimapa.setViewport(sf::FloatRect(0.85f,0,0.15f,0.25f));
+  window.setView(camara);
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
@@ -117,6 +136,7 @@ int main() {
     exit(0);
   }
 
+  sf::Sprite spr2(tex);
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
   //Le pongo el centroide donde corresponde
@@ -124,77 +144,154 @@ int main() {
   //Cojo el sprite que me interesa por defecto del sheet
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
   // Lo dispongo en el centro de la pantalla
-  sprite.setPosition(320, 240);
-
-  string mapas[3] = {"../resources/curva_derecha.xml","../resources/curva_abajo.xml","../resources/zigzag.xml"};
-  
+  sprite.setPosition(25*320+320/2, 25*320+320/2);
+  camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
   //inicio un menu
+  //Menu menu(window.getSize().x, window.getSize().y);
+
+  vehiculo *coche = new vehiculo(1,2,3,"../resources/sprites.png",spr2);
+  Circuito *cir = new Circuito();
+  cir->CrearMapa();
+  cir->montaMapa();
+  bool pista=true;
+  ia *ene = new ia(cir,coche);
+  
+ //Creamos clase circuito
+    //Circuito circuito=Circuito();
+    //bool pista=false;
+
+<<<<<<< HEAD
+  //inicio un menu
   menu menu(window.getSize().x, window.getSize().y);
+=======
+  sf::Vector2f position, previous;
+>>>>>>> c75a7add677ea04b257d94b6ac66793bad1423f8
 
-  ia *ene = new ia(mapas,sizeof(mapas)/sizeof(*mapas));
-  cout << ene->getSize() << endl;
-  ene->~ia();
+  position.x = 25*320+320/2;
+  position.y = 25*320+320/2;
 
+  float prev = 0;
+  //float rot = sprite.getRotation();
+  float rot = -90.00f;
+  sprite.setRotation(rot);
+  float speed = 0.0f;
+
+  //float gir = 10.0f;
+
+  sf::Clock clock;
+  sf::Clock updateClock;
+
+  float accumulator = 0;
+  const float timestep = 1.0f / 15.0f; 
   //Bucle del juego
-  while (window.isOpen()) {
-    //Bucle de obtención de eventos
-    sf::Event event;
-    while (window.pollEvent(event)) {
+  while (window.isOpen()){
 
-      switch (event.type) {
+    sf::Event e;
 
-      //Si se recibe el evento de cerrar la ventana la cierro
-      case sf::Event::Closed:
+    while (window.pollEvent(e))
+      if (e.type == sf::Event::Closed)
         window.close();
-        break;
 
-      //Se pulsó una tecla, imprimo su codigo
-      case sf::Event::KeyPressed:
+    accumulator += clock.restart().asSeconds();
 
-        //Verifico si se pulsa alguna tecla de movimiento
-        switch (event.key.code) {
+    while (accumulator >= timestep){
+      accumulator -= timestep;
 
-        //Mapeo del cursor
-        case sf::Keyboard::Right:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-          //Escala por defecto
-          sprite.setScale(1, 1);
-          sprite.move(kVel, 0);
-          break;
+      previous = position;
+      sprite.setRotation(rot);
+      prev = rot;
 
-        case sf::Keyboard::Left:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-          //Reflejo vertical
-          sprite.setScale(-1, 1);
-          sprite.move(-kVel, 0);
-          break;
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+        sprite.rotate(-15.0f);
+        rot = sprite.getRotation();
+        //Giro de la camara y minimapa
+        camara.rotate(-15.0f);
+        minimapa.rotate(-15.0f);
+      }
 
-        case sf::Keyboard::Up:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
-          sprite.move(0, -kVel);
-          break;
-
-        case sf::Keyboard::Down:
-          sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-          sprite.move(0, kVel);
-          break;
-
-        //Tecla ESC para salir
-        case sf::Keyboard::Escape:
-          window.close();
-          break;
-
-        //Cualquier tecla desconocida se imprime por pantalla su código
-        default:
-          std::cout << event.key.code << std::endl;
-          break;
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+        sprite.rotate(+15.0f);
+        rot = sprite.getRotation();
+        //Giro de la camara y minimapa
+        camara.rotate(+15.0f);
+        minimapa.rotate(+15.0f);
+      }
+      
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+        if(speed<=50.0f){
+          speed += 1.0f;
         }
+      
+        position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+        position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+      }
+      else{
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)==false){
+          if(speed>0.0f){
+            speed -= 1.0f;
+          }
+          
+          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+        }       
+      }
+
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)==false){
+        if(speed>0.0f && speed-5.0f>=0){
+          speed -= 5.0f;
+        }
+        if(speed>5.0f){
+          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+        }
+      }
+
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
+        if(pista){
+          sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
+          cir->vaciaMapa();
+          cir=new Circuito();
+          rot=-90.00f;
+          sprite.setRotation(rot);
+        }
+        cir->CrearMapa();
+        cir->montaMapa();
+        pista=true;
+        ene->~ia();
+        ene = new ia(cir,coche);
+        speed=0;
+      }
+
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+        window.close();
       }
     }
 
     window.clear();
+    
+    camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
+    minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
+
+    window.setView(camara);
+    if(pista){
+      cir->dibujaMapa(&window);
+      ene->dibujaRecorrido(&window);
+    }
     window.draw(sprite);
+    window.draw(ene->getVehi()->getImagen());
+
+    window.setView(minimapa);
+    if(pista){
+      cir->dibujaMapa(&window);
+      ene->dibujaRecorrido(&window);
+    }
+    sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
+    if(sprite.getRotation()<345 && sprite.getRotation()>0){
+      sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));
+    }
+    window.draw(sprite);
+
     window.display();
   }
 

@@ -7,7 +7,7 @@
 //#include "../IA/ia.h"
 //#include "../Mejoras/mejora.h"
 #include "../Poderes/poderes.h"
-#include "../Vehiculo/vehiculo.h"
+//#include "../Vehiculo/vehiculo.h"
 
 #ifndef JUEGO_H
 #define JUEGO_H
