@@ -5,23 +5,11 @@
 #include "ej_modulos/mimodulo.h"
 
 #define kVel 10
-/*
-bool collision(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, int y2){
-  sf::Color color[2];
-  bool collision=false;
-  int i, j;
-  for(i=0; (i<40)&& (!collision); i++){
-    for(j=0; (j<40)&& (!collision); j++){
-      color[0]=image1.getPixel(x1+j, y1+i);
-      color[1]=image2.getPixel(x2+j, y2+i);
-      if((color[0].r==0) && (color[0].g==0) && (color[0].b==0))
-      if((color[1].r!=0) || (color[1].g!=255) || (color[1].b!=0))
-        collision=true;
-    }
-  }
-  return collision;
+bool colision(sf::Sprite &image1, sf::Sprite &image2){
+  bool colision=image1.getGlobalBounds().intersects(image2.getGlobalBounds());
+  return colision;
 }
-*/
+
 int colisionMapa(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, int y2, int tx, int ty){
   sf::Color color[2];
   int colision=0;
@@ -109,7 +97,7 @@ int main() {
             sprite.setScale(1, 1);
             sprite2.setScale(1, 1);
             sprite.move(kVel, 0);
-            if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
+            if(colision(sprite, sprite2)){
               sprite.move(-kVel, 0);
             }
             if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){
@@ -127,7 +115,7 @@ int main() {
             sprite.setScale(-1, 1);
             sprite2.setScale(-1, 1);
             sprite.move(-kVel, 0);
-            if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
+            if(colision(sprite, sprite2)){
               sprite.move(kVel, 0);
             }
              if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){
@@ -142,7 +130,7 @@ int main() {
             sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
             sprite2.setTextureRect(sf::IntRect(1 * 75, 3 * 75, 75, 75));
             sprite.move(0, -kVel);
-            if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
+            if(colision(sprite, sprite2)){
                 sprite.move(0, kVel);
             }
            if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){
@@ -157,7 +145,7 @@ int main() {
             sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
             sprite2.setTextureRect(sf::IntRect(4.5 * 75, 0 * 75, 75, 75));
             sprite.move(0, kVel);
-            if(sprite.getGlobalBounds().intersects(sprite2.getGlobalBounds())){
+            if(colision(sprite, sprite2)){
                 sprite.move(0, -kVel);
             }
               if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){ 

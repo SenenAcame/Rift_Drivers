@@ -175,3 +175,6 @@ El pendejo de Joan no sabe como funciona la velocidad negativa.
 
 # 8/04/2022 Senén Martinez Acame (30min)
 He creado el setup.sh con los comando para descargar y guardar las imagenes que usamos.
+
+# 9/04/2022 Joan Pascual Izquierdo (45 min)
+He estado probando para que calcule la colisión con el mapa de textura con los pixeles de los 4 extremos y no consigo que funcione. Lo otro que he hecho es que las colisiones entre otros coches se comprueben en un método aparte, sólo hay que llamar a colision(sprite1, sprite2) y ya estaría
