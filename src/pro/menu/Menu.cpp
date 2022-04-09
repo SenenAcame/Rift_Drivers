@@ -1,6 +1,7 @@
 #include "SFML/Graphics.hpp"
 #include <iostream>
 #include "Menu.h"
+#include "menu_empezar.h"
 
 Menu::Menu(float width, float heigth)
 {   
