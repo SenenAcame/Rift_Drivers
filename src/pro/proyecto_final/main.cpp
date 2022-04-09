@@ -113,6 +113,7 @@ int main() {
     exit(0);
   }
 
+  sf::Sprite spr2(tex);
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
   //Le pongo el centroide donde corresponde
@@ -123,45 +124,15 @@ int main() {
   sprite.setPosition(25*320+320/2, 25*320+320/2);
   camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
-  string mapas[3] = {"../resources/curva_derecha.xml","../resources/curva_abajo.xml","../resources/zigzag.xml"};
-  string mapa[1] = {"../resources/curva_abajo.xml"};
-
   //inicio un menu
   //Menu menu(window.getSize().x, window.getSize().y);
 
-  vehiculo *coche = new vehiculo(1,2,3,"sprite");
-  //ia *ene = new ia(mapas,sizeof(mapas)/sizeof(*mapas),coche);
+  vehiculo *coche = new vehiculo(1,2,3,"../resources/sprites.png",spr2);
   Circuito *cir = new Circuito();
   cir->CrearMapa();
   cir->montaMapa();
   bool pista=true;
   ia *ene = new ia(cir,coche);
-  
-  
-  /*
-  cout << ene->getSize() << endl;
-  cout << ene->getList()[0][0] << " , " << ene->getList()[0][1] << endl;
-
-  ene->setList(mapa,sizeof(mapa)/sizeof(*mapa));
-
-  cout << ene->getSize() << endl;
-  cout << ene->getList()[0][0] << " , " << ene->getList()[0][1] << endl;
-  */
-
-  //ene->~ia();
-
-  //cout << "Enemigo eliminado" << endl;
-  /*
-  string letra = "3,2";
-  char let = letra.at(0);
-  int num = let-48;
-  cout << num << endl;
-
-
-  char let2 = letra.at(2);
-  int num2 = let2-48;
-  cout << num2 << endl;
-  */
   
  //Creamos clase circuito
     //Circuito circuito=Circuito();
@@ -176,8 +147,9 @@ int main() {
   //float rot = sprite.getRotation();
   float rot = -90.00f;
   sprite.setRotation(rot);
+  float speed = 0.0f;
 
-   float speed = 0.0f;
+  //float gir = 10.0f;
 
   sf::Clock clock;
   sf::Clock updateClock;
@@ -205,11 +177,17 @@ int main() {
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
         sprite.rotate(-15.0f);
         rot = sprite.getRotation();
+        //Giro de la camara y minimapa
+        camara.rotate(-15.0f);
+        minimapa.rotate(-15.0f);
       }
 
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
         sprite.rotate(+15.0f);
         rot = sprite.getRotation();
+        //Giro de la camara y minimapa
+        camara.rotate(+15.0f);
+        minimapa.rotate(+15.0f);
       }
       
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
@@ -252,6 +230,7 @@ int main() {
         cir->CrearMapa();
         cir->montaMapa();
         pista=true;
+        ene->~ia();
         ene = new ia(cir,coche);
         speed=0;
       }
@@ -272,6 +251,7 @@ int main() {
       ene->dibujaRecorrido(&window);
     }
     window.draw(sprite);
+    window.draw(ene->getVehi()->getImagen());
 
     window.setView(minimapa);
     if(pista){

@@ -119,7 +119,7 @@ std::string Circuito::BuscaCacho(int entrada){
             //std::cerr << cacho<<"\n";
             pasa=CompruebaCacho(cacho);
         }
-        std::cerr << cacho<<"\n";
+        //std::cerr << cacho<<"\n";
     }
     return cacho;
 }
