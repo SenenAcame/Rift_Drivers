@@ -174,4 +174,7 @@ Arreglado lo de repetir, he vuelto a poner que pulsando un botón se genere un m
 El pendejo de Joan no sabe como funciona la velocidad negativa.
 
 # 8/04/2022 Senén Martinez Acame (30min)
-He creado el setup.sh con los comando para descargar y guardar las imagenes que usamos.
+He creado el setup.sh con los comandos para descargar y guardar las imagenes que usemos.
+
+# 9/04/2022 Senén Martinez Acame (1h)
+He modificado Vehiculo para que tenga un sprite y asi poder hacer pruebas de movimiento con la IA.
