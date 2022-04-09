@@ -100,8 +100,6 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
-<<<<<<< HEAD
-=======
 //incluir nuestras carpetas
 #include "Mejoras/mejora.h"
 #include "IA/ia.h"
@@ -110,7 +108,6 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 #include "Poderes/poderes.h"
 //#include "Vehiculo/vehiculo.h"
 #include "Circuito/circuito.h"
->>>>>>> c75a7add677ea04b257d94b6ac66793bad1423f8
 
 
 //#define kVel 5
