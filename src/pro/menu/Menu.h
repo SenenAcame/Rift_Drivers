@@ -1,5 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
+#include "menu_empezar.h"
 #define MAX_NUMBER_OF_ITEMS 3
 
 class Menu
@@ -14,6 +15,7 @@ class Menu
         void MoveDown();
         int GetPressedItem() {return selectedItemIdex; }
         Menu(float width, float height);
+        //menu_empezar();
         ~Menu();
 
     private:

@@ -1,11 +1,19 @@
-/*
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
-//incluyo mi menu
-#include "Menu.h"
-
-#include "include/config.h"
+//#include "include/config.h"
 #include "ej_modulos/mimodulo.h"
+
+#include "IA/ia.h"
+//incluir nuestras carpetas
+#include "Mejoras/mejora.h"
+#include "Juego/juego.h"
+#include "Menu/menu.h"
+#include "Poderes/poderes.h"
+#include "Vehiculo/vehiculo.h"
+#include "Circuito/circuito.h"
+#include "Juego/Manejador.h"
+#include "Motor/Motor.h"
 
 //#define kVel 5
 
@@ -13,20 +21,30 @@ int main()
 {
   //creo la ventana
   sf::RenderWindow window(sf::VideoMode(640, 680), "VENTANA MENU");
- 
+  Menu * Menu = Menu::Instance();
+  Motor * motor = Motor::instance();
+  juego * juego = juego::instance();
+  Manejador * instancia = Manejador::instancia();
+  instancia->cambiarEstado(Menu);
+
 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 
 }
-  Menu menu(window.getSize().x, window.getSize().y);
+  //Menu menu(window.getSize().x, window.getSize().y);
   //creo singletons
-  //Transicion* trans = Transicion::instancia();
-
+  /*
+  Menu *menu1 = Menu::Instance();
+  Menu *menu2 = menu1->Instance();
+  Menu &ref = * Menu::Instance();
+  */
+ 
   while(window.isOpen())
   {
     sf::Event event;
-
+  juego->circuito->CrearMapa();
     while(window.pollEvent(event))
     {
+      /*
       switch (event.type)
       {
       case sf::Event::Closed:
@@ -38,7 +56,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
         switch (event.key.code)
         {
         case sf::Keyboard::Up:
-          menu.MoveUp();
+          Menu.MoveUp();
           break;
         
         case sf::Keyboard::Down:
@@ -50,7 +68,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
             case 0:
               std::cout <<"Has seleccionado emmpezar" << std::endl;
               //Menu_empezar.draw(window);
-              //dibujo el otro menu
+              //dibujo el otro Menu
                   //window.clear();
               break;
             case 1:
@@ -63,24 +81,27 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
           }
         break;
         }
-      
+        */
       
       
       }
     }
     window.clear();
-    menu.draw(window);
+   // menu.draw(window);
     window.display();
   }
   //return 0;
-}
-*/
+
+
+/*
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <math.h>
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
+<<<<<<< HEAD
+=======
 //incluir nuestras carpetas
 #include "Mejoras/mejora.h"
 #include "IA/ia.h"
@@ -89,8 +110,10 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 #include "Poderes/poderes.h"
 //#include "Vehiculo/vehiculo.h"
 #include "Circuito/circuito.h"
+>>>>>>> c75a7add677ea04b257d94b6ac66793bad1423f8
 
-#define kVel 5
+
+//#define kVel 5
 
 int main() {
 
@@ -140,7 +163,12 @@ int main() {
     //Circuito circuito=Circuito();
     //bool pista=false;
 
+<<<<<<< HEAD
+  //inicio un menu
+  menu menu(window.getSize().x, window.getSize().y);
+=======
   sf::Vector2f position, previous;
+>>>>>>> c75a7add677ea04b257d94b6ac66793bad1423f8
 
   position.x = 25*320+320/2;
   position.y = 25*320+320/2;
@@ -273,3 +301,4 @@ int main() {
 
   return 0;
 }
+*/
