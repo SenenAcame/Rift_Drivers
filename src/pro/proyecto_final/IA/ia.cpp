@@ -5,6 +5,10 @@
 #include "../tinyxml/tinyxml2.h"
 
 #define TamTile 320
+#define kVel 1
+#define Pi 3.14159265
+#define MARGEN 10
+
 using namespace tinyxml2;
 /*
 ia::ia(string maps[],int leng, vehiculo *car){
@@ -68,9 +72,11 @@ ia::ia(Circuito *world, vehiculo *car){
     setList(world);
     setVehi(car);
     setCont(0);
+    calcularDirc();
 }
 
 void ia::setList(Circuito *world){
+    
     if(list!=0){
         deleteList();
     }
@@ -140,6 +146,14 @@ int ia::getCont(){
     return cont;
 }
 
+void ia::setAngle(int a){
+    angle = a;
+}
+
+int ia::getAngle(){
+    return angle;
+}
+
 void ia::setVehi(vehiculo *car){
     vehi = car;
 }
@@ -187,6 +201,41 @@ void ia::dibujaRecorrido(sf::RenderWindow *vent){
     }
     vent->draw(lineas,size,sf::LinesStrip);
 }
+
+void ia::seguirRuta(){
+    if(cont<size){
+        siguienteNodo();
+        if(abs(vehi->getImagen().getPosition().x-list[cont][0])<MARGEN && 
+           abs(vehi->getImagen().getPosition().y-list[cont][1])<MARGEN){
+               cont++;
+               calcularDirc();
+        }
+    }
+}
+
+void ia::siguienteNodo(){
+    //int angulo = cambiarDirecc();
+    //if(abs(angulo-angle)>1){
+        //angle=angulo-90;
+    //}
+    float vx = kVel*cos(angle);
+    float vy = kVel*sin(angle);
+    //cout << "Velocidad : " << vx << " , " << vy << endl;
+    getVehi()->moverIA(vx,vy);
+}
+
+void ia::calcularDirc(){
+    //cout << "Posicion: " << vehi->getImagen().getPosition().x << " , " << vehi->getImagen().getPosition().y << endl;
+    //cout << "Siguiente punto: " << list[cont][0] << " , " << list[cont][1] << endl;
+    float x = vehi->getImagen().getPosition().x - list[cont][0];
+    float y = vehi->getImagen().getPosition().y - list[cont][1];
+    //cout << "Distancia: " << x << " , " << y << endl;
+    angle = atan(y/x);
+    cout << angle << endl;
+    //cout << "Angulo: " << ang << endl;
+}
+
+
 
 void ia::deleteList(){
     for(int i=0; i<size; i++){

@@ -69,6 +69,10 @@ void vehiculo::setImagen(sf::Sprite &sf){
 sf::Sprite vehiculo::getImagen(){
     return imagen;
 }
+
+void vehiculo::moverIA(float vx, float vy){
+    imagen.move(vx,vy);
+}
 //Fin
 
 void vehiculo::setReloj(){

@@ -181,3 +181,6 @@ He modificado Vehiculo para que tenga un sprite y asi poder hacer pruebas de mov
 
 # 9/04/2022 Joan Pascual Izquierdo (45 min)
 He estado probando para que calcule la colisión con el mapa de textura con los pixeles de los 4 extremos y no consigo que funcione. Lo otro que he hecho es que las colisiones entre otros coches se comprueben en un método aparte, sólo hay que llamar a colision(sprite1, sprite2) y ya estaría
+
+# 9/04/2022 Senén Martinez Acame (1h 15min)
+Estoy intentando usar lo que tengo en el prototipo de la IA para recorrer la ruta, pero no consigo que funcione bien, me esta dando problemas los angulos del vehiculo con respecto al punto al que tiene que ir.

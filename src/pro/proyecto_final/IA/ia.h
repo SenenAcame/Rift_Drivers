@@ -12,6 +12,7 @@ class ia{
         int size;
         float **list;
         vehiculo *vehi;
+        int angle;
 
     public: 
         //Obsoletas
@@ -31,14 +32,19 @@ class ia{
         void setCont(int con);
         int getCont();
 
+        void setAngle(int ang);
+        int getAngle();
+
         void setVehi(vehiculo *car);
         vehiculo *getVehi();
         
         int contarPuntos(Circuito *mundo);
         int *posicionesMapa(Circuito *mundo);
         void dibujaRecorrido(sf::RenderWindow *wind);
+        void seguirRuta();
+        void siguienteNodo();
+        void calcularDirc();
 
         void deleteList();
-
         ~ia();
 };
