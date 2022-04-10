@@ -184,3 +184,6 @@ He estado probando para que calcule la colisión con el mapa de textura con los 
 
 # 9/04/2022 Senén Martinez Acame (1h 15min)
 Estoy intentando usar lo que tengo en el prototipo de la IA para recorrer la ruta, pero no consigo que funcione bien, me esta dando problemas los angulos del vehiculo con respecto al punto al que tiene que ir.
+
+# 9/04/2022 Senén Martinez Acame (2h)
+He intentado implementar el recorrido del prototipo en el proyecto final. No funciona muy bien, y no entiendo el motivo, he estado 2 horas probando cosas, pero no he conseguido arreglarlo. Si el lunes no consigo solucionarlo, le preguntare a Fidel cual puede ser el problema.

@@ -1,11 +1,11 @@
-
+/*
 #include <SFML/Graphics.hpp>
 #include <iostream>
 //#include "include/config.h"
 #include "ej_modulos/mimodulo.h"
 
-#include "IA/ia.h"
 //incluir nuestras carpetas
+#include "IA/ia.h"
 #include "Mejoras/mejora.h"
 #include "Juego/juego.h"
 #include "Menu/menu.h"
@@ -30,6 +30,7 @@ int main()
 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 
 }
+*/
   //Menu menu(window.getSize().x, window.getSize().y);
   //creo singletons
   /*
@@ -37,13 +38,14 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
   Menu *menu2 = menu1->Instance();
   Menu &ref = * Menu::Instance();
   */
- 
+/*
   while(window.isOpen())
   {
     sf::Event event;
   juego->circuito->CrearMapa();
     while(window.pollEvent(event))
     {
+*/
       /*
       switch (event.type)
       {
@@ -83,7 +85,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
         }
         */
       
-      
+/*
       }
     }
     window.clear();
@@ -91,9 +93,9 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
     window.display();
   }
   //return 0;
+*/
 
 
-/*
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <math.h>
@@ -160,12 +162,9 @@ int main() {
     //Circuito circuito=Circuito();
     //bool pista=false;
 
-<<<<<<< HEAD
   //inicio un menu
-  menu menu(window.getSize().x, window.getSize().y);
-=======
+  //menu menu(window.getSize().x, window.getSize().y);
   sf::Vector2f position, previous;
->>>>>>> c75a7add677ea04b257d94b6ac66793bad1423f8
 
   position.x = 25*320+320/2;
   position.y = 25*320+320/2;
@@ -298,4 +297,3 @@ int main() {
 
   return 0;
 }
-*/
