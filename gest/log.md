@@ -218,4 +218,3 @@ Se ha modificado los MakeLists de las carpetas juego y motor. He intentado soluc
 
 # 11/04/2022 Sergio Tortajada Santonja (1h 30 min)
 Segmentos de hielo en el mapa.
-
