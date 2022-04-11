@@ -8,8 +8,8 @@
 
 using namespace tinyxml2;
 
-#define kVel 10
-#define MARGEN 50
+#define kVel 2
+#define MARGEN 10
 
 int main() {
   //int margen = 50;

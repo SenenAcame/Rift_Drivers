@@ -38,6 +38,7 @@ class vehiculo{
         //Senen
         void setImagen(sf::Sprite &tx);
         sf::Sprite getImagen();
+        void moverIA(float x, float y);
         //Fin
 
         void setReloj();

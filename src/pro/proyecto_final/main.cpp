@@ -1,9 +1,10 @@
-
+/*
 #include <SFML/Graphics.hpp>
 #include <iostream>
 //#include "include/config.h"
 #include "ej_modulos/mimodulo.h"
 //incluir nuestras carpetas
+#include "IA/ia.h"
 #include "Mejoras/mejora.h"
 #include "Juego/juego.h"
 #include "Menu/menu.h"
@@ -24,21 +25,54 @@ int main()
   juego* juego = juego::instance();
 
   while(motor->getOpen())
+if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
+
+}
+*/
+  //Menu menu(window.getSize().x, window.getSize().y);
+  //creo singletons
+  /*
+  Menu *menu1 = Menu::Instance();
+  Menu *menu2 = menu1->Instance();
+  Menu &ref = * Menu::Instance();
+  */
+/*
+  while(window.isOpen())
   {
     sf::RenderWindow* window = motor->getVentana();
     sf::Event event;
 
     while(window->pollEvent(event))
     {
-      switch(event.type)
+*/
+      /*
+      switch (event.type)
       {
           case sf::Event::EventType::Closed :
             window->close();
           break;
 
-      :
-          default:
-          break;
+        case sf::Keyboard::Key::Enter:
+          switch (menu.GetPressedItem()){
+            case 0:
+              std::cout <<"Has seleccionado emmpezar" << std::endl;
+              //Menu_empezar.draw(window);
+              //dibujo el otro Menu
+                  //window.clear();
+              break;
+            case 1:
+              std::cout <<"Has seleccionado las opciones" << std::endl;
+              break;
+            case 2:
+              std::cout <<"salir" << std::endl;
+              window.close();
+              break;
+          }
+        break;
+        }
+        */
+      
+/*
       }
     }
     window->display();
@@ -50,9 +84,9 @@ int main()
     //window.display();
   }
   //return 0;
+*/
 
 
-/*
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <math.h>
@@ -101,6 +135,7 @@ int main() {
   sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(25*320+320/2, 25*320+320/2);
+  sprite.scale(0.75,0.75);
   camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
   //inicio un menu
@@ -111,6 +146,7 @@ int main() {
   cir->CrearMapa();
   cir->montaMapa();
   bool pista=true;
+  
   ia *ene = new ia(cir,coche);
   
  //Creamos clase circuito
@@ -118,7 +154,7 @@ int main() {
     //bool pista=false;
 
   //inicio un menu
-  menu menu(window.getSize().x, window.getSize().y);
+  //menu menu(window.getSize().x, window.getSize().y);
   sf::Vector2f position, previous;
 
   position.x = 25*320+320/2;
@@ -130,7 +166,7 @@ int main() {
   sprite.setRotation(rot);
   float speed = 0.0f;
 
-  //float gir = 10.0f;
+  float gir = 10.0f;
 
   sf::Clock clock;
   sf::Clock updateClock;
@@ -141,6 +177,8 @@ int main() {
   while (window.isOpen()){
 
     sf::Event e;
+
+    ene->seguirRuta();
 
     while (window.pollEvent(e))
       if (e.type == sf::Event::Closed)
@@ -156,19 +194,19 @@ int main() {
       prev = rot;
 
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-        sprite.rotate(-15.0f);
+        sprite.rotate(-gir);
         rot = sprite.getRotation();
         //Giro de la camara y minimapa
-        camara.rotate(-15.0f);
-        minimapa.rotate(-15.0f);
+        camara.rotate(-gir);
+        minimapa.rotate(-gir);
       }
 
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-        sprite.rotate(+15.0f);
+        sprite.rotate(+gir);
         rot = sprite.getRotation();
         //Giro de la camara y minimapa
-        camara.rotate(+15.0f);
-        minimapa.rotate(+15.0f);
+        camara.rotate(+gir);
+        minimapa.rotate(+gir);
       }
       
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
@@ -250,4 +288,3 @@ int main() {
 
   return 0;
 }
-*/
