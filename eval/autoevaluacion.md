@@ -11,5 +11,9 @@ Al principio iba perdido porque no sabía por donde empezar pero después de ver
 
 ## Miembro : Joan Pascual Izquierdo
 Empecé bastante perdido porque hacía varios años que no programaba en c++ o similares, pero ahora ya voy empezando a entender como va todo(salvo en cunado utilizar punteros porque todavía no los he utilizado). Lo único es que me estoy quedando demasiado enganchado en solucionar algunos detalles que pueden ser importantes, como el de colisiones con mapas de dureza.
+
+## Miembro: Angelica Quaranta Barba
+Con el prototipo logré lo que me propuse, previamente buscando información y ejemplos para lo que tenía en mente hacer. Cuando quise hacer que al pulsar una opción cambiara la información que mostraba en la pantalla y querer llamar a los objetos de mis compañeros para empezar a juntarlo fue cuando se me complicó porque no entendía cómo se hacía. Después de ver referencias y leer información entendí cómo funciona teóricamente pero no logré entender porqué no funcionaba lo que probaba y todos los errores que me salían. No he conseguido implementar lo que me había propuesto y he notado que me ha faltado evolución a pesar del tiempo dedicado. Me he sentido algo perdida.
+
 # Autoevaluación general
 Requiere añadir una propuesta de nota sobre 10
