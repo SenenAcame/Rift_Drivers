@@ -3,11 +3,10 @@
 #include <iostream>
 
 #include "Manejador.h"
-#include "../Circuito/circuito.h"
-//#include "../IA/ia.h"
 //#include "../Mejoras/mejora.h"
+#include "../IA/ia.h"
 #include "../Poderes/poderes.h"
-//#include "../Vehiculo/vehiculo.h"
+
 
 #ifndef JUEGO_H
 #define JUEGO_H
@@ -16,6 +15,9 @@ class juego : public Estado
 {
 private:
     static juego* pinstance;
+    ia * ia;
+    mejora * mejora;
+
 protected:
     juego();
     ~juego();
@@ -24,11 +26,9 @@ public:
     void update(float deltaTime);
     void render(float porcentaje);
 
-    Circuito * circuito;
-    ia * ia;
-    mejora * mejora;
+    //ia * ia;
     //poderes * poderes; ----falta definirlo---
-    //vehiculo * vehiculo; ---falta definirlo---
+    vehiculo * vehiculo;
     //llamadas a las coliciones(?)
     
 };

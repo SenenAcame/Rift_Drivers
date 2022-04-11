@@ -10,6 +10,9 @@ add_subdirectory(IA)
 add_subdirectory(Vehiculo)
 add_subdirectory(tinyxml)
 add_subdirectory(Circuito)
+add_subdirectory(Juego)
+add_subdirectory(Menu)
+add_subdirectory(Motor)
 
 #Opciones a pasar al compilador de C++
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -Wall -Wextra")

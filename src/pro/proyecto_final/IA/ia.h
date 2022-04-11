@@ -21,7 +21,6 @@ class ia{
         int contarPuntos(string mapas[], int num);
         */
         ia(Circuito *mundo, vehiculo *car);
-
         void setList(Circuito *mundo);
         float **getList();
 

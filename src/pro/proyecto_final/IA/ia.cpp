@@ -64,6 +64,7 @@ int ia::contarPuntos(string maps[], int leng){
     return cont;
 }
 */
+
 ia::ia(Circuito *world, vehiculo *car){
     setList(world);
     setVehi(car);

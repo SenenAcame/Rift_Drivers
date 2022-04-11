@@ -11,11 +11,16 @@ private:
     sf::RenderWindow * ventana;
     bool instanced; //si esta instanciada
     static Motor* pinstance;
-protected:
-    Motor();
 public:
+    Motor();
     ~Motor();
     static Motor * instance();
+
+    void close();
+    void limpieza();
+    void mostrar();
+    bool getOpen();
+    sf::RenderWindow* getVentana(){return ventana;}
 };
 
 #endif

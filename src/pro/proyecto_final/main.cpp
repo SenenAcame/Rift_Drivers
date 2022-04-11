@@ -3,15 +3,11 @@
 #include <iostream>
 //#include "include/config.h"
 #include "ej_modulos/mimodulo.h"
-
-#include "IA/ia.h"
 //incluir nuestras carpetas
 #include "Mejoras/mejora.h"
 #include "Juego/juego.h"
 #include "Menu/menu.h"
 #include "Poderes/poderes.h"
-#include "Vehiculo/vehiculo.h"
-#include "Circuito/circuito.h"
 #include "Juego/Manejador.h"
 #include "Motor/Motor.h"
 
@@ -20,75 +16,38 @@
 int main() 
 {
   //creo la ventana
-  sf::RenderWindow window(sf::VideoMode(640, 680), "VENTANA MENU");
-  Menu * Menu = Menu::Instance();
+  //sf::RenderWindow window(sf::VideoMode(640, 680), "VENTANA MENU");
   Motor * motor = Motor::instance();
-  juego * juego = juego::instance();
+  Menu * Menu = Menu::Instance();
   Manejador * instancia = Manejador::instancia();
   instancia->cambiarEstado(Menu);
+  juego* juego = juego::instance();
 
-if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
-
-}
-  //Menu menu(window.getSize().x, window.getSize().y);
-  //creo singletons
-  /*
-  Menu *menu1 = Menu::Instance();
-  Menu *menu2 = menu1->Instance();
-  Menu &ref = * Menu::Instance();
-  */
- 
-  while(window.isOpen())
+  while(motor->getOpen())
   {
+    sf::RenderWindow* window = motor->getVentana();
     sf::Event event;
-  juego->circuito->CrearMapa();
-    while(window.pollEvent(event))
+
+    while(window->pollEvent(event))
     {
-      /*
-      switch (event.type)
+      switch(event.type)
       {
-      case sf::Event::Closed:
-      window.close();
-      break;
-      
-
-      case sf::Event::KeyReleased:
-        switch (event.key.code)
-        {
-        case sf::Keyboard::Up:
-          Menu.MoveUp();
-          break;
-        
-        case sf::Keyboard::Down:
-          menu.MoveDown();
+          case sf::Event::EventType::Closed :
+            window->close();
           break;
 
-        case sf::Keyboard::Key::Enter:
-          switch (menu.GetPressedItem()){
-            case 0:
-              std::cout <<"Has seleccionado emmpezar" << std::endl;
-              //Menu_empezar.draw(window);
-              //dibujo el otro Menu
-                  //window.clear();
-              break;
-            case 1:
-              std::cout <<"Has seleccionado las opciones" << std::endl;
-              break;
-            case 2:
-              std::cout <<"salir" << std::endl;
-              window.close();
-              break;
-          }
-        break;
-        }
-        */
-      
-      
+      :
+          default:
+          break;
       }
     }
-    window.clear();
+    window->display();
+  }
+  
+  
+    //window.clear();
    // menu.draw(window);
-    window.display();
+    //window.display();
   }
   //return 0;
 
@@ -100,8 +59,6 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
-<<<<<<< HEAD
-=======
 //incluir nuestras carpetas
 #include "Mejoras/mejora.h"
 #include "IA/ia.h"
@@ -110,7 +67,6 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 #include "Poderes/poderes.h"
 //#include "Vehiculo/vehiculo.h"
 #include "Circuito/circuito.h"
->>>>>>> c75a7add677ea04b257d94b6ac66793bad1423f8
 
 
 //#define kVel 5
@@ -161,12 +117,9 @@ int main() {
     //Circuito circuito=Circuito();
     //bool pista=false;
 
-<<<<<<< HEAD
   //inicio un menu
   menu menu(window.getSize().x, window.getSize().y);
-=======
   sf::Vector2f position, previous;
->>>>>>> c75a7add677ea04b257d94b6ac66793bad1423f8
 
   position.x = 25*320+320/2;
   position.y = 25*320+320/2;
