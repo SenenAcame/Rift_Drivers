@@ -190,3 +190,6 @@ He intentado implementar el recorrido del prototipo en el proyecto final. No fun
 
 # 10/04/2022 Senén Martinez Acame (1h 10min)
 He podido solucionar el problema del recorrido, ahora funciona perfectamente. Tambien he organizado y pulido la clase IA para que quede mejor estructurada.
+
+# 10/04/2022 Joan Pascual Izquierdo (3h 30 min)
+He estado intentando que funcione las colisiones de mejor forma y no lo he cnseguido, no he llegado a tener un mejor resultado, siepre fallaba en algo y provocaba lo siguiente: Violación de segmento (`core' generado). Así que, al final, lo dejé como antes
