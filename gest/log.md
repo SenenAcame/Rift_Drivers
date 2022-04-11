@@ -216,3 +216,6 @@ He intentando crear un motor y que desde juego llamara e instanciara al resto de
 # 11/04/2022 Angelica Quaranta Barba (2h 30 min)
 Se ha modificado los MakeLists de las carpetas juego y motor. He intentado solucionar los errores y conflictos generados entre las clases y llamadas entre ellas. Ya no me aperece el error 'sin definir', pero aún existen conflictos que no me permiten ejecutar el juego. No he conseguido que se mostrara el menú y el resto de cosas, creo que no tengo bien implementado los singleton y las instancias.
 
+# 11/04/2022 Sergio Tortajada Santonja (1h 30 min)
+Segmentos de hielo en el mapa.
+
