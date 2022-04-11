@@ -1,4 +1,3 @@
-/*
 #include <SFML/Graphics.hpp>
 #include <iostream>
 //#include "include/config.h"
@@ -22,13 +21,10 @@ int main()
   Menu * Menu = Menu::Instance();
   Manejador * instancia = Manejador::instancia();
   instancia->cambiarEstado(Menu);
-  juego* juego = juego::instance();
+  juego * juego = juego::instance();
 
   while(motor->getOpen())
-if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 
-}
-*/
   //Menu menu(window.getSize().x, window.getSize().y);
   //creo singletons
   /*
@@ -84,9 +80,9 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
     //window.display();
   }
   //return 0;
-*/
 
 
+/*
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <math.h>
@@ -288,3 +284,4 @@ int main() {
 
   return 0;
 }
+*/

@@ -1,14 +1,19 @@
 #include "juego.h"
-#include "Manejador.h"
-#include "../Menu/menu.h"
 
 juego * juego::pinstance = 0;
+
+juego* juego::instance()
+{
+    if(pinstance == 0)
+    {
+        pinstance = new juego();
+    }
+    return pinstance;
+}
+
 juego::juego()
 {
-    circuito = new Circuito();
-    circuito->CrearMapa();
-    circuito->montaMapa();
-    //circuito->dibujaMapa();
-    
+    //vehiculo = new vehiculo(15.0, 2.0, 15.0, );
+
     
 }

@@ -1,5 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#ifndef  VEHICULO_H
+#define VEHICULO_H
 
 using namespace std;
 
@@ -44,3 +46,5 @@ class vehiculo{
         void setReloj();
         float getReloj();
 };
+
+#endif

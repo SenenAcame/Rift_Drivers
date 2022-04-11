@@ -3,6 +3,7 @@
 #define MAX_NUMBER_OF_ITEMS 3
 
 #include "../Juego/Manejador.h"
+#include "../Motor/Motor.h"
 
 #ifndef MENU_H
 #define MENU_H
@@ -13,7 +14,6 @@ class Menu : public Estado
         //para cambiar de estado
         static Menu* Instance();
         void update(float deltaTime); //para el cambio de estado
-        void render(float num);
 
         void draw(sf::RenderWindow &window);
         void MoveUp();
