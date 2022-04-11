@@ -5,7 +5,7 @@
 juego * juego::pinstance = 0;
 juego::juego()
 {
-    circuito = new Circuito();
+    Circuito *circuito = new Circuito();
     circuito->CrearMapa();
     circuito->montaMapa();
     //circuito->dibujaMapa();

@@ -187,3 +187,6 @@ Estoy intentando usar lo que tengo en el prototipo de la IA para recorrer la rut
 
 # 9/04/2022 Senén Martinez Acame (2h)
 He intentado implementar el recorrido del prototipo en el proyecto final. No funciona muy bien, y no entiendo el motivo, he estado 2 horas probando cosas, pero no he conseguido arreglarlo. Si el lunes no consigo solucionarlo, le preguntare a Fidel cual puede ser el problema.
+
+# 10/04/2022 Senén Martinez Acame (1h 10min)
+He podido solucionar el problema del recorrido, ahora funciona perfectamente. Tambien he organizado y pulido la clase IA para que quede mejor estructurada.

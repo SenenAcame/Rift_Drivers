@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include "Manejador.h"
-//#include "../Mejoras/mejora.h"
+#include "../Mejoras/mejora.h"
 #include "../IA/ia.h"
 #include "../Poderes/poderes.h"
 

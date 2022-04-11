@@ -94,8 +94,8 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
 //incluir nuestras carpetas
-#include "Mejoras/mejora.h"
-#include "IA/ia.h"
+//#include "Mejoras/mejora.h"
+//#include "IA/ia.h"
 #include "Juego/juego.h"
 #include "Menu/menu.h"
 #include "Poderes/poderes.h"
@@ -175,7 +175,6 @@ int main() {
   const float timestep = 1.0f / 15.0f; 
   //Bucle del juego
   while (window.isOpen()){
-
     sf::Event e;
 
     ene->seguirRuta();
@@ -197,16 +196,20 @@ int main() {
         sprite.rotate(-gir);
         rot = sprite.getRotation();
         //Giro de la camara y minimapa
+        /*
         camara.rotate(-gir);
         minimapa.rotate(-gir);
+        */
       }
 
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
         sprite.rotate(+gir);
         rot = sprite.getRotation();
         //Giro de la camara y minimapa
+        /*
         camara.rotate(+gir);
         minimapa.rotate(+gir);
+        */
       }
       
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
@@ -267,7 +270,7 @@ int main() {
     window.setView(camara);
     if(pista){
       cir->dibujaMapa(&window);
-      ene->dibujaRecorrido(&window);
+      //ene->dibujaRecorrido(&window);
     }
     window.draw(sprite);
     window.draw(ene->getVehi()->getImagen());
@@ -275,13 +278,14 @@ int main() {
     window.setView(minimapa);
     if(pista){
       cir->dibujaMapa(&window);
-      ene->dibujaRecorrido(&window);
+      //ene->dibujaRecorrido(&window);
     }
     sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
     if(sprite.getRotation()<345 && sprite.getRotation()>0){
       sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));
     }
     window.draw(sprite);
+    window.draw(ene->getVehi()->getImagen());
 
     window.display();
   }
