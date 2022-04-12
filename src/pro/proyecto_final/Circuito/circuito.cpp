@@ -69,6 +69,7 @@ Circuito::Circuito(){
 void Circuito::CrearMapa(){
     int contador=0;
     int cachos=0;
+    nieve=false;
     std::string cacho=BuscaCacho(0);
     mapas.push_back(cacho);
     int buscar=1;

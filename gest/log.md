@@ -218,3 +218,6 @@ Se ha modificado los MakeLists de las carpetas juego y motor. He intentado soluc
 
 # 11/04/2022 Sergio Tortajada Santonja (1h 30 min)
 Segmentos de hielo en el mapa.
+
+# 12/04/2022 Joan Pascual Izquierdo (45 min)
+Arreglando gran parte de los problemas de las colisiones y empezando la solución final de éstas
