@@ -16,6 +16,7 @@
 
 int main() 
 {
+  //hola
   //creo la ventana
   //sf::RenderWindow window(sf::VideoMode(640, 680), "VENTANA MENU");
   Motor * motor = Motor::instance();
