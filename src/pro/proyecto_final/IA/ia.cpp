@@ -15,10 +15,11 @@ ia::ia(Circuito *world, vehiculo *car){
     setList(world);
     setVehi(car);
     setCont(0);
+    setDibCheck(true);
+    setSegCheck(true);
 }
 
 void ia::setList(Circuito *world){
-    
     if(list!=0){
         deleteList();
     }
@@ -60,8 +61,6 @@ void ia::setList(Circuito *world){
                     y--;
                 break;
             }
-            fichero=NULL;
-            grupo=NULL;
         }
     }
     setSize(cont);
@@ -95,6 +94,22 @@ vehiculo * ia::getVehi(){
     return vehi;
 }
 
+void ia::setDibCheck(bool check){
+    dibCheck = check;
+}
+
+bool ia::getDibCheck(){
+    return dibCheck;
+}
+
+void ia::setSegCheck(bool check){
+    segCheck = check;
+}
+
+bool ia::getSegCheck(){
+    return segCheck;
+}
+
 int ia::contarPuntos(Circuito *world){
     int cont=0; 
     for(int i=0; i<(int)world->getMapas().size(); i++){
@@ -107,8 +122,6 @@ int ia::contarPuntos(Circuito *world){
             for(XMLNode *hijo = grupo->FirstChild(); hijo; hijo = hijo->NextSibling()){
                 cont++;
             }
-            fichero=NULL;
-            grupo=NULL;
         }
     }
     return cont;
@@ -127,16 +140,18 @@ int *ia::posicionesMapa(Circuito *world){
 }
 
 void ia::dibujaRecorrido(sf::RenderWindow *vent){
-    sf::Vertex lineas[size];
-    for(int i=0; i<size; i++){
-        lineas[i].position = sf::Vector2f(list[i][0],list[i][1]);
-        lineas[i].color = sf::Color::Red;
+    if(dibCheck){
+        sf::Vertex lineas[size];
+        for(int i=0; i<size; i++){
+            lineas[i].position = sf::Vector2f(list[i][0],list[i][1]);
+            lineas[i].color = sf::Color::Red;
+        }
+        vent->draw(lineas,size,sf::LinesStrip);
     }
-    vent->draw(lineas,size,sf::LinesStrip);
 }
 
 void ia::seguirRuta(){
-    if(cont<size){
+    if(cont<size && segCheck){
         siguienteNodo();
         if(abs(vehi->getImagen().getPosition().x-list[cont][0])<MARGEN && abs(vehi->getImagen().getPosition().y-list[cont][1])<MARGEN){
             cont++;
@@ -170,4 +185,6 @@ ia::~ia(){
     setSize(0);
     setVehi(NULL);
     setCont(0);
+    setDibCheck(false);
+    setSegCheck(false);
 }

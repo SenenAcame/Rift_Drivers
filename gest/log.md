@@ -221,3 +221,6 @@ Segmentos de hielo en el mapa.
 
 # 12/04/2022 Joan Pascual Izquierdo (45 min)
 Arreglando gran parte de los problemas de las colisiones y empezando la solución final de éstas
+
+# 17/04/2022 Senén Martínez Acame (10 min)
+Implementado que se pueda activar y desactivar que se dibuje el recorrido con la O y que recorra el camino con la P.

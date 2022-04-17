@@ -12,6 +12,7 @@ class ia{
         int size;
         float **list;
         vehiculo *vehi;
+        bool dibCheck, segCheck;
 
     public: 
         ia(Circuito *mundo, vehiculo *car);
@@ -27,6 +28,12 @@ class ia{
 
         void setVehi(vehiculo *car);
         vehiculo *getVehi();
+
+        void setDibCheck(bool dib);
+        bool getDibCheck();
+
+        void setSegCheck(bool seg);
+        bool getSegCheck();
         
         int contarPuntos(Circuito *mundo);
         int *posicionesMapa(Circuito *mundo);

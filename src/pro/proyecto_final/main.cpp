@@ -257,6 +257,14 @@ int main() {
         speed=0;
       }
 
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){
+        ene->setDibCheck(!ene->getDibCheck());
+      }
+
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
+        ene->setSegCheck(!ene->getSegCheck());
+      }
+
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
         window.close();
       }
@@ -270,7 +278,7 @@ int main() {
     window.setView(camara);
     if(pista){
       cir->dibujaMapa(&window);
-      //ene->dibujaRecorrido(&window);
+      ene->dibujaRecorrido(&window);
     }
     window.draw(sprite);
     window.draw(ene->getVehi()->getImagen());
@@ -278,7 +286,7 @@ int main() {
     window.setView(minimapa);
     if(pista){
       cir->dibujaMapa(&window);
-      //ene->dibujaRecorrido(&window);
+      ene->dibujaRecorrido(&window);
     }
     sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
     if(sprite.getRotation()<345 && sprite.getRotation()>0){
