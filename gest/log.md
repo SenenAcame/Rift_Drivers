@@ -225,3 +225,6 @@ Arreglando gran parte de los problemas de las colisiones y empezando la solució
 # 17/04/2022 Senén Martínez Acame (1h 20 min)
 Implementado que se pueda activar y desactivar que se dibuje el recorrido con la O y que recorra el camino con la P.
 Modificado los archivos xml para que los puntos del recorrido esten mas suavizados y de una mejor sensacion de recorrido.
+
+# 19/04/2022 Joan Pascual Izquierdo (1h)
+He intentado arreglar el problema que había con la colisión de arriba cuando ponía que calculara la colisión con más de 2 puntos, no lo he conseguido, pero he encontrado otra solución, que la colisión de arriba la calcule con el centro (una solución equivalente al error, es decir, absurdo).

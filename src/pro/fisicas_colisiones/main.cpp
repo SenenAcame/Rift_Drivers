@@ -44,28 +44,32 @@ int colisionMapa(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, i
   }
   */
   int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty){
-  sf::Color color[2];
+  sf::Color color[4];
   int colision=0;
-  int i, j;
   bool negro=false;
   bool col=false;
-
-  color[0]=image1.getPixel(x1, y1);
-  //printf("color1: [ %d, %d, %d ]",color[0].r, color[0].g, color[0].b);
-  if((color[0].r==0) && (color[0].g==0) && (color[0].b==0)){
-    col=true;
-    negro=true;
-  }else if((color[0].r==204) && (color[0].g==204) && (color[0].b==204)){
-    col=true;
-  }  
-  if(col){
-    if(negro){
+  int x=(int)tx/2;
+  int y=(int)ty/2;
+  color[0]=image1.getPixel(x1-x, y1);
+  color[1]=image1.getPixel(x1+x, y1);
+  color[3]=image1.getPixel(x1, y1+y);
+  color[2]=image1.getPixel(x1, y1);
+  printf("color2: [ %d, %d, %d ]\n",color[2].r, color[2].g, color[2].b);
+  for(int i=0; i<4 && col==false;i++){
+    if((color[i].r==0) && (color[i].g==0) && (color[i].b==0)){
+      negro=true;
+      col=true;
+    }else if((color[i].r==204) && (color[i].g==204) && (color[i].b==204)){
+      col=true;
+    } 
+  } 
+  if(col==true){
+    if(negro==true){
       colision=2;
     }else{
       colision=1;
     }
   }
-
   return colision;
 }
 int main() {
@@ -190,14 +194,14 @@ int main() {
             if(colision(sprite, sprite2)){
                 sprite.move(0, kVel);
             }
-            //if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==2){
+              //if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==2){
             if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1])==2){
-             sprite.move(0, kVel);
-            }
-            //else if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==1){
-              else if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1])==1){
-             sprite.move(0, kVel/1.3);
-            }
+              sprite.move(0, kVel);
+             }
+              //else if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==1){
+              else if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1])==1){ 
+              sprite.move(0, kVel/1.3);
+             }
           break;
 
         case sf::Keyboard::Down:
