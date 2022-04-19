@@ -15,6 +15,7 @@ ia::ia(Circuito *world, vehiculo *car){
     setList(world);
     setVehi(car);
     setCont(0);
+    setAngulo(0);
     setDibCheck(true);
     setSegCheck(true);
 }
@@ -86,6 +87,14 @@ int ia::getCont(){
     return cont;
 }
 
+void ia::setAngulo(float a){
+    angulo = a;
+}
+
+int ia::getAngulo(){
+    return angulo;
+}
+
 void ia::setVehi(vehiculo *car){
     vehi = car;
 }
@@ -154,6 +163,7 @@ void ia::seguirRuta(){
     if(cont<size && segCheck){
         siguienteNodo();
         if(abs(vehi->getImagen().getPosition().x-list[cont][0])<MARGEN && abs(vehi->getImagen().getPosition().y-list[cont][1])<MARGEN){
+            girarVehiculo();
             cont++;
         }
     }
@@ -173,6 +183,16 @@ float ia::calcularDirc(){
     return angle;
 }
 
+void ia::girarVehiculo(){
+    float rot = calcularDirc();
+    rot = rot*180/Pi+90;
+    if(rot>180){
+        rot-=360;
+    }
+    vehi->rotarIA(rot-angulo);
+    setAngulo(rot);
+}
+
 void ia::deleteList(){
     for(int i=0; i<size; i++){
         delete[] list[i];
@@ -185,6 +205,7 @@ ia::~ia(){
     setSize(0);
     setVehi(NULL);
     setCont(0);
+    setAngulo(0);
     setDibCheck(false);
     setSegCheck(false);
 }

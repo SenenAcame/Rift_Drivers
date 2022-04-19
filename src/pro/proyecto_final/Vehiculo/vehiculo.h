@@ -39,6 +39,7 @@ class vehiculo{
         void setImagen(sf::Sprite &tx);
         sf::Sprite getImagen();
         void moverIA(float x, float y);
+        void rotarIA(float ang);
         //Fin
 
         void setReloj();

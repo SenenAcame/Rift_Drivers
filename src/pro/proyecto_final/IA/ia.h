@@ -12,6 +12,7 @@ class ia{
         int size;
         float **list;
         vehiculo *vehi;
+        float angulo;
         bool dibCheck, segCheck;
 
     public: 
@@ -25,6 +26,9 @@ class ia{
 
         void setCont(int con);
         int getCont();
+
+        void setAngulo(float ang);
+        int getAngulo();
 
         void setVehi(vehiculo *car);
         vehiculo *getVehi();
@@ -42,6 +46,7 @@ class ia{
         void seguirRuta();
         void siguienteNodo();
         float calcularDirc();
+        void girarVehiculo();
 
         void deleteList();
         ~ia();

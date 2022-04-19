@@ -228,3 +228,6 @@ Modificado los archivos xml para que los puntos del recorrido esten mas suavizad
 
 # 19/04/2022 Joan Pascual Izquierdo (1h)
 He intentado arreglar el problema que había con la colisión de arriba cuando ponía que calculara la colisión con más de 2 puntos, no lo he conseguido, pero he encontrado otra solución, que la colisión de arriba la calcule con el centro (una solución equivalente al error, es decir, absurdo).
+
+# 19/04/2022 Senén Martínez Acame (1h 10min)
+Añadido que ahora el sprite de la IA rota para orientarse en funcion de la direccion del camino que tiene que recorrer.
