@@ -16,7 +16,6 @@
 
 int main() 
 {
-  //hola
   //creo la ventana
   //sf::RenderWindow window(sf::VideoMode(640, 680), "VENTANA MENU");
   Motor * motor = Motor::instance();
@@ -122,18 +121,28 @@ int main() {
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
-  if (!tex.loadFromFile("../resources/sprites.png")) {
+  if (!tex.loadFromFile("../resources/cocherot.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+
+  sf::Texture tex2;
+  if (!tex2.loadFromFile("../resources/f1rot.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
 
   sf::Sprite spr2(tex);
   //Y creo el spritesheet a partir de la imagen anterior
-  sf::Sprite sprite(tex);
+  sf::Sprite sprite(tex2);
   //Le pongo el centroide donde corresponde
-  sprite.setOrigin(75 / 2, 75 / 2);
+  sprite.setOrigin(11, 8);
+  spr2.setOrigin(11.5f, 8);
+  sprite.setScale(3.5f, 3.5f);
+  spr2.setScale(3.5f, 3.5f);
   //Cojo el sprite que me interesa por defecto del sheet
-  sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+  sprite.setTextureRect(sf::IntRect(0 , 0, 22, 16));
+  spr2.setTextureRect(sf::IntRect(0 , 0, 23, 16));
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(25*320+320/2, 25*320+320/2);
   sprite.scale(0.75,0.75);
@@ -142,7 +151,7 @@ int main() {
   //inicio un menu
   //Menu menu(window.getSize().x, window.getSize().y);
 
-  vehiculo *coche = new vehiculo(1,2,3,"../resources/sprites.png",spr2);
+  vehiculo *coche = new vehiculo(1,2,3,"../resources/cocherot.png",spr2);
   Circuito *cir = new Circuito();
   cir->CrearMapa();
   cir->montaMapa();
@@ -233,12 +242,19 @@ int main() {
       }
 
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)==false){
-        if(speed>0.0f && speed-5.0f>=0){
+        if(speed>0.0f){
           speed -= 5.0f;
+        }
+        if(speed<1.0f){
+          speed = 0.0f;
         }
         if(speed>5.0f){
           position.x += cos(sprite.getRotation()*M_PI/180)*speed;
           position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+        }
+        if(speed==0.0f){
+          position.x -= cos(sprite.getRotation()*M_PI/180)*5.0f;
+          position.y -= sin(sprite.getRotation()*M_PI/180)*5.0f;
         }
       }
 
@@ -256,14 +272,6 @@ int main() {
         ene->~ia();
         ene = new ia(cir,coche);
         speed=0;
-      }
-
-      if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){
-        ene->setDibCheck(!ene->getDibCheck());
-      }
-
-      if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
-        ene->setSegCheck(!ene->getSegCheck());
       }
 
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){

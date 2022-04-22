@@ -61,8 +61,11 @@ string vehiculo::getSprite(){
 //Senen
 void vehiculo::setImagen(sf::Sprite &sf){
     imagen = sf;
-    imagen.setOrigin(3 * 75 / 4, 75 / 2);
-    imagen.setTextureRect(sf::IntRect(1 * 75, 0 * 75, 75, 75));
+    imagen.setOrigin(11.5f, 8);
+    float rot = -90.00f;
+    imagen.setRotation(rot);
+    imagen.setScale(2.5f, 2.5f);
+    imagen.setTextureRect(sf::IntRect(0 , 0, 23, 16));
     imagen.setPosition(25*320+320/2, 25*320+320/2+320);
 
     //cout << "Enlazado" << endl;
