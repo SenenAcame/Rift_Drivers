@@ -231,3 +231,6 @@ He intentado arreglar el problema que había con la colisión de arriba cuando p
 
 # 19/04/2022 Senén Martínez Acame (1h 10min)
 Añadido que ahora el sprite de la IA rota para orientarse en funcion de la direccion del camino que tiene que recorrer.
+
+# 25/04/2022 Joan Pascual Izquierdo (1h)
+He intentado incorporar las colisiones en el proyecto final pero, entre el movimiento y el coger los trozos de vía correspondientes que no estoy viendo cómo hacerlo ahora mismo, lo único que he hecho ha sido incorporar los métodos de colisiones en el main del proyecto final

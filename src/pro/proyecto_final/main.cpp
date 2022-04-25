@@ -104,6 +104,40 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 
 
 //#define kVel 5
+bool colisionCoche(sf::Sprite &image1, sf::Sprite &image2){
+  bool colision=image1.getGlobalBounds().intersects(image2.getGlobalBounds());
+  return colision;
+}
+
+int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty){
+  sf::Color color[4];
+  int colision=0;
+  bool negro=false;
+  bool col=false;
+  int x=(int)tx/2;
+  int y=(int)ty/2;
+  color[0]=image1.getPixel(x1-x, y1);
+  color[1]=image1.getPixel(x1+x, y1);
+  color[3]=image1.getPixel(x1, y1+y);
+  color[2]=image1.getPixel(x1, y1);
+  printf("color2: [ %d, %d, %d ]\n",color[2].r, color[2].g, color[2].b);
+  for(int i=0; i<4 && col==false;i++){
+    if((color[i].r==0) && (color[i].g==0) && (color[i].b==0)){
+      negro=true;
+      col=true;
+    }else if((color[i].r==204) && (color[i].g==204) && (color[i].b==204)){
+      col=true;
+    } 
+  } 
+  if(col==true){
+    if(negro==true){
+      colision=2;
+    }else{
+      colision=1;
+    }
+  }
+  return colision;
+}
 
 int main() {
 
