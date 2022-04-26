@@ -44,4 +44,6 @@ class vehiculo{
 
         void setReloj();
         float getReloj();
+
+        ~vehiculo();
 };
