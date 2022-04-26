@@ -68,6 +68,9 @@ Seguimos probando con hitboxes (no actualicé el log en su momento)
 ## 9/3/2022 Joan Pascual Izquierdo (30min)
 busqué información de por que no me funcionaba bien y era porque compobaba si el sprite1 colisionaba con sigo mismo, así que daba que sí y, por eso, no se movía (soy muy tonto).
 
+# 9/03/2022 Angelica Quaranta Barba (30 min)
+He intentado añadir la seleccion para los circuitos en el menú para que al pulsar me mostrara un mapa de circuito. No he logrado que cambiara.
+
 ## 11/03/2022 Sergio Tortajada Santonja (2h)
 Me he visto muchos videos de como pintar mapas con sfml (no se si cuenta para el log)
 
@@ -91,6 +94,10 @@ La camara sigue al personaje y un par de arreglos al procedural(aun no lo he pro
 
 ## 12/03/2022 Miguel Ángel Ferrer García de la Reina @(2h)
 Intentando arreglar el problema del giro pero aún no he podido. Aceleracion y freno conseguidas;
+
+# 12/03/2022 Angelica Quaranta Barba (40 min)
+Implementando estados y singleton para hacer instancias con las clases.
+
 
 ## 13/03/2022 Sergio Tortajada Santonja (20min)
 Segmentos del circuitos creados en png
@@ -143,8 +150,14 @@ Mapas en blanco y negro hechos
 # 2/04/2022 Sergio Tortajada Santonja(1h 30min)
 Dibujado del mapa desde la clase circuito y pasado a developer
 
+# 2/04/2022 Angelica Quaranta Barba (2h)
+Probando a unir las clases del resto de compañeros para invocar instancias sus respectivas estancias y mostrarlo. AL principio me daba error al crearlas. 
+
 # 3/04/2022 Miguel Ángel Ferrer García de la Reina @(1h)
 He creado las variables en la clase vehiculo
+
+# 3/04/2022 Angelica Quaranta Barba (1h)
+Arreglé la creación de las instnacias, las definí correctamente en los .h e inicialicé en los .cpp. Aún seguía sin mostrar nada, no ejecutaba.
 
 # 4/04/2022 Senén Martinez Acame (1h)
 Actualizar IA, añadiendirle un atributo Vehiculo para acceder a sus funciones y agregarle setters a IA.
@@ -176,6 +189,9 @@ El pendejo de Joan no sabe como funciona la velocidad negativa.
 # 8/04/2022 Senén Martinez Acame (30min)
 He creado el setup.sh con los comandos para descargar y guardar las imagenes que usemos.
 
+# 9/04/2022 Angelica Quaranta Barba (2h)
+He creado una clase manejador y otra de estados para controlar los cambios de estados. He hechos que algunas clases hereden de estados para hacer el cambio entre las clases a la hora de mostrarlo. Anque aún no tenía claro cómo manejarlo bien.
+
 # 9/04/2022 Senén Martinez Acame (1h)
 He modificado Vehiculo para que tenga un sprite y asi poder hacer pruebas de movimiento con la IA.
 
@@ -187,3 +203,37 @@ Estoy intentando usar lo que tengo en el prototipo de la IA para recorrer la rut
 
 # 9/04/2022 Senén Martinez Acame (2h)
 He intentado implementar el recorrido del prototipo en el proyecto final. No funciona muy bien, y no entiendo el motivo, he estado 2 horas probando cosas, pero no he conseguido arreglarlo. Si el lunes no consigo solucionarlo, le preguntare a Fidel cual puede ser el problema.
+
+# 10/04/2022 Senén Martinez Acame (1h 10min)
+He podido solucionar el problema del recorrido, ahora funciona perfectamente. Tambien he organizado y pulido la clase IA para que quede mejor estructurada.
+
+# 10/04/2022 Joan Pascual Izquierdo (3h 30 min)
+He estado intentando que funcione las colisiones de mejor forma y no lo he cnseguido, no he llegado a tener un mejor resultado, siepre fallaba en algo y provocaba lo siguiente: Violación de segmento (`core' generado). Así que, al final, lo dejé como antes
+
+# 10/04/20022 ANgelica Quaranta Barba (3h)
+He intentando crear un motor y que desde juego llamara e instanciara al resto de clases de los componentes de juego para iniciarlo, al igual que modifiqué el main inicializando solo con el menu, motor y juego. He intentado que main no tuviera mucho código y fuera en juego donde se cargara la mayoría de las cosas. No me ha dado resultado.
+
+# 11/04/2022 Angelica Quaranta Barba (2h 30 min)
+Se ha modificado los MakeLists de las carpetas juego y motor. He intentado solucionar los errores y conflictos generados entre las clases y llamadas entre ellas. Ya no me aperece el error 'sin definir', pero aún existen conflictos que no me permiten ejecutar el juego. No he conseguido que se mostrara el menú y el resto de cosas, creo que no tengo bien implementado los singleton y las instancias.
+
+# 11/04/2022 Sergio Tortajada Santonja (1h 30 min)
+Segmentos de hielo en el mapa.
+
+# 12/04/2022 Joan Pascual Izquierdo (45 min)
+Arreglando gran parte de los problemas de las colisiones y empezando la solución final de éstas
+
+# 17/04/2022 Senén Martínez Acame (1h 20 min)
+Implementado que se pueda activar y desactivar que se dibuje el recorrido con la O y que recorra el camino con la P.
+Modificado los archivos xml para que los puntos del recorrido esten mas suavizados y de una mejor sensacion de recorrido.
+
+# 19/04/2022 Joan Pascual Izquierdo (1h)
+He intentado arreglar el problema que había con la colisión de arriba cuando ponía que calculara la colisión con más de 2 puntos, no lo he conseguido, pero he encontrado otra solución, que la colisión de arriba la calcule con el centro (una solución equivalente al error, es decir, absurdo).
+
+# 19/04/2022 Senén Martínez Acame (1h 10min)
+Añadido que ahora el sprite de la IA rota para orientarse en funcion de la direccion del camino que tiene que recorrer.
+
+# 25/04/2022 Joan Pascual Izquierdo (30 min)
+He intentado incorporar las colisiones en el proyecto final pero, entre el movimiento y el coger los trozos de vía correspondientes que no estoy viendo cómo hacerlo ahora mismo, lo único que he hecho ha sido incorporar los métodos de colisiones en el main del proyecto final
+
+# 26/04/2022 Joan Pascual Izquierdo (1h 30 min)
+Tratrando de incorporar las colisiones al proyecto final, he intentado una solución a lo que hacemos actualmente de no poner los trozos de mapa con sus texturas que era el cargar el trozo de carretera que había y abrir la textura de ese trozo y ya calcular las colisiones, pero no funciona porque existe un reloj y otras cosas que no se que serán.

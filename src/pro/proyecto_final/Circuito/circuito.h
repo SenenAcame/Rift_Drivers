@@ -9,6 +9,7 @@ class Circuito{
         int fila;
         int col;
         bool final=false;
+        bool nieve=false;
         std::vector<sf::Sprite> cachos;
         sf::Texture tex12;
         sf::Texture tex13;
@@ -16,6 +17,12 @@ class Circuito{
         sf::Texture tex23;
         sf::Texture tex24;
         sf::Texture tex34;
+        sf::Texture tex12nieve;
+        sf::Texture tex13nieve;
+        sf::Texture tex14nieve;
+        sf::Texture tex23nieve;
+        sf::Texture tex24nieve;
+        sf::Texture tex34nieve;
 
         std::vector<std::string> mapas;
 
@@ -31,6 +38,7 @@ class Circuito{
         void vaciaMapa();
         void dibujaMapa(sf::RenderWindow *);
         void montaMapa();
+        bool getNieve();
         std::vector<std::string> getMapas();
 };
 

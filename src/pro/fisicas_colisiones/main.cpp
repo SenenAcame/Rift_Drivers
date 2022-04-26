@@ -9,19 +9,67 @@ bool colision(sf::Sprite &image1, sf::Sprite &image2){
   bool colision=image1.getGlobalBounds().intersects(image2.getGlobalBounds());
   return colision;
 }
-
-int colisionMapa(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, int y2, int tx, int ty){
+/*
+int colisionMapa(sf::Image &image1, sf::Image &image2, int x1, int x2, int y1, int y2){
   sf::Color color[2];
   int colision=0;
   int i, j;
+  bool negro=false;
+  bool col=false;
+  //for(i=0; i<40; i++){
+    //for(j=0; j<40; j++){
+      //color[0]=image1.getPixel(x1+i, y1+j);
+      //color[1]=image2.getPixel(x2+i, y2+j);
       color[0]=image1.getPixel(x1, y1);
-      color[1]=image2.getPixel(x2, y2);
+      //color[1]=image2.getPixel(x2, y2);
+      printf("color1: [ %d, %d, %d ]",color[0].r, color[0].g, color[0].b);
+      //printf("color2: [ %d, %d, %d ]\n",color[1].r, color[1].g, color[1].b);
       if((color[0].r==0) && (color[0].g==0) && (color[0].b==0)){
-        colision=2;
+        //if((color[1].r!=0) && (color[1].g!=255) && (color[1].b!=0))
+        col=true;
+        negro=true;
       }  
       else if((color[0].r==204) && (color[0].g==204) && (color[0].b==204)){
-        colision=1;
-  }  
+        //if((color[1].r!=0) && (color[1].g!=255) && (color[1].b!=0))
+        col=true;
+      }  
+    //}
+  //}
+  if(col){
+    if(negro){
+      colision=2;
+    }else{
+      colision=1;
+    }
+  }
+  */
+  int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty){
+  sf::Color color[4];
+  int colision=0;
+  bool negro=false;
+  bool col=false;
+  int x=(int)tx/2;
+  int y=(int)ty/2;
+  color[0]=image1.getPixel(x1-x, y1);
+  color[1]=image1.getPixel(x1+x, y1);
+  color[3]=image1.getPixel(x1, y1+y);
+  color[2]=image1.getPixel(x1, y1);
+  printf("color2: [ %d, %d, %d ]\n",color[2].r, color[2].g, color[2].b);
+  for(int i=0; i<4 && col==false;i++){
+    if((color[i].r==0) && (color[i].g==0) && (color[i].b==0)){
+      negro=true;
+      col=true;
+    }else if((color[i].r==204) && (color[i].g==204) && (color[i].b==204)){
+      col=true;
+    } 
+  } 
+  if(col==true){
+    if(negro==true){
+      colision=2;
+    }else{
+      colision=1;
+    }
+  }
   return colision;
 }
 int main() {
@@ -48,12 +96,17 @@ int main() {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
+  sf::Texture verde;
+  if (!verde.loadFromFile("../resources/sprites-dureza-verde.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
   sf::Image dbw=durmp.copyToImage();
   sf::Image sp=tex.copyToImage();
+  sf::Image dr=verde.copyToImage();
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex);
   sf::Sprite sprite2(tex);
-  float width=75, heigth=75;
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
   sprite2.setOrigin(75 / 2, 75 / 2);
@@ -66,6 +119,9 @@ int main() {
   //sf::Rect pos2=sprite2.getGlobalBounds();
 
   // Lo dispongo en el centro de la pantalla
+  int tam[2];
+  tam[0]=75;
+  tam[1]=75;
   sprite.setPosition(240, 240);
 
   sprite2.setPosition(100, 200);
@@ -96,14 +152,17 @@ int main() {
             //Escala por defecto
             sprite.setScale(1, 1);
             sprite2.setScale(1, 1);
+            
             sprite.move(kVel, 0);
             if(colision(sprite, sprite2)){
               sprite.move(-kVel, 0);
             }
-            if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){
+            //if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==2){
+            if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1])==2){
               sprite.move(-kVel, 0);
             }
-            else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){
+            //else if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==1){
+              else if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1])==1){
               sprite.move(-kVel/1.3, 0);
             }
           break;
@@ -118,10 +177,12 @@ int main() {
             if(colision(sprite, sprite2)){
               sprite.move(kVel, 0);
             }
-             if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){
+             //if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==2){
+            if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1])==2){
               sprite.move(kVel, 0);
             }
-            else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){
+            //else if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==1){
+              else if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1])==1){
               sprite.move(kVel/1.3, 0);
             }
           break;
@@ -133,12 +194,14 @@ int main() {
             if(colision(sprite, sprite2)){
                 sprite.move(0, kVel);
             }
-           if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){
-             sprite.move(0, kVel);
-            }
-            else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){
-             sprite.move(0, kVel/1.3);
-            }
+              //if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==2){
+            if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1])==2){
+              sprite.move(0, kVel);
+             }
+              //else if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==1){
+              else if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1])==1){ 
+              sprite.move(0, kVel/1.3);
+             }
           break;
 
         case sf::Keyboard::Down:
@@ -148,10 +211,12 @@ int main() {
             if(colision(sprite, sprite2)){
                 sprite.move(0, -kVel);
             }
-              if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==2){ 
+              //if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==2){
+            if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1])==2){
               sprite.move(0, -kVel);
              }
-              else if(colisionMapa(dbw, sp, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y, 75, 75)==1){ 
+              //else if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==1){
+              else if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1])==1){ 
               sprite.move(0, -kVel/1.3);
              }
           break;
@@ -174,7 +239,7 @@ int main() {
     for(int i=0; i<10; i++){
       for(int j=0;j<10; j++){
         sf::Sprite roadbw (durmp);
-        roadbw.setPosition(i*32,j*32);
+        roadbw.setPosition(i*32+ 20,j*32+20);
         roadbw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
         window.draw(roadbw);
       }
@@ -183,13 +248,13 @@ int main() {
     for(int i=0; i<10; i++){
       for(int j=0;j<10; j++){
         sf::Sprite road (mp);
-        road.setPosition(i*32,j*32);
+        road.setPosition(i*32+20,j*32+20);
         road.setTextureRect(sf::IntRect(i*32,j*32,32,32));
         window.draw(road);
       }
     }
     window.draw(sprite);
-    window.draw(sprite2);
+    /*window.draw(sprite2);*/
     window.display();
   }
 

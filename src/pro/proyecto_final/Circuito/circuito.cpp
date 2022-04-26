@@ -13,6 +13,7 @@ Circuito::Circuito(){
     fila=25;
     col=25;
     final=false;
+    nieve=false;
     //cachos=new std::vector<sf::Sprite>;
     srand(time(0));
     if (!tex12.loadFromFile("../resources/1,2.png")) {
@@ -39,10 +40,36 @@ Circuito::Circuito(){
         std::cerr << "Error cargando la imagen sprites.png";
         exit(0);
     }
+    if (!tex12nieve.loadFromFile("../resources/1,2nieve.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!tex13nieve.loadFromFile("../resources/1,3nieve.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!tex14nieve.loadFromFile("../resources/1,4nieve.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!tex23nieve.loadFromFile("../resources/2,3nieve.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!tex24nieve.loadFromFile("../resources/2,4nieve.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!tex34nieve.loadFromFile("../resources/3,4nieve.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
 }
 
 void Circuito::CrearMapa(){
+    int contador=0;
     int cachos=0;
+    nieve=false;
     std::string cacho=BuscaCacho(0);
     mapas.push_back(cacho);
     int buscar=1;
@@ -50,13 +77,31 @@ void Circuito::CrearMapa(){
     circuito.at(fila).at(col)=cacho;
     fila=fila-1;
     while(!final){
+        if(contador>6){
+            int random=rand()%3;
+            if(random==0 && !nieve){
+                nieve=true;
+                contador=0;
+            }
+            else if(random==0 && nieve){
+                nieve=false;
+                contador=0;
+            }
+        }
+        contador++;
         cachos++;
         cacho=BuscaCacho(buscar);
         mapas.push_back(cacho);
-        cacho="../resources/"+cacho+".png";
+        if(nieve)
+            cacho="../resources/"+cacho+"nieve.png";
+        else
+            cacho="../resources/"+cacho+".png";
         if(!final){
             circuito.at(fila).at(col)=cacho;
-            buscar=stoi(cacho.substr(cacho.length()-5,cacho.length()-4));
+            if(nieve)
+                buscar=stoi(cacho.substr(cacho.length()-10,cacho.length()-4));
+            else
+                buscar=stoi(cacho.substr(cacho.length()-5,cacho.length()-4));
 
             switch (buscar)
             {
@@ -92,6 +137,7 @@ void Circuito::CrearMapa(){
         fila=25;
         col=25;
         final=false;
+        contador=0;
         std::cerr<<std::to_string(cachos)<<" Repite\n";
         CrearMapa();
     }
@@ -261,6 +307,66 @@ void Circuito::montaMapa(){
                         }
                     }
                 }
+                else if(circuito.at(k).at(l)=="../resources/1,2nieve.png"||circuito.at(k).at(l)=="../resources/2,1nieve.png"){
+                    sf::Sprite sprite12nieve(tex12nieve);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            sprite12nieve.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite12nieve.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(sprite12nieve);
+                        }
+                    }
+                }
+                else if(circuito.at(k).at(l)=="../resources/1,3nieve.png"||circuito.at(k).at(l)=="../resources/3,1nieve.png"){
+                    sf::Sprite sprite13nieve(tex13nieve);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            sprite13nieve.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite13nieve.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(sprite13nieve);
+                        }
+                    }
+                }
+                else if(circuito.at(k).at(l)=="../resources/1,4nieve.png"||circuito.at(k).at(l)=="../resources/4,1nieve.png"){
+                    sf::Sprite sprite14nieve(tex14nieve);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            sprite14nieve.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite14nieve.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(sprite14nieve);
+                        }
+                    }
+                }
+                else if(circuito.at(k).at(l)=="../resources/2,3nieve.png"||circuito.at(k).at(l)=="../resources/3,2nieve.png"){
+                    sf::Sprite sprite23nieve(tex23nieve);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            sprite23nieve.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite23nieve.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(sprite23nieve);
+                        }
+                    }
+                }
+                else if(circuito.at(k).at(l)=="../resources/2,4nieve.png"||circuito.at(k).at(l)=="../resources/4,2nieve.png"){
+                    sf::Sprite sprite24nieve(tex24nieve);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            sprite24nieve.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite24nieve.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(sprite24nieve);
+                        }
+                    }
+                }
+                else if(circuito.at(k).at(l)=="../resources/3,4nieve.png"||circuito.at(k).at(l)=="../resources/4,3nieve.png"){
+                    sf::Sprite sprite34nieve(tex34nieve);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            sprite34nieve.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite34nieve.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(sprite34nieve);
+                        }
+                    }
+                }
             }
         }
     }
@@ -268,4 +374,8 @@ void Circuito::montaMapa(){
 
 std::vector<std::string> Circuito::getMapas(){
     return mapas;
+}
+
+bool Circuito::getNieve(){
+    return nieve;
 }
