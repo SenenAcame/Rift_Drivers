@@ -221,7 +221,7 @@ int main() {
   while (window.isOpen()){
     sf::Event e;
 
-    ene->seguirRuta();
+    
 
     while (window.pollEvent(e))
       if (e.type == sf::Event::Closed)
@@ -231,7 +231,7 @@ int main() {
 
     while (accumulator >= timestep){
       accumulator -= timestep;
-
+      ene->seguirRuta();
       previous = position;
       sprite.setRotation(rot);
       prev = rot;
@@ -292,6 +292,15 @@ int main() {
         }
       }
 
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){
+        ene->setDibCheck(!ene->getDibCheck());
+      }
+
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
+        ene->setSegCheck(!ene->getSegCheck());
+      }
+
+
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
         if(pista){
           sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
@@ -331,6 +340,12 @@ int main() {
       cir->dibujaMapa(&window);
       ene->dibujaRecorrido(&window);
     }
+
+    ene->getVehi()->getImagen().setPosition(previous + ((position - previous) * (accumulator / timestep)));
+    if(ene->getVehi()->getImagen().getRotation()<345 && ene->getVehi()->getImagen().getRotation()>0){
+      ene->getVehi()->getImagen().setRotation(prev +((rot - prev)* (accumulator / timestep)));
+    }
+
     sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
     if(sprite.getRotation()<345 && sprite.getRotation()>0){
       sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));
