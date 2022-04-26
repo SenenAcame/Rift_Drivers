@@ -163,6 +163,7 @@ int main() {
   camara=sf::View(sf::FloatRect(0,0,1080,720));
   minimapa.setViewport(sf::FloatRect(0.85f,0,0.15f,0.25f));
   window.setView(camara);
+  window.setFramerateLimit(60);
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
@@ -210,7 +211,7 @@ int main() {
 
   //inicio un menu
   //menu menu(window.getSize().x, window.getSize().y);
-  sf::Vector2f position, previous;
+  sf::Vector2f position, previous, previous2;
 
   position.x = 25*320+320/2;
   position.y = 25*320+320/2;
@@ -236,17 +237,44 @@ int main() {
   while (window.isOpen()){
     sf::Event e;
 
-    ene->seguirRuta();
+    
 
-    while (window.pollEvent(e))
+    while (window.pollEvent(e)){
+      /*
       if (e.type == sf::Event::Closed)
         window.close();
+        */
+      switch(e.type){
+         case sf::Event::Closed:
+          window.close();
+          break;
+
+          case sf::Event::KeyReleased:
+            switch (e.key.code){
+            case sf::Keyboard::O:
+              ene->setDibCheck(!ene->getDibCheck());
+              break;
+
+              case sf::Keyboard::P:
+              ene->setSegCheck(!ene->getSegCheck());
+              break;
+            
+            default:
+            std::cout << e.key.code << std::endl;
+              break;
+            }
+
+
+      }
+        
+    }
 
     accumulator += clock.restart().asSeconds();
-
+    ene->seguirRuta();
     while (accumulator >= timestep){
       accumulator -= timestep;
-
+      previous2 = ene->getVehi()->getImagen().getPosition();
+      
       previous = position;
       sprite.setRotation(rot);
       prev = rot;
@@ -430,10 +458,22 @@ int main() {
           position.y -= sin(sprite.getRotation()*M_PI/180)*5.0f;
         }
       }
+/*
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){
+        ene->setDibCheck(!ene->getDibCheck());
+      }
+      
+
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
+        ene->setSegCheck(!ene->getSegCheck());
+      }
+
+*/
 
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
         if(pista){
           sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
+          
           cir->vaciaMapa();
           cir=new Circuito();
           rot=-90.00f;
@@ -444,6 +484,7 @@ int main() {
         pista=true;
         ene->~ia();
         ene = new ia(cir,coche);
+        ene->getVehi()->getImagen().setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
         speed=0;
       }
 
@@ -478,10 +519,14 @@ int main() {
       cir->dibujaMapa(&window);
       ene->dibujaRecorrido(&window);
     }
+
+    ene->getVehi()->getImagen().setPosition(previous2 + ((ene->getVehi()->getImagen().getPosition() - previous2) * (accumulator / timestep)));
+
     sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
     if(sprite.getRotation()<345 && sprite.getRotation()>0){
       sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));
     }
+    
     window.draw(sprite);
     window.draw(ene->getVehi()->getImagen());
 
