@@ -93,3 +93,10 @@ float vehiculo::getReloj(){
     return reloj.getElapsedTime().asSeconds();
 }
 
+vehiculo::~vehiculo(){
+    velocidad=0;
+    aceleracion=0;
+    giro=0;
+    spritename="";
+    reloj.restart();
+}

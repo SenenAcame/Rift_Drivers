@@ -237,36 +237,52 @@ int main() {
   while (window.isOpen()){
     sf::Event e;
 
-    
-
     while (window.pollEvent(e)){
       /*
       if (e.type == sf::Event::Closed)
         window.close();
         */
       switch(e.type){
-         case sf::Event::Closed:
+        case sf::Event::Closed:
           window.close();
-          break;
+        break;
 
-          case sf::Event::KeyReleased:
-            switch (e.key.code){
+        case sf::Event::KeyReleased:
+          switch (e.key.code){
             case sf::Keyboard::O:
               ene->setDibCheck(!ene->getDibCheck());
-              break;
+            break;
 
-              case sf::Keyboard::P:
+            case sf::Keyboard::P:
               ene->setSegCheck(!ene->getSegCheck());
-              break;
+            break;
             
+            case sf::Keyboard::L:
+              if(pista){
+                position.x = 25*320+320/2;
+                position.y = 25*320+320/2;
+                sprite.setPosition(position.x,position.y);
+                cir->vaciaMapa();
+                cir=new Circuito();
+                rot=-90.00f;
+                sprite.setRotation(rot);
+              }
+              coche->~vehiculo();
+              coche = new vehiculo(1,2,3,"../resources/cocherot.png",spr2);
+              cir->CrearMapa();
+              cir->montaMapa();
+              pista=true;
+              ene->~ia();
+              ene = new ia(cir,coche);
+              speed=0;
+            break;
+
             default:
-            std::cout << e.key.code << std::endl;
-              break;
-            }
-
-
-      }
-        
+              std::cout << e.key.code << std::endl;
+            break;
+          }
+        break;
+      }   
     }
 
     accumulator += clock.restart().asSeconds();
@@ -458,7 +474,7 @@ int main() {
           position.y -= sin(sprite.getRotation()*M_PI/180)*5.0f;
         }
       }
-
+      /*
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
         if(pista){
           sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
@@ -473,10 +489,12 @@ int main() {
         pista=true;
         ene->~ia();
         ene = new ia(cir,coche);
-        ene->getVehi()->getImagen().setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
+        //ene->getVehi()->getImagen().setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
+        //ene->getVehi()->getImagen().setPosition(25*320+320/2,25*320+320/2);
         speed=0;
       }
-
+      */
+      /*
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){
         ene->setDibCheck(!ene->getDibCheck());
       }
@@ -484,7 +502,7 @@ int main() {
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
         ene->setSegCheck(!ene->getSegCheck());
       }
-
+      */
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
         window.close();
       }
