@@ -38,6 +38,7 @@ class Circuito{
         void vaciaMapa();
         void dibujaMapa(sf::RenderWindow *);
         void montaMapa();
+        bool getNieve();
         std::vector<std::string> getMapas();
 };
 

@@ -375,3 +375,7 @@ void Circuito::montaMapa(){
 std::vector<std::string> Circuito::getMapas(){
     return mapas;
 }
+
+bool Circuito::getNieve(){
+    return nieve;
+}
