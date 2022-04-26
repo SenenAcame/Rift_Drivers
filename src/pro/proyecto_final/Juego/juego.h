@@ -15,8 +15,8 @@ class juego : public Estado
 {
 private:
     static juego* pinstance;
-    ia * ia;
-    mejora * mejora;
+    //ia * ia;
+    //mejora * mejora;
 
 protected:
     juego();
@@ -28,7 +28,7 @@ public:
 
     //ia * ia;
     //poderes * poderes; ----falta definirlo---
-    vehiculo * vehiculo;
+    //vehiculo * vehiculo;
     //llamadas a las coliciones(?)
     
 };
