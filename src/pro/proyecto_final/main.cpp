@@ -458,17 +458,6 @@ int main() {
           position.y -= sin(sprite.getRotation()*M_PI/180)*5.0f;
         }
       }
-/*
-       if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){
-        ene->setDibCheck(!ene->getDibCheck());
-      }
-      
-
-      if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
-        ene->setSegCheck(!ene->getSegCheck());
-      }
-
-*/
 
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
         if(pista){
