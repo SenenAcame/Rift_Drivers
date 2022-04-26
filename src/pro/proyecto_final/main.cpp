@@ -66,9 +66,8 @@ int main()
           }
         break;
         }
-        */
+        
       
-/*
       }
     }
     window->display();
@@ -81,8 +80,6 @@ int main()
   }
   //return 0;
 
-
-/*
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <math.h>
