@@ -2,6 +2,8 @@
 #include <iostream>
 //#include "include/config.h"
 #include "ej_modulos/mimodulo.h"
+#include <math.h>
+
 //incluir nuestras carpetas
 #include "IA/ia.h"
 #include "Mejoras/mejora.h"
@@ -127,6 +129,11 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
     } 
   } 
   */
+   sf::Color color[4];
+   int colision=0;
+  bool negro=false;
+  bool col=false;
+
   if((color[0].r==0) && (color[0].g==0) && (color[0].b==0)){
       negro=true;
       col=true;
@@ -517,4 +524,3 @@ int main() {
 
   return 0;
 }
-*/

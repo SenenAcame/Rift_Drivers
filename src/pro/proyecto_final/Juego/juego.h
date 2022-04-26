@@ -17,16 +17,10 @@ class juego : public Estado
 {
 private:
     static juego* pinstance;
-<<<<<<< HEAD
     ia * ia;
     mejora * mejora;
     Circuito* circuito;
     vehiculo * vehiculo;
-=======
-    //ia * ia;
-    //mejora * mejora;
-
->>>>>>> 477511f8364bf31951018d444e6c10aa032004cc
 protected:
     juego();
     ~juego();
@@ -37,10 +31,6 @@ public:
 
     //ia * ia;
     //poderes * poderes; ----falta definirlo---
-<<<<<<< HEAD
-=======
-    //vehiculo * vehiculo;
->>>>>>> 477511f8364bf31951018d444e6c10aa032004cc
     //llamadas a las coliciones(?)
     
 };
