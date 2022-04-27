@@ -13,7 +13,7 @@
 #include "Motor/Motor.h"
 
 //#define kVel 5
-
+/*
 int main() 
 {
   //creo la ventana
@@ -515,6 +515,7 @@ int main() {
 
     window.setView(camara);
     if(pista){
+      cir->dibujaMapabw(&window);
       cir->dibujaMapa(&window);
       ene->dibujaRecorrido(&window);
     }
