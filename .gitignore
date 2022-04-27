@@ -32,6 +32,7 @@
 *.app
 
 src/pro/fisicas_colisiones/build/*
+src/pro/menu/build/*
 src/pro/circuitos/build/*
 src/pro/IA/build/*
 src/pro/plantilla_fv/build/*

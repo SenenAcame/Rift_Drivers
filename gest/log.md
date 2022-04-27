@@ -240,3 +240,6 @@ Tratrando de incorporar las colisiones al proyecto final, he intentado una soluc
 
 # 26/04/2022 Senén Martínez Acame (20min)
 Corregido el reseteo del mapa, ahora la IA comienza siempre desde el mismo punto cuando se reinicia el nivel, en lugar de moverse al punto de inicio.
+
+# 27/04/2022 Senén Martínez Acame (1h 30min)
+Implementado menu de inicio. El menu esta implementado como un switch desde el main. Lo ideal seria implementarlo con el patron state, intentaremos aplicarlo de esa forma para la entrega final, pero de momento tenemos algo funcional.

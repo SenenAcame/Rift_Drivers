@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp" "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles/MiJuego.dir/Menu.cpp.o"
-  "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/main.cpp" "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles/MiJuego.dir/main.cpp.o"
+  "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp" "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles/MiJuego.dir/Menu.cpp.o"
+  "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/main.cpp" "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles/MiJuego.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
@@ -16,7 +16,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles/libModulos.dir/DependInfo.cmake"
+  "/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles/libModulos.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
