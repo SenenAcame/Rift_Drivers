@@ -235,7 +235,6 @@ int main() {
     }
 
     window.clear();
-
     for(int i=0; i<10; i++){
       for(int j=0;j<10; j++){
         sf::Sprite roadbw (durmp);
@@ -244,7 +243,6 @@ int main() {
         window.draw(roadbw);
       }
     }
-
     for(int i=0; i<10; i++){
       for(int j=0;j<10; j++){
         sf::Sprite road (mp);

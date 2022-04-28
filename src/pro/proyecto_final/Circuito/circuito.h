@@ -52,10 +52,10 @@ class Circuito{
         std::vector<std::vector<std::string> > getCircuitobw();
         void vaciaMapa();
         void dibujaMapa(sf::RenderWindow *);
-        void dibujaMapabw(sf::RenderWindow *);
+        //void dibujaMapabw(sf::RenderWindow *);
         void montaMapa();
         std::vector<std::string> getMapas();
-        std::vector<std::string> getMapasbw();
+        //std::vector<std::string> getMapasbw();
 };
 
 #endif
