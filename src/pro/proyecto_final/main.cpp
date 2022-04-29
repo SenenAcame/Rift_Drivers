@@ -203,7 +203,7 @@ int main() {
   cir->montaMapa();
   bool pista=true;
   
-  ia *ene = new ia(cir,coche);
+  //habichuela ia *ene = new ia(cir,coche);
   
  //Creamos clase circuito
     //Circuito circuito=Circuito();
@@ -308,11 +308,11 @@ int main() {
             case sf::Event::KeyReleased:
               switch (e.key.code){
                 case sf::Keyboard::O:
-                  ene->setDibCheck(!ene->getDibCheck());
+                  //habichuela ene->setDibCheck(!ene->getDibCheck());
                 break;
 
                 case sf::Keyboard::P:
-                  ene->setSegCheck(!ene->getSegCheck());
+                  //habichuela ene->setSegCheck(!ene->getSegCheck());
                 break;
                 
                 case sf::Keyboard::L:
@@ -330,8 +330,8 @@ int main() {
                   cir->CrearMapa();
                   cir->montaMapa();
                   pista=true;
-                  ene->~ia();
-                  ene = new ia(cir,coche);
+                  //habichuela ene->~ia();
+                  //habichuela ene = new ia(cir,coche);
                   speed=0;
                 break;
 
@@ -349,10 +349,10 @@ int main() {
         }
 
         accumulator += clock.restart().asSeconds();
-        ene->seguirRuta();
+        //habichuela ene->seguirRuta();
         while (accumulator >= timestep){
           accumulator -= timestep;
-          previous2 = ene->getVehi()->getImagen().getPosition();
+          //habichuela previous2 = ene->getVehi()->getImagen().getPosition();
           
           previous = position;
           sprite.setRotation(rot);
@@ -494,18 +494,18 @@ int main() {
         if(pista){
           //cir->dibujaMapabw(&window);
           cir->dibujaMapa(&window);
-          ene->dibujaRecorrido(&window);
+          //habichuela ene->dibujaRecorrido(&window);
         }
         window.draw(sprite);
-        window.draw(ene->getVehi()->getImagen());
+        //habichuela window.draw(ene->getVehi()->getImagen());
 
         window.setView(minimapa);
         if(pista){
           cir->dibujaMapa(&window);
-          ene->dibujaRecorrido(&window);
+          //habichuela ene->dibujaRecorrido(&window);
         }
 
-        ene->getVehi()->getImagen().setPosition(previous2 + ((ene->getVehi()->getImagen().getPosition() - previous2) * (accumulator / timestep)));
+        //habichuela ene->getVehi()->getImagen().setPosition(previous2 + ((ene->getVehi()->getImagen().getPosition() - previous2) * (accumulator / timestep)));
 
         sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
         if(sprite.getRotation()<345 && sprite.getRotation()>0){
@@ -513,7 +513,7 @@ int main() {
         }
         
         window.draw(sprite);
-        window.draw(ene->getVehi()->getImagen());
+        //habichuela window.draw(ene->getVehi()->getImagen());
         window.display();
 
       break;

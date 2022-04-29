@@ -119,6 +119,56 @@ Circuito::Circuito(){
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
+
+  if (!texsalida.loadFromFile("../resources/salida.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!texsalidabw.loadFromFile("../resources/salidabw.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!texmeta1.loadFromFile("../resources/meta1.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!texmeta1bw.loadFromFile("../resources/meta1bw.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!texmeta2.loadFromFile("../resources/meta2.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!texmeta2bw.loadFromFile("../resources/meta2bw.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!texmeta3.loadFromFile("../resources/meta3.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!texmeta3bw.loadFromFile("../resources/meta3bw.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!texmeta4.loadFromFile("../resources/meta4.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!texmeta4bw.loadFromFile("../resources/meta4bw.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  if (!texvortice.loadFromFile("../resources/vortice.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  imvortice.setTexture(texvortice);
+  if (!texfuera.loadFromFile("../resources/fuera.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
 }
 
 void Circuito::CrearMapa(){
@@ -127,7 +177,7 @@ void Circuito::CrearMapa(){
     int contador=0;
     int cachos=0;
     nieve=false;
-    std::string cacho=BuscaCacho(0);
+    std::string cacho="salida";
     std::string cacho1;
     std::string cacho2;
     mapas.push_back(cacho);
@@ -164,6 +214,9 @@ void Circuito::CrearMapa(){
         if(!final){
             circuito.at(fila).at(col)=cacho1;
             circuitobw.at(fila).at(col)=cacho2;
+            if(circuito.at(fila).at(col)=="../resources/salida.png"){
+                circuitobw.at(fila).at(col)="../resources/salidabw.png";
+            }
             if(circuito.at(fila).at(col)=="../resources/2,1.png"){
                 circuitobw.at(fila).at(col)="../resources/1,2bw.png";
             }
@@ -201,6 +254,7 @@ void Circuito::CrearMapa(){
                 circuitobw.at(fila).at(col)="../resources/3,4nievebw.png";
             }
             
+            
             buscar=stoi(cacho.substr(2,1));
 
             switch (buscar)
@@ -225,7 +279,21 @@ void Circuito::CrearMapa(){
             }
         }
     }
-    if(cachos<30){
+    mapas.push_back("meta"+std::to_string(buscar));
+    circuito.at(fila).at(col)="../resources/meta"+std::to_string(buscar)+".png";
+    if(circuito.at(fila).at(col)=="../resources/meta1.png"){
+        circuitobw.at(fila).at(col)="../resources/meta1bw.png";
+    }
+    if(circuito.at(fila).at(col)=="../resources/meta2.png"){
+        circuitobw.at(fila).at(col)="../resources/meta2bw.png";
+    }
+    if(circuito.at(fila).at(col)=="../resources/meta3.png"){
+        circuitobw.at(fila).at(col)="../resources/meta3bw.png";
+    }
+    if(circuito.at(fila).at(col)=="../resources/meta4.png"){
+        circuitobw.at(fila).at(col)="../resources/meta4bw.png";
+    }
+    if(cachos<50){
         vaciaMapa();
         for(int i=0;i<50;i++){
             std::vector<std::string> linea;
@@ -248,16 +316,16 @@ void Circuito::CrearMapa(){
         std::cerr<<std::to_string(cachos)<<" Repite\n";
         CrearMapa();
     }
+    
+    imvortice.setOrigin(160,160);
+    imvortice.setPosition(160+32*10*col,160+32*10*fila);
+    
 }
 
 std::string Circuito::BuscaCacho(int entrada){
-    std::string cacho;
+    std::string cacho="";
     int num2;
     bool pasa=false;
-    if(entrada==0){
-        cacho="1,4";
-    }
-    else{
         num2=entrada;
         
         while(num2==entrada||!pasa){
@@ -273,7 +341,6 @@ std::string Circuito::BuscaCacho(int entrada){
             pasa=CompruebaCacho(cacho);
         }
         //std::cerr << cacho<<"\n";
-    }
     return cacho;
 }
 
@@ -356,6 +423,8 @@ void Circuito::dibujaMapa(sf::RenderWindow *window){
     for(int i=0;i<cachos.size();i++){
         window->draw(cachos.at(i));
       }
+    imvortice.setRotation(imvortice.getRotation()-5);
+    window->draw(imvortice);
 }
 /*
 void Circuito::dibujaMapabw(sf::RenderWindow *window){
@@ -556,6 +625,215 @@ void Circuito::montaMapa(){
                             sprite34nievebw.setPosition(i*32+32*10*l,j*32+32*10*k);
                             sprite34nievebw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
                             cachosbw.push_back(sprite34nievebw);
+                            */
+                        }
+                    }
+                }
+                else if(circuito.at(k).at(l)=="../resources/salida.png"){
+                    sf::Sprite spritesalida(texsalida);
+                    //sf::Sprite sprite34nievebw(tex34nievebw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritesalida.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            spritesalida.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritesalida);
+                            /*
+                            sprite34nievebw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite34nievebw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite34nievebw);
+                            */
+                        }
+                    }
+                }
+                else if(circuito.at(k).at(l)=="../resources/meta1.png"){
+                    sf::Sprite spritemeta1(texmeta1);
+                    //sf::Sprite sprite34nievebw(tex34nievebw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritemeta1.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            spritemeta1.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritemeta1);
+                            /*
+                            sprite34nievebw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite34nievebw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite34nievebw);
+                            */
+                        }
+                    }
+
+                }
+                else if(circuito.at(k).at(l)=="../resources/meta2.png"){
+                    sf::Sprite spritemeta2(texmeta2);
+                    //sf::Sprite sprite34nievebw(tex34nievebw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritemeta2.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            spritemeta2.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritemeta2);
+                            /*
+                            sprite34nievebw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite34nievebw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite34nievebw);
+                            */
+                        }
+                    }
+                }
+                else if(circuito.at(k).at(l)=="../resources/meta3.png"){
+                    sf::Sprite spritemeta3(texmeta3);
+                    //sf::Sprite sprite34nievebw(tex34nievebw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritemeta3.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            spritemeta3.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritemeta3);
+                            /*
+                            sprite34nievebw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite34nievebw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite34nievebw);
+                            */
+                        }
+                    }
+                }
+                else if(circuito.at(k).at(l)=="../resources/meta4.png"){
+                    sf::Sprite spritemeta4(texmeta4);
+                    //sf::Sprite sprite34nievebw(tex34nievebw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritemeta4.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            spritemeta4.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritemeta4);
+                            /*
+                            sprite34nievebw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite34nievebw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite34nievebw);
+                            */
+                        }
+                    }
+                }
+                if(circuito.at(k-1).at(l-1)=="0"){
+                    sf::Sprite spritefuera(texfuera);
+                    //sf::Sprite sprite12bw(tex12bw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritefuera.setPosition(i*32+32*10*(l-1),j*32+32*10*(k-1));
+                            spritefuera.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritefuera);
+                            /*
+                            sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite12bw);
+                            */
+                        }
+                    }
+                }
+                if(circuito.at(k).at(l-1)=="0"){
+                    sf::Sprite spritefuera(texfuera);
+                    //sf::Sprite sprite12bw(tex12bw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritefuera.setPosition(i*32+32*10*(l-1),j*32+32*10*(k));
+                            spritefuera.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritefuera);
+                            /*
+                            sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite12bw);
+                            */
+                        }
+                    }
+                }
+                if(circuito.at(k+1).at(l+1)=="0"){
+                    sf::Sprite spritefuera(texfuera);
+                    //sf::Sprite sprite12bw(tex12bw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritefuera.setPosition(i*32+32*10*(l+1),j*32+32*10*(k+1));
+                            spritefuera.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritefuera);
+                            /*
+                            sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite12bw);
+                            */
+                        }
+                    }
+                }
+                if(circuito.at(k).at(l+1)=="0"){
+                    sf::Sprite spritefuera(texfuera);
+                    //sf::Sprite sprite12bw(tex12bw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritefuera.setPosition(i*32+32*10*(l+1),j*32+32*10*(k));
+                            spritefuera.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritefuera);
+                            /*
+                            sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite12bw);
+                            */
+                        }
+                    }
+                }
+                if(circuito.at(k+1).at(l-1)=="0"){
+                    sf::Sprite spritefuera(texfuera);
+                    //sf::Sprite sprite12bw(tex12bw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritefuera.setPosition(i*32+32*10*(l-1),j*32+32*10*(k+1));
+                            spritefuera.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritefuera);
+                            /*
+                            sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite12bw);
+                            */
+                        }
+                    }
+                }
+                if(circuito.at(k+1).at(l)=="0"){
+                    sf::Sprite spritefuera(texfuera);
+                    //sf::Sprite sprite12bw(tex12bw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritefuera.setPosition(i*32+32*10*(l),j*32+32*10*(k+1));
+                            spritefuera.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritefuera);
+                            /*
+                            sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite12bw);
+                            */
+                        }
+                    }
+                }
+                if(circuito.at(k-1).at(l+1)=="0"){
+                    sf::Sprite spritefuera(texfuera);
+                    //sf::Sprite sprite12bw(tex12bw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritefuera.setPosition(i*32+32*10*(l+1),j*32+32*10*(k-1));
+                            spritefuera.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritefuera);
+                            /*
+                            sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite12bw);
+                            */
+                        }
+                    }
+                }
+                if(circuito.at(k-1).at(l)=="0"){
+                    sf::Sprite spritefuera(texfuera);
+                    //sf::Sprite sprite12bw(tex12bw);
+                    for (int i = 0; i < 10; i++){
+                        for (int j = 0; j < 10; j++){
+                            spritefuera.setPosition(i*32+32*10*(l),j*32+32*10*(k-1));
+                            spritefuera.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachos.push_back(spritefuera);
+                            /*
+                            sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
+                            sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+                            cachosbw.push_back(sprite12bw);
                             */
                         }
                     }

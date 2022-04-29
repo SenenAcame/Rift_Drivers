@@ -38,6 +38,21 @@ class Circuito{
         sf::Texture tex24nievebw;
         sf::Texture tex34nievebw;
 
+        sf::Texture texsalida;
+        sf::Texture texsalidabw;
+        sf::Texture texmeta1;
+        sf::Texture texmeta1bw;
+        sf::Texture texmeta2;
+        sf::Texture texmeta2bw;
+        sf::Texture texmeta3;
+        sf::Texture texmeta3bw;
+        sf::Texture texmeta4;
+        sf::Texture texmeta4bw;
+        sf::Texture texvortice;
+        sf::Texture texfuera;
+
+        sf::Sprite imvortice;
+
         std::vector<std::string> mapas;
 
         
