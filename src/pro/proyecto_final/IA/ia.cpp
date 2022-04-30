@@ -141,6 +141,9 @@ int *ia::posicionesMapa(Circuito *world){
     for(int i=0; i<(int)world->getMapas().size();i++){
         if(world->getMapas().at(i).size()>0){
             char y = world->getMapas().at(i).at(2);
+            if(y=='l'){
+                y='4';
+            }
             posis[i] = y-48;
         }
     }

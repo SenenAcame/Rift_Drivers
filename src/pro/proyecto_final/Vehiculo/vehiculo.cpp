@@ -66,7 +66,7 @@ void vehiculo::setImagen(sf::Sprite &sf){
     imagen.setRotation(rot);
     imagen.setScale(2.5f, 2.5f);
     imagen.setTextureRect(sf::IntRect(0 , 0, 23, 16));
-    imagen.setPosition(25*320+320/2, 25*320+320/2+320);
+    imagen.setPosition(25*320+320/2, 25*320+320/2+100);
 
     //cout << "Enlazado" << endl;
 }

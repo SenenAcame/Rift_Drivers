@@ -55,7 +55,6 @@ class Circuito{
 
         std::vector<std::string> mapas;
 
-        
         std::string BuscaCacho(int);
         bool CompruebaCacho(std::string);
         void CompruebaFinal();

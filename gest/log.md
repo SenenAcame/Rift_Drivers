@@ -246,3 +246,6 @@ Implementado menu de inicio. El menu esta implementado como un switch desde el m
 
 # 28/04/2022 Joan Pascual Izquierdo (45 min)
 Incorporadas con éxito las colisiones. En todo caso queda arreglar las reducciones de velocidad y las reacciones con las colisiones.
+
+# 30/04/2022 Senén Martínez Acame (1h 15min)
+Adaptada la IA a los añadidos de meta y salida del mapa.
