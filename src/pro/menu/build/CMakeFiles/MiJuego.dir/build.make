@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu
+CMAKE_SOURCE_DIR = /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build
+CMAKE_BINARY_DIR = /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MiJuego.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/MiJuego.dir/flags.make
 
 CMakeFiles/MiJuego.dir/main.cpp.o: CMakeFiles/MiJuego.dir/flags.make
 CMakeFiles/MiJuego.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MiJuego.dir/main.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MiJuego.dir/main.cpp.o -c /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MiJuego.dir/main.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MiJuego.dir/main.cpp.o -c /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/main.cpp
 
 CMakeFiles/MiJuego.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MiJuego.dir/main.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/main.cpp > CMakeFiles/MiJuego.dir/main.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/main.cpp > CMakeFiles/MiJuego.dir/main.cpp.i
 
 CMakeFiles/MiJuego.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiJuego.dir/main.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/main.cpp -o CMakeFiles/MiJuego.dir/main.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/main.cpp -o CMakeFiles/MiJuego.dir/main.cpp.s
 
 CMakeFiles/MiJuego.dir/Menu.cpp.o: CMakeFiles/MiJuego.dir/flags.make
 CMakeFiles/MiJuego.dir/Menu.cpp.o: ../Menu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MiJuego.dir/Menu.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MiJuego.dir/Menu.cpp.o -c /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MiJuego.dir/Menu.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MiJuego.dir/Menu.cpp.o -c /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp
 
 CMakeFiles/MiJuego.dir/Menu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MiJuego.dir/Menu.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp > CMakeFiles/MiJuego.dir/Menu.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp > CMakeFiles/MiJuego.dir/Menu.cpp.i
 
 CMakeFiles/MiJuego.dir/Menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiJuego.dir/Menu.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp -o CMakeFiles/MiJuego.dir/Menu.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/Menu.cpp -o CMakeFiles/MiJuego.dir/Menu.cpp.s
 
 # Object files for target MiJuego
 MiJuego_OBJECTS = \
@@ -101,7 +101,7 @@ MiJuego: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 MiJuego: /usr/lib/x86_64-linux-gnu/libsfml-network.so
 MiJuego: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
 MiJuego: CMakeFiles/MiJuego.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable MiJuego"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable MiJuego"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MiJuego.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -114,6 +114,6 @@ CMakeFiles/MiJuego.dir/clean:
 .PHONY : CMakeFiles/MiJuego.dir/clean
 
 CMakeFiles/MiJuego.dir/depend:
-	cd /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build /home/angie/Escritorio/fv/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles/MiJuego.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/build /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/build /home/osboxes/FV/proyectoabp-grupo-c04/src/pro/menu/build/CMakeFiles/MiJuego.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/MiJuego.dir/depend
 
