@@ -24,6 +24,9 @@ class vehiculo{
         vehiculo(float vel, float acc, float gir, string spr, sf::Sprite &img);
         //Fin
 
+        //declaracion del destructor
+        ~vehiculo();
+
         void setVelocidad(float vel);
         float getVelocidad();
 

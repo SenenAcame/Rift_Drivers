@@ -1,9 +1,9 @@
+/*
 #include <SFML/Graphics.hpp>
 #include <iostream>
 //#include "include/config.h"
 #include "ej_modulos/mimodulo.h"
 #include <math.h>
-
 //incluir nuestras carpetas
 #include "IA/ia.h"
 #include "Mejoras/mejora.h"
@@ -81,6 +81,10 @@ int main()
     //window.display();
   }
   //return 0;
+*/
+
+
+
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -128,12 +132,11 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
       col=true;
     } 
   } 
-  */
    sf::Color color[4];
    int colision=0;
   bool negro=false;
   bool col=false;
-  
+  */
 
   if((color[0].r==0) && (color[0].g==0) && (color[0].b==0)){
       negro=true;
@@ -149,7 +152,7 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
     }
   }
   return colision;
-}
+} 
 
 int main() {
 
@@ -244,39 +247,6 @@ int main() {
   while (window.isOpen()){
     sf::Event e;
 
-<<<<<<< HEAD
-    
-
-    while (window.pollEvent(e)){
-      /*
-      if (e.type == sf::Event::Closed)
-        window.close();
-        */
-      switch(e.type){
-         case sf::Event::Closed:
-          window.close();
-          break;
-
-          case sf::Event::KeyReleased:
-            switch (e.key.code){
-            case sf::Keyboard::O:
-              ene->setDibCheck(!ene->getDibCheck());
-              break;
-
-              case sf::Keyboard::P:
-              ene->setSegCheck(!ene->getSegCheck());
-              break;
-            
-            default:
-            std::cout << e.key.code << std::endl;
-              break;
-            }
-
-
-      }
-        
-    }
-=======
     switch(estado){
       case 0:
         while (window.pollEvent(e)){
@@ -423,7 +393,6 @@ int main() {
                 speed=speed/10;
             }
           }
->>>>>>> d5cde7f2cc13b09f31c5210972986d5b82589f70
 
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
             sprite.rotate(-gir);
@@ -847,7 +816,6 @@ int main() {
             position.y -= sin(sprite.getRotation()*M_PI/180)*5.0f;
           }
         }
-<<<<<<< HEAD
       }
 
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
@@ -878,41 +846,6 @@ int main() {
 
       if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
         window.close();
-=======
-        
-        //if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
-          //if(pista){
-            //sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
-            
-            //cir->vaciaMapa();
-            //cir=new Circuito();
-            //rot=-90.00f;
-            //sprite.setRotation(rot);
-          //}
-          //cir->CrearMapa();
-          //cir->montaMapa();
-          //pista=true;
-          //ene->~ia();
-          //ene = new ia(cir,coche);
-          //ene->getVehi()->getImagen().setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
-          //ene->getVehi()->getImagen().setPosition(25*320+320/2,25*320+320/2);
-          //speed=0;
-        //}
-        
-        
-        //if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){
-          //ene->setDibCheck(!ene->getDibCheck());
-        //}
-
-        //if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
-          //ene->setSegCheck(!ene->getSegCheck());
-        //}
-        
-        //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-          //window.close();
-        //}
-        
->>>>>>> d5cde7f2cc13b09f31c5210972986d5b82589f70
       }
     }
 */
