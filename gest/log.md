@@ -165,6 +165,9 @@ Actualizar IA, añadiendirle un atributo Vehiculo para acceder a sus funciones y
 # 4/04/2022 Joan Pascual Izquierdo (1h 30min)
 He probado el hacer las colisiones con los mapas de dureza, todavía no funciona
 
+# 4/04/2022 Miguel Ángel Ferrer García de la Reina (2h )
+He intentado que el movimiento del vehiculo esté ne la clase vehiculo, pero no cinsigo que funcione.
+
 # 5/04/2022 Joan Pascual Izquierdo (20 minutos)
 Ya sé como funciona la función de las colisiones con mapas de dureza, ya funciona. Ahora funciona con todos los píxeles del sprite.
 
@@ -204,6 +207,9 @@ Estoy intentando usar lo que tengo en el prototipo de la IA para recorrer la rut
 # 9/04/2022 Senén Martinez Acame (2h)
 He intentado implementar el recorrido del prototipo en el proyecto final. No funciona muy bien, y no entiendo el motivo, he estado 2 horas probando cosas, pero no he conseguido arreglarlo. Si el lunes no consigo solucionarlo, le preguntare a Fidel cual puede ser el problema.
 
+# 10/04/2022 Miguel Ángel Ferrer García de la Reina (3h)
+Nuevo intento pasar el movimiento del vehiculo a una clase externa del main, pero me da problemas con el reloj y no consigo un movimiento fluido.
+
 # 10/04/2022 Senén Martinez Acame (1h 10min)
 He podido solucionar el problema del recorrido, ahora funciona perfectamente. Tambien he organizado y pulido la clase IA para que quede mejor estructurada.
 
@@ -231,6 +237,12 @@ He intentado arreglar el problema que había con la colisión de arriba cuando p
 
 # 19/04/2022 Senén Martínez Acame (1h 10min)
 Añadido que ahora el sprite de la IA rota para orientarse en funcion de la direccion del camino que tiene que recorrer.
+
+# 22/04/2022 Miguel Ángel Ferrer García de la Reina (30min)
+Sprites actualizados en el juego.
+
+# 24/04/2022 Miguel Ángel Ferrer García de la Reina (2h 30min)
+Ceadas 4 parejas de sprites diferentes. Cada pareja con dos colores distintos, que se pueden cambiar si no nos convencen.
 
 # 25/04/2022 Joan Pascual Izquierdo (30 min)
 He intentado incorporar las colisiones en el proyecto final pero, entre el movimiento y el coger los trozos de vía correspondientes que no estoy viendo cómo hacerlo ahora mismo, lo único que he hecho ha sido incorporar los métodos de colisiones en el main del proyecto final
