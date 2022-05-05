@@ -267,3 +267,6 @@ Creada variaciones de recorrido en las curvas.
 
 # 05/05/2022 Senén Martínez Acame (2h)
 Adaptada la IA para que pueda tomar las curvas de distinta forma, y correcciones de las curvas.
+
+# 05/05/2022 Sergio Tortajada Santonja(12h)
+Tiempo que no me he puesto de juntar el circuito y la ia con Senén, colisiones con Joan, implementación de salida y meta, rellenado de huecos cercanos al recorrido y corrección de fallos
