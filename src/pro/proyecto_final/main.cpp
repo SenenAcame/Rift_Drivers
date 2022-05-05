@@ -143,7 +143,7 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
       col=true;
     }else if((color[0].r==204) && (color[0].g==204) && (color[0].b==204)){
       col=true;
-    } 
+    }
   if(col==true){
     if(negro==true){
       colision=2;
@@ -378,19 +378,25 @@ int main() {
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
               if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==2){
-                speed=speed/10;
+                speed=-0.5f;
               }
                 else if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==1){
                   if(speed>10){
                     speed -= 10.0f;
                   }
                   if(speed<10){
-                    speed = 8.0f;
+                    if(speed<8){
+                      if(speed>0){
+                        speed-= 0.5f;
+                      }
+                    }else{
+                      speed-=1.5f;
+                    }
+                  }
+                  if(speed<0){
+                    speed += 0.5f;
                   }
               } 
-            }
-            else{
-                speed=speed/10;
             }
           }
 
