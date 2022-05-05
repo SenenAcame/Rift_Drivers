@@ -202,7 +202,12 @@ void Circuito::CrearMapa(){
         contador++;
         cachos++;
         cacho=BuscaCacho(buscar);
-        mapas.push_back(cacho);
+        /*if(nieve){
+            mapas.push_back(cacho+"nieve");
+        }
+        else{*/
+            mapas.push_back(cacho);
+        //}
         if(nieve){
             cacho1="../resources/"+cacho+"nieve.png";
             cacho2="../resources/"+cacho+"nievebw.png";
@@ -280,6 +285,8 @@ void Circuito::CrearMapa(){
         }
     }
     mapas.push_back("meta"+std::to_string(buscar));
+    std::cerr << "fila :"+std::to_string(fila)<<"\n";
+    std::cerr << "col :"+std::to_string(col)<<"\n";
     circuito.at(fila).at(col)="../resources/meta"+std::to_string(buscar)+".png";
     if(circuito.at(fila).at(col)=="../resources/meta1.png"){
         circuitobw.at(fila).at(col)="../resources/meta1bw.png";
@@ -710,7 +717,7 @@ void Circuito::montaMapa(){
                         }
                     }
                 }
-                if(circuito.at(k-1).at(l-1)=="0"){
+                if(k-1>=0&&l-1>=0&&circuito.at(k-1).at(l-1)=="0"){
                     sf::Sprite spritefuera(texfuera);
                     //sf::Sprite sprite12bw(tex12bw);
                     for (int i = 0; i < 10; i++){
@@ -726,7 +733,7 @@ void Circuito::montaMapa(){
                         }
                     }
                 }
-                if(circuito.at(k).at(l-1)=="0"){
+                if(l-1>=0&&circuito.at(k).at(l-1)=="0"){
                     sf::Sprite spritefuera(texfuera);
                     //sf::Sprite sprite12bw(tex12bw);
                     for (int i = 0; i < 10; i++){
@@ -742,7 +749,7 @@ void Circuito::montaMapa(){
                         }
                     }
                 }
-                if(circuito.at(k+1).at(l+1)=="0"){
+                if(k+1<circuito.size()&&l+1<circuito.at(k+1).size()&&circuito.at(k+1).at(l+1)=="0"){
                     sf::Sprite spritefuera(texfuera);
                     //sf::Sprite sprite12bw(tex12bw);
                     for (int i = 0; i < 10; i++){
@@ -758,7 +765,7 @@ void Circuito::montaMapa(){
                         }
                     }
                 }
-                if(circuito.at(k).at(l+1)=="0"){
+                if(l+1<circuito.at(k).size()&&circuito.at(k).at(l+1)=="0"){
                     sf::Sprite spritefuera(texfuera);
                     //sf::Sprite sprite12bw(tex12bw);
                     for (int i = 0; i < 10; i++){
@@ -774,7 +781,7 @@ void Circuito::montaMapa(){
                         }
                     }
                 }
-                if(circuito.at(k+1).at(l-1)=="0"){
+                if(k+1<circuito.size()&&l-1>=0&&circuito.at(k+1).at(l-1)=="0"){
                     sf::Sprite spritefuera(texfuera);
                     //sf::Sprite sprite12bw(tex12bw);
                     for (int i = 0; i < 10; i++){
@@ -790,7 +797,7 @@ void Circuito::montaMapa(){
                         }
                     }
                 }
-                if(circuito.at(k+1).at(l)=="0"){
+                if(k+1<circuito.size()&&circuito.at(k+1).at(l)=="0"){
                     sf::Sprite spritefuera(texfuera);
                     //sf::Sprite sprite12bw(tex12bw);
                     for (int i = 0; i < 10; i++){
@@ -806,7 +813,7 @@ void Circuito::montaMapa(){
                         }
                     }
                 }
-                if(circuito.at(k-1).at(l+1)=="0"){
+                if(k-1>=0&&l+1<circuito.at(k-1).size()&&circuito.at(k-1).at(l+1)=="0"){
                     sf::Sprite spritefuera(texfuera);
                     //sf::Sprite sprite12bw(tex12bw);
                     for (int i = 0; i < 10; i++){
@@ -822,7 +829,7 @@ void Circuito::montaMapa(){
                         }
                     }
                 }
-                if(circuito.at(k-1).at(l)=="0"){
+                if(k-1>=0&&circuito.at(k-1).at(l)=="0"){
                     sf::Sprite spritefuera(texfuera);
                     //sf::Sprite sprite12bw(tex12bw);
                     for (int i = 0; i < 10; i++){

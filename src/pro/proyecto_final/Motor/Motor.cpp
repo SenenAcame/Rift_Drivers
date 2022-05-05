@@ -1,6 +1,6 @@
 #include "Motor.h"
 
-Motor* Motor::pinstance=NULL;
+Motor* Motor::pinstance=0;
 
 Motor::Motor()
 {
@@ -18,7 +18,7 @@ Motor* Motor::instance()
     {
         pinstance = new Motor();
     }
-    return(pinstance);
+    return pinstance;
 }
 
 void Motor::limpieza()

@@ -8,6 +8,7 @@
 #define kVel 8
 #define Pi 3.14159265
 #define MARGEN 10
+#define NoContains string::npos
 
 using namespace tinyxml2;
 
@@ -30,10 +31,20 @@ void ia::setList(Circuito *world){
     int global=0;
     int *posiciones = posicionesMapa(world);
     int x=25,y=25;
-
+    srand(time(NULL));
     for(int i=0; i<(int)world->getMapas().size(); i++){
         if(world->getMapas().at(i).size()>0){
-            string nom = "../resources/"+world->getMapas().at(i)+".xml";
+            string part = "";
+            if(world->getMapas().at(i).find("salida")==NoContains && world->getMapas().at(i).find("meta")==NoContains){
+                char ent = world->getMapas().at(i).at(0);
+                char sal = world->getMapas().at(i).at(2);
+                if(!((ent=='1' && sal=='4') || (ent=='4' && sal=='1') || (ent=='2' && sal=='3') || (ent=='3' && sal=='2'))){
+                    int v = rand() % 3;
+                    part += ","+to_string(v);
+                } 
+            }
+            
+            string nom = "../resources/"+world->getMapas().at(i)+part+".xml";
             const char* fichero = nom.c_str();
             XMLDocument doc;
             doc.LoadFile(fichero);
@@ -121,9 +132,21 @@ bool ia::getSegCheck(){
 
 int ia::contarPuntos(Circuito *world){
     int cont=0; 
+    srand(time(NULL));
     for(int i=0; i<(int)world->getMapas().size(); i++){
         if(world->getMapas().at(i).size()>0){
-            string nom = "../resources/"+world->getMapas().at(i)+".xml";
+            string part = "";
+            if(world->getMapas().at(i).find("salida")==NoContains && world->getMapas().at(i).find("meta")==NoContains){
+                char ent = world->getMapas().at(i).at(0);
+                char sal = world->getMapas().at(i).at(2);
+                if(!((ent=='1' && sal=='4') || (ent=='4' && sal=='1') || (ent=='2' && sal=='3') || (ent=='3' && sal=='2'))){
+                    int v = rand() % 3;
+                    part += ","+to_string(v);
+                    
+                } 
+            }
+
+            string nom = "../resources/"+world->getMapas().at(i)+part+".xml";
             const char* fichero = nom.c_str();
             XMLDocument doc;
             doc.LoadFile(fichero);

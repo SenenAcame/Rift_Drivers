@@ -3,6 +3,7 @@
 #include <iostream>
 //#include "include/config.h"
 #include "ej_modulos/mimodulo.h"
+#include <math.h>
 //incluir nuestras carpetas
 #include "IA/ia.h"
 #include "Mejoras/mejora.h"
@@ -22,13 +23,10 @@ int main()
   Menu * Menu = Menu::Instance();
   Manejador * instancia = Manejador::instancia();
   instancia->cambiarEstado(Menu);
-  juego* juego = juego::instance();
+  juego * juego = juego::instance();
 
   while(motor->getOpen())
-if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
 
-}
-*/
   //Menu menu(window.getSize().x, window.getSize().y);
   //creo singletons
   /*
@@ -70,9 +68,8 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
           }
         break;
         }
-        */
+        
       
-/*
       }
     }
     window->display();
@@ -85,6 +82,8 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)){
   }
   //return 0;
 */
+
+
 
 
 #include <SFML/Graphics.hpp>
@@ -133,7 +132,12 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
       col=true;
     } 
   } 
+   sf::Color color[4];
+   int colision=0;
+  bool negro=false;
+  bool col=false;
   */
+
   if((color[0].r==0) && (color[0].g==0) && (color[0].b==0)){
       negro=true;
       col=true;
@@ -148,7 +152,7 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
     }
   }
   return colision;
-}
+} 
 
 int main() {
 
@@ -818,39 +822,36 @@ int main() {
             position.y -= sin(sprite.getRotation()*M_PI/180)*5.0f;
           }
         }
-        
-        //if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
-          //if(pista){
-            //sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
-            
-            //cir->vaciaMapa();
-            //cir=new Circuito();
-            //rot=-90.00f;
-            //sprite.setRotation(rot);
-          //}
-          //cir->CrearMapa();
-          //cir->montaMapa();
-          //pista=true;
-          //ene->~ia();
-          //ene = new ia(cir,coche);
-          //ene->getVehi()->getImagen().setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
-          //ene->getVehi()->getImagen().setPosition(25*320+320/2,25*320+320/2);
-          //speed=0;
-        //}
-        
-        
-        //if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){
-          //ene->setDibCheck(!ene->getDibCheck());
-        //}
+      }
 
-        //if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
-          //ene->setSegCheck(!ene->getSegCheck());
-        //}
-        
-        //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-          //window.close();
-        //}
-        
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
+        if(pista){
+          sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
+          
+          cir->vaciaMapa();
+          cir=new Circuito();
+          rot=-90.00f;
+          sprite.setRotation(rot);
+        }
+        cir->CrearMapa();
+        cir->montaMapa();
+        pista=true;
+        ene->~ia();
+        ene = new ia(cir,coche);
+        ene->getVehi()->getImagen().setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
+        speed=0;
+      }
+
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){
+        ene->setDibCheck(!ene->getDibCheck());
+      }
+
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
+        ene->setSegCheck(!ene->getSegCheck());
+      }
+
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+        window.close();
       }
     }
 */

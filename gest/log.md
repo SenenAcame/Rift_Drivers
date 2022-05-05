@@ -261,3 +261,9 @@ Incorporadas con éxito las colisiones. En todo caso queda arreglar las reduccio
 
 # 30/04/2022 Senén Martínez Acame (1h 15min)
 Adaptada la IA a los añadidos de meta y salida del mapa.
+
+# 05/05/2022 Senén Martínez Acame (1h 25min)
+Creada variaciones de recorrido en las curvas.
+
+# 05/05/2022 Senén Martínez Acame (2h)
+Adaptada la IA para que pueda tomar las curvas de distinta forma, y correcciones de las curvas.

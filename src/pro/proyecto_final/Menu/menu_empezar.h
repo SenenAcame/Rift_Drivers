@@ -1,6 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
-#define MAX_NUMBER_OF_ITEMS 2
+#define MAX_EMPEZAR 2
 class menu_empezar
 {
     public:
@@ -11,6 +11,6 @@ class menu_empezar
         menu_empezar(float width, float heigth);
     private:
         sf::Font font;
-        sf::Text empezar_opciones[MAX_NUMBER_OF_ITEMS];
+        sf::Text empezar_opciones[MAX_EMPEZAR];
         
 };

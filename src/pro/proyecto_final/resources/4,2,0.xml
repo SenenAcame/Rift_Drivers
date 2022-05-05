@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="36">
+ <tileset firstgid="1" source="tile_atlas.tsx"/>
+ <layer id="1" name="Capa de patrones 1" width="10" height="10">
+  <data encoding="csv">
+27,28,16,17,18,17,18,21,27,28,
+42,43,31,32,33,32,33,38,6,43,
+27,28,46,47,48,47,17,18,38,5,
+42,43,61,62,63,62,32,33,19,20,
+57,58,16,35,18,19,47,48,34,35,
+72,73,76,24,18,19,62,63,49,50,
+27,27,28,76,24,19,62,63,64,65,
+42,42,27,28,76,78,77,78,79,80,
+57,57,42,43,27,28,29,30,73,73,
+72,72,57,58,42,43,44,45,43,44
+</data>
+ </layer>
+ <objectgroup id="2" name="Capa de Objetos 1">
+  <object id="17" x="160.148" y="4.47086">
+   <properties>
+    <property name="path" type="object" value="18"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="18" x="156.927" y="18.0159">
+   <properties>
+    <property name="path" type="object" value="19"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="19" x="152.353" y="32.077">
+   <properties>
+    <property name="path" type="object" value="20"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="20" x="147.088" y="47.5346">
+   <properties>
+    <property name="path" type="object" value="21"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="21" x="142.808" y="72.1549">
+   <properties>
+    <property name="path" type="object" value="22"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="22" x="137.42" y="100.026">
+   <properties>
+    <property name="path" type="object" value="23"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="23" x="134.215" y="124.97">
+   <properties>
+    <property name="path" type="object" value="24"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="24" x="136.818" y="150.889">
+   <properties>
+    <property name="path" type="object" value="25"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="25" x="146.23" y="167.327">
+   <properties>
+    <property name="path" type="object" value="26"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="26" x="161.442" y="175.896">
+   <properties>
+    <property name="path" type="object" value="27"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="27" x="178.252" y="181.666">
+   <properties>
+    <property name="path" type="object" value="28"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="28" x="197.843" y="184.593">
+   <properties>
+    <property name="path" type="object" value="29"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="29" x="216.448" y="185.093">
+   <properties>
+    <property name="path" type="object" value="30"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="30" x="235.141" y="183.343">
+   <properties>
+    <property name="path" type="object" value="31"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="31" x="254.585" y="179.195">
+   <properties>
+    <property name="path" type="object" value="32"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="32" x="270.498" y="173.547">
+   <properties>
+    <property name="path" type="object" value="33"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="33" x="284.618" y="167.356">
+   <properties>
+    <property name="path" type="object" value="34"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="34" x="299.722" y="162.237">
+   <properties>
+    <property name="path" type="object" value="35"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="35" x="315.002" y="160.178">
+   <properties>
+    <property name="path" type="object" value="0"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>

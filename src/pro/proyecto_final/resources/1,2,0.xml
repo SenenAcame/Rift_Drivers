@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="76">
+ <tileset firstgid="1" source="tile_atlas.tsx"/>
+ <layer id="1" name="Capa de patrones 1" width="10" height="10">
+  <data encoding="csv">
+27,27,28,43,58,57,58,43,28,28,
+42,42,43,58,73,72,73,58,43,28,
+27,57,58,73,1,3,2,3,4,5,
+42,72,73,1,39,17,18,19,20,20,
+57,58,1,39,17,18,19,20,35,35,
+72,73,16,33,32,33,34,35,50,50,
+42,43,31,17,47,48,49,50,65,65,
+57,58,46,32,62,63,64,65,23,80,
+72,73,61,47,48,49,50,23,81,73,
+72,72,61,62,63,64,65,66,43,44
+</data>
+ </layer>
+ <objectgroup id="2" name="Capa de Objetos 1">
+  <object id="51" x="159.815" y="318.075">
+   <properties>
+    <property name="path" type="object" value="52"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="52" x="160.04" y="299.702">
+   <properties>
+    <property name="path" type="object" value="53"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="53" x="158.71" y="281.593">
+   <properties>
+    <property name="path" type="object" value="54"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="54" x="155.685" y="265.787">
+   <properties>
+    <property name="path" type="object" value="55"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="55" x="150.043" y="250.861">
+   <properties>
+    <property name="path" type="object" value="56"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="56" x="142.286" y="234.654">
+   <properties>
+    <property name="path" type="object" value="57"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="57" x="133.671" y="217.297">
+   <properties>
+    <property name="path" type="object" value="58"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="58" x="125.914" y="199.571">
+   <properties>
+    <property name="path" type="object" value="59"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="59" x="123.99" y="181.652">
+   <properties>
+    <property name="path" type="object" value="60"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="60" x="126.409" y="164.285">
+   <properties>
+    <property name="path" type="object" value="61"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="61" x="132.924" y="148.003">
+   <properties>
+    <property name="path" type="object" value="62"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="62" x="144.754" y="133.258">
+   <properties>
+    <property name="path" type="object" value="63"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="63" x="160.712" y="128.266">
+   <properties>
+    <property name="path" type="object" value="64"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="64" x="176.968" y="126.608">
+   <properties>
+    <property name="path" type="object" value="65"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="65" x="198.726" y="127.255">
+   <properties>
+    <property name="path" type="object" value="66"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="66" x="216.915" y="129.793">
+   <properties>
+    <property name="path" type="object" value="71"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="71" x="231.5" y="135.5">
+   <properties>
+    <property name="path" type="object" value="72"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="72" x="251" y="143.75">
+   <properties>
+    <property name="path" type="object" value="73"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="73" x="270.75" y="152.5">
+   <properties>
+    <property name="path" type="object" value="74"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="74" x="293" y="158">
+   <properties>
+    <property name="path" type="object" value="75"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="75" x="313.75" y="159.75">
+   <properties>
+    <property name="path" type="object" value="0"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>
