@@ -52,19 +52,19 @@
    </properties>
    <point/>
   </object>
-  <object id="19" x="159.53" y="43.2121">
+  <object id="19" x="159.78" y="42.4621">
    <properties>
     <property name="path" type="object" value="20"/>
    </properties>
    <point/>
   </object>
-  <object id="20" x="159.47" y="21.4394">
+  <object id="20" x="159.47" y="25.4394">
    <properties>
     <property name="path" type="object" value="21"/>
    </properties>
    <point/>
   </object>
-  <object id="21" x="160.045" y="1.40909">
+  <object id="21" x="160.045" y="3.40909">
    <properties>
     <property name="path" type="object" value="0"/>
    </properties>

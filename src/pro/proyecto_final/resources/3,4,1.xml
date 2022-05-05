@@ -16,13 +16,13 @@
 </data>
  </layer>
  <objectgroup id="2" name="Capa de Objetos 1">
-  <object id="9" x="2.56421" y="160.531">
+  <object id="9" x="3.93921" y="159.781">
    <properties>
     <property name="path" type="object" value="10"/>
    </properties>
    <point/>
   </object>
-  <object id="10" x="17.291" y="159.531">
+  <object id="10" x="17.541" y="159.906">
    <properties>
     <property name="path" type="object" value="11"/>
    </properties>
@@ -112,13 +112,13 @@
    </properties>
    <point/>
   </object>
-  <object id="25" x="160.741" y="15.5842">
+  <object id="25" x="160.196" y="16.1297">
    <properties>
     <property name="path" type="object" value="26"/>
    </properties>
    <point/>
   </object>
-  <object id="26" x="160.741" y="1.47587">
+  <object id="26" x="160.196" y="2.56678">
    <properties>
     <property name="path" type="object" value="0"/>
    </properties>

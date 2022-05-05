@@ -16,123 +16,111 @@
 </data>
  </layer>
  <objectgroup id="2" name="Capa de Objetos 1">
-  <object id="33" x="316.5" y="159.75">
-   <properties>
-    <property name="path" type="object" value="43"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="43" x="301.5" y="164.75">
+  <object id="43" x="316.25" y="160.5">
    <properties>
     <property name="path" type="object" value="44"/>
    </properties>
    <point/>
   </object>
-  <object id="44" x="289.25" y="175">
+  <object id="44" x="297.75" y="164.75">
    <properties>
     <property name="path" type="object" value="45"/>
    </properties>
    <point/>
   </object>
-  <object id="45" x="275.5" y="184.5">
+  <object id="45" x="283" y="175">
    <properties>
     <property name="path" type="object" value="46"/>
    </properties>
    <point/>
   </object>
-  <object id="46" x="258.5" y="193.5">
+  <object id="46" x="265" y="186.5">
    <properties>
     <property name="path" type="object" value="47"/>
    </properties>
    <point/>
   </object>
-  <object id="47" x="236.25" y="202.25">
+  <object id="47" x="244.25" y="198">
    <properties>
     <property name="path" type="object" value="48"/>
    </properties>
    <point/>
   </object>
-  <object id="48" x="210" y="207.25">
+  <object id="48" x="219.75" y="204.5">
    <properties>
     <property name="path" type="object" value="49"/>
    </properties>
    <point/>
   </object>
-  <object id="49" x="187.5" y="208.25">
+  <object id="49" x="195.25" y="206.5">
    <properties>
     <property name="path" type="object" value="50"/>
    </properties>
    <point/>
   </object>
-  <object id="50" x="167.75" y="203.5">
+  <object id="50" x="171.25" y="202.5">
    <properties>
     <property name="path" type="object" value="51"/>
    </properties>
    <point/>
   </object>
-  <object id="51" x="148" y="194">
+  <object id="51" x="147" y="190.25">
    <properties>
     <property name="path" type="object" value="52"/>
    </properties>
    <point/>
   </object>
-  <object id="52" x="134.25" y="174">
+  <object id="52" x="135.75" y="167.25">
    <properties>
     <property name="path" type="object" value="53"/>
    </properties>
    <point/>
   </object>
-  <object id="53" x="134.25" y="152">
+  <object id="53" x="134.25" y="144.75">
    <properties>
     <property name="path" type="object" value="54"/>
    </properties>
    <point/>
   </object>
-  <object id="54" x="141" y="128.75">
+  <object id="54" x="140.75" y="122.25">
    <properties>
     <property name="path" type="object" value="55"/>
    </properties>
    <point/>
   </object>
-  <object id="55" x="149.5" y="109.75">
+  <object id="55" x="152.5" y="101">
    <properties>
     <property name="path" type="object" value="56"/>
    </properties>
    <point/>
   </object>
-  <object id="56" x="161" y="88.75">
+  <object id="56" x="164.75" y="75.25">
    <properties>
     <property name="path" type="object" value="57"/>
    </properties>
    <point/>
   </object>
-  <object id="57" x="169" y="70">
+  <object id="57" x="170.75" y="55.75">
    <properties>
     <property name="path" type="object" value="58"/>
    </properties>
    <point/>
   </object>
-  <object id="58" x="170.75" y="51.75">
+  <object id="58" x="169.5" y="36.25">
    <properties>
     <property name="path" type="object" value="59"/>
    </properties>
    <point/>
   </object>
-  <object id="59" x="168.25" y="33.25">
+  <object id="59" x="166.5" y="19">
    <properties>
     <property name="path" type="object" value="60"/>
    </properties>
    <point/>
   </object>
-  <object id="60" x="164" y="19.25">
+  <object id="60" x="160" y="3.25">
    <properties>
     <property name="path" type="object" value="61"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="61" x="160.75" y="2.75">
-   <properties>
-    <property name="path" type="object" value="0"/>
    </properties>
    <point/>
   </object>

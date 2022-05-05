@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="50">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="52">
  <tileset firstgid="1" source="tile_atlas.tsx"/>
  <layer id="1" name="Capa de patrones 1" width="10" height="10">
   <data encoding="csv">
@@ -16,7 +16,7 @@
 </data>
  </layer>
  <objectgroup id="2" name="Capa de Objetos 1">
-  <object id="32" x="160.333" y="319">
+  <object id="32" x="160.083" y="317.5">
    <properties>
     <property name="path" type="object" value="33"/>
    </properties>
@@ -34,91 +34,103 @@
    </properties>
    <point/>
   </object>
-  <object id="35" x="159" y="268.5">
+  <object id="35" x="159.545" y="279.591">
    <properties>
     <property name="path" type="object" value="36"/>
    </properties>
    <point/>
   </object>
-  <object id="36" x="158.583" y="250.167">
+  <object id="36" x="159.31" y="264.894">
    <properties>
     <property name="path" type="object" value="37"/>
    </properties>
    <point/>
   </object>
-  <object id="37" x="157.5" y="230.583">
+  <object id="37" x="158.955" y="248.583">
    <properties>
     <property name="path" type="object" value="38"/>
    </properties>
    <point/>
   </object>
-  <object id="38" x="152.333" y="214.5">
+  <object id="38" x="158.878" y="230.136">
    <properties>
     <property name="path" type="object" value="39"/>
    </properties>
    <point/>
   </object>
-  <object id="39" x="143.583" y="198.667">
+  <object id="39" x="155.765" y="213.212">
    <properties>
     <property name="path" type="object" value="40"/>
    </properties>
    <point/>
   </object>
-  <object id="40" x="132" y="184.75">
+  <object id="40" x="148.909" y="198.386">
    <properties>
     <property name="path" type="object" value="41"/>
    </properties>
    <point/>
   </object>
-  <object id="41" x="117.75" y="175.583">
+  <object id="41" x="141.023" y="189.038">
    <properties>
     <property name="path" type="object" value="42"/>
    </properties>
    <point/>
   </object>
-  <object id="42" x="106.917" y="171.333">
+  <object id="42" x="130.553" y="180.06">
    <properties>
     <property name="path" type="object" value="43"/>
    </properties>
    <point/>
   </object>
-  <object id="43" x="94.6667" y="166.333">
+  <object id="43" x="118.121" y="173.424">
    <properties>
     <property name="path" type="object" value="44"/>
    </properties>
    <point/>
   </object>
-  <object id="44" x="83.3333" y="164.583">
+  <object id="44" x="104.424" y="168.038">
    <properties>
     <property name="path" type="object" value="45"/>
    </properties>
    <point/>
   </object>
-  <object id="45" x="67.2083" y="162.292">
+  <object id="45" x="89.7538" y="164.11">
    <properties>
     <property name="path" type="object" value="46"/>
    </properties>
    <point/>
   </object>
-  <object id="46" x="51.2917" y="161.25">
+  <object id="46" x="73.6553" y="161.432">
    <properties>
     <property name="path" type="object" value="47"/>
    </properties>
    <point/>
   </object>
-  <object id="47" x="35.375" y="160.875">
+  <object id="47" x="60.1023" y="160.511">
    <properties>
     <property name="path" type="object" value="48"/>
    </properties>
    <point/>
   </object>
-  <object id="48" x="16.3333" y="160.333">
+  <object id="48" x="45.606" y="159.788">
    <properties>
     <property name="path" type="object" value="49"/>
    </properties>
    <point/>
   </object>
-  <object id="49" x="1.58333" y="160.125">
+  <object id="49" x="31.2197" y="159.761">
+   <properties>
+    <property name="path" type="object" value="50"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="50" x="18.3636" y="159.455">
+   <properties>
+    <property name="path" type="object" value="51"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="51" x="3.5" y="159.636">
    <properties>
     <property name="path" type="object" value="0"/>
    </properties>

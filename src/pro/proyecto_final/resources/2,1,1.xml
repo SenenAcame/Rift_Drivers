@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="199">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="200">
  <tileset firstgid="1" source="tile_atlas.tsx"/>
  <layer id="1" name="Capa de patrones 1" width="10" height="10">
   <data encoding="csv">
@@ -16,97 +16,103 @@
 </data>
  </layer>
  <objectgroup id="2" name="Capa de Objetos 1">
-  <object id="175" x="316.667" y="160">
+  <object id="175" x="315.667" y="160">
    <properties>
     <property name="path" type="object" value="176"/>
    </properties>
    <point/>
   </object>
-  <object id="176" x="297.5" y="159.667">
+  <object id="176" x="299.833" y="159.667">
    <properties>
     <property name="path" type="object" value="180"/>
    </properties>
    <point/>
   </object>
-  <object id="180" x="275.833" y="160">
+  <object id="180" x="282.166" y="160">
    <properties>
     <property name="path" type="object" value="181"/>
    </properties>
    <point/>
   </object>
-  <object id="181" x="255.75" y="160.75">
+  <object id="181" x="262.083" y="160.083">
    <properties>
     <property name="path" type="object" value="187"/>
    </properties>
    <point/>
   </object>
-  <object id="187" x="236.833" y="162.583">
+  <object id="187" x="242.166" y="160.583">
    <properties>
     <property name="path" type="object" value="188"/>
    </properties>
    <point/>
   </object>
-  <object id="188" x="215.333" y="167.333">
+  <object id="188" x="219.666" y="164.333">
    <properties>
     <property name="path" type="object" value="189"/>
    </properties>
    <point/>
   </object>
-  <object id="189" x="200.667" y="173.417">
+  <object id="189" x="203.667" y="169.75">
    <properties>
     <property name="path" type="object" value="190"/>
    </properties>
    <point/>
   </object>
-  <object id="190" x="186.083" y="184.167">
+  <object id="190" x="188.75" y="180.5">
    <properties>
     <property name="path" type="object" value="191"/>
    </properties>
    <point/>
   </object>
-  <object id="191" x="172.083" y="197.833">
+  <object id="191" x="175.416" y="191.833">
    <properties>
     <property name="path" type="object" value="192"/>
    </properties>
    <point/>
   </object>
-  <object id="192" x="164.5" y="214.333">
+  <object id="192" x="166.833" y="206">
    <properties>
     <property name="path" type="object" value="193"/>
    </properties>
    <point/>
   </object>
-  <object id="193" x="161.667" y="235">
+  <object id="193" x="161.667" y="223.333">
    <properties>
     <property name="path" type="object" value="194"/>
    </properties>
    <point/>
   </object>
-  <object id="194" x="160.75" y="251.583">
+  <object id="194" x="160.75" y="236.25">
    <properties>
     <property name="path" type="object" value="195"/>
    </properties>
    <point/>
   </object>
-  <object id="195" x="160.667" y="271.917">
+  <object id="195" x="160.5" y="252.25">
    <properties>
     <property name="path" type="object" value="196"/>
    </properties>
    <point/>
   </object>
-  <object id="196" x="160.667" y="288">
+  <object id="196" x="160.667" y="272.083">
    <properties>
     <property name="path" type="object" value="197"/>
    </properties>
    <point/>
   </object>
-  <object id="197" x="160.417" y="305.25">
+  <object id="197" x="160.084" y="286.917">
    <properties>
     <property name="path" type="object" value="198"/>
    </properties>
    <point/>
   </object>
-  <object id="198" x="160.333" y="318.667">
+  <object id="198" x="160.416" y="305">
+   <properties>
+    <property name="path" type="object" value="199"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="199" x="160.417" y="316.5">
    <properties>
     <property name="path" type="object" value="0"/>
    </properties>
