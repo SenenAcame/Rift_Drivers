@@ -2,7 +2,7 @@
 #include <iostream>
 #include "menu_final.h"
 
-menu_final::menu_final(float width, float heigth){
+menu_final::menu_final(float width, float heigth) : Menu(width, heigth){
     if(!font.loadFromFile("../resources/Barbarian NS.ttf"))
     {
        std::cout << "No se ha cargado la fuente" << std::endl;

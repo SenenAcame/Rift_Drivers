@@ -3,7 +3,7 @@
 #include "menu_final.h"
 #include "menu.h"
 
-class menu_final
+class menu_final : public Menu
 {
 private:
     sf::Font font;
