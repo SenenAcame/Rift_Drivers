@@ -137,18 +137,28 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
   bool negro=false;
   bool col=false;
   */
-
+  int otroCont=0;
   if((color[0].r==0) && (color[0].g==0) && (color[0].b==0)){
       negro=true;
       col=true;
     }else if((color[0].r==204) && (color[0].g==204) && (color[0].b==204)){
       col=true;
+    }else if((color[0].r==127) && (color[0].g==127) && (color[0].b==127)){
+      otroCont=1;
+    }else if((color[0].r==119) && (color[0].g==119) && (color[0].b==119)){
+      otroCont=2;
     }
   if(col==true){
     if(negro==true){
       colision=2;
     }else{
       colision=1;
+    }
+  } else if(otroCont!=0){
+    if(otroCont==1){
+      colision=3;
+    }else if(otroCont==2){
+      colision=4;
     }
   }
   return colision;
@@ -362,13 +372,18 @@ int main() {
           sprite.setRotation(rot);
           prev = rot;
 
-          if(speed!=0){
             int col=(int)sprite.getPosition().x/320;
             int row=(int)sprite.getPosition().y/320;
             //hola
             std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
             sf::Texture durmp;
             string trbw=mapbw.at(row).at(col);
+            if(trbw=="0"){
+              speed=0.0f;
+                if(speed==0){
+                  speed=-3.5f;
+                }
+            }
             if(trbw!="0"){
               if (!durmp.loadFromFile(trbw)) {
                 std::cerr << "Error cargando la imagen sprites.png";
@@ -378,7 +393,10 @@ int main() {
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
               if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==2){
-                speed=-0.5f;
+                speed=0.0f;
+                if(speed==0){
+                  speed=-3.5f;
+                }
               }
                 else if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==1){
                   if(speed>10){
@@ -398,7 +416,6 @@ int main() {
                   }
               } 
             }
-          }
 
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
             sprite.rotate(-gir);
