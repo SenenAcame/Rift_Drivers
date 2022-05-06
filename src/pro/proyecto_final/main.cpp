@@ -254,7 +254,6 @@ int main() {
   Menu menu(window.getSize().x, window.getSize().y);
 
   int estado = 0;
-  bool trasera=false;
   //Bucle del juego
   while (window.isOpen()){
     sf::Event e;
@@ -419,7 +418,7 @@ int main() {
               //esto es para la meta
               if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==3){
                 //Esto es cuando pisa EL PORTAL DEL AVERNO 
-                
+
                 //estado=0;
                 //NO SE QUE ESTOY HACIENDO MAL, AIUDA
                 /*
