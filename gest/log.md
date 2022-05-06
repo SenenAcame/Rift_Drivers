@@ -275,4 +275,4 @@ Tiempo que no me he puesto de juntar el circuito y la ia con Senén, colisiones 
 Seleccion de tipo de recorrido para curvas dependiendo de si hay nieve o no.
 
 # 06/05/2022 Joan Pascual Izquierdo (2h 15min)
-(Este log es un conjunto de lo que hice otro día y no apunté en su momento, y hoy) Mejorado el tema de la reacción del coche ante colisiones, añadiendo varios intervalos con los que al coche se le aplica más deceleración.
+(Este log es un conjunto de lo que hice otro día y no apunté en su momento, y hoy) Mejorado el tema de la reacción del coche ante colisiones, añadiendo varios intervalos con los que al coche se le aplica más deceleración (intentando "replicar" un poco la fuerza normal que se le da al coche cuando impacta contra  un objeto sólido).
