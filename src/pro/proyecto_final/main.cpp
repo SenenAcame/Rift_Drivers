@@ -365,7 +365,7 @@ int main() {
           if(speed!=0){
             int col=(int)sprite.getPosition().x/320;
             int row=(int)sprite.getPosition().y/320;
-            
+            //hola
             std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
             sf::Texture durmp;
             string trbw=mapbw.at(row).at(col);
