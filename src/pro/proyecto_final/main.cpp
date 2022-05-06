@@ -393,25 +393,55 @@ int main() {
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
               if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==2){
+                if(speed>30.0f){
+                  speed-=50.0f;
+                }else if(speed>20.0f){
+                  speed-=38.0f;
+                }else if(speed>15.0f){
+                  speed-=28.0f;
+                }else if(speed>12.0f){
+                  speed-=22.0f;
+                }else if(speed>10.0f){
+                  speed-=16.0f;
+                }else if(speed>8.0f){
+                  speed-=13.0f;
+                }else if(speed>6.0f){
+                  speed-=11.0f;
+                }else if(speed>4.0f){
+                  speed-=10.0f;
+                }else if(speed>2.0f){
+                  speed-=6.0f;
+                }else if(speed>1){
+                  speed-=3.7f;
+                }else if(speed>0){
+                  speed-=2.0f;
+                }
+                /*
                 speed=0.0f;
                 if(speed==0){
                   speed=-3.5f;
                 }
+                */
               }
                 else if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==1){
-                  if(speed>10){
-                    speed -= 10.0f;
+                  if(speed>20.0f){
+                    speed-=12.0f;
+                  }else if(speed>15.0f){
+                    speed -= 6.0f;
+                  }else if(speed>10.0f){
+                    speed -= 4.0f;
                   }
-                  if(speed<10){
-                    if(speed<8){
-                      if(speed>0){
+                  
+                  if(speed<10.0f){
+                    if(speed<9.2f){
+                      if(speed>0.0f){
                         speed-= 0.5f;
                       }
                     }else{
                       speed-=1.5f;
                     }
                   }
-                  if(speed<0){
+                  if(speed<0.0f){
                     speed += 0.5f;
                   }
               } 
