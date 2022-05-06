@@ -270,3 +270,6 @@ Adaptada la IA para que pueda tomar las curvas de distinta forma, y correcciones
 
 # 05/05/2022 Sergio Tortajada Santonja(12h)
 Tiempo que no me he puesto de juntar el circuito y la ia con Senén, colisiones con Joan, implementación de salida y meta, rellenado de huecos cercanos al recorrido y corrección de fallos
+
+# 06/05/2022 Senén Martínez Acame (1h 35min)
+Seleccion de tipo de recorrido para curvas dependiendo de si sin de nieve o no. Hay un error en los trozos de nieve que necesito que Sergio intente arreglar para poder implementar al complento esta parte.

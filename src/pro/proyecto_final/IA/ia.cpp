@@ -17,8 +17,8 @@ ia::ia(Circuito *world, vehiculo *car){
     setVehi(car);
     setCont(0);
     setAngulo(0);
-    setDibCheck(false);
-    setSegCheck(true);
+    setDibCheck(true);
+    setSegCheck(false);
 }
 
 void ia::setList(Circuito *world){
@@ -32,20 +32,27 @@ void ia::setList(Circuito *world){
     int *posiciones = posicionesMapa(world);
     int x=25,y=25;
     srand(time(NULL));
+    cout << "A parte" << endl;
     for(int i=0; i<(int)world->getMapas().size(); i++){
         if(world->getMapas().at(i).size()>0){
-            string part = "";
+            string trozo = tipoTerreno(world, i);
+            /*
             if(world->getMapas().at(i).find("salida")==NoContains && world->getMapas().at(i).find("meta")==NoContains){
                 char ent = world->getMapas().at(i).at(0);
                 char sal = world->getMapas().at(i).at(2);
                 if(!((ent=='1' && sal=='4') || (ent=='4' && sal=='1') || (ent=='2' && sal=='3') || (ent=='3' && sal=='2'))){
                     int v = rand() % 3;
-                    part += ","+to_string(v);
+                    trozo += ","+to_string(v);
                 } 
             }
+            */
+            //string nom = "../resources/"+world->getMapas().at(i)+trozo+".xml";
             
-            string nom = "../resources/"+world->getMapas().at(i)+part+".xml";
-            const char* fichero = nom.c_str();
+            /*
+            string trozo = tipoTerreno(world, i);
+            string nom = "../resources/"+trozo+".xml";
+            */
+            const char* fichero = trozo.c_str();
             XMLDocument doc;
             doc.LoadFile(fichero);
             XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
@@ -135,19 +142,25 @@ int ia::contarPuntos(Circuito *world){
     srand(time(NULL));
     for(int i=0; i<(int)world->getMapas().size(); i++){
         if(world->getMapas().at(i).size()>0){
-            string part = "";
+            string trozo = tipoTerreno(world, i);
+            /*
             if(world->getMapas().at(i).find("salida")==NoContains && world->getMapas().at(i).find("meta")==NoContains){
                 char ent = world->getMapas().at(i).at(0);
                 char sal = world->getMapas().at(i).at(2);
                 if(!((ent=='1' && sal=='4') || (ent=='4' && sal=='1') || (ent=='2' && sal=='3') || (ent=='3' && sal=='2'))){
                     int v = rand() % 3;
-                    part += ","+to_string(v);
+                    trozo += ","+to_string(v);
                     
                 } 
             }
-
-            string nom = "../resources/"+world->getMapas().at(i)+part+".xml";
-            const char* fichero = nom.c_str();
+            */
+            //string nom = "../resources/"+world->getMapas().at(i)+trozo+".xml";
+            
+            /*
+            string trozo = tipoTerreno(world, i);
+            string nom = "../resources/"+trozo+".xml";
+            */
+            const char* fichero = trozo.c_str();
             XMLDocument doc;
             doc.LoadFile(fichero);
             XMLElement *grupo = doc.FirstChildElement("map")->FirstChildElement("objectgroup");
@@ -183,6 +196,48 @@ void ia::dibujaRecorrido(sf::RenderWindow *vent){
         }
         vent->draw(lineas,size,sf::LinesStrip);
     }
+}
+
+string ia::tipoTerreno(Circuito *world, int posi){
+    string part = "";
+    //srand(NULL);
+    /*
+    if(world->getMapas().at(posi).find("salida")==NoContains && world->getMapas().at(posi).find("meta")==NoContains){
+        char ent = world->getMapas().at(posi).at(0);
+        char sal = world->getMapas().at(posi).at(2);
+        part.push_back(ent);
+        part += ",";
+        part.push_back(sal);
+        if(!((ent=='1' && sal=='4') || (ent=='4' && sal=='1') || (ent=='2' && sal=='3') || (ent=='3' && sal=='2'))){
+            int v = rand() % 2;
+            if(world->getMapas().at(posi).find("nieve")==NoContains){
+                v++;
+            }
+            part += ","+to_string(v);
+            cout << v << endl;
+        } 
+    }
+    else{
+        part = world->getMapas().at(posi);
+    }
+    */
+    if(world->getMapas().at(posi).find("salida")==NoContains && world->getMapas().at(posi).find("meta")==NoContains){
+        char ent = world->getMapas().at(posi).at(0);
+        char sal = world->getMapas().at(posi).at(2);
+        part.push_back(ent);
+        part += ",";
+        part.push_back(sal);
+        if(!((ent=='1' && sal=='4') || (ent=='4' && sal=='1') || (ent=='2' && sal=='3') || (ent=='3' && sal=='2'))){
+            int v = rand() % 3;
+            part += ","+to_string(v);
+        } 
+    }
+    else{
+        part = world->getMapas().at(posi);
+    }
+    cout << world->getMapas().at(posi) << endl;
+    string fichero = "../resources/"+part+".xml";
+    return fichero;
 }
 
 void ia::seguirRuta(){

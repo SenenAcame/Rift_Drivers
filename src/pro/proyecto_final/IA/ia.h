@@ -42,6 +42,7 @@ class ia{
         int contarPuntos(Circuito *mundo);
         int *posicionesMapa(Circuito *mundo);
         void dibujaRecorrido(sf::RenderWindow *wind);
+        string tipoTerreno(Circuito *mundo, int pos);
 
         void seguirRuta();
         void siguienteNodo();
