@@ -143,7 +143,7 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
       col=true;
     }else if((color[0].r==204) && (color[0].g==204) && (color[0].b==204)){
       col=true;
-    }else if((color[0].r==127) && (color[0].g==127) && (color[0].b==127)){
+    }else if((color[0].r==170) && (color[0].g==170) && (color[0].b==170)){
       otroCont=1;
     }else if((color[0].r==119) && (color[0].g==119) && (color[0].b==119)){
       otroCont=2;
@@ -156,7 +156,9 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
     }
   } else if(otroCont!=0){
     if(otroCont==1){
+      //META
       colision=3;
+      //META
     }else if(otroCont==2){
       colision=4;
     }
@@ -252,7 +254,7 @@ int main() {
   Menu menu(window.getSize().x, window.getSize().y);
 
   int estado = 0;
-
+  bool trasera=false;
   //Bucle del juego
   while (window.isOpen()){
     sf::Event e;
@@ -379,21 +381,9 @@ int main() {
             sf::Texture durmp;
             string trbw=mapbw.at(row).at(col);
             if(trbw=="0"){
-              speed=0.0f;
-                if(speed==0){
-                  speed=-3.5f;
-                }
-            }
-            if(trbw!="0"){
-              if (!durmp.loadFromFile(trbw)) {
-                std::cerr << "Error cargando la imagen sprites.png";
-                exit(0);
-              }
-              sf::Image dbw=durmp.copyToImage();
-              int spx= sprite.getPosition().x;
-              int spy= sprite.getPosition().y;
-              if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==2){
-                if(speed>30.0f){
+              if(speed>40.0f){
+                  speed-=65.0f;
+                }else if(speed>30.0f){
                   speed-=50.0f;
                 }else if(speed>20.0f){
                   speed-=40.0f;
@@ -416,13 +406,64 @@ int main() {
                 }else if(speed>0){
                   speed-=2.0f;
                 }
+            }
+            if(trbw!="0"){
+              if (!durmp.loadFromFile(trbw)) {
+                std::cerr << "Error cargando la imagen sprites.png";
+                exit(0);
+              }
+              sf::Image dbw=durmp.copyToImage();
+              int spx= sprite.getPosition().x;
+              int spy= sprite.getPosition().y;
+
+              //esto es para la meta
+              if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==3){
+                //Esto es cuando pisa EL PORTAL DEL AVERNO 
+                
+                //estado=0;
+                //NO SE QUE ESTOY HACIENDO MAL, AIUDA
+                /*
+                window.clear();
+                menu.draw(window);
+                break;
+                */
+              }
+
+              if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==2){
+                
+                if(speed>40.0f){
+                  speed-=65.0f;
+                }else if(speed>30.0f){
+                  speed-=50.0f;
+                }else if(speed>20.0f){
+                  speed-=40.0f;
+                }else if(speed>15.0f){
+                  speed-=29.0f;
+                }else if(speed>12.0f){
+                  speed-=23.0f;
+                }else if(speed>10.0f){
+                  speed-=17.0f;
+                }else if(speed>8.0f){
+                  speed-=14.0f;
+                }else if(speed>6.0f){
+                  speed-=12.0f;
+                }else if(speed>4.0f){
+                  speed-=10.5f;
+                }else if(speed>2.0f){
+                  speed-=6.5f;
+                }else if(speed>1){
+                  speed-=3.7f;
+                }else if(speed>0){
+                  speed-=2.0f;
+                }
+              }
                 /*
                 speed=0.0f;
                 if(speed==0){
                   speed=-3.5f;
                 }
                 */
-              }
+              
                 else if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==1){
                   if(speed>20.0f){
                     speed-=12.0f;
