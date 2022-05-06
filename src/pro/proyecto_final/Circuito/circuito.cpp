@@ -202,12 +202,12 @@ void Circuito::CrearMapa(){
         contador++;
         cachos++;
         cacho=BuscaCacho(buscar);
-        /*if(nieve){
+        if(nieve){
             mapas.push_back(cacho+"nieve");
         }
-        else{*/
+        else{
             mapas.push_back(cacho);
-        //}
+        }
         if(nieve){
             cacho1="../resources/"+cacho+"nieve.png";
             cacho2="../resources/"+cacho+"nievebw.png";
