@@ -578,6 +578,10 @@ int main() {
                   rot = sprite.getRotation();
                 }
             }
+            else{
+              sprite.rotate(-gir);
+              rot = sprite.getRotation();
+            }
 
             
 
@@ -612,6 +616,10 @@ int main() {
                   sprite.rotate(+gir);
                   rot = sprite.getRotation();
                 }
+            }
+            else{
+              sprite.rotate(+gir);
+              rot = sprite.getRotation();
             }
             
             //Giro de la camara y minimapa
