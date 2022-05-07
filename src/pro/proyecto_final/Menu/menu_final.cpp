@@ -16,12 +16,12 @@ menu_final::menu_final(float width, float heigth){
     final_opciones[0].setFont(font);
     final_opciones[0].setFillColor(sf::Color::Green);
     final_opciones[0].setString("Reintentar");
-    final_opciones[1].setPosition(sf::Vector2f(width/2, heigth/(NUM_OPCIONES+1)*1));
+    final_opciones[0].setPosition(sf::Vector2f(width/2, heigth/(NUM_OPCIONES+1)*1));
 
-    final_opciones[0].setFont(font);
-    final_opciones[0].setFillColor(sf::Color::Green);
-    final_opciones[0].setString("Volver al inicio");
-    final_opciones[2].setPosition(sf::Vector2f(width/2, heigth/(NUM_OPCIONES+1)*2));
+    final_opciones[1].setFont(font);
+    final_opciones[1].setFillColor(sf::Color::Green);
+    final_opciones[1].setString("Volver al inicio");
+    final_opciones[1].setPosition(sf::Vector2f(width/2, heigth/(NUM_OPCIONES+1)*2));
 
 }
 

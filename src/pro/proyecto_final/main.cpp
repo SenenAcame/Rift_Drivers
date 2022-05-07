@@ -97,6 +97,7 @@ int main()
 //#include "IA/ia.h"
 #include "Juego/juego.h"
 #include "Menu/menu.h"
+#include "Menu/menu_final.h"
 #include "Poderes/poderes.h"
 //#include "Vehiculo/vehiculo.h"
 #include "Circuito/circuito.h"
@@ -250,16 +251,20 @@ int main() {
   float accumulator = 0;
   const float timestep = 1.0f / 15.0f; 
 
-
+ 
+  menu_final menuFinal(window.getSize().x, window.getSize().y);
   Menu menu(window.getSize().x, window.getSize().y);
+
 
   int estado = 0;
   //Bucle del juego
   while (window.isOpen()){
+ 
     sf::Event e;
-
+   
     switch(estado){
       case 0:
+       
         while (window.pollEvent(e)){
           switch(e.type){
             case sf::Event::Closed:
@@ -328,6 +333,7 @@ int main() {
 
                 case sf::Keyboard::P:
                    ene->setSegCheck(!ene->getSegCheck());
+                   estado=2;
                 break;
                 
                 case sf::Keyboard::L:
@@ -416,17 +422,19 @@ int main() {
               int spy= sprite.getPosition().y;
 
               //esto es para la meta
-              if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==3){
-                //Esto es cuando pisa EL PORTAL DEL AVERNO 
 
-                //estado=0;
-                //NO SE QUE ESTOY HACIENDO MAL, AIUDA
-                /*
-                window.clear();
-                menu.draw(window);
-                break;
-                */
-              }
+                if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==3){
+                  //Esto es cuando pisa EL PORTAL DEL AVERNO 
+
+                  estado=2;
+                  break;
+                  //NO SE QUE ESTOY HACIENDO MAL, AIUDA
+                  /*
+                  window.clear();
+                  menu.draw(window);
+                  break;
+                  */
+                }
 
               if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==2){
                 
@@ -547,46 +555,15 @@ int main() {
               position.y -= sin(sprite.getRotation()*M_PI/180)*5.0f;
             }
           }
-          /*
-          if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
-            if(pista){
-              sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
-              
-              cir->vaciaMapa();
-              cir=new Circuito();
-              rot=-90.00f;
-              sprite.setRotation(rot);
-            }
-            cir->CrearMapa();
-            cir->montaMapa();
-            pista=true;
-            ene->~ia();
-            ene = new ia(cir,coche);
-            //ene->getVehi()->getImagen().setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
-            //ene->getVehi()->getImagen().setPosition(25*320+320/2,25*320+320/2);
-            speed=0;
-          }
-          */
-          /*
-          if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){
-            ene->setDibCheck(!ene->getDibCheck());
-          }
-
-          if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
-            ene->setSegCheck(!ene->getSegCheck());
-          }
           
-        
-          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-            window.close();
-          }
-          */
         }
         
         window.clear();
+        camara=sf::View(sf::FloatRect(0,0,1080+speed*7,720+speed*7));
         camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
+        
         window.setView(camara);
         if(pista){
           //cir->dibujaMapabw(&window);
@@ -614,7 +591,95 @@ int main() {
         window.display();
 
       break;
+      //MENÚ FINALIIIIIIIIIIIIIIIIIIISIMO
+
+      case 2:
+        sf::Event e;
+        std::cout <<"HE ENTRADO WEEEEEEEEE ,SOY PROASO" << std::endl;
+        camara.setCenter(25*320+320/2, 25*320+320/2);
+        window.setView(camara);
+        while (window.pollEvent(e)){
+          switch(e.type){
+            case sf::Event::Closed:
+              window.close();
+            break;
+            case sf::Event::KeyReleased:
+              switch (e.key.code){
+                case sf::Keyboard::Up:
+                  menuFinal.Mover_arriba();
+                break;
+              
+                case sf::Keyboard::Down:
+                  menuFinal.Mover_abajo();
+                break;
+
+                case sf::Keyboard::Key::Enter:
+                  switch (menuFinal.GetPressed()){
+                    case 0:
+                      std::cout <<"Has seleccionado: Volver a jugar" << std::endl;
+                      if(pista){
+                        position.x = 25*320+320/2;
+                        position.y = 25*320+320/2;
+                        sprite.setPosition(position.x,position.y);
+                        cir->vaciaMapa();
+                        cir=new Circuito();
+                        rot=-90.00f;
+                        sprite.setRotation(rot);
+                      }
+                      coche->~vehiculo();
+                      coche = new vehiculo(1,2,3,"../resources/cocherot.png",spr2);
+                      cir->CrearMapa();
+                      cir->montaMapa();
+                      pista=true;
+                      ene->~ia();
+                      ene = new ia(cir,coche);
+                      speed=0;
+                      estado=1;
+                    break;
+
+                    case 1:
+                      std::cout <<"Has seleccionado: Inici" << std::endl;
+                      std::cout <<"Has seleccionado: Volver a jugar" << std::endl;
+                      if(pista){
+                        position.x = 25*320+320/2;
+                        position.y = 25*320+320/2;
+                        sprite.setPosition(position.x,position.y);
+                        cir->vaciaMapa();
+                        cir=new Circuito();
+                        rot=-90.00f;
+                        sprite.setRotation(rot);
+                      }
+                      coche->~vehiculo();
+                      coche = new vehiculo(1,2,3,"../resources/cocherot.png",spr2);
+                      cir->CrearMapa();
+                      cir->montaMapa();
+                      pista=true;
+                      ene->~ia();
+                      ene = new ia(cir,coche);
+                      speed=0;
+                      estado=0;
+                    break;
+                  }
+                break;
+
+                case sf::Keyboard::Escape:
+                  window.close();
+                break;
+                /*
+                default:
+                  std::cout << e.key.code << std::endl;
+                break;
+                */
+              }
+            break;
+          } 
+        }
+        window.clear();
+        menuFinal.draw(window);
+        window.display();
+      break;
     }
+
 
 /*
     if(estado==0){
