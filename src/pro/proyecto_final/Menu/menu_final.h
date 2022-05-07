@@ -15,5 +15,4 @@ public:
     void Mover_arriba();
     void Mover_abajo();
     int GetPressed() {return selected;}
-    ~menu_final();
 };
