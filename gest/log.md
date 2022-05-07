@@ -282,3 +282,5 @@ Intento de mejora de colisiones y el cambio a Menu_final (sale mal, la pantalla 
 
 # 06/05/2022 Joan Pascual Izquierdo/Sergio Tortajada Santonja/Angélica Quaranta Barba (1h 30min)
 Cambio a Menu_final (sale mal, la pantalla se pone en negro y ya)
+
+# 07/05/2022 Sergio Tortajada Santonja(10 min)
