@@ -284,3 +284,4 @@ Intento de mejora de colisiones y el cambio a Menu_final (sale mal, la pantalla 
 Cambio a Menu_final (sale mal, la pantalla se pone en negro y ya)
 
 # 07/05/2022 Sergio Tortajada Santonja(10 min)
+Cambiada rotación en terreno de hielo
