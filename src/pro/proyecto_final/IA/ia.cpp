@@ -5,7 +5,7 @@
 #include "../tinyxml/tinyxml2.h"
 
 #define TamTile 320
-#define kVel 8
+#define kVel 9
 #define Pi 3.14159265
 #define MARGEN 10
 #define NoContains string::npos
@@ -17,8 +17,8 @@ ia::ia(Circuito *world, vehiculo *car){
     setVehi(car);
     setCont(0);
     setAngulo(0);
-    setDibCheck(true);
-    setSegCheck(false);
+    setDibCheck(false);
+    setSegCheck(true);
 }
 
 void ia::setList(Circuito *world){

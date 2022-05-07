@@ -289,3 +289,5 @@ Cambiada rotación en terreno de hielo.
 # 07/05/2022 Senén Martínez Acame(30 min)
 Solucionado el problema de los cambios del menu.
 
+# 07/05/2022 Miguel Ángel Ferrer  García de la Reina (30 min)
+Cambio en la rotacion del vehiculo para que no de tirones, y cambiada la velocidad de la IA.

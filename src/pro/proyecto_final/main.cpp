@@ -653,9 +653,7 @@ int main() {
         ene->getVehi()->getImagen().setPosition(previous2 + ((ene->getVehi()->getImagen().getPosition() - previous2) * (accumulator / timestep)));
 
         sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
-        if(sprite.getRotation()<345 && sprite.getRotation()>0){
-            sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));
-        }
+        
         
         window.draw(sprite);
         window.draw(ene->getVehi()->getImagen());
