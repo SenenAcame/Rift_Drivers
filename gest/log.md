@@ -293,4 +293,4 @@ Solucionado el problema de los cambios del menu.
 Cambio en la rotacion del vehiculo para que no de tirones, y cambiada la velocidad de la IA.
 
 # 08/05/2022 Joan Pascual Izquierdo/Sergio Tortajada Santonja(1h 20min)
-Menú to flamoso, cambiando cosas de menu y menu final
+Menú to flamoso, cambiando cosas de menu y menu final: hemos puesto el color de la letra seleccionada en rojo, que hay más contraste de color que el verde que había para que se vea mejor, hemos puesto un delineado en negro a la letra para difereciarla del fondo, porque no se veía bien las letras por la cantidad de blanco del fondo y, la imagen del fondo, que es una imagen azul y blanca (por eso es el cambio a rojo y el delineado).
