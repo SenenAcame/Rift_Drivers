@@ -14,14 +14,20 @@ menu_final::menu_final(float width, float heigth){
     
     //defino el menu final con las opciones
     final_opciones[0].setFont(font);
-    final_opciones[0].setFillColor(sf::Color::Green);
+    final_opciones[0].setFillColor(sf::Color::Red);
     final_opciones[0].setString("Reintentar");
-    final_opciones[0].setPosition(sf::Vector2f(width/2, heigth/(NUM_OPCIONES+1)*1));
+    final_opciones[0].setScale(4, 3);
+    final_opciones[0].setOutlineColor(sf::Color::Black);
+    final_opciones[0].setOutlineThickness(2);
+    final_opciones[0].setPosition(sf::Vector2f(width/2-270, (heigth/(NUM_OPCIONES+1)*1)+80));
 
     final_opciones[1].setFont(font);
-    final_opciones[1].setFillColor(sf::Color::Green);
+    final_opciones[1].setFillColor(sf::Color::White);
     final_opciones[1].setString("Volver al inicio");
-    final_opciones[1].setPosition(sf::Vector2f(width/2, heigth/(NUM_OPCIONES+1)*2));
+    final_opciones[1].setScale(3.5, 3);
+    final_opciones[1].setOutlineColor(sf::Color::Black);
+    final_opciones[1].setOutlineThickness(2);
+    final_opciones[1].setPosition(sf::Vector2f(width/2-350, (heigth/(NUM_OPCIONES+1)*2)+20));
 
 }
 
@@ -39,7 +45,7 @@ void menu_final::Mover_arriba()
     {
         final_opciones[selected].setFillColor(sf::Color::White);
         selected--;
-        final_opciones[selected].setFillColor(sf::Color::Green);
+        final_opciones[selected].setFillColor(sf::Color::Red);
     }
 }
 
@@ -49,6 +55,6 @@ void menu_final::Mover_abajo()
     {
         final_opciones[selected].setFillColor(sf::Color::White);
         selected++;
-        final_opciones[selected].setFillColor(sf::Color::Green);
+        final_opciones[selected].setFillColor(sf::Color::Red);
     }
 }

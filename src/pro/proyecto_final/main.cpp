@@ -195,6 +195,33 @@ int main() {
     exit(0);
   }
 
+   sf::Texture iniF;
+  if (!iniF.loadFromFile("../resources/inicio.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Texture fondo;
+  if (!fondo.loadFromFile("../resources/fondo.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Sprite imgIni(iniF);
+  //imgIni.setTexture(iniF, true);
+  /*
+  std::vector <sf::Sprite> vektor;
+  for (int i = 0; i < (int)(1080/32)+1; i++){
+        for (int j = 0; j < (int)(720/32)+1; j++){
+            imgIni.setPosition(i*32,j*32);
+            imgIni.setTextureRect(sf::IntRect(i*32,j*32,32,32));
+            vektor.push_back(imgIni);
+        }
+    }
+    */
+  imgIni.setTextureRect(sf::IntRect(0,0,1080,720));
+
+  sf::Sprite imgFondo(fondo);
+  imgIni.setTextureRect(sf::IntRect(0,0,1080,720));
+
   sf::Sprite spr2(tex);
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex2);
@@ -325,9 +352,15 @@ int main() {
 
         camara=sf::View(sf::FloatRect(0,0,1080,720));
         window.setView(camara);
-
         window.clear();
+        /*
+        for(int i=0; i<vektor.size();i++){
+          window.draw(vektor.at(i));
+        }
+        */
+        window.draw(imgIni);
         menu.draw(window);
+        
         window.display();
 
       break;
@@ -755,10 +788,27 @@ int main() {
           } 
         }
         
-        camara=sf::View(sf::FloatRect(0,0,1080,720));
-        window.setView(camara);
+        
 
         window.clear();
+        /*
+        window.setView(camara);
+        if(pista){
+          //cir->dibujaMapabw(&window);
+          cir->dibujaMapa(&window);
+        }
+        window.draw(sprite);
+        window.draw(ene->getVehi()->getImagen());
+        window.setView(minimapa);
+        if(pista){
+            cir->dibujaMapa(&window);
+        }
+        window.draw(sprite);
+        window.draw(ene->getVehi()->getImagen());
+        */
+        camara=sf::View(sf::FloatRect(0,0,1080,720));
+        window.setView(camara);
+        window.draw(imgIni);
         menuFinal.draw(window);
         window.display();
       break;

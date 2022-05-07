@@ -291,3 +291,6 @@ Solucionado el problema de los cambios del menu.
 
 # 07/05/2022 Miguel Ángel Ferrer  García de la Reina (30 min)
 Cambio en la rotacion del vehiculo para que no de tirones, y cambiada la velocidad de la IA.
+
+# 08/05/2022 Joan Pascual Izquierdo/Sergio Tortajada Santonja(1h 20min)
+Menú to flamoso, cambiando cosas de menu y menu final
