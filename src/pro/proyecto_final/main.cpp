@@ -172,7 +172,7 @@ int main() {
   //MiModulo *mod = new MiModulo();
 
   //Creamos una ventana
-  sf::RenderWindow window(sf::VideoMode(1080, 720), "P0. Fundamentos de los Videojuegos. DCCIA");
+  sf::RenderWindow window(sf::VideoMode(1080, 720), "Rift Drivers");
 
   //camara y minimapa
   sf::View camara;
@@ -273,6 +273,17 @@ int main() {
 
             case sf::Event::KeyReleased:
               switch (e.key.code){
+                /*
+                case sf::Keyboard::Z:
+                  estado=0;
+                break;
+                case sf::Keyboard::X:
+                  estado=1;
+                break;
+                case sf::Keyboard::C:
+                  estado=2;
+                break;
+                */
                 case sf::Keyboard::Up:
                   menu.MoveUp();
                 break;
@@ -312,6 +323,9 @@ int main() {
           }   
         }
 
+        camara=sf::View(sf::FloatRect(0,0,1080,720));
+        window.setView(camara);
+
         window.clear();
         menu.draw(window);
         window.display();
@@ -327,6 +341,17 @@ int main() {
 
             case sf::Event::KeyReleased:
               switch (e.key.code){
+                /*
+                case sf::Keyboard::Z:
+                  estado=0;
+                break;
+                case sf::Keyboard::X:
+                  estado=1;
+                break;
+                case sf::Keyboard::C:
+                  estado=2;
+                break;
+                */
                 case sf::Keyboard::O:
                    ene->setDibCheck(!ene->getDibCheck());
                 break;
@@ -641,9 +666,9 @@ int main() {
 
       case 2:
         sf::Event e;
-        std::cout <<"HE ENTRADO WEEEEEEEEE ,SOY PROASO" << std::endl;
-        camara.setCenter(25*320+320/2, 25*320+320/2);
-        window.setView(camara);
+        //std::cout <<"HE ENTRADO WEEEEEEEEE ,SOY PROASO" << std::endl;
+        //camara.setCenter(25*320+320/2, 25*320+320/2);
+        //window.setView(camara);
         while (window.pollEvent(e)){
           switch(e.type){
             case sf::Event::Closed:
@@ -651,6 +676,17 @@ int main() {
             break;
             case sf::Event::KeyReleased:
               switch (e.key.code){
+                /*
+                case sf::Keyboard::Z:
+                  estado=0;
+                break;
+                case sf::Keyboard::X:
+                  estado=1;
+                break;
+                case sf::Keyboard::C:
+                  estado=2;
+                break;
+                */
                 case sf::Keyboard::Up:
                   menuFinal.Mover_arriba();
                 break;
@@ -720,6 +756,10 @@ int main() {
             break;
           } 
         }
+        
+        camara=sf::View(sf::FloatRect(0,0,1080,720));
+        window.setView(camara);
+
         window.clear();
         menuFinal.draw(window);
         window.display();
