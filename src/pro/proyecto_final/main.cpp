@@ -496,8 +496,32 @@ int main() {
             }
 
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-            sprite.rotate(-gir);
-            rot = sprite.getRotation();
+            int col=(int)sprite.getPosition().x/320;
+            int row=(int)sprite.getPosition().y/320;
+            //hola
+            std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
+            sf::Texture durmp;
+            string trbw=mapbw.at(row).at(col);
+            if(trbw!="0"){
+              if (!durmp.loadFromFile(trbw)) {
+                std::cerr << "Error cargando la imagen sprites.png";
+                exit(0);
+              }
+              sf::Image dbw=durmp.copyToImage();
+              int spx= sprite.getPosition().x;
+              int spy= sprite.getPosition().y;
+
+                if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==4){
+                  sprite.rotate(-gir+5.0f);
+                  rot = sprite.getRotation();
+                }
+                else{
+                  sprite.rotate(-gir);
+                  rot = sprite.getRotation();
+                }
+            }
+
+            
 
             //Giro de la camara y minimapa
             /*
@@ -507,8 +531,30 @@ int main() {
           }
 
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-            sprite.rotate(+gir);
-            rot = sprite.getRotation();
+            int col=(int)sprite.getPosition().x/320;
+            int row=(int)sprite.getPosition().y/320;
+            //hola
+            std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
+            sf::Texture durmp;
+            string trbw=mapbw.at(row).at(col);
+            if(trbw!="0"){
+              if (!durmp.loadFromFile(trbw)) {
+                std::cerr << "Error cargando la imagen sprites.png";
+                exit(0);
+              }
+              sf::Image dbw=durmp.copyToImage();
+              int spx= sprite.getPosition().x;
+              int spy= sprite.getPosition().y;
+
+                if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==4){
+                  sprite.rotate(+gir-5.0f);
+                  rot = sprite.getRotation();
+                }
+                else{
+                  sprite.rotate(+gir);
+                  rot = sprite.getRotation();
+                }
+            }
             
             //Giro de la camara y minimapa
             /*
