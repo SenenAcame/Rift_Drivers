@@ -133,6 +133,7 @@ Menu::Menu(float width, float heigth)
     menu[0].setOutlineThickness(2);
     //menu[0].setCharacterSize(100);
     menu[0].setPosition(sf::Vector2f(width/2-285, heigth/(MAX_NUMBER_OF_ITEMS+1)*1-20));
+    //
     /*
     menu[1].setFont(font);
     menu[1].setFillColor(sf::Color::White);

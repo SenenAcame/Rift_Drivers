@@ -52,7 +52,7 @@ class Menu
         void MoveDown();
         int GetPressedItem() {return selectedItemIdex; }
         Menu(float width, float height);
-        //menu_empezar();
+        //menu_empezar();a
         ~Menu();
 
     private:
