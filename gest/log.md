@@ -253,6 +253,9 @@ Tratrando de incorporar las colisiones al proyecto final, he intentado una soluc
 # 26/04/2022 Senén Martínez Acame (20min)
 Corregido el reseteo del mapa, ahora la IA comienza siempre desde el mismo punto cuando se reinicia el nivel, en lugar de moverse al punto de inicio.
 
+# 27/04/2022 Angelica Quaranta Barba (2h)
+Probando a implementar una interfaz para el juego mediante estados para cambiar del menu inicial al juego y del juego al menu final. No conseguido de esta manera, pero la estructura de las 3 partes están. Fallos en el main.
+
 # 27/04/2022 Senén Martínez Acame (1h 30min)
 Implementado menu de inicio. El menu esta implementado como un switch desde el main. Lo ideal seria implementarlo con el patron state, intentaremos aplicarlo de esa forma para la entrega final, pero de momento tenemos algo funcional.
 
@@ -261,6 +264,15 @@ Incorporadas con éxito las colisiones. En todo caso queda arreglar las reduccio
 
 # 30/04/2022 Senén Martínez Acame (1h 15min)
 Adaptada la IA a los añadidos de meta y salida del mapa.
+
+# 30/04/2022 Angelica Quaranta Barba (30 min)
+Haciendo pruebas en el main para comprobar funcionamiento y fallos del menu junto con el juego.
+
+# 03/05/2022 Angelica Quaranta Barba (2h)
+Creado el menu final. Al principio lo hice hederado del menu principal pero no me daba resultado así que lo volví a hacer como si fuera uno independiente para tratarlos como dos objetos distintos.
+
+# 05/05/2022 Angelica Quaranta Barba (30 min)
+Pequeñas modificaciones en el menu final. Para que se viera como el principal.
 
 # 05/05/2022 Senén Martínez Acame (1h 25min)
 Creada variaciones de recorrido en las curvas.
@@ -297,3 +309,6 @@ Menú to flamoso, cambiando cosas de menu y menu final: hemos puesto el color de
 
 # 08/05/2022 Joan Pascual Izquierdo/Sergio Tortajada Santonja(30min)
 Hemos hecho que se resalte más la opción seleccionada del menú y arreglado un problema que habia con la rotación cuando te salías del mapa.
+
+# 08/05/2022 Angelica Quaranta Barba (30 min)
+Con las últimas modificaciones del menú se mostrtaban mal y daba problemas aunque se ejecutara. He realizado unos cambios en pocas líneas del main y del menu final y ya están arreglados y funcionan correctamente. El problema era con el tamaño del array y las posiciones de las opciones, y faltaba modificar un caso en el main.
