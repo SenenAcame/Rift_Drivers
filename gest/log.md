@@ -318,3 +318,6 @@ Ahora puedes perder
 
 # 08/05/2022 Miguel Ángel Ferrer García de la Reina (2h)
 Implementado el menu para seleccionar el coche
+
+# 08/05/2022 Sergio Tortajada Santonja (10 min)
+Arreglado problemas con los sprites cuando cambias de coche
