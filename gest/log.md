@@ -313,5 +313,5 @@ Hemos hecho que se resalte más la opción seleccionada del menú y arreglado un
 # 08/05/2022 Angelica Quaranta Barba (30 min)
 Con las últimas modificaciones del menú se mostrtaban mal y daba problemas aunque se ejecutara. He realizado unos cambios en pocas líneas del main y del menu final y ya están arreglados y funcionan correctamente. El problema era con el tamaño del array y las posiciones de las opciones, y faltaba modificar un caso en el main.
 
-# 08/05/2022 Angelica Quaranta Barba (10 min)
+# 08/05/2022 Sergio Tortajada Santonja (10 min)
 Ahora puedes perder
