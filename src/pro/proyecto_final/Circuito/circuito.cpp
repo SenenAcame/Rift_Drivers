@@ -853,3 +853,11 @@ void Circuito::montaMapa(){
 std::vector<std::string> Circuito::getMapas(){
     return mapas;
 }
+
+int Circuito::getFinalx(){
+    return fila;
+}
+
+int Circuito::getFinaly(){
+    return col;
+}

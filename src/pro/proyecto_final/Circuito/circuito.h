@@ -70,6 +70,8 @@ class Circuito{
         void montaMapa();
         std::vector<std::string> getMapas();
         //std::vector<std::string> getMapasbw();
+        int getFinalx();
+        int getFinaly();
 };
 
 #endif

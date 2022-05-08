@@ -377,7 +377,7 @@ int main() {
 
                 case sf::Keyboard::P:
                    ene->setSegCheck(!ene->getSegCheck());
-                   //estado=2;
+                   estado=2;
                 break;
                 
                 case sf::Keyboard::L:
@@ -423,8 +423,14 @@ int main() {
           sprite.setRotation(rot);
           prev = rot;
 
-            int col=(int)sprite.getPosition().x/320;
-            int row=(int)sprite.getPosition().y/320;
+          int col=(int)ene->getVehi()->getImagen().getPosition().x/320;
+          int row=(int)ene->getVehi()->getImagen().getPosition().y/320;
+
+          if(col==cir->getFinaly()&&row==cir->getFinalx()){
+            estado=2;
+          }
+          col=(int)sprite.getPosition().x/320;
+          row=(int)sprite.getPosition().y/320;
             //hola
             std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
             sf::Texture durmp;
@@ -637,7 +643,8 @@ int main() {
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)==false){
             int col=(int)sprite.getPosition().x/320;
             int row=(int)sprite.getPosition().y/320;
-            printf("(%d, %d)", row, col);
+            printf("(%d, %d)", (int)ene->getVehi()->getImagen().getPosition().y/320, (int)ene->getVehi()->getImagen().getPosition().x/320);
+            printf("(%d, %d)", cir->getFinalx(), cir->getFinaly());
             if(speed>0.0f){
               speed -= 5.0f;
             }
