@@ -393,7 +393,7 @@ int main() {
                   switch (menuCoche.GetPressedItem()){
                     case 0:
                       std::cout <<"Has seleccionado el Formula 1" << std::endl;
-                      
+                      sprite.setTexture(tex2);
                       estado=1;
                     break;
 
