@@ -229,8 +229,6 @@ int main() {
     */
   imgIni.setTextureRect(sf::IntRect(0,0,1080,720));
 
-  imgIni.setTextureRect(sf::IntRect(0,0,1080,720));
-
   sf::Sprite spr2(tex);
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite sprite(tex2);
@@ -394,6 +392,8 @@ int main() {
                     case 0:
                       std::cout <<"Has seleccionado el Formula 1" << std::endl;
                       sprite.setTexture(tex2);
+                      sprite.setOrigin(11, 8);
+                      sprite.setTextureRect(sf::IntRect(0 , 0, 22, 16));
                       estado=1;
                     break;
 
@@ -401,6 +401,8 @@ int main() {
                       std::cout <<"Has seleccionado el Deportivo" << std::endl;
 
                       sprite.setTexture(tex5);
+                      sprite.setOrigin(11.5f, 8);
+                      sprite.setTextureRect(sf::IntRect(0 , 0, 23, 16));
                       estado=1;
                     break;
 
