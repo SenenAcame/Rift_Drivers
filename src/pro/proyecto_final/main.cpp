@@ -92,14 +92,10 @@ int main()
 
 #include "include/config.h"
 #include "ej_modulos/mimodulo.h"
-//incluir nuestras carpetas
-//#include "Mejoras/mejora.h"
-//#include "IA/ia.h"
 #include "Juego/juego.h"
 #include "Menu/menu.h"
 #include "Menu/menu_final.h"
 #include "Poderes/poderes.h"
-//#include "Vehiculo/vehiculo.h"
 #include "Circuito/circuito.h"
 
 
@@ -200,11 +196,6 @@ int main() {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
-  sf::Texture fondo;
-  if (!fondo.loadFromFile("../resources/fondo.png")) {
-    std::cerr << "Error cargando la imagen sprites.png";
-    exit(0);
-  }
   sf::Sprite imgIni(iniF);
   //imgIni.setTexture(iniF, true);
   /*
@@ -219,7 +210,6 @@ int main() {
     */
   imgIni.setTextureRect(sf::IntRect(0,0,1080,720));
 
-  sf::Sprite imgFondo(fondo);
   imgIni.setTextureRect(sf::IntRect(0,0,1080,720));
 
   sf::Sprite spr2(tex);
@@ -391,7 +381,7 @@ int main() {
 
                 case sf::Keyboard::P:
                    ene->setSegCheck(!ene->getSegCheck());
-                   estado=2;
+                   //estado=2;
                 break;
                 
                 case sf::Keyboard::L:

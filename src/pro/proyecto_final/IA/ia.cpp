@@ -149,7 +149,6 @@ int *ia::posicionesMapa(Circuito *world){
             posis[i] = y-48;
         }
     }
-
     return posis;
 }
 
