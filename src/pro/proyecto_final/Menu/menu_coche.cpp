@@ -35,7 +35,7 @@ menu_coche::menu_coche(float width, float heigth)
     //menu[0].setFillColor(sf::Color::Green);
     menu[0].setFillColor(sf::Color::Red);
     menu[0].setString("Supercoche");
-    menu[0].setScale(3, 2);
+    menu[0].setScale(4, 3);
     menu[0].setOutlineColor(sf::Color::Black);
     menu[0].setOutlineThickness(2);
     //menu[0].setCharacterSize(100);
