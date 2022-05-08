@@ -317,10 +317,6 @@ int main() {
                     break;
 
                     case 1:
-                      std::cout <<"Has seleccionado las opciones" << std::endl;
-                    break;
-
-                    case 2:
                       std::cout <<"Salir" << std::endl;
                       window.close();
                     break;
