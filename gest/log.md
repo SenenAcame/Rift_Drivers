@@ -315,3 +315,6 @@ Con las últimas modificaciones del menú se mostrtaban mal y daba problemas aun
 
 # 08/05/2022 Sergio Tortajada Santonja (10 min)
 Ahora puedes perder
+
+# 08/05/2022 Miguel Ángel Ferrer García de la Reina (2h)
+Implementado el menu para seleccionar el coche

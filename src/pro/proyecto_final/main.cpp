@@ -95,6 +95,7 @@ int main()
 #include "Juego/juego.h"
 #include "Menu/menu.h"
 #include "Menu/menu_final.h"
+#include "Menu/menu_coche.h"
 #include "Poderes/poderes.h"
 #include "Circuito/circuito.h"
 
@@ -191,6 +192,24 @@ int main() {
     exit(0);
   }
 
+  sf::Texture tex3;
+  if (!tex3.loadFromFile("../resources/4x4.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+
+  sf::Texture tex4;
+  if (!tex4.loadFromFile("../resources/kart.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+
+  sf::Texture tex5;
+  if (!tex5.loadFromFile("../resources/cocherot-2.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+
    sf::Texture iniF;
   if (!iniF.loadFromFile("../resources/inicio.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
@@ -271,7 +290,7 @@ int main() {
  
   menu_final menuFinal(window.getSize().x, window.getSize().y);
   Menu menu(window.getSize().x, window.getSize().y);
-
+  menu_coche menuCoche(window.getSize().x, window.getSize().y);
 
   int estado = 0;
   //Bucle del juego
@@ -313,7 +332,7 @@ int main() {
                   switch (menu.GetPressedItem()){
                     case 0:
                       std::cout <<"Has seleccionado empezar" << std::endl;
-                      estado=1;
+                      estado=4;
                     break;
 
                     case 1:
@@ -350,6 +369,89 @@ int main() {
         window.display();
 
       break;
+
+       case 4:
+       
+        while (window.pollEvent(e)){
+          switch(e.type){
+            case sf::Event::Closed:
+              window.close();
+            break;
+
+            case sf::Event::KeyReleased:
+              switch (e.key.code){
+               
+                case sf::Keyboard::Up:
+                  menuCoche.MoveUp();
+                break;
+              
+                case sf::Keyboard::Down:
+                  menuCoche.MoveDown();
+                break;
+
+                case sf::Keyboard::Key::Enter:
+                  switch (menuCoche.GetPressedItem()){
+                    case 0:
+                      std::cout <<"Has seleccionado el Formula 1" << std::endl;
+                      
+                      estado=1;
+                    break;
+
+                    case 1:
+                      std::cout <<"Has seleccionado el Deportivo" << std::endl;
+
+                      sprite.setTexture(tex5);
+                      estado=1;
+                    break;
+
+                    case 2:
+                      std::cout <<"Has seleccionado el 4X4" << std::endl;
+
+                      sprite.setTexture(tex3);
+                      sprite.setOrigin(8, 9);
+                      sprite.setTextureRect(sf::IntRect(0 , 0, 16, 18));
+                      
+                      estado=1;
+                    break;
+
+                    case 3:
+                      std::cout <<"Has seleccionado el Kart" << std::endl;
+                      sprite.setTexture(tex4);
+                      sprite.setOrigin(11, 10);
+                      sprite.setTextureRect(sf::IntRect(0 , 0, 22, 20));
+                      estado=1;
+                    break;
+                  }
+                break;
+
+                case sf::Keyboard::Escape:
+                  window.close();
+                break;
+                /*
+                default:
+                  std::cout << e.key.code << std::endl;
+                break;
+                */
+              }
+            break;
+          }   
+        }
+
+        camara=sf::View(sf::FloatRect(0,0,1080,720));
+        window.setView(camara);
+        window.clear();
+        /*
+        for(int i=0; i<vektor.size();i++){
+          window.draw(vektor.at(i));
+        }
+        */
+        window.draw(imgIni);
+        menuCoche.draw(window);
+        
+        window.display();
+
+      break;
+
 
       case 1:
         while (window.pollEvent(e)){
