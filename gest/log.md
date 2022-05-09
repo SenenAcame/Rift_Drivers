@@ -324,3 +324,6 @@ Arreglado problemas con los sprites cuando cambias de coche
 
 # 09/05/2022 Sergio Tortajada Santonja (30 min)
 Imagen de fondo en el circuito y colisión marcha atrás
+
+# 08/05/2022 Joan Pascual Izquierdo/Sergio Tortajada Santonja(20min)
+Ajustando las velocidaddes de colisiones, la rotación en la zona de "hierba" del trozo de nieve, y otros detalles menores.

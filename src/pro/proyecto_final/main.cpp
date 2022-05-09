@@ -121,7 +121,6 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
   color[1]=image1.getPixel(x1+x, y1);
   color[3]=image1.getPixel(x1, y1+y);
   color[2]=image1.getPixel(x1, y1);
-  printf("color2: [ %d, %d, %d ]\n",color[2].r, color[2].g, color[2].b);
   for(int i=0; i<4 && col==false;i++){
     if((color[i].r==0) && (color[i].g==0) && (color[i].b==0)){
       negro=true;
@@ -130,10 +129,6 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
       col=true;
     } 
   } 
-   sf::Color color[4];
-   int colision=0;
-  bool negro=false;
-  bool col=false;
   */
   int otroCont=0;
   if((color[0].r==0) && (color[0].g==0) && (color[0].b==0)){
@@ -156,7 +151,6 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
     if(otroCont==1){
       //META
       colision=3;
-      //META
     }else if(otroCont==2){
       colision=4;
     }
@@ -553,53 +547,53 @@ int main() {
             }else if(speed>20.0f){
               speed-=40.0f;
             }else if(speed>15.0f){
-              speed-=29.0f;
+              speed-=30.0f;
             }else if(speed>12.0f){
               speed-=23.0f;
             }else if(speed>10.0f){
-              speed-=17.0f;
+              speed-=18.0f;
             }else if(speed>8.0f){
-              speed-=14.0f;
+              speed-=16.0f;
             }else if(speed>6.0f){
-              speed-=12.0f;
+              speed-=13.0f;
             }else if(speed>4.0f){
-              speed-=10.5f;
+              speed-=11.5f;
             }else if(speed>2.0f){
-              speed-=6.5f;
+              speed-=7.5f;
             }else if(speed>1){
-              speed-=5.7f;
+              speed-=6.7f;
             }else if(speed>0){
-              speed-=5.0f;
+              speed-=5.1f;
             }
           }
           else{
             string trbw=mapbw.at(row).at(col);
             if(trbw=="0"){
               if(speed>40.0f){
-                  speed-=65.0f;
-                }else if(speed>30.0f){
-                  speed-=50.0f;
-                }else if(speed>20.0f){
-                  speed-=40.0f;
-                }else if(speed>15.0f){
-                  speed-=29.0f;
-                }else if(speed>12.0f){
-                  speed-=23.0f;
-                }else if(speed>10.0f){
-                  speed-=17.0f;
-                }else if(speed>8.0f){
-                  speed-=14.0f;
-                }else if(speed>6.0f){
-                  speed-=12.0f;
-                }else if(speed>4.0f){
-                  speed-=10.5f;
-                }else if(speed>2.0f){
-                  speed-=6.5f;
-                }else if(speed>1){
-                  speed-=5.7f;
-                }else if(speed>0){
-                  speed-=5.0f;
-                }
+                speed-=65.0f;
+              }else if(speed>30.0f){
+                speed-=50.0f;
+              }else if(speed>20.0f){
+                speed-=40.0f;
+              }else if(speed>15.0f){
+                speed-=30.0f;
+              }else if(speed>12.0f){
+                speed-=23.0f;
+              }else if(speed>10.0f){
+                speed-=18.0f;
+              }else if(speed>8.0f){
+                speed-=16.0f;
+              }else if(speed>6.0f){
+                speed-=13.0f;
+              }else if(speed>4.0f){
+                speed-=11.5f;
+              }else if(speed>2.0f){
+                speed-=7.5f;
+              }else if(speed>1){
+                speed-=6.7f;
+              }else if(speed>0){
+                speed-=5.1f;
+              }
             }
             if(trbw!="0"){
               
@@ -665,11 +659,14 @@ int main() {
                 */
               
                 else if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==1){
-                  if(speed>20.0f){
-                    speed-=12.0f;
+
+                  if(speed>30.0f){
+                    speed-=15.0f;
+                  }else if(speed>20.0f){
+                    speed-=8.0f;
                   }else if(speed>15.0f){
                     speed -= 6.0f;
-                  }else if(speed>10.0f){
+                  }else if(speed>12.0f){
                     speed -= 4.0f;
                   }
                   
@@ -679,7 +676,7 @@ int main() {
                         speed-= 0.5f;
                       }
                     }else{
-                      speed-=1.5f;
+                      speed-=1.2f;
                     }
                   }
                   if(speed<0.0f){
@@ -704,14 +701,14 @@ int main() {
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
 
-                if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==4){
-                  sprite.rotate(-gir+5.0f);
-                  rot = sprite.getRotation();
-                }
-                else{
-                  sprite.rotate(-gir);
-                  rot = sprite.getRotation();
-                }
+              if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4){
+                sprite.rotate(-gir+4.0f);
+                rot = sprite.getRotation();
+              }
+              else{
+                sprite.rotate(-gir);
+                rot = sprite.getRotation();
+              }
             }
             else{
               sprite.rotate(-gir);
@@ -743,8 +740,8 @@ int main() {
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
 
-                if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==4){
-                  sprite.rotate(+gir-5.0f);
+                 if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4){
+                  sprite.rotate(+gir-4.0f);
                   rot = sprite.getRotation();
                 }
                 else{
