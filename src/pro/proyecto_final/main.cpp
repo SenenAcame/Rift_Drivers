@@ -559,9 +559,9 @@ int main() {
             }else if(speed>2.0f){
               speed-=6.5f;
             }else if(speed>1){
-              speed-=3.7f;
+              speed-=5.7f;
             }else if(speed>0){
-              speed-=2.0f;
+              speed-=5.0f;
             }
           }
           else{
@@ -588,12 +588,13 @@ int main() {
                 }else if(speed>2.0f){
                   speed-=6.5f;
                 }else if(speed>1){
-                  speed-=3.7f;
+                  speed-=5.7f;
                 }else if(speed>0){
-                  speed-=2.0f;
+                  speed-=5.0f;
                 }
             }
             if(trbw!="0"){
+              
               if (!durmp.loadFromFile(trbw)) {
                 std::cerr << "Error cargando la imagen sprites.png";
                 exit(0);
@@ -640,10 +641,13 @@ int main() {
                 }else if(speed>2.0f){
                   speed-=6.5f;
                 }else if(speed>1){
-                  speed-=3.7f;
+                  speed-=5.7f;
                 }else if(speed>0){
-                  speed-=2.0f;
+                  speed-=5.0f;
                 }
+              }
+              else if(speed<0){
+                speed=0;
               }
                 /*
                 speed=0.0f;
@@ -772,10 +776,7 @@ int main() {
           }
 
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)==false){
-            int col=(int)sprite.getPosition().x/320;
-            int row=(int)sprite.getPosition().y/320;
-            printf("(%d, %d)", (int)ene->getVehi()->getImagen().getPosition().y/320, (int)ene->getVehi()->getImagen().getPosition().x/320);
-            printf("(%d, %d)", cir->getFinalx(), cir->getFinaly());
+            
             if(speed>0.0f){
               speed -= 5.0f;
             }
@@ -790,6 +791,38 @@ int main() {
               position.x -= cos(sprite.getRotation()*M_PI/180)*5.0f;
               position.y -= sin(sprite.getRotation()*M_PI/180)*5.0f;
             }
+          col=(int)sprite.getPosition().x/320;
+          row=(int)sprite.getPosition().y/320;
+            //hola
+          std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
+          sf::Texture durmp;
+          if(row<0||row>49||col<0||col>49){
+            position.x += cos(sprite.getRotation()*M_PI/180)*10.0f;
+              position.y += sin(sprite.getRotation()*M_PI/180)*10.0f;
+          }
+          else{
+            string trbw=mapbw.at(row).at(col);
+            if(trbw=="0"){
+              position.x += cos(sprite.getRotation()*M_PI/180)*10.0f;
+              position.y += sin(sprite.getRotation()*M_PI/180)*10.0f;
+            }
+            if(trbw!="0"){
+              
+              if (!durmp.loadFromFile(trbw)) {
+                std::cerr << "Error cargando la imagen sprites.png";
+                exit(0);
+              }
+              sf::Image dbw=durmp.copyToImage();
+              int spx= sprite.getPosition().x;
+              int spy= sprite.getPosition().y;
+
+            if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==2){
+                
+              position.x += cos(sprite.getRotation()*M_PI/180)*10.0f;
+              position.y += sin(sprite.getRotation()*M_PI/180)*10.0f;
+              }
+          }
+          }
           }
           
         }

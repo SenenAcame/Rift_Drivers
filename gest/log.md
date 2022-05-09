@@ -321,3 +321,6 @@ Implementado el menu para seleccionar el coche
 
 # 08/05/2022 Sergio Tortajada Santonja (10 min)
 Arreglado problemas con los sprites cuando cambias de coche
+
+# 09/05/2022 Sergio Tortajada Santonja (30 min)
+Imagen de fondo en el circuito y colisión marcha atrás
