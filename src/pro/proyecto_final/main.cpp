@@ -470,18 +470,17 @@ int main() {
                 break;
                 case sf::Keyboard::X:
                   estado=1;
-                break;
+                break;*/
                 case sf::Keyboard::C:
                   estado=2;
                 break;
-                */
+                
                 case sf::Keyboard::O:
                    ene->setDibCheck(!ene->getDibCheck());
                 break;
 
                 case sf::Keyboard::P:
                    ene->setSegCheck(!ene->getSegCheck());
-                   estado=2;
                 break;
                 
                 case sf::Keyboard::L:
@@ -536,8 +535,36 @@ int main() {
           col=(int)sprite.getPosition().x/320;
           row=(int)sprite.getPosition().y/320;
             //hola
-            std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
-            sf::Texture durmp;
+          std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
+          sf::Texture durmp;
+          if(row<0||row>49||col<0||col>49){
+            if(speed>40.0f){
+              speed-=65.0f;
+            }else if(speed>30.0f){
+              speed-=50.0f;
+            }else if(speed>20.0f){
+              speed-=40.0f;
+            }else if(speed>15.0f){
+              speed-=29.0f;
+            }else if(speed>12.0f){
+              speed-=23.0f;
+            }else if(speed>10.0f){
+              speed-=17.0f;
+            }else if(speed>8.0f){
+              speed-=14.0f;
+            }else if(speed>6.0f){
+              speed-=12.0f;
+            }else if(speed>4.0f){
+              speed-=10.5f;
+            }else if(speed>2.0f){
+              speed-=6.5f;
+            }else if(speed>1){
+              speed-=3.7f;
+            }else if(speed>0){
+              speed-=2.0f;
+            }
+          }
+          else{
             string trbw=mapbw.at(row).at(col);
             if(trbw=="0"){
               if(speed>40.0f){
@@ -648,7 +675,7 @@ int main() {
                   }
               } 
             }
-
+          }
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
             int col=(int)sprite.getPosition().x/320;
             int row=(int)sprite.getPosition().y/320;
