@@ -165,7 +165,7 @@ int main() {
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(1080, 720), "Rift Drivers");
   sf::Texture texicon;
-  if (!texicon.loadFromFile("../resources/cocherot.png")) {
+  if (!texicon.loadFromFile("../resources/logo.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
