@@ -797,14 +797,14 @@ int main() {
           std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
           sf::Texture durmp;
           if(row<0||row>49||col<0||col>49){
-            position.x += cos(sprite.getRotation()*M_PI/180)*10.0f;
-              position.y += sin(sprite.getRotation()*M_PI/180)*10.0f;
+            position.x += cos(sprite.getRotation()*M_PI/180)*15.0f;
+              position.y += sin(sprite.getRotation()*M_PI/180)*15.0f;
           }
           else{
             string trbw=mapbw.at(row).at(col);
             if(trbw=="0"){
-              position.x += cos(sprite.getRotation()*M_PI/180)*10.0f;
-              position.y += sin(sprite.getRotation()*M_PI/180)*10.0f;
+              position.x += cos(sprite.getRotation()*M_PI/180)*15.0f;
+              position.y += sin(sprite.getRotation()*M_PI/180)*15.0f;
             }
             if(trbw!="0"){
               
@@ -816,10 +816,10 @@ int main() {
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
 
-            if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==2){
+            if(colisionMapa(dbw, spx%320, spy%320, tam[0], tam[1], rot)==2){
                 
-              position.x += cos(sprite.getRotation()*M_PI/180)*10.0f;
-              position.y += sin(sprite.getRotation()*M_PI/180)*10.0f;
+              position.x += cos(sprite.getRotation()*M_PI/180)*15.0f;
+              position.y += sin(sprite.getRotation()*M_PI/180)*15.0f;
               }
           }
           }

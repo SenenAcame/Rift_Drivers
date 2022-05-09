@@ -442,7 +442,7 @@ void Circuito::dibujaMapabw(sf::RenderWindow *window){
 */
 void Circuito::montaMapa(){
     sf::Sprite spritefuera(texfuera);
-    spritefuera.setTextureRect(sf::IntRect(-640,-6400,320*54,320*54));
+    spritefuera.setTextureRect(sf::IntRect(-640,-640,320*54,320*54));
     cachos.push_back(spritefuera);
     for(int k=0;k<circuito.size();k++){
         for (int l = 0; l < circuito.at(k).size(); l++){
