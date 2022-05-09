@@ -170,7 +170,15 @@ int main() {
 
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(1080, 720), "Rift Drivers");
-
+  sf::Texture texicon;
+  if (!texicon.loadFromFile("../resources/cocherot.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Image icono=texicon.copyToImage();
+  int ancho=icono.getSize().x;
+  int alto=icono.getSize().y;
+  window.setIcon(ancho,alto,icono.getPixelsPtr());
   //camara y minimapa
   sf::View camara;
   sf::View minimapa;
