@@ -87,6 +87,7 @@ int main()
 
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include <math.h>
 
@@ -173,6 +174,19 @@ int main() {
   int ancho=icono.getSize().x;
   int alto=icono.getSize().y;
   window.setIcon(ancho,alto,icono.getPixelsPtr());
+  sf::SoundBuffer buffer;
+  if (!buffer.loadFromFile("../resources/ban-ban.wav")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::SoundBuffer buffer2;
+  if (!buffer2.loadFromFile("../resources/musica-carrera.wav")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Sound music(buffer);
+  music.play();
+  music.setLoop(true);
   //camara y minimapa
   sf::View camara;
   sf::View minimapa;
@@ -396,6 +410,10 @@ int main() {
                       sprite.setTexture(tex2);
                       sprite.setOrigin(11, 8);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 22, 16));
+                      music.setBuffer(buffer2);
+                      music.setVolume(50);
+                      music.play();
+                      music.setLoop(true);
                       estado=1;
                     break;
 
@@ -405,6 +423,10 @@ int main() {
                       sprite.setTexture(tex5);
                       sprite.setOrigin(11.5f, 8);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 23, 16));
+                      music.setBuffer(buffer2);
+                      music.setVolume(50);
+                      music.play();
+                      music.setLoop(true);
                       estado=1;
                     break;
 
@@ -414,7 +436,10 @@ int main() {
                       sprite.setTexture(tex3);
                       sprite.setOrigin(8, 9);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 16, 18));
-                      
+                      music.setBuffer(buffer2);
+                      music.setVolume(50);
+                      music.play();
+                      music.setLoop(true);
                       estado=1;
                     break;
 
@@ -423,6 +448,10 @@ int main() {
                       sprite.setTexture(tex4);
                       sprite.setOrigin(11, 10);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 22, 20));
+                      music.setBuffer(buffer2);
+                      music.setVolume(50);
+                      music.play();
+                      music.setLoop(true);
                       estado=1;
                     break;
                   }
@@ -475,6 +504,9 @@ int main() {
                 break;*/
                 case sf::Keyboard::C:
                   estado=2;
+                  music.setBuffer(buffer);
+                  music.play();
+                  music.setLoop(true);
                 break;
                 
                 case sf::Keyboard::O:
@@ -533,6 +565,9 @@ int main() {
 
           if(col==cir->getFinaly()&&row==cir->getFinalx()){
             estado=2;
+            music.setBuffer(buffer);
+            music.play();
+            music.setLoop(true);
           }
           col=(int)sprite.getPosition().x/320;
           row=(int)sprite.getPosition().y/320;
@@ -611,6 +646,9 @@ int main() {
                   //Esto es cuando pisa EL PORTAL DEL AVERNO 
 
                   estado=2;
+                  music.setBuffer(buffer);
+                  music.play();
+                  music.setLoop(true);
                   break;
                   //NO SE QUE ESTOY HACIENDO MAL, AIUDA
                   /*
@@ -918,6 +956,10 @@ int main() {
                       ene = new ia(cir,coche);
                       speed=0;
                       estado=1;
+                      music.setBuffer(buffer2);
+                      music.play();
+                      music.setLoop(true);
+                      music.setVolume(50);
                     break;
 
                     case 1:
