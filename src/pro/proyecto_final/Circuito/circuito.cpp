@@ -165,10 +165,12 @@ Circuito::Circuito(){
     exit(0);
   }
   imvortice.setTexture(texvortice);
+    /*
   if (!texfuera.loadFromFile("../resources/fuera.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
+*/
 }
 
 void Circuito::CrearMapa(){

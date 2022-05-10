@@ -5,7 +5,7 @@
 #include "../tinyxml/tinyxml2.h"
 
 #define TamTile 320
-#define kVel 7
+//#define kVel 7
 #define Pi 3.14159265
 #define MARGEN 10
 #define NoContains string::npos
@@ -17,11 +17,13 @@ ia::ia(Circuito *world, vehiculo *car){
     setVehi(car);
     setCont(0);
     setAngulo(0);
+    setSpeed(7);
     setDibCheck(false);
     setSegCheck(true);
 }
 
 void ia::setList(Circuito *world){
+    
     if(list!=0){
         deleteList();
     }
@@ -33,7 +35,7 @@ void ia::setList(Circuito *world){
     int x=25,y=25;
     srand(time(NULL));
     for(int i=0; i<(int)world->getMapas().size(); i++){
-        if(world->getMapas().at(i).size()>0 && i!=world->getMapas().size()-2){
+        if(world->getMapas().at(i).size()>0 && i!=(int)world->getMapas().size()-2){
             string trozo = tipoTerreno(world, i);
             const char* fichero = trozo.c_str();
             XMLDocument doc;
@@ -70,6 +72,14 @@ void ia::setList(Circuito *world){
 
 float ** ia::getList(){
     return list;
+}
+
+void ia::setSpeed(int spe){
+    speed = spe;
+}
+
+int ia::getSpeed(){
+    return speed;
 }
 
 void ia::setSize(int num){
@@ -124,7 +134,7 @@ int ia::contarPuntos(Circuito *world){
     int cont=0; 
     srand(time(NULL));
     for(int i=0; i<(int)world->getMapas().size(); i++){
-        if(world->getMapas().at(i).size()>0 && i!=world->getMapas().size()-2){
+        if(world->getMapas().at(i).size()>0 && i!=(int)world->getMapas().size()-2){
             string trozo = tipoTerreno(world, i);
             const char* fichero = trozo.c_str();
             XMLDocument doc;
@@ -198,8 +208,8 @@ void ia::seguirRuta(){
 
 void ia::siguienteNodo(){
     float angu = calcularDirc();
-    float vx = cos(angu)*kVel;
-    float vy = sin(angu)*kVel;
+    float vx = cos(angu)*speed;
+    float vy = sin(angu)*speed;
     vehi->moverIA(vx,vy);
 }
 
@@ -233,6 +243,7 @@ ia::~ia(){
     setVehi(NULL);
     setCont(0);
     setAngulo(0);
+    setSpeed(0);
     setDibCheck(false);
     setSegCheck(false);
 }

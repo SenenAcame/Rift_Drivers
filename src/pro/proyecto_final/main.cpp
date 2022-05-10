@@ -176,17 +176,27 @@ int main() {
   window.setIcon(ancho,alto,icono.getPixelsPtr());
   sf::SoundBuffer buffer;
   if (!buffer.loadFromFile("../resources/ban-ban.wav")) {
-    std::cerr << "Error cargando la imagen sprites.png";
+    std::cerr << "Error cargando los sonidos.png";
     exit(0);
   }
   sf::SoundBuffer buffer2;
   if (!buffer2.loadFromFile("../resources/musica-carrera.wav")) {
-    std::cerr << "Error cargando la imagen sprites.png";
+    std::cerr << "Error cargando los sonidos.png";
+    exit(0);
+  }
+  sf::SoundBuffer buffer3;
+  if (!buffer3.loadFromFile("../resources/ruido_motor.wav")) {
+    std::cerr << "Error cargando los sonidos.png";
     exit(0);
   }
   sf::Sound music(buffer);
   music.play();
   music.setLoop(true);
+
+  sf::Sound motor(buffer3);
+  motor.setLoop(true);
+  bool ruido = true;
+
   //camara y minimapa
   sf::View camara;
   sf::View minimapa;
@@ -335,7 +345,10 @@ int main() {
    
     switch(estado){
       case 0:
-       
+        if(!ruido){
+          motor.stop();
+          ruido = true;
+        }
         while (window.pollEvent(e)){
           switch(e.type){
             case sf::Event::Closed:
@@ -405,8 +418,11 @@ int main() {
 
       break;
 
-       case 4:
-       
+      case 4:
+        if(!ruido){
+          motor.stop();
+          ruido = true;
+        }
         while (window.pollEvent(e)){
           switch(e.type){
             case sf::Event::Closed:
@@ -433,7 +449,7 @@ int main() {
                       sprite.setTextureRect(sf::IntRect(0 , 0, 22, 16));
 
                       music.setBuffer(buffer2);
-                      music.setVolume(50);
+                      music.setVolume(40);
                       music.play();
                       music.setLoop(true);
 
@@ -455,7 +471,7 @@ int main() {
                       sprite.setOrigin(11.5f, 8);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 23, 16));
                       music.setBuffer(buffer2);
-                      music.setVolume(50);
+                      music.setVolume(40);
                       music.play();
                       music.setLoop(true);
                       spr2.setTexture(tex);
@@ -475,7 +491,7 @@ int main() {
                       sprite.setOrigin(8, 9);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 16, 18));
                       music.setBuffer(buffer2);
-                      music.setVolume(50);
+                      music.setVolume(40);
                       music.play();
                       music.setLoop(true);
                       cocheselec = "4x4";
@@ -497,7 +513,7 @@ int main() {
                       sprite.setOrigin(11, 10);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 22, 20));
                       music.setBuffer(buffer2);
-                      music.setVolume(50);
+                      music.setVolume(40);
                       music.play();
                       music.setLoop(true);
 
@@ -857,6 +873,11 @@ int main() {
           }
           
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+            if(ruido){
+              motor.play();
+              ruido = false;
+            }
+              
 
             if(speed<=maxvel){
               speed += acc;
@@ -865,13 +886,17 @@ int main() {
             position.y += sin(sprite.getRotation()*M_PI/180)*speed;
           }
           else{
+            if(!ruido){
+              motor.stop();
+              ruido = true;
+            }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)==false){
-            
-                if(speed>0.0f){
-                  speed -= 1.0f;
-                }
-                position.x += cos(sprite.getRotation()*M_PI/180)*speed;
-                position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+              
+              if(speed>0.0f){
+                speed -= 1.0f;
+              }
+              position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+              position.y += sin(sprite.getRotation()*M_PI/180)*speed;
             }       
           }
 
@@ -961,6 +986,10 @@ int main() {
       //MENÚ FINALIIIIIIIIIIIIIIIIIIISIMO
 
       case 2:
+        if(!ruido){
+          motor.stop();
+          ruido = true;
+        }
         sf::Event e;
         //std::cout <<"HE ENTRADO WEEEEEEEEE ,SOY PROASO" << std::endl;
         //camara.setCenter(25*320+320/2, 25*320+320/2);

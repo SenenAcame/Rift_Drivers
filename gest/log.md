@@ -330,3 +330,6 @@ Ajustando las velocidaddes de colisiones, la rotación en la zona de "hierba" de
 
 # 10/05/2022 Sergio Tortajada Santonja (30 min)
 Música de menú y de juego
+
+# 10/05/2022 Senén Martínez Acame(1 h)
+Añadido que el coche haga ruido de motor cuando acelera y que cese cuando dejas de acelerar, y tambien la velocidad de la IA es parametrizable.
