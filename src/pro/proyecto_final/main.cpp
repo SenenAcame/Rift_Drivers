@@ -187,6 +187,17 @@ int main() {
   sf::Sound music(buffer);
   music.play();
   music.setLoop(true);
+
+  sf::Texture texfondo;
+  if (!texfondo.loadFromFile("../resources/fondo.jpeg")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Sprite fondo;
+  fondo.setTexture(texfondo);
+  fondo.setOrigin(627,416);
+  fondo.setPosition(25*320+320/2, 25*320+320/2);
+  fondo.setScale(1.3f,1.5f);
   //camara y minimapa
   sf::View camara;
   sf::View minimapa;
@@ -931,11 +942,12 @@ int main() {
         camara=sf::View(sf::FloatRect(0,0,1080+speed*7,720+speed*7));
         camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
-
+        fondo.setPosition(sprite.getPosition().x,sprite.getPosition().y);
         
         window.setView(camara);
         if(pista){
           //cir->dibujaMapabw(&window);
+          window.draw(fondo);
           cir->dibujaMapa(&window);
         ene->dibujaRecorrido(&window);
         }
@@ -944,6 +956,7 @@ int main() {
 
         window.setView(minimapa);
         if(pista){
+          window.draw(fondo);
             cir->dibujaMapa(&window);
             ene->dibujaRecorrido(&window);
         }
