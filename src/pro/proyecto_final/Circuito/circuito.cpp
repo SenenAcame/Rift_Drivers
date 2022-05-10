@@ -430,7 +430,7 @@ void Circuito::dibujaMapa(sf::RenderWindow *window){
     for(int i=0;i<cachos.size();i++){
         window->draw(cachos.at(i));
       }
-    imvortice.setRotation(imvortice.getRotation()-5);
+    imvortice.setRotation(imvortice.getRotation()-2);
     window->draw(imvortice);
 }
 /*
