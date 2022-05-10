@@ -289,7 +289,10 @@ int main() {
   menu_final menuFinal(window.getSize().x, window.getSize().y);
   Menu menu(window.getSize().x, window.getSize().y);
   menu_coche menuCoche(window.getSize().x, window.getSize().y);
-
+  //con el tiempo actual, cuando empieza, y al entrar al bucle se le resta
+  sf::Clock *crono = new sf::Clock();
+  sf::Time tiempo = crono->getElapsedTime();
+  sf::Time rest;
   int estado = 0;
   //Bucle del juego
   while (window.isOpen()){
@@ -456,6 +459,7 @@ int main() {
 
 
       case 1:
+      //crono->restart();
         while (window.pollEvent(e)){
           switch(e.type){
             case sf::Event::Closed:
@@ -481,7 +485,7 @@ int main() {
 
                 case sf::Keyboard::P:
                    ene->setSegCheck(!ene->getSegCheck());
-                   estado=2;
+                   //estado=2;
                 break;
                 
                 case sf::Keyboard::L:
@@ -519,7 +523,13 @@ int main() {
 
         accumulator += clock.restart().asSeconds();
         ene->seguirRuta();
+
+        //*tiempo += crono->getElapsedTime();
+        //cout << tiempo->asSeconds() << endl;
+
         while (accumulator >= timestep){
+          rest =crono->getElapsedTime()- tiempo;
+          cout << crono->getElapsedTime().asSeconds() << endl;
           accumulator -= timestep;
           previous2 = ene->getVehi()->getImagen().getPosition();
           
