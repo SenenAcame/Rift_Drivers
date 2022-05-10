@@ -430,7 +430,7 @@ void Circuito::dibujaMapa(sf::RenderWindow *window){
     for(int i=0;i<cachos.size();i++){
         window->draw(cachos.at(i));
       }
-    imvortice.setRotation(imvortice.getRotation()-5);
+    imvortice.setRotation(imvortice.getRotation()-2);
     window->draw(imvortice);
 }
 /*
@@ -441,6 +441,9 @@ void Circuito::dibujaMapabw(sf::RenderWindow *window){
 }
 */
 void Circuito::montaMapa(){
+    sf::Sprite spritefuera(texfuera);
+    spritefuera.setTextureRect(sf::IntRect(-640,-640,320*54,320*54));
+    cachos.push_back(spritefuera);
     for(int k=0;k<circuito.size();k++){
         for (int l = 0; l < circuito.at(k).size(); l++){
             if(circuito.at(k).at(l)!="0"){
@@ -716,7 +719,7 @@ void Circuito::montaMapa(){
                             */
                         }
                     }
-                }
+                }/*
                 if(k-1>=0&&l-1>=0&&circuito.at(k-1).at(l-1)=="0"){
                     sf::Sprite spritefuera(texfuera);
                     //sf::Sprite sprite12bw(tex12bw);
@@ -729,7 +732,7 @@ void Circuito::montaMapa(){
                             sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
                             sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
                             cachosbw.push_back(sprite12bw);
-                            */
+                            *//*
                         }
                     }
                 }
@@ -745,7 +748,7 @@ void Circuito::montaMapa(){
                             sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
                             sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
                             cachosbw.push_back(sprite12bw);
-                            */
+                            *//*
                         }
                     }
                 }
@@ -761,7 +764,7 @@ void Circuito::montaMapa(){
                             sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
                             sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
                             cachosbw.push_back(sprite12bw);
-                            */
+                            *//*
                         }
                     }
                 }
@@ -777,7 +780,7 @@ void Circuito::montaMapa(){
                             sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
                             sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
                             cachosbw.push_back(sprite12bw);
-                            */
+                            *//*
                         }
                     }
                 }
@@ -793,7 +796,7 @@ void Circuito::montaMapa(){
                             sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
                             sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
                             cachosbw.push_back(sprite12bw);
-                            */
+                            *//*
                         }
                     }
                 }
@@ -809,7 +812,7 @@ void Circuito::montaMapa(){
                             sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
                             sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
                             cachosbw.push_back(sprite12bw);
-                            */
+                            *//*
                         }
                     }
                 }
@@ -825,7 +828,7 @@ void Circuito::montaMapa(){
                             sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
                             sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
                             cachosbw.push_back(sprite12bw);
-                            */
+                            *//*
                         }
                     }
                 }
@@ -841,10 +844,10 @@ void Circuito::montaMapa(){
                             sprite12bw.setPosition(i*32+32*10*l,j*32+32*10*k);
                             sprite12bw.setTextureRect(sf::IntRect(i*32,j*32,32,32));
                             cachosbw.push_back(sprite12bw);
-                            */
+                            *//*
                         }
                     }
-                }
+                }*/
             }
         }
     }

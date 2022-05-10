@@ -321,3 +321,15 @@ Implementado el menu para seleccionar el coche
 
 # 08/05/2022 Sergio Tortajada Santonja (10 min)
 Arreglado problemas con los sprites cuando cambias de coche
+
+# 09/05/2022 Sergio Tortajada Santonja (30 min)
+Imagen de fondo en el circuito y colisión marcha atrás
+
+# 08/05/2022 Joan Pascual Izquierdo/Sergio Tortajada Santonja(20min)
+Ajustando las velocidaddes de colisiones, la rotación en la zona de "hierba" del trozo de nieve, y otros detalles menores.
+
+# 10/05/2022 Sergio Tortajada Santonja (30 min)
+Música de menú y de juego
+
+# 08/05/2022 Miguel Ángel Ferrer García de la Reina (1h 30m)
+Puestos los prites de los enemigos y distintas estadisticas para cada coche

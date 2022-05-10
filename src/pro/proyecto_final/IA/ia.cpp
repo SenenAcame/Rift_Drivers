@@ -5,7 +5,7 @@
 #include "../tinyxml/tinyxml2.h"
 
 #define TamTile 320
-#define kVel 9
+#define kVel 7
 #define Pi 3.14159265
 #define MARGEN 10
 #define NoContains string::npos

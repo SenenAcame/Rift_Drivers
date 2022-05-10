@@ -87,6 +87,7 @@ int main()
 
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include <math.h>
 
@@ -121,7 +122,6 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
   color[1]=image1.getPixel(x1+x, y1);
   color[3]=image1.getPixel(x1, y1+y);
   color[2]=image1.getPixel(x1, y1);
-  printf("color2: [ %d, %d, %d ]\n",color[2].r, color[2].g, color[2].b);
   for(int i=0; i<4 && col==false;i++){
     if((color[i].r==0) && (color[i].g==0) && (color[i].b==0)){
       negro=true;
@@ -130,10 +130,6 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
       col=true;
     } 
   } 
-   sf::Color color[4];
-   int colision=0;
-  bool negro=false;
-  bool col=false;
   */
   int otroCont=0;
   if((color[0].r==0) && (color[0].g==0) && (color[0].b==0)){
@@ -156,7 +152,6 @@ int colisionMapa(sf::Image &image1, int x1, int y1, int tx, int ty, float rot){
     if(otroCont==1){
       //META
       colision=3;
-      //META
     }else if(otroCont==2){
       colision=4;
     }
@@ -170,7 +165,28 @@ int main() {
 
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(1080, 720), "Rift Drivers");
-
+  sf::Texture texicon;
+  if (!texicon.loadFromFile("../resources/logo.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Image icono=texicon.copyToImage();
+  int ancho=icono.getSize().x;
+  int alto=icono.getSize().y;
+  window.setIcon(ancho,alto,icono.getPixelsPtr());
+  sf::SoundBuffer buffer;
+  if (!buffer.loadFromFile("../resources/ban-ban.wav")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::SoundBuffer buffer2;
+  if (!buffer2.loadFromFile("../resources/musica-carrera.wav")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Sound music(buffer);
+  music.play();
+  music.setLoop(true);
   //camara y minimapa
   sf::View camara;
   sf::View minimapa;
@@ -186,8 +202,20 @@ int main() {
     exit(0);
   }
 
+  sf::Texture texalt;
+  if (!texalt.loadFromFile("../resources/cocherot-2.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+
   sf::Texture tex2;
   if (!tex2.loadFromFile("../resources/f1rot.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+
+  sf::Texture texalt2;
+  if (!texalt2.loadFromFile("../resources/f1rot-2.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
@@ -198,17 +226,23 @@ int main() {
     exit(0);
   }
 
+  sf::Texture texalt3;
+  if (!texalt3.loadFromFile("../resources/4x4-2.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+
   sf::Texture tex4;
   if (!tex4.loadFromFile("../resources/kart.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
-
-  sf::Texture tex5;
-  if (!tex5.loadFromFile("../resources/cocherot-2.png")) {
+  sf::Texture texalt4;
+  if (!texalt4.loadFromFile("../resources/kart-2.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
+
 
    sf::Texture iniF;
   if (!iniF.loadFromFile("../resources/inicio.png")) {
@@ -238,11 +272,11 @@ int main() {
   sprite.setScale(3.5f, 3.5f);
   spr2.setScale(3.5f, 3.5f);
   //Cojo el sprite que me interesa por defecto del sheet
-  sprite.setTextureRect(sf::IntRect(0 , 0, 22, 16));
-  spr2.setTextureRect(sf::IntRect(0 , 0, 23, 16));
+ 
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(25*320+320/2, 25*320+320/2);
   sprite.scale(0.75,0.75);
+  spr2.scale(0.75,0.75);
   camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
 
   //inicio un menu
@@ -272,12 +306,15 @@ int main() {
   float rot = -90.00f;
   sprite.setRotation(rot);
   float speed = 0.0f;
-
+  float maxvel = 0.0f;
+  float acc = 0.0f;
   int tam[2];
   tam[0]=22*3.5f;
   tam[1]=16*3.5f;
 
-  float gir = 10.0f;
+  float gir = 0.0f;
+
+  string cocheselec = "";
 
   sf::Clock clock;
   sf::Clock updateClock;
@@ -397,15 +434,40 @@ int main() {
                       sprite.setTexture(tex2);
                       sprite.setOrigin(11, 8);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 22, 16));
+
+                      music.setBuffer(buffer2);
+                      music.setVolume(50);
+                      music.play();
+                      music.setLoop(true);
+
+                      spr2.setTexture(texalt2);
+                      spr2.setOrigin(11, 8);
+                      spr2.setTextureRect(sf::IntRect(0 , 0, 22, 16));
+                      ene->getVehi()->setImagen(spr2);
+
+                      maxvel = 70.0f;
+                      acc = 2.0f;
+                      gir = 10.0f;
                       estado=1;
                     break;
 
                     case 1:
                       std::cout <<"Has seleccionado el Deportivo" << std::endl;
 
-                      sprite.setTexture(tex5);
+                      sprite.setTexture(texalt);
                       sprite.setOrigin(11.5f, 8);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 23, 16));
+                      music.setBuffer(buffer2);
+                      music.setVolume(50);
+                      music.play();
+                      music.setLoop(true);
+                      spr2.setTexture(tex);
+                      spr2.setOrigin(11.5f, 8);
+                      spr2.setTextureRect(sf::IntRect(0 , 0, 23, 16));
+                      ene->getVehi()->setImagen(spr2);
+                      acc = 1.0f;
+                      maxvel = 60.0f;
+                      gir = 10.0f;
                       estado=1;
                     break;
 
@@ -415,7 +477,20 @@ int main() {
                       sprite.setTexture(tex3);
                       sprite.setOrigin(8, 9);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 16, 18));
-                      
+                      music.setBuffer(buffer2);
+                      music.setVolume(50);
+                      music.play();
+                      music.setLoop(true);
+                      cocheselec = "4x4";
+
+                      spr2.setTexture(texalt3);
+                      spr2.setOrigin(8, 9);
+                      spr2.setTextureRect(sf::IntRect(0 , 0, 16, 18));
+                      ene->getVehi()->setImagen(spr2);
+
+                      maxvel = 40.0f;
+                      acc = 0.7f;
+                      gir = 10.0f;
                       estado=1;
                     break;
 
@@ -424,6 +499,19 @@ int main() {
                       sprite.setTexture(tex4);
                       sprite.setOrigin(11, 10);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 22, 20));
+                      music.setBuffer(buffer2);
+                      music.setVolume(50);
+                      music.play();
+                      music.setLoop(true);
+
+                      spr2.setTexture(texalt4);
+                      spr2.setOrigin(11, 10);
+                      spr2.setTextureRect(sf::IntRect(0 , 0, 22, 20));
+                      ene->getVehi()->setImagen(spr2);
+
+                      maxvel = 40.0f;
+                      acc = 1.5f;
+                      gir = 15.0f;
                       estado=1;
                     break;
                   }
@@ -474,18 +562,24 @@ int main() {
                 break;
                 case sf::Keyboard::X:
                   estado=1;
-                break;
+                break;*/
                 case sf::Keyboard::C:
                   estado=2;
+                  music.setBuffer(buffer);
+                  music.play();
+                  music.setLoop(true);
                 break;
-                */
+                
                 case sf::Keyboard::O:
                    ene->setDibCheck(!ene->getDibCheck());
                 break;
 
                 case sf::Keyboard::P:
                    ene->setSegCheck(!ene->getSegCheck());
+<<<<<<< HEAD
                    //estado=2;
+=======
+>>>>>>> dfb41ccda3e3ec4b488091d4d79a2808efb610a5
                 break;
                 
                 case sf::Keyboard::L:
@@ -542,41 +636,73 @@ int main() {
 
           if(col==cir->getFinaly()&&row==cir->getFinalx()){
             estado=2;
+            music.setBuffer(buffer);
+            music.play();
+            music.setLoop(true);
           }
           col=(int)sprite.getPosition().x/320;
           row=(int)sprite.getPosition().y/320;
             //hola
-            std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
-            sf::Texture durmp;
+          std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
+          sf::Texture durmp;
+          if(row<0||row>49||col<0||col>49){
+            if(speed>40.0f){
+              speed-=65.0f;
+            }else if(speed>30.0f){
+              speed-=50.0f;
+            }else if(speed>20.0f){
+              speed-=40.0f;
+            }else if(speed>15.0f){
+              speed-=30.0f;
+            }else if(speed>12.0f){
+              speed-=23.0f;
+            }else if(speed>10.0f){
+              speed-=18.0f;
+            }else if(speed>8.0f){
+              speed-=16.0f;
+            }else if(speed>6.0f){
+              speed-=13.0f;
+            }else if(speed>4.0f){
+              speed-=11.5f;
+            }else if(speed>2.0f){
+              speed-=7.5f;
+            }else if(speed>1){
+              speed-=6.7f;
+            }else if(speed>0){
+              speed-=5.1f;
+            }
+          }
+          else{
             string trbw=mapbw.at(row).at(col);
             if(trbw=="0"){
               if(speed>40.0f){
-                  speed-=65.0f;
-                }else if(speed>30.0f){
-                  speed-=50.0f;
-                }else if(speed>20.0f){
-                  speed-=40.0f;
-                }else if(speed>15.0f){
-                  speed-=29.0f;
-                }else if(speed>12.0f){
-                  speed-=23.0f;
-                }else if(speed>10.0f){
-                  speed-=17.0f;
-                }else if(speed>8.0f){
-                  speed-=14.0f;
-                }else if(speed>6.0f){
-                  speed-=12.0f;
-                }else if(speed>4.0f){
-                  speed-=10.5f;
-                }else if(speed>2.0f){
-                  speed-=6.5f;
-                }else if(speed>1){
-                  speed-=3.7f;
-                }else if(speed>0){
-                  speed-=2.0f;
-                }
+                speed-=65.0f;
+              }else if(speed>30.0f){
+                speed-=50.0f;
+              }else if(speed>20.0f){
+                speed-=40.0f;
+              }else if(speed>15.0f){
+                speed-=30.0f;
+              }else if(speed>12.0f){
+                speed-=23.0f;
+              }else if(speed>10.0f){
+                speed-=18.0f;
+              }else if(speed>8.0f){
+                speed-=16.0f;
+              }else if(speed>6.0f){
+                speed-=13.0f;
+              }else if(speed>4.0f){
+                speed-=11.5f;
+              }else if(speed>2.0f){
+                speed-=7.5f;
+              }else if(speed>1){
+                speed-=6.7f;
+              }else if(speed>0){
+                speed-=5.1f;
+              }
             }
             if(trbw!="0"){
+              
               if (!durmp.loadFromFile(trbw)) {
                 std::cerr << "Error cargando la imagen sprites.png";
                 exit(0);
@@ -591,6 +717,9 @@ int main() {
                   //Esto es cuando pisa EL PORTAL DEL AVERNO 
 
                   estado=2;
+                  music.setBuffer(buffer);
+                  music.play();
+                  music.setLoop(true);
                   break;
                   //NO SE QUE ESTOY HACIENDO MAL, AIUDA
                   /*
@@ -623,10 +752,13 @@ int main() {
                 }else if(speed>2.0f){
                   speed-=6.5f;
                 }else if(speed>1){
-                  speed-=3.7f;
+                  speed-=5.7f;
                 }else if(speed>0){
-                  speed-=2.0f;
+                  speed-=5.0f;
                 }
+              }
+              else if(speed<0){
+                speed=0;
               }
                 /*
                 speed=0.0f;
@@ -636,11 +768,14 @@ int main() {
                 */
               
                 else if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==1){
-                  if(speed>20.0f){
-                    speed-=12.0f;
+
+                  if(speed>30.0f){
+                    speed-=15.0f;
+                  }else if(speed>20.0f){
+                    speed-=8.0f;
                   }else if(speed>15.0f){
                     speed -= 6.0f;
-                  }else if(speed>10.0f){
+                  }else if(speed>12.0f){
                     speed -= 4.0f;
                   }
                   
@@ -650,7 +785,7 @@ int main() {
                         speed-= 0.5f;
                       }
                     }else{
-                      speed-=1.5f;
+                      speed-=1.2f;
                     }
                   }
                   if(speed<0.0f){
@@ -658,7 +793,7 @@ int main() {
                   }
               } 
             }
-
+          }
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
             int col=(int)sprite.getPosition().x/320;
             int row=(int)sprite.getPosition().y/320;
@@ -675,14 +810,14 @@ int main() {
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
 
-                if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==4){
-                  sprite.rotate(-gir+5.0f);
-                  rot = sprite.getRotation();
-                }
-                else{
-                  sprite.rotate(-gir);
-                  rot = sprite.getRotation();
-                }
+              if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4 && cocheselec != "4x4"){
+                sprite.rotate(-gir+4.0f);
+                rot = sprite.getRotation();
+              }
+              else{
+                sprite.rotate(-gir);
+                rot = sprite.getRotation();
+              }
             }
             else{
               sprite.rotate(-gir);
@@ -714,8 +849,8 @@ int main() {
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
 
-                if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==4){
-                  sprite.rotate(+gir-5.0f);
+                 if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4 && cocheselec!="4x4"){
+                  sprite.rotate(+gir-4.0f);
                   rot = sprite.getRotation();
                 }
                 else{
@@ -737,8 +872,8 @@ int main() {
           
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
 
-            if(speed<=50.0f){
-              speed += 1.0f;
+            if(speed<=maxvel){
+              speed += acc;
             }
             position.x += cos(sprite.getRotation()*M_PI/180)*speed;
             position.y += sin(sprite.getRotation()*M_PI/180)*speed;
@@ -755,10 +890,7 @@ int main() {
           }
 
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)==false){
-            int col=(int)sprite.getPosition().x/320;
-            int row=(int)sprite.getPosition().y/320;
-            printf("(%d, %d)", (int)ene->getVehi()->getImagen().getPosition().y/320, (int)ene->getVehi()->getImagen().getPosition().x/320);
-            printf("(%d, %d)", cir->getFinalx(), cir->getFinaly());
+            
             if(speed>0.0f){
               speed -= 5.0f;
             }
@@ -773,6 +905,38 @@ int main() {
               position.x -= cos(sprite.getRotation()*M_PI/180)*5.0f;
               position.y -= sin(sprite.getRotation()*M_PI/180)*5.0f;
             }
+          col=(int)sprite.getPosition().x/320;
+          row=(int)sprite.getPosition().y/320;
+            //hola
+          std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
+          sf::Texture durmp;
+          if(row<0||row>49||col<0||col>49){
+            position.x += cos(sprite.getRotation()*M_PI/180)*15.0f;
+              position.y += sin(sprite.getRotation()*M_PI/180)*15.0f;
+          }
+          else{
+            string trbw=mapbw.at(row).at(col);
+            if(trbw=="0"){
+              position.x += cos(sprite.getRotation()*M_PI/180)*15.0f;
+              position.y += sin(sprite.getRotation()*M_PI/180)*15.0f;
+            }
+            if(trbw!="0"){
+              
+              if (!durmp.loadFromFile(trbw)) {
+                std::cerr << "Error cargando la imagen sprites.png";
+                exit(0);
+              }
+              sf::Image dbw=durmp.copyToImage();
+              int spx= sprite.getPosition().x;
+              int spy= sprite.getPosition().y;
+
+            if(colisionMapa(dbw, spx%320, spy%320, tam[0], tam[1], rot)==2){
+                
+              position.x += cos(sprite.getRotation()*M_PI/180)*15.0f;
+              position.y += sin(sprite.getRotation()*M_PI/180)*15.0f;
+              }
+          }
+          }
           }
           
         }
@@ -863,6 +1027,10 @@ int main() {
                       ene = new ia(cir,coche);
                       speed=0;
                       estado=1;
+                      music.setBuffer(buffer2);
+                      music.play();
+                      music.setLoop(true);
+                      music.setVolume(50);
                     break;
 
                     case 1:
