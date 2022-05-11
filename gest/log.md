@@ -336,3 +336,6 @@ Música de menú y de juego
 
 # 10/05/2022 Senén Martínez Acame(1 h)
 Añadido que el coche haga ruido de motor cuando acelera y que cese cuando dejas de acelerar, y tambien la velocidad de la IA es parametrizable.
+
+# 10/05/2022 Sergio Tortajada Santonja (1 h)
+Cosas volando de fondo para que no quede tan soso

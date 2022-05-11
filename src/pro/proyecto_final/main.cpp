@@ -269,7 +269,9 @@ int main() {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
+  
   sf::Sprite imgIni(iniF);
+  
   //imgIni.setTexture(iniF, true);
   /*
   std::vector <sf::Sprite> vektor;
@@ -282,6 +284,45 @@ int main() {
     }
     */
   imgIni.setTextureRect(sf::IntRect(0,0,1080,720));
+  sf::Texture aste;
+  if (!aste.loadFromFile("../resources/asteroide.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Sprite asteroide(aste);
+  asteroide.setOrigin(82,75.5);
+  sf::Sprite asteroide2(aste);
+  asteroide2.setOrigin(82,75.5);
+  asteroide2.setScale(0.8,0.8);
+  sf::Sprite asteroide3(aste);
+  asteroide3.setOrigin(82,75.5);
+  sf::Sprite asteroide4(aste);
+  asteroide4.setOrigin(82,75.5);
+  sf::Sprite asteroide5(aste);
+  asteroide5.setOrigin(82,75.5);
+
+  float pos1=0;
+  float pos2=-200;
+  float pos3=+300;
+  float pos4=-500;
+  float pos5=+500;
+
+  sf::Texture zor;
+  if (!zor.loadFromFile("../resources/zorro.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Texture pingu;
+  if (!pingu.loadFromFile("../resources/pingu.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Sprite zorro(zor);
+  zorro.setOrigin(61.5,49.5);
+  float posx,posy=0;
+
+  bool nieve=false;
+  int entra=0;
 
   sf::Sprite spr2(tex);
   //Y creo el spritesheet a partir de la imagen anterior
@@ -643,6 +684,37 @@ int main() {
           sprite.setRotation(rot);
           prev = rot;
 
+          pos1-=5;
+          pos2-=10;
+          pos3-=4;
+          pos4-=8;
+          pos5-=6;
+
+          posx-=3;
+          posy-=4;
+
+          if(pos1<=-800){
+            pos1=800;
+          }
+          if(pos2<=-800){
+            pos2=800;
+          }
+          if(pos3<=-800){
+            pos3=800;
+          }
+          if(pos4<=-800){
+            pos4=800;
+          }
+          if(pos5<=-800){
+            pos5=800;
+          }
+          if(posx<=-700){
+            posx=700;
+          }
+          if(posy<=-500){
+            posy=500;
+          }
+
           int col=(int)ene->getVehi()->getImagen().getPosition().x/320;
           int row=(int)ene->getVehi()->getImagen().getPosition().y/320;
 
@@ -714,7 +786,11 @@ int main() {
               }
             }
             if(trbw!="0"){
-              
+              if(trbw.length()>25){
+                nieve=true;
+              }else{
+                nieve=false;
+              }
               if (!durmp.loadFromFile(trbw)) {
                 std::cerr << "Error cargando la imagen sprites.png";
                 exit(0);
@@ -967,13 +1043,42 @@ int main() {
         camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         fondo.setPosition(sprite.getPosition().x,sprite.getPosition().y);
+        asteroide.setPosition(sprite.getPosition().x-pos1,sprite.getPosition().y+300);
+        asteroide.setRotation(asteroide.getRotation()-3);
+        asteroide2.setPosition(sprite.getPosition().x-pos2,sprite.getPosition().y+180);
+        asteroide2.setRotation(asteroide.getRotation()-3);
+        asteroide3.setPosition(sprite.getPosition().x-pos3,sprite.getPosition().y);
+        asteroide3.setRotation(asteroide.getRotation()-3);
+        asteroide4.setPosition(sprite.getPosition().x-pos4,sprite.getPosition().y-200);
+        asteroide4.setRotation(asteroide.getRotation()-3);
+        asteroide5.setPosition(sprite.getPosition().x-pos5,sprite.getPosition().y-450);
+        asteroide5.setRotation(asteroide.getRotation()-3);
+        zorro.setPosition(sprite.getPosition().x-posx,sprite.getPosition().y-posy);
+        zorro.setRotation(zorro.getRotation()-3);
+        if(nieve&&entra==1){
+          zorro.setTexture(pingu);
+          zorro.setScale(1,1);
+          zorro.setOrigin(31,27.5);
+          entra=0;
+        }
+        else if(!nieve&&entra==0){
+          zorro.setTexture(zor);
+          zorro.setScale(0.5,0.5);
+          entra=1;
+        }
         
         window.setView(camara);
         if(pista){
           //cir->dibujaMapabw(&window);
           window.draw(fondo);
+          window.draw(asteroide);
+          window.draw(asteroide2);
+          window.draw(asteroide3);
+          window.draw(asteroide4);
+          window.draw(asteroide5);
           cir->dibujaMapa(&window);
-        ene->dibujaRecorrido(&window);
+          ene->dibujaRecorrido(&window);
+          window.draw(zorro);
         }
         window.draw(sprite);
         window.draw(ene->getVehi()->getImagen());
