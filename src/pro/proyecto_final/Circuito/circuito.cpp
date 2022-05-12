@@ -165,10 +165,12 @@ Circuito::Circuito(){
     exit(0);
   }
   imvortice.setTexture(texvortice);
+    /*
   if (!texfuera.loadFromFile("../resources/fuera.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
+*/
 }
 
 void Circuito::CrearMapa(){
@@ -441,9 +443,6 @@ void Circuito::dibujaMapabw(sf::RenderWindow *window){
 }
 */
 void Circuito::montaMapa(){
-    sf::Sprite spritefuera(texfuera);
-    spritefuera.setTextureRect(sf::IntRect(-640,-640,320*54,320*54));
-    cachos.push_back(spritefuera);
     for(int k=0;k<circuito.size();k++){
         for (int l = 0; l < circuito.at(k).size(); l++){
             if(circuito.at(k).at(l)!="0"){

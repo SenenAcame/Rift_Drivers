@@ -14,12 +14,16 @@ class ia{
         vehiculo *vehi;
         float angulo;
         bool dibCheck, segCheck;
+        int speed;
 
     public: 
         ia(Circuito *mundo, vehiculo *car);
 
         void setList(Circuito *mundo);
         float **getList();
+        
+        void setSpeed(int spe);
+        int getSpeed();
 
         void setSize(int tam);
         int getSize();

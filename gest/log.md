@@ -328,8 +328,17 @@ Imagen de fondo en el circuito y colisión marcha atrás
 # 08/05/2022 Joan Pascual Izquierdo/Sergio Tortajada Santonja(20min)
 Ajustando las velocidaddes de colisiones, la rotación en la zona de "hierba" del trozo de nieve, y otros detalles menores.
 
+# 08/05/2022 Miguel Ángel Ferrer García de la Reina (1h 30m)
+Puestos los prites de los enemigos y distintas estadisticas para cada coche
+
 # 10/05/2022 Sergio Tortajada Santonja (30 min)
 Música de menú y de juego
 
-# 08/05/2022 Miguel Ángel Ferrer García de la Reina (1h 30m)
-Puestos los prites de los enemigos y distintas estadisticas para cada coche
+# 10/05/2022 Senén Martínez Acame(1 h)
+Añadido que el coche haga ruido de motor cuando acelera y que cese cuando dejas de acelerar, y tambien la velocidad de la IA es parametrizable.
+
+# 10/05/2022 Sergio Tortajada Santonja (1 h)
+Cosas volando de fondo para que no quede tan soso
+
+# 08/05/2022 Joan Pascual Izquierdo/Sergio Tortajada Santonja(30min)
+Balanceo de coches (parche 1.1).

@@ -176,17 +176,37 @@ int main() {
   window.setIcon(ancho,alto,icono.getPixelsPtr());
   sf::SoundBuffer buffer;
   if (!buffer.loadFromFile("../resources/ban-ban.wav")) {
-    std::cerr << "Error cargando la imagen sprites.png";
+    std::cerr << "Error cargando los sonidos.png";
     exit(0);
   }
   sf::SoundBuffer buffer2;
   if (!buffer2.loadFromFile("../resources/musica-carrera.wav")) {
-    std::cerr << "Error cargando la imagen sprites.png";
+    std::cerr << "Error cargando los sonidos.png";
+    exit(0);
+  }
+  sf::SoundBuffer buffer3;
+  if (!buffer3.loadFromFile("../resources/ruido_motor.wav")) {
+    std::cerr << "Error cargando los sonidos.png";
     exit(0);
   }
   sf::Sound music(buffer);
   music.play();
   music.setLoop(true);
+
+  sf::Texture texfondo;
+  if (!texfondo.loadFromFile("../resources/fondo.jpeg")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Sprite fondo;
+  fondo.setTexture(texfondo);
+  fondo.setOrigin(627,416);
+  fondo.setPosition(25*320+320/2, 25*320+320/2);
+  fondo.setScale(1.3f,1.5f);
+  sf::Sound motor(buffer3);
+  motor.setLoop(true);
+  bool ruido = true;
+
   //camara y minimapa
   sf::View camara;
   sf::View minimapa;
@@ -249,7 +269,9 @@ int main() {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
+  
   sf::Sprite imgIni(iniF);
+  
   //imgIni.setTexture(iniF, true);
   /*
   std::vector <sf::Sprite> vektor;
@@ -262,6 +284,45 @@ int main() {
     }
     */
   imgIni.setTextureRect(sf::IntRect(0,0,1080,720));
+  sf::Texture aste;
+  if (!aste.loadFromFile("../resources/asteroide.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Sprite asteroide(aste);
+  asteroide.setOrigin(82,75.5);
+  sf::Sprite asteroide2(aste);
+  asteroide2.setOrigin(82,75.5);
+  asteroide2.setScale(0.8,0.8);
+  sf::Sprite asteroide3(aste);
+  asteroide3.setOrigin(82,75.5);
+  sf::Sprite asteroide4(aste);
+  asteroide4.setOrigin(82,75.5);
+  sf::Sprite asteroide5(aste);
+  asteroide5.setOrigin(82,75.5);
+
+  float pos1=0;
+  float pos2=-200;
+  float pos3=+300;
+  float pos4=-500;
+  float pos5=+500;
+
+  sf::Texture zor;
+  if (!zor.loadFromFile("../resources/zorro.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Texture pingu;
+  if (!pingu.loadFromFile("../resources/pingu.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Sprite zorro(zor);
+  zorro.setOrigin(61.5,49.5);
+  float posx,posy=0;
+
+  bool nieve=false;
+  int entra=0;
 
   sf::Sprite spr2(tex);
   //Y creo el spritesheet a partir de la imagen anterior
@@ -338,7 +399,10 @@ int main() {
    
     switch(estado){
       case 0:
-       
+        if(!ruido){
+          motor.stop();
+          ruido = true;
+        }
         while (window.pollEvent(e)){
           switch(e.type){
             case sf::Event::Closed:
@@ -408,8 +472,11 @@ int main() {
 
       break;
 
-       case 4:
-       
+      case 4:
+        if(!ruido){
+          motor.stop();
+          ruido = true;
+        }
         while (window.pollEvent(e)){
           switch(e.type){
             case sf::Event::Closed:
@@ -436,7 +503,7 @@ int main() {
                       sprite.setTextureRect(sf::IntRect(0 , 0, 22, 16));
 
                       music.setBuffer(buffer2);
-                      music.setVolume(50);
+                      music.setVolume(40);
                       music.play();
                       music.setLoop(true);
 
@@ -446,8 +513,8 @@ int main() {
                       ene->getVehi()->setImagen(spr2);
 
                       maxvel = 70.0f;
-                      acc = 2.0f;
-                      gir = 10.0f;
+                      acc = 2.5f;
+                      gir = 9.0f;
                       estado=1;
                     break;
 
@@ -458,16 +525,16 @@ int main() {
                       sprite.setOrigin(11.5f, 8);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 23, 16));
                       music.setBuffer(buffer2);
-                      music.setVolume(50);
+                      music.setVolume(40);
                       music.play();
                       music.setLoop(true);
                       spr2.setTexture(tex);
                       spr2.setOrigin(11.5f, 8);
                       spr2.setTextureRect(sf::IntRect(0 , 0, 23, 16));
                       ene->getVehi()->setImagen(spr2);
-                      acc = 1.0f;
-                      maxvel = 60.0f;
-                      gir = 10.0f;
+                      acc = 1.2f;
+                      maxvel = 55.0f;
+                      gir = 11.0f;
                       estado=1;
                     break;
 
@@ -478,7 +545,7 @@ int main() {
                       sprite.setOrigin(8, 9);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 16, 18));
                       music.setBuffer(buffer2);
-                      music.setVolume(50);
+                      music.setVolume(40);
                       music.play();
                       music.setLoop(true);
                       cocheselec = "4x4";
@@ -489,7 +556,7 @@ int main() {
                       ene->getVehi()->setImagen(spr2);
 
                       maxvel = 40.0f;
-                      acc = 0.7f;
+                      acc = 0.85f;
                       gir = 10.0f;
                       estado=1;
                     break;
@@ -500,7 +567,7 @@ int main() {
                       sprite.setOrigin(11, 10);
                       sprite.setTextureRect(sf::IntRect(0 , 0, 22, 20));
                       music.setBuffer(buffer2);
-                      music.setVolume(50);
+                      music.setVolume(40);
                       music.play();
                       music.setLoop(true);
 
@@ -509,8 +576,8 @@ int main() {
                       spr2.setTextureRect(sf::IntRect(0 , 0, 22, 20));
                       ene->getVehi()->setImagen(spr2);
 
-                      maxvel = 40.0f;
-                      acc = 1.5f;
+                      maxvel = 33.0f;
+                      acc = 1.6f;
                       gir = 15.0f;
                       estado=1;
                     break;
@@ -631,6 +698,37 @@ int main() {
           sprite.setRotation(rot);
           prev = rot;
 
+          pos1-=5;
+          pos2-=10;
+          pos3-=4;
+          pos4-=8;
+          pos5-=6;
+
+          posx-=3;
+          posy-=4;
+
+          if(pos1<=-800){
+            pos1=800;
+          }
+          if(pos2<=-800){
+            pos2=800;
+          }
+          if(pos3<=-800){
+            pos3=800;
+          }
+          if(pos4<=-800){
+            pos4=800;
+          }
+          if(pos5<=-800){
+            pos5=800;
+          }
+          if(posx<=-700){
+            posx=700;
+          }
+          if(posy<=-500){
+            posy=500;
+          }
+
           int col=(int)ene->getVehi()->getImagen().getPosition().x/320;
           int row=(int)ene->getVehi()->getImagen().getPosition().y/320;
 
@@ -702,7 +800,11 @@ int main() {
               }
             }
             if(trbw!="0"){
-              
+              if(trbw.length()>25){
+                nieve=true;
+              }else{
+                nieve=false;
+              }
               if (!durmp.loadFromFile(trbw)) {
                 std::cerr << "Error cargando la imagen sprites.png";
                 exit(0);
@@ -767,8 +869,9 @@ int main() {
                 }
                 */
               
-                else if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==1){
+              else if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==1){
 
+                if(cocheselec!="4x4"){
                   if(speed>30.0f){
                     speed-=15.0f;
                   }else if(speed>20.0f){
@@ -791,6 +894,26 @@ int main() {
                   if(speed<0.0f){
                     speed += 0.5f;
                   }
+                }else{
+                  if(speed>30.0f){
+                    speed-=10.0f;
+                  }else if(speed>18.0f){
+                    speed-=4.0f;
+                  }
+                  
+                  if(speed<18.0f){
+                    if(speed<17.3f){
+                      if(speed>0.0f){
+                        speed-= 0.1f;
+                      }
+                    }else{
+                      speed-=1.0f;
+                    }
+                  }
+                  if(speed<0.0f){
+                    speed += 0.5f;
+                  }
+                }
               } 
             }
           }
@@ -871,6 +994,11 @@ int main() {
           }
           
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+            if(ruido){
+              motor.play();
+              ruido = false;
+            }
+              
 
             if(speed<=maxvel){
               speed += acc;
@@ -879,13 +1007,17 @@ int main() {
             position.y += sin(sprite.getRotation()*M_PI/180)*speed;
           }
           else{
+            if(!ruido){
+              motor.stop();
+              ruido = true;
+            }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)==false){
-            
-                if(speed>0.0f){
-                  speed -= 1.0f;
-                }
-                position.x += cos(sprite.getRotation()*M_PI/180)*speed;
-                position.y += sin(sprite.getRotation()*M_PI/180)*speed;
+              
+              if(speed>0.0f){
+                speed -= 1.0f;
+              }
+              position.x += cos(sprite.getRotation()*M_PI/180)*speed;
+              position.y += sin(sprite.getRotation()*M_PI/180)*speed;
             }       
           }
 
@@ -945,19 +1077,50 @@ int main() {
         camara=sf::View(sf::FloatRect(0,0,1080+speed*7,720+speed*7));
         camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
-
+        fondo.setPosition(sprite.getPosition().x,sprite.getPosition().y);
+        asteroide.setPosition(sprite.getPosition().x-pos1,sprite.getPosition().y+300);
+        asteroide.setRotation(asteroide.getRotation()-3);
+        asteroide2.setPosition(sprite.getPosition().x-pos2,sprite.getPosition().y+180);
+        asteroide2.setRotation(asteroide.getRotation()-3);
+        asteroide3.setPosition(sprite.getPosition().x-pos3,sprite.getPosition().y);
+        asteroide3.setRotation(asteroide.getRotation()-3);
+        asteroide4.setPosition(sprite.getPosition().x-pos4,sprite.getPosition().y-200);
+        asteroide4.setRotation(asteroide.getRotation()-3);
+        asteroide5.setPosition(sprite.getPosition().x-pos5,sprite.getPosition().y-450);
+        asteroide5.setRotation(asteroide.getRotation()-3);
+        zorro.setPosition(sprite.getPosition().x-posx,sprite.getPosition().y-posy);
+        zorro.setRotation(zorro.getRotation()-3);
+        if(nieve&&entra==1){
+          zorro.setTexture(pingu);
+          zorro.setScale(1,1);
+          zorro.setOrigin(31,27.5);
+          entra=0;
+        }
+        else if(!nieve&&entra==0){
+          zorro.setTexture(zor);
+          zorro.setScale(0.5,0.5);
+          entra=1;
+        }
         
         window.setView(camara);
         if(pista){
           //cir->dibujaMapabw(&window);
+          window.draw(fondo);
+          window.draw(asteroide);
+          window.draw(asteroide2);
+          window.draw(asteroide3);
+          window.draw(asteroide4);
+          window.draw(asteroide5);
           cir->dibujaMapa(&window);
-        ene->dibujaRecorrido(&window);
+          ene->dibujaRecorrido(&window);
+          window.draw(zorro);
         }
         window.draw(sprite);
         window.draw(ene->getVehi()->getImagen());
 
         window.setView(minimapa);
         if(pista){
+          window.draw(fondo);
             cir->dibujaMapa(&window);
             ene->dibujaRecorrido(&window);
         }
@@ -975,6 +1138,10 @@ int main() {
       //MENÚ FINALIIIIIIIIIIIIIIIIIIISIMO
 
       case 2:
+        if(!ruido){
+          motor.stop();
+          ruido = true;
+        }
         sf::Event e;
         //std::cout <<"HE ENTRADO WEEEEEEEEE ,SOY PROASO" << std::endl;
         //camara.setCenter(25*320+320/2, 25*320+320/2);
