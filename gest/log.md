@@ -339,3 +339,6 @@ Añadido que el coche haga ruido de motor cuando acelera y que cese cuando dejas
 
 # 10/05/2022 Sergio Tortajada Santonja (1 h)
 Cosas volando de fondo para que no quede tan soso
+
+# 08/05/2022 Joan Pascual Izquierdo/Sergio Tortajada Santonja(30min)
+Balanceo de coches (parche 1.1).

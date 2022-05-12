@@ -510,8 +510,8 @@ int main() {
                       ene->getVehi()->setImagen(spr2);
 
                       maxvel = 70.0f;
-                      acc = 2.0f;
-                      gir = 10.0f;
+                      acc = 2.5f;
+                      gir = 9.0f;
                       estado=1;
                     break;
 
@@ -529,9 +529,9 @@ int main() {
                       spr2.setOrigin(11.5f, 8);
                       spr2.setTextureRect(sf::IntRect(0 , 0, 23, 16));
                       ene->getVehi()->setImagen(spr2);
-                      acc = 1.0f;
-                      maxvel = 60.0f;
-                      gir = 10.0f;
+                      acc = 1.2f;
+                      maxvel = 55.0f;
+                      gir = 11.0f;
                       estado=1;
                     break;
 
@@ -553,7 +553,7 @@ int main() {
                       ene->getVehi()->setImagen(spr2);
 
                       maxvel = 40.0f;
-                      acc = 0.7f;
+                      acc = 0.85f;
                       gir = 10.0f;
                       estado=1;
                     break;
@@ -573,8 +573,8 @@ int main() {
                       spr2.setTextureRect(sf::IntRect(0 , 0, 22, 20));
                       ene->getVehi()->setImagen(spr2);
 
-                      maxvel = 40.0f;
-                      acc = 1.5f;
+                      maxvel = 33.0f;
+                      acc = 1.6f;
                       gir = 15.0f;
                       estado=1;
                     break;
@@ -855,8 +855,9 @@ int main() {
                 }
                 */
               
-                else if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==1){
+              else if(colisionMapa(dbw, spx%320+1, spy%320+1, tam[0], tam[1], rot)==1){
 
+                if(cocheselec!="4x4"){
                   if(speed>30.0f){
                     speed-=15.0f;
                   }else if(speed>20.0f){
@@ -879,6 +880,26 @@ int main() {
                   if(speed<0.0f){
                     speed += 0.5f;
                   }
+                }else{
+                  if(speed>30.0f){
+                    speed-=10.0f;
+                  }else if(speed>18.0f){
+                    speed-=4.0f;
+                  }
+                  
+                  if(speed<18.0f){
+                    if(speed<17.3f){
+                      if(speed>0.0f){
+                        speed-= 0.1f;
+                      }
+                    }else{
+                      speed-=1.0f;
+                    }
+                  }
+                  if(speed<0.0f){
+                    speed += 0.5f;
+                  }
+                }
               } 
             }
           }
