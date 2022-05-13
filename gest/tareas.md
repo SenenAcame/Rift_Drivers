@@ -17,3 +17,24 @@ Se recomienda gastar alguna herramienta que permita medir el tiempo y administra
 * Todo+: Plugin de VSCODE: fabiospampinato.vscode-todo-plus
 
 Este fichero puede ser un PDF si la herramienta que gastáis lo requiere, pero **debe estar actualizado semanalmente**.
+
+# Tareas realizadas
+* `4/3/2022 - Crear clase IA - Senén Martinez Acame`
+* `7/3/2022 - Integrar XML - Senén Martinez Acame`
+* `9/3/2022 - IA recorre camino - Senén Martinez Acame`
+* `12/3/2022 - Crear clase Vehiculo - Senén Martinez Acame`
+* `15/3/2022 - Prototipos de mejoras - Senén Martinez Acame`
+* `19/3/2022 - Opctimizar IA - Senén Martinez Acame`
+* `26/3/2022 - Estructurar archivos - Senén Martinez Acame`
+* `4/4/2022 - Actualizar IA - Senén Martinez Acame`
+* `7/4/2022 - IA adaptada al Circuito - Senén Martinez Acame`
+* `8/4/2022 - Crear setup.sh - Senén Martinez Acame`
+* `10/4/2022 - Arreglar bugs y mala optimizacion de IA - Senén Martinez Acame`
+* `17/4/2022 - Trucos y mejorar recorridos - Senén Martinez Acame`
+* `17/4/2022 - Orientar IA - Senén Martinez Acame`
+* `27/4/2022 - Implementar menu - Senén Martinez Acame`
+* `30/4/2022 - Adaptar IA a salida y meta - Senén Martinez Acame`
+* `6/5/2022 - Mejora de recorridos - Senén Martinez Acame`
+* `7/5/2022 - Arreglar bug del menu - Senén Martinez Acame`
+* `10/5/2022 - Ruido de motor - Senén Martinez Acame`
+* `13/5/2022 - Ruido de motor - Senén Martinez Acame`
