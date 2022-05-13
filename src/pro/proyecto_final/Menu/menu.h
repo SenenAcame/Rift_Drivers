@@ -60,4 +60,7 @@ class Menu
         sf::Font font;
         sf::Text menu[MAX_NUMBER_OF_ITEMS];
         sf::Texture textura;
+        //
+        sf::Time tiempo;
+        sf::Clock reloj;
 };

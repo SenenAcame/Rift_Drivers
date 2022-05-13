@@ -210,10 +210,38 @@ int main() {
   //camara y minimapa
   sf::View camara;
   sf::View minimapa;
+  //cronometro
+  //sf::View cronometro;
+  //cronometro.setViewport(sf::FloatRect(0.65f,0,0.25f,0.15f));
+
   camara=sf::View(sf::FloatRect(0,0,1080,720));
   minimapa.setViewport(sf::FloatRect(0.85f,0,0.15f,0.25f));
+  //marco.setViewport(sf::FloatRect(0.85f,0,0.15f,0.25f));
+ 
+  
+  
+  /*
+  //contorno para el minimapa
+  sf::RectangleShape marco(sf::Vector2f(0.35f, 0.45f));
+  marco.setSize(sf::Vector2f(50.f, 50.f));
+  marco.setOutlineThickness(10.f);
+  marco.setOutlineColor(sf::Color::Cyan);
+  */
+ /*
+  sf::Texture marco;
+    //cargo el marco
+    if(!marco.loadFromFile("../resources/marco.png")){
+    std::cerr << "Error cargando el marco del minimapa";
+  }
+
+  sf:: Sprite marco2;
+  marco2.setTexture(marco);
+  marco2.scale(1.7,1.9);
+  marco2.setPosition(25*320+530,25*320-200);
+*/
   window.setView(camara);
   window.setFramerateLimit(60);
+
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
@@ -388,7 +416,10 @@ int main() {
   menu_final menuFinal(window.getSize().x, window.getSize().y);
   Menu menu(window.getSize().x, window.getSize().y);
   menu_coche menuCoche(window.getSize().x, window.getSize().y);
-
+  //con el tiempo actual, cuando empieza, y al entrar al bucle se le resta
+  sf::Clock *crono = new sf::Clock();
+  sf::Time tiempo = crono->getElapsedTime();
+  sf::Time rest;
   int estado = 0;
   //Bucle del juego
   while (window.isOpen()){
@@ -612,6 +643,7 @@ int main() {
 
 
       case 1:
+      //crono->restart();
         while (window.pollEvent(e)){
           switch(e.type){
             case sf::Event::Closed:
@@ -640,6 +672,7 @@ int main() {
 
                 case sf::Keyboard::P:
                    ene->setSegCheck(!ene->getSegCheck());
+                   //estado=2;
                 break;
                 
                 case sf::Keyboard::L:
@@ -677,7 +710,13 @@ int main() {
 
         accumulator += clock.restart().asSeconds();
         ene->seguirRuta();
+
+        //*tiempo += crono->getElapsedTime();
+        //cout << tiempo->asSeconds() << endl;
+
         while (accumulator >= timestep){
+          rest =crono->getElapsedTime()- tiempo;
+          cout << crono->getElapsedTime().asSeconds() << endl;
           accumulator -= timestep;
           previous2 = ene->getVehi()->getImagen().getPosition();
           
@@ -1064,6 +1103,11 @@ int main() {
         camara=sf::View(sf::FloatRect(0,0,1080+speed*7,720+speed*7));
         camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
+        //marco.setCenter(sprite.getPosition().x,sprite.getPosition().y);
+        //marco.setPosition(sprite.getPosition().x + 500,sprite.getPosition().y - 50);
+        //situar el cronometro
+        //cronometro.setCenter(sprite.getPosition().x, sprite.getPosition().y);
+
         fondo.setPosition(sprite.getPosition().x,sprite.getPosition().y);
         asteroide.setPosition(sprite.getPosition().x-pos1,sprite.getPosition().y+300);
         asteroide.setRotation(asteroide.getRotation()-3);
@@ -1101,17 +1145,30 @@ int main() {
           window.draw(asteroide5);
           cir->dibujaMapa(&window);
           ene->dibujaRecorrido(&window);
+<<<<<<< HEAD
+          window.draw(zorro);
+          
+=======
           //window.draw(zorro);
+>>>>>>> f31b860e03a78ac11b5926b81a9e5edf05f03036
         }
         window.draw(sprite);
         window.draw(ene->getVehi()->getImagen());
-
+        //window.draw(marco);
+        
+       // window.draw(marco2);
+        //window.setView(marco);
         window.setView(minimapa);
         if(pista){
           window.draw(fondo);
             cir->dibujaMapa(&window);
             ene->dibujaRecorrido(&window);
+
         }
+
+
+        //poner el cronometro
+        
 
         ene->getVehi()->getImagen().setPosition(previous2 + ((ene->getVehi()->getImagen().getPosition() - previous2) * (accumulator / timestep)));
 
@@ -1120,6 +1177,7 @@ int main() {
         
         window.draw(sprite);
         window.draw(ene->getVehi()->getImagen());
+
         window.display();
 
       break;

@@ -156,6 +156,9 @@ Menu::Menu(float width, float heigth)
     menu[2].setString("Salir");
     menu[2].setPosition(sf::Vector2f(width/2, heigth/(MAX_NUMBER_OF_ITEMS+1)*3));
     */
+
+   //reloj.getElapsedTime();
+   //tiempo.asSeconds();
 }
 
 Menu::~Menu()
