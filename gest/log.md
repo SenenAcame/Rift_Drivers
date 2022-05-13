@@ -345,3 +345,6 @@ Cosas volando de fondo para que no quede tan soso
 
 # 13/05/2022 Senén Martínez Acame(1h 15min)
 Rellenar documentacion.
+
+# 13/05/2022 Sergio Tortajada Santonja(20min)
+Borde minimapa
