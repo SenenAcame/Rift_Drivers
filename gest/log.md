@@ -348,3 +348,6 @@ Rellenar documentacion.
 
 # 13/05/2022 Sergio Tortajada Santonja(20min)
 Borde minimapa
+
+# 13/05/2022 Sergio Tortajada Santonja(20min)
+Cronometro con minutos
