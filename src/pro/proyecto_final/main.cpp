@@ -643,10 +643,7 @@ int main() {
 
                 case sf::Keyboard::P:
                    ene->setSegCheck(!ene->getSegCheck());
-<<<<<<< HEAD
                    //estado=2;
-=======
->>>>>>> dfb41ccda3e3ec4b488091d4d79a2808efb610a5
                 break;
                 
                 case sf::Keyboard::L:
