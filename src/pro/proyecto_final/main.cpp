@@ -202,7 +202,7 @@ int main() {
   fondo.setTexture(texfondo);
   fondo.setOrigin(627,416);
   fondo.setPosition(25*320+320/2, 25*320+320/2);
-  fondo.setScale(1.3f,1.5f);
+  fondo.setScale(1.7f,2);
   sf::Sound motor(buffer3);
   motor.setLoop(true);
   bool ruido = true;
@@ -215,18 +215,28 @@ int main() {
   //cronometro.setViewport(sf::FloatRect(0.65f,0,0.25f,0.15f));
 
   camara=sf::View(sf::FloatRect(0,0,1080,720));
+  minimapa=sf::View(sf::FloatRect(0,0,2160,1440));
   minimapa.setViewport(sf::FloatRect(0.85f,0,0.15f,0.25f));
+  
   //marco.setViewport(sf::FloatRect(0.85f,0,0.15f,0.25f));
  
   
   
-  /*
+  
   //contorno para el minimapa
-  sf::RectangleShape marco(sf::Vector2f(0.35f, 0.45f));
-  marco.setSize(sf::Vector2f(50.f, 50.f));
-  marco.setOutlineThickness(10.f);
-  marco.setOutlineColor(sf::Color::Cyan);
-  */
+  sf::RectangleShape marco(sf::Vector2f(0,2400));
+  marco.setOutlineThickness(200);
+  marco.setOutlineColor(sf::Color::Black);
+  sf::RectangleShape marco2(sf::Vector2f(0,2400));
+  marco2.setOutlineThickness(200);
+  marco2.setOutlineColor(sf::Color::Black);
+  sf::RectangleShape marco3(sf::Vector2f(0,2400));
+  marco3.setOutlineThickness(200);
+  marco3.setOutlineColor(sf::Color::Black);
+  sf::RectangleShape marco4(sf::Vector2f(0,2400));
+  marco4.setOutlineThickness(200);
+  marco4.setOutlineColor(sf::Color::Black);
+  
  /*
   sf::Texture marco;
     //cargo el marco
@@ -1145,12 +1155,7 @@ int main() {
           window.draw(asteroide5);
           cir->dibujaMapa(&window);
           ene->dibujaRecorrido(&window);
-<<<<<<< HEAD
-          window.draw(zorro);
-          
-=======
           //window.draw(zorro);
->>>>>>> f31b860e03a78ac11b5926b81a9e5edf05f03036
         }
         window.draw(sprite);
         window.draw(ene->getVehi()->getImagen());
@@ -1177,6 +1182,16 @@ int main() {
         
         window.draw(sprite);
         window.draw(ene->getVehi()->getImagen());
+        marco.setPosition(sprite.getPosition().x-1180,sprite.getPosition().y-720);
+        marco2.setPosition(sprite.getPosition().x-1080,sprite.getPosition().y-820);
+        marco2.setRotation(-90);
+        marco3.setPosition(sprite.getPosition().x-1080,sprite.getPosition().y+820);
+        marco3.setRotation(-90);
+        marco4.setPosition(sprite.getPosition().x+1180,sprite.getPosition().y-720);
+        window.draw(marco);
+        window.draw(marco2);
+        window.draw(marco3);
+        window.draw(marco4);
 
         window.display();
 
