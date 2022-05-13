@@ -428,8 +428,13 @@ int main() {
   menu_coche menuCoche(window.getSize().x, window.getSize().y);
   //con el tiempo actual, cuando empieza, y al entrar al bucle se le resta
   sf::Clock *crono = new sf::Clock();
-  sf::Time tiempo = crono->getElapsedTime();
-  sf::Time rest;
+  int segundos=crono->getElapsedTime().asSeconds();
+  int minutos=0;
+  int contseg=60;
+  bool suma=false;
+  string gana;
+  //sf::Time tiempo = crono->getElapsedTime();
+  //sf::Time rest;
   int estado = 0;
   //Bucle del juego
   while (window.isOpen()){
@@ -474,6 +479,9 @@ int main() {
                     case 0:
                       std::cout <<"Has seleccionado empezar" << std::endl;
                       estado=4;
+                      crono->restart();
+                      suma=false;
+                      minutos=0;
                     break;
 
                     case 1:
@@ -671,6 +679,7 @@ int main() {
                 break;*/
                 case sf::Keyboard::C:
                   estado=2;
+                  gana="Tramposo, has tardado: "+std::to_string(minutos)+":"+std::to_string(segundos);
                   music.setBuffer(buffer);
                   music.play();
                   music.setLoop(true);
@@ -725,8 +734,16 @@ int main() {
         //cout << tiempo->asSeconds() << endl;
 
         while (accumulator >= timestep){
-          rest =crono->getElapsedTime()- tiempo;
-          cout << crono->getElapsedTime().asSeconds() << endl;
+          //rest =crono->getElapsedTime()- tiempo;
+          segundos=(int) crono->getElapsedTime().asSeconds()%contseg;
+          if((int) crono->getElapsedTime().asSeconds()%60==0&&suma){
+            minutos+=1;
+            suma=false;
+          }
+          if((int) crono->getElapsedTime().asSeconds()%60!=0){
+            suma=true;
+          }
+          cout << minutos<<":"<<segundos << endl;
           accumulator -= timestep;
           previous2 = ene->getVehi()->getImagen().getPosition();
           
@@ -770,6 +787,7 @@ int main() {
 
           if(col==cir->getFinaly()&&row==cir->getFinalx()){
             estado=2;
+            gana="Has perdido";
             music.setBuffer(buffer);
             music.play();
             music.setLoop(true);
@@ -855,6 +873,7 @@ int main() {
                   //Esto es cuando pisa EL PORTAL DEL AVERNO 
 
                   estado=2;
+                  gana="Has ganado!!, has tardado: "+std::to_string(minutos)+":"+std::to_string(segundos);
                   music.setBuffer(buffer);
                   music.play();
                   music.setLoop(true);
@@ -1259,11 +1278,13 @@ int main() {
                       music.play();
                       music.setLoop(true);
                       music.setVolume(50);
+                      crono->restart();
+                      suma=false;
+                      minutos=0;
                     break;
 
                     case 1:
                       std::cout <<"Has seleccionado: Inici" << std::endl;
-                      std::cout <<"Has seleccionado: Volver a jugar" << std::endl;
                       if(pista){
                         position.x = 25*320+320/2;
                         position.y = 25*320+320/2;
