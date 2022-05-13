@@ -1145,12 +1145,7 @@ int main() {
           window.draw(asteroide5);
           cir->dibujaMapa(&window);
           ene->dibujaRecorrido(&window);
-<<<<<<< HEAD
-          window.draw(zorro);
-          
-=======
           //window.draw(zorro);
->>>>>>> f31b860e03a78ac11b5926b81a9e5edf05f03036
         }
         window.draw(sprite);
         window.draw(ene->getVehi()->getImagen());
