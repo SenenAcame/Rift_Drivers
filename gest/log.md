@@ -357,3 +357,6 @@ Cronometro con minutos
 
 # 14/05/2022 Senén Martínez Acame(1h 25min)
 Implementado layout donde se muestra el cronometro, controles de movimiento con WASD ademas de con las flechas. Hay que arreglar un bug que cuando se reseta el mapa el cronometro no se reinicia bien.
+
+# 08/05/2022 Joan Pascual Izquierdo(5min)
+Vuelven pingu y el/la zorro/a.

@@ -338,7 +338,7 @@ int main() {
   float pos3=+300;
   float pos4=-500;
   float pos5=+500;
-  /*
+  
   sf::Texture zor;
   if (!zor.loadFromFile("../resources/zorro.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
@@ -351,11 +351,11 @@ int main() {
   }
   sf::Sprite zorro(zor);
   zorro.setOrigin(61.5,49.5);
-  */
+  
   float posx,posy=0;
 
   bool nieve=false;
-  //int entra=0;
+  int entra=0;
 
   sf::Sprite spr2(tex);
   //Y creo el spritesheet a partir de la imagen anterior
@@ -573,7 +573,7 @@ int main() {
                       ene->getVehi()->setImagen(spr2);
 
                       maxvel = 70.0f;
-                      acc = 2.5f;
+                      acc = 2.25f;
                       gir = 9.0f;
                       estado=1;
                     break;
@@ -714,6 +714,8 @@ int main() {
                   ene = new ia(cir,coche);
                   speed=0;
                   crono->restart();
+                  suma=false;
+                  minutos=0;
                 break;
 
                 case sf::Keyboard::Escape:
@@ -1154,7 +1156,7 @@ int main() {
         asteroide4.setRotation(asteroide.getRotation()-3);
         asteroide5.setPosition(sprite.getPosition().x-pos5,sprite.getPosition().y-450);
         asteroide5.setRotation(asteroide.getRotation()-3);
-        /*
+    
         zorro.setPosition(sprite.getPosition().x-posx,sprite.getPosition().y-posy);
         zorro.setRotation(zorro.getRotation()-3);
         if(nieve&&entra==1){
@@ -1168,7 +1170,7 @@ int main() {
           zorro.setScale(0.5,0.5);
           entra=1;
         }
-        */
+      
         window.setView(camara);
         if(pista){
           //cir->dibujaMapabw(&window);
@@ -1180,7 +1182,7 @@ int main() {
           window.draw(asteroide5);
           cir->dibujaMapa(&window);
           ene->dibujaRecorrido(&window);
-          //window.draw(zorro);
+          window.draw(zorro);
         }
         window.draw(sprite);
         window.draw(ene->getVehi()->getImagen());
