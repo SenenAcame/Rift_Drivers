@@ -343,6 +343,9 @@ Añadido que el coche haga ruido de motor cuando acelera y que cese cuando dejas
 # 10/05/2022 Sergio Tortajada Santonja (1 h)
 Cosas volando de fondo para que no quede tan soso
 
+# 13/05/2022 Angelica Quaranta Barba (1h 35min)
+Probando a poner borde al minimapa con un shape de rectángulo, un sprite y una view.
+
 # 13/05/2022 Senén Martínez Acame(1h 15min)
 Rellenar documentacion.
 
