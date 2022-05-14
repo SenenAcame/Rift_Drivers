@@ -37,4 +37,5 @@ Este fichero puede ser un PDF si la herramienta que gastáis lo requiere, pero *
 * `6/5/2022 - Mejora de recorridos - Senén Martinez Acame`
 * `7/5/2022 - Arreglar bug del menu - Senén Martinez Acame`
 * `10/5/2022 - Ruido de motor - Senén Martinez Acame`
-* `13/5/2022 - Ruido de motor - Senén Martinez Acame`
+* `13/5/2022 - Rellenar documentacion - Senén Martinez Acame`
+* `14/5/2022 - Integrar layout - Senén Martinez Acame`

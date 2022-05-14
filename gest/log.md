@@ -351,3 +351,6 @@ Borde minimapa
 
 # 13/05/2022 Sergio Tortajada Santonja(20min)
 Cronometro con minutos
+
+# 14/05/2022 Senén Martínez Acame(1h 25min)
+Implementado layout donde se muestra el cronometro, controles de movimiento con WASD ademas de con las flechas. Hay que arreglar un bug que cuando se reseta el mapa el cronometro no se reinicia bien.

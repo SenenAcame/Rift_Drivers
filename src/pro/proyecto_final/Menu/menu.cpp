@@ -92,6 +92,7 @@ void Menu::MoveDown()
 }
 */
 #include "SFML/Graphics.hpp"
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include "menu.h"
 #include "menu_empezar.h"
