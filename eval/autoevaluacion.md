@@ -17,6 +17,12 @@ Empecé bastante perdido porque hacía varios años que no programaba en c++ o s
 
 ## Miembro: Angelica Quaranta Barba
 Con el prototipo logré lo que me propuse, previamente buscando información y ejemplos para lo que tenía en mente hacer. Cuando quise hacer que al pulsar una opción cambiara la información que mostraba en la pantalla y querer llamar a los objetos de mis compañeros para empezar a juntarlo fue cuando se me complicó porque no entendía cómo se hacía. Después de ver referencias y leer información entendí cómo funciona teóricamente pero no logré entender porqué no funcionaba lo que probaba y todos los errores que me salían. No he conseguido implementar lo que me había propuesto y he notado que me ha faltado evolución a pesar del tiempo dedicado. Me he sentido algo perdida.
+Ha habido ocasiones en los que entre algunos compañeros nos hemos apoyado para mirar juntos los problemas problemas o detección de estos y ver qué soluciones poner, cuando no entendíamos algo o no teníamos claro alguna parte del código. Nos avisábamos para comprenderlo en conjunto. Eso ha servido de ayuda aunque no se haya llegado a implementar del todo la propuesta que decidimos entre todos en la primera semana.
+Otra parte del grupo cuando no se conseguía algo la solucionaban sin previo aviso, sin participación conjunta en la solución para poder estar implicados por igual en las distintas partes del juego.
+Ha faltado más comunicación entre todos los integrantes del grupo e implicación. Solo una pequeña parte ha conseguido trabajar conjuntamente, cuando el trabajo individual era del primer hito. Lo que ha generado sensación de no poder trabajar más.
+Aunque no ha sido el resultado esperado se ha llegado a sacar la idea principal que tuvimos del juego y lo importante. Estoy satisfecha con el resultado porque se puede jugar de principio a fin y se siente como un juego de carreras de coches al estilo retro que nos gustó.
+Horas trabajadas: 26h 15min
+
 
 ## Miembro : Miguel Ángel Ferrer García de la Reina 
 Me costó bastante poco conseguir el movimiento del vehiculo. Donde ya tuve más problemas fue a la hora de hacer interpolación utilizando un reloj, ya que no entendía como hacerlo. Una vez lo conseguí, el movimiento en linea recta funcionaba perfecto, pero el giro seguía sin funcionar bien. Ahora ya he conseguido un giro más o menos como el que esperaba pero no estoy del todo contento con el resultado.
