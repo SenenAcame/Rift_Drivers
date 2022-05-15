@@ -374,3 +374,6 @@ Creado un menú para elegir la dificultad del juego. Implementado y se muestra. 
 # 15/05/2022 Joan Pascual Izquierdo(1h)
 Ajustes de posición del velocímetro, el kart no tiene ya tanta ventaja porque sufre una mayor penalización en la nieve (un extra de 1.6, ya que con la nueva reducción se quedaba con 9.6), y más ajustes de balanceo.
 Arreglo de problemas para hacer un merge.
+
+# 15/05/2022 Joan Pascual Izquierdo(40min)
+Arreglando y centrando menu_dificultad.

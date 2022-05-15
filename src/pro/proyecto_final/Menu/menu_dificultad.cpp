@@ -19,10 +19,10 @@ menu_dificultad::menu_dificultad(float width, float height)
   dificultad_opciones[0].setFont(font);
   dificultad_opciones[0].setFillColor(sf::Color::Red);
   dificultad_opciones[0].setString("Facil");
-  dificultad_opciones[0].setScale(3, 2);
+  dificultad_opciones[0].setScale(4, 3);
   dificultad_opciones[0].setOutlineColor(sf::Color::Black);
   dificultad_opciones[0].setOutlineThickness(2);
-  dificultad_opciones[0].setPosition(sf::Vector2f(width/2-295, height/(MAX_DIFICULTAD+1)*1-20));
+  dificultad_opciones[0].setPosition(sf::Vector2f(width/2-125, height/(MAX_DIFICULTAD+1)*1+35));
   //
   dificultad_opciones[1].setFont(font);
   dificultad_opciones[1].setFillColor(sf::Color::White);
@@ -30,7 +30,7 @@ menu_dificultad::menu_dificultad(float width, float height)
   dificultad_opciones[1].setScale(3, 2);
   dificultad_opciones[1].setOutlineColor(sf::Color::Black);
   dificultad_opciones[1].setOutlineThickness(2);
-  dificultad_opciones[1].setPosition(sf::Vector2f(width/2-295, height/(MAX_DIFICULTAD+1)*2-20));
+  dificultad_opciones[1].setPosition(sf::Vector2f(width/2-105, height/(MAX_DIFICULTAD+1)*2+40));
   //
   dificultad_opciones[2].setFont(font);
   dificultad_opciones[2].setFillColor(sf::Color::White);
@@ -38,7 +38,7 @@ menu_dificultad::menu_dificultad(float width, float height)
   dificultad_opciones[2].setScale(3, 2);
   dificultad_opciones[2].setOutlineColor(sf::Color::Black);
   dificultad_opciones[2].setOutlineThickness(2);
-  dificultad_opciones[2].setPosition(sf::Vector2f(width/2-295, height/(MAX_DIFICULTAD+1)*3-20));
+  dificultad_opciones[2].setPosition(sf::Vector2f(width/2-105, height/(MAX_DIFICULTAD+1)*3+40));
 }
 
 menu_dificultad::~menu_dificultad()
@@ -60,11 +60,18 @@ void menu_dificultad::MoveUp()
   {
     dificultad_opciones[selectedItem].setFillColor(sf::Color::White);
     dificultad_opciones[selectedItem].setScale(3, 2);
+    dificultad_opciones[selectedItem].setPosition(sf::Vector2f(1080/2-105, 720/(MAX_DIFICULTAD+1)*(selectedItem+1)+40));
 
     selectedItem--;
 
     dificultad_opciones[selectedItem].setFillColor(sf::Color::Red);
     dificultad_opciones[selectedItem].setScale(4, 3);
+    if(selectedItem==0){
+      dificultad_opciones[selectedItem].setPosition(sf::Vector2f(1080/2-125, 720/(MAX_DIFICULTAD+1)*(selectedItem+1)+35));
+    }
+    else{
+      dificultad_opciones[selectedItem].setPosition(sf::Vector2f(1080/2-145, 720/(MAX_DIFICULTAD+1)*(selectedItem+1)+35));
+    }
   }
 }
 
@@ -74,11 +81,17 @@ void menu_dificultad::MoveDown()
   {
     dificultad_opciones[selectedItem].setFillColor(sf::Color::White);
     dificultad_opciones[selectedItem].setScale(3, 2);
+    dificultad_opciones[selectedItem].setPosition(sf::Vector2f(1080/2-105, 720/(MAX_DIFICULTAD+1)*(selectedItem+1)+40));
 
     selectedItem++;
 
     dificultad_opciones[selectedItem].setFillColor(sf::Color::Red);
     dificultad_opciones[selectedItem].setScale(4, 3);
-
+    if(selectedItem==0){
+      dificultad_opciones[selectedItem].setPosition(sf::Vector2f(1080/2-125, 720/(MAX_DIFICULTAD+1)*(selectedItem+1)+35));
+    }
+    else{
+      dificultad_opciones[selectedItem].setPosition(sf::Vector2f(1080/2-145, 720/(MAX_DIFICULTAD+1)*(selectedItem+1)+35));
+    }
   }
 }
