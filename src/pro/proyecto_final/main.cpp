@@ -573,8 +573,8 @@ int main() {
                       ene->getVehi()->setImagen(spr2);
 
                       maxvel = 70.0f;
-                      acc = 2.15f;
-                      gir = 9.5f;
+                      acc = 2.2f;
+                      gir = 10.0f;
                       estado=1;
                     break;
 
@@ -594,7 +594,7 @@ int main() {
                       ene->getVehi()->setImagen(spr2);
                       acc = 1.2f;
                       maxvel = 55.0f;
-                      gir = 11.0f;
+                      gir = 11.5f;
                       estado=1;
                     break;
 
@@ -615,9 +615,9 @@ int main() {
                       spr2.setTextureRect(sf::IntRect(0 , 0, 16, 18));
                       ene->getVehi()->setImagen(spr2);
 
-                      maxvel = 40.0f;
+                      maxvel = 45.0f;
                       acc = 0.85f;
-                      gir = 10.0f;
+                      gir = 10.5f;
                       estado=1;
                     break;
 
@@ -638,7 +638,7 @@ int main() {
 
                       maxvel = 33.0f;
                       acc = 1.6f;
-                      gir = 15.0f;
+                      gir = 14.5f;
                       estado=1;
                     break;
                   }
@@ -996,7 +996,7 @@ int main() {
               int spy= sprite.getPosition().y;
 */
               if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4 && cocheselec != "4x4"){
-                sprite.rotate(-gir+4.0f);
+                sprite.rotate(-gir*0.6);
                 rot = sprite.getRotation();
               }
               else{
@@ -1034,7 +1034,7 @@ int main() {
               int spy= sprite.getPosition().y;
 */
               if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4 && cocheselec!="4x4"){
-                sprite.rotate(+gir-4.0f);
+                sprite.rotate(+gir*0.6);
                 rot = sprite.getRotation();
               }
               else{
