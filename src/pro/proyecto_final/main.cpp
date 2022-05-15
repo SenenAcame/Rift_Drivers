@@ -298,6 +298,7 @@ int main() {
 
   bool nieve=false;
   bool dio=false;
+  bool parado=false;
   int dioS=0;
   int entra=0;
 
@@ -732,7 +733,7 @@ int main() {
                 break;
 
                 case sf::Keyboard::P:
-                if(!dio && crono->getElapsedTime().asSeconds()-dioS>4){
+                if(!dio){
                   dio=true;
                   dioS=crono->getElapsedTime().asSeconds();
                 }
@@ -842,11 +843,19 @@ int main() {
           } 
           
           if(dio){
-            DIO.play();
+            if(!parado){
             DIO.setVolume(100);
-            if(crono->getElapsedTime().asSeconds()-dioS>2){
+            DIO.play();
+            }
+            
+            if(crono->getElapsedTime().asSeconds()-dioS>3&&!parado){
               ene->setSegCheck(!ene->getSegCheck());
+              parado=true;
+            }
+            else if(parado&&crono->getElapsedTime().asSeconds()-dioS>13){
+              parado=false;
               dio=false;
+              ene->setSegCheck(!ene->getSegCheck());
             }
           }
 
