@@ -1,91 +1,3 @@
-/*
-#include <SFML/Graphics.hpp>
-#include <iostream>
-//#include "include/config.h"
-#include "ej_modulos/mimodulo.h"
-#include <math.h>
-//incluir nuestras carpetas
-#include "IA/ia.h"
-#include "Mejoras/mejora.h"
-#include "Juego/juego.h"
-#include "Menu/menu.h"
-#include "Poderes/poderes.h"
-#include "Juego/Manejador.h"
-#include "Motor/Motor.h"
-
-//#define kVel 5
-/*
-int main() 
-{
-  //creo la ventana
-  //sf::RenderWindow window(sf::VideoMode(640, 680), "VENTANA MENU");
-  Motor * motor = Motor::instance();
-  Menu * Menu = Menu::Instance();
-  Manejador * instancia = Manejador::instancia();
-  instancia->cambiarEstado(Menu);
-  juego * juego = juego::instance();
-
-  while(motor->getOpen())
-
-  //Menu menu(window.getSize().x, window.getSize().y);
-  //creo singletons
-  /*
-  Menu *menu1 = Menu::Instance();
-  Menu *menu2 = menu1->Instance();
-  Menu &ref = * Menu::Instance();
-  */
-/*
-  while(window.isOpen())
-  {
-    sf::RenderWindow* window = motor->getVentana();
-    sf::Event event;
-
-    while(window->pollEvent(event))
-    {
-*/
-      /*
-      switch (event.type)
-      {
-          case sf::Event::EventType::Closed :
-            window->close();
-          break;
-
-        case sf::Keyboard::Key::Enter:
-          switch (menu.GetPressedItem()){
-            case 0:
-              std::cout <<"Has seleccionado emmpezar" << std::endl;
-              //Menu_empezar.draw(window);
-              //dibujo el otro Menu
-                  //window.clear();
-              break;
-            case 1:
-              std::cout <<"Has seleccionado las opciones" << std::endl;
-              break;
-            case 2:
-              std::cout <<"salir" << std::endl;
-              window.close();
-              break;
-          }
-        break;
-        }
-        
-      
-      }
-    }
-    window->display();
-  }
-  
-  
-    //window.clear();
-   // menu.draw(window);
-    //window.display();
-  }
-  //return 0;
-*/
-
-
-
-
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
@@ -304,17 +216,6 @@ int main() {
   
   sf::Sprite imgIni(iniF);
   
-  //imgIni.setTexture(iniF, true);
-  /*
-  std::vector <sf::Sprite> vektor;
-  for (int i = 0; i < (int)(1080/32)+1; i++){
-        for (int j = 0; j < (int)(720/32)+1; j++){
-            imgIni.setPosition(i*32,j*32);
-            imgIni.setTextureRect(sf::IntRect(i*32,j*32,32,32));
-            vektor.push_back(imgIni);
-        }
-    }
-    */
   imgIni.setTextureRect(sf::IntRect(0,0,1080,720));
   sf::Texture aste;
   if (!aste.loadFromFile("../resources/asteroide.png")) {
@@ -520,11 +421,6 @@ int main() {
         camara=sf::View(sf::FloatRect(0,0,1080,720));
         window.setView(camara);
         window.clear();
-        /*
-        for(int i=0; i<vektor.size();i++){
-          window.draw(vektor.at(i));
-        }
-        */
         window.draw(imgIni);
         menu.draw(window);
         
@@ -580,9 +476,10 @@ int main() {
                       spr2.setTextureRect(sf::IntRect(0 , 0, 22, 16));
                       ene->getVehi()->setImagen(spr2);
 
-                      maxvel = 70.0f;
+                      cocheselec = "";
+                      maxvel = 75.0f;
                       acc = 2.2f;
-                      gir = 10.5f;
+                      gir = 11.0f;
                       estado=1;
                     break;
 
@@ -600,9 +497,10 @@ int main() {
                       spr2.setOrigin(11.5f, 8);
                       spr2.setTextureRect(sf::IntRect(0 , 0, 23, 16));
                       ene->getVehi()->setImagen(spr2);
-                      acc = 1.2f;
-                      maxvel = 55.0f;
-                      gir = 11.5f;
+                      cocheselec = "";
+                      acc = 1.25f;
+                      maxvel = 60.0f;
+                      gir = 12.0f;
                       estado=1;
                     break;
 
@@ -623,9 +521,9 @@ int main() {
                       spr2.setTextureRect(sf::IntRect(0 , 0, 16, 18));
                       ene->getVehi()->setImagen(spr2);
 
-                      maxvel = 42.0f;
+                      maxvel = 45.0f;
                       acc = 0.85f;
-                      gir = 10.5f;
+                      gir = 9.2f;
                       estado=1;
                     break;
 
@@ -643,10 +541,10 @@ int main() {
                       spr2.setOrigin(11, 10);
                       spr2.setTextureRect(sf::IntRect(0 , 0, 22, 20));
                       ene->getVehi()->setImagen(spr2);
-
-                      maxvel = 33.0f;
-                      acc = 1.6f;
-                      gir = 15.0f;
+                      cocheselec = "";
+                      maxvel = 36.0f;
+                      acc = 1.65f;
+                      gir = 16.0f;
                       estado=1;
                     break;
                   }
@@ -758,9 +656,13 @@ int main() {
           //cout << text << endl;
           
           tiempo.setString(text);
-          int spV=((int)(speed)*2);
+          int spV=((int)(speed)*2.2);
           veloc = "Speed: ";
-          veloc += to_string(spV);
+          if(spV>0){
+            veloc += to_string(spV);
+          }else{
+            veloc +="0";
+          }
           veloc +=" km/h";
           velocimetro.setString(veloc);
 
@@ -818,7 +720,9 @@ int main() {
           std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
           sf::Texture durmp;
           if(row<0||row>49||col<0||col>49){
-            if(speed>40.0f){
+            if(speed>60.0f){
+              speed-=90.0f;
+            }else if(speed>40.0f){
               speed-=65.0f;
             }else if(speed>30.0f){
               speed-=50.0f;
@@ -847,7 +751,9 @@ int main() {
           else{
             string trbw=mapbw.at(row).at(col);
             if(trbw=="0"){
-              if(speed>40.0f){
+              if(speed>60.0f){
+                speed-=90.0f;
+              }else if(speed>40.0f){
                 speed-=65.0f;
               }else if(speed>30.0f){
                 speed-=50.0f;
@@ -1010,7 +916,11 @@ int main() {
               int spy= sprite.getPosition().y;
 */
               if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4 && cocheselec != "4x4"){
-                sprite.rotate(-gir*0.6);
+                float rt=gir*0.6;
+                if(rt>9){
+                  rt=(gir*0.6)-1.6f;
+                }
+                sprite.rotate(-rt);
                 rot = sprite.getRotation();
               }
               else{
@@ -1048,7 +958,11 @@ int main() {
               int spy= sprite.getPosition().y;
 */
               if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4 && cocheselec!="4x4"){
-                sprite.rotate(+gir*0.6);
+                float rt=gir*0.6;
+                if(rt>9){
+                  rt=(gir*0.6)-1.6f;
+                }
+                sprite.rotate(+rt);
                 rot = sprite.getRotation();
               }
               else{
@@ -1154,7 +1068,7 @@ int main() {
         layout.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         tiempo.setPosition(sprite.getPosition().x-52,sprite.getPosition().y-360);
-        velocimetro.setPosition(sprite.getPosition().x-450,sprite.getPosition().y+250);
+        velocimetro.setPosition(sprite.getPosition().x-500,sprite.getPosition().y+250);
         //marco.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         //marco.setPosition(sprite.getPosition().x + 500,sprite.getPosition().y - 50);
         //situar el cronometro
@@ -1249,9 +1163,6 @@ int main() {
           ruido = true;
         }
         sf::Event e;
-        //std::cout <<"HE ENTRADO WEEEEEEEEE ,SOY PROASO" << std::endl;
-        //camara.setCenter(25*320+320/2, 25*320+320/2);
-        //window.setView(camara);
         while (window.pollEvent(e)){
           switch(e.type){
             case sf::Event::Closed:
@@ -1259,17 +1170,6 @@ int main() {
             break;
             case sf::Event::KeyReleased:
               switch (e.key.code){
-                /*
-                case sf::Keyboard::Z:
-                  estado=0;
-                break;
-                case sf::Keyboard::X:
-                  estado=1;
-                break;
-                case sf::Keyboard::C:
-                  estado=2;
-                break;
-                */
                 case sf::Keyboard::Up:
                   menuFinal.Mover_arriba();
                 break;
@@ -1336,34 +1236,12 @@ int main() {
                 case sf::Keyboard::Escape:
                   window.close();
                 break;
-                /*
-                default:
-                  std::cout << e.key.code << std::endl;
-                break;
-                */
               }
             break;
           } 
         }
-        
-        
 
         window.clear();
-        /*
-        window.setView(camara);
-        if(pista){
-          //cir->dibujaMapabw(&window);
-          cir->dibujaMapa(&window);
-        }
-        window.draw(sprite);
-        window.draw(ene->getVehi()->getImagen());
-        window.setView(minimapa);
-        if(pista){
-            cir->dibujaMapa(&window);
-        }
-        window.draw(sprite);
-        window.draw(ene->getVehi()->getImagen());
-        */
         camara=sf::View(sf::FloatRect(0,0,1080,720));
         window.setView(camara);
         window.draw(imgIni);
@@ -1371,373 +1249,6 @@ int main() {
         window.display();
       break;
     }
-
-
-/*
-    if(estado==0){
-      while (window.pollEvent(e)){
-        switch(e.type){
-          case sf::Event::Closed:
-            window.close();
-          break;
-
-          case sf::Event::KeyReleased:
-            switch (e.key.code){
-              case sf::Keyboard::Up:
-                menu.MoveUp();
-              break;
-            
-              case sf::Keyboard::Down:
-                menu.MoveDown();
-              break;
-
-              case sf::Keyboard::Key::Enter:
-                switch (menu.GetPressedItem()){
-                  case 0:
-                    std::cout <<"Has seleccionado empezar" << std::endl;
-                    estado=1;
-                    //Menu_empezar.draw(window);
-                    //dibujo el otro menu
-                        //window.clear();
-                  break;
-
-                  case 1:
-                    std::cout <<"Has seleccionado las opciones" << std::endl;
-                  break;
-
-                  case 2:
-                    std::cout <<"Salir" << std::endl;
-                    window.close();
-                  break;
-                }
-              break;
-
-              case sf::Keyboard::Escape:
-                window.close();
-              break;
-
-              default:
-                std::cout << e.key.code << std::endl;
-              break;
-            }
-          break;
-        }   
-      }
-    }
-
-    if(estado==1){
-      while (window.pollEvent(e)){
-        switch(e.type){
-          case sf::Event::Closed:
-            window.close();
-          break;
-
-          case sf::Event::KeyReleased:
-            switch (e.key.code){
-              case sf::Keyboard::O:
-                ene->setDibCheck(!ene->getDibCheck());
-              break;
-
-              case sf::Keyboard::P:
-                ene->setSegCheck(!ene->getSegCheck());
-              break;
-              
-              case sf::Keyboard::L:
-                if(pista){
-                  position.x = 25*320+320/2;
-                  position.y = 25*320+320/2;
-                  sprite.setPosition(position.x,position.y);
-                  cir->vaciaMapa();
-                  cir=new Circuito();
-                  rot=-90.00f;
-                  sprite.setRotation(rot);
-                }
-                coche->~vehiculo();
-                coche = new vehiculo(1,2,3,"../resources/cocherot.png",spr2);
-                cir->CrearMapa();
-                cir->montaMapa();
-                pista=true;
-                ene->~ia();
-                ene = new ia(cir,coche);
-                speed=0;
-              break;
-
-              case sf::Keyboard::Escape:
-                window.close();
-              break;
-
-              default:
-                std::cout << e.key.code << std::endl;
-              break;
-            }
-          break;
-        }   
-      }
-    }
-*/
-/*
-    if(estado==1){
-      accumulator += clock.restart().asSeconds();
-      ene->seguirRuta();
-      while (accumulator >= timestep){
-        accumulator -= timestep;
-        previous2 = ene->getVehi()->getImagen().getPosition();
-        
-        previous = position;
-        sprite.setRotation(rot);
-        prev = rot;
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-          sprite.rotate(-gir);
-          rot = sprite.getRotation();
-
-          int col=(int)sprite.getPosition().x/320;
-          int row=(int)sprite.getPosition().y/320;
-          //printf("(%d, %d)", row, col);
-          //1,2.png -> 1,2bw.png
-          
-          //std::string trozo_bw =cir->getCircuito().at(row).at(col);
-          //if(trozo_bw!="0"){
-          //if(cir->getNieve()){
-              //trozo_bw=trozo_bw.substr(0, trozo_bw.length()-5.7)+ "nievebw.png";
-            //}
-            //else{
-              //trozo_bw=trozo_bw.substr(0, trozo_bw.length()-6)+ "bw.png";
-            //}
-          //sf::Texture durmp;
-          //if (!durmp.loadFromFile(trozo_bw)) {
-            //std::cerr << "Error cargando la imagen sprites.png";
-            //exit(0);
-          //}
-          //sf::Image dbw=durmp.copyToImage();
-          //if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1], rot)==2){
-            //speed=speed/10;
-          //}
-            //else if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==1){
-          //if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1], rot)==1){
-              //speed=speed/2;
-          //}
-          //}
-          
-          //Giro de la camara y minimapa
-          
-          //camara.rotate(-gir);
-          //minimapa.rotate(-gir);
-          
-        }
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-          sprite.rotate(+gir);
-          rot = sprite.getRotation();
-          
-          int col=(int)sprite.getPosition().x/320;
-          int row=(int)sprite.getPosition().y/320;
-          //printf("(%d, %d)", row, col);
-          //1,2.png -> 1,2bw.png
-          
-          //std::string trozo_bw =cir->getCircuito().at(row).at(col);
-          //if(trozo_bw!="0"){
-          //if(cir->getNieve()){
-              //trozo_bw=trozo_bw.substr(0, trozo_bw.length()-5)+ "nievebw.png";
-            //}
-            //else{
-              //trozo_bw=trozo_bw.substr(0, trozo_bw.length()-6)+ "bw.png";
-            //}
-          //sf::Texture durmp;
-          //if (!durmp.loadFromFile(trozo_bw)) {
-            //std::cerr << "Error cargando la imagen sprites.png";
-            //exit(0);
-          //}
-          //sf::Image dbw=durmp.copyToImage();
-          //if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1], rot)==2){
-            //speed=speed/10;
-          //}
-            //else if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==1){
-          //if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1], rot)==1){
-              //speed=speed/2;
-          //}
-          //}
-          
-          
-          //Giro de la camara y minimapa
-          
-          //camara.rotate(+gir);
-          //minimapa.rotate(+gir);
-          
-        }
-        
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-          int col=(int)sprite.getPosition().x/320;
-          int row=(int)sprite.getPosition().y/320;
-          //printf("(%d, %d)", row, col);
-          //1,2.png -> 1,2bw.png
-          
-          //std::string trozo_bw =cir->getCircuito().at(row).at(col);
-          //if(trozo_bw!="0"){
-          //if(cir->getNieve()){
-              //trozo_bw=trozo_bw.substr(0, trozo_bw.length()-5)+ "nievebw.png";
-            //}
-            //else{
-              //trozo_bw=trozo_bw.substr(0, trozo_bw.length()-6)+ "bw.png";
-            //}
-          //sf::Texture durmp;
-          //if (!durmp.loadFromFile(trozo_bw)) {
-            //std::cerr << "Error cargando la imagen sprites.png";
-            //exit(0);
-          //}
-          //sf::Image dbw=durmp.copyToImage();
-          //if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1], rot)==2){
-            //speed=speed/10;
-          //}
-            //else if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==1){
-          //else if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1], rot)==1){
-              //speed=speed/2;
-          //} else{
-            //if(speed<=50.0f){
-              //speed += 1.0f;
-            //}
-          //}
-          //}
-          
-          if(speed<=50.0f){
-            speed += 1.0f;
-          }
-          position.x += cos(sprite.getRotation()*M_PI/180)*speed;
-          position.y += sin(sprite.getRotation()*M_PI/180)*speed;
-        }
-        else{
-          if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)==false){
-            int col=(int)sprite.getPosition().x/320;
-            int row=(int)sprite.getPosition().y/320;
-            //printf("(%d, %d)", row, col);
-            //1,2.png -> 1,2bw.png
-            
-            //std::string trozo_bw =cir->getCircuito().at(row).at(col);
-            //if(trozo_bw!="0"){
-            //if(cir->getNieve()){
-              //trozo_bw=trozo_bw.substr(0, trozo_bw.length()-5)+ "nievebw.png";
-            //}
-            //else{
-              //trozo_bw=trozo_bw.substr(0, trozo_bw.length()-6)+ "bw.png";
-            //}
-            //sf::Texture durmp;
-            //if (!durmp.loadFromFile(trozo_bw)) {
-              //std::cerr << "Error cargando la imagen sprites.png";
-              //exit(0);
-            //}
-            //sf::Image dbw=durmp.copyToImage();
-            //if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1], rot)==2){
-              //speed=speed/10;
-            //}
-              //else if(colisionMapa(dbw, dr, sprite.getPosition().x, sprite.getPosition().x, sprite.getPosition().y, sprite.getPosition().y)==1){
-            //else if(colisionMapa(dbw, sprite.getPosition().x, sprite.getPosition().y, tam[0], tam[1], rot)==1){
-                //speed=speed/2;
-            //} else{
-              //if(speed>0.0f){
-                //speed -= 1.0f;
-              //}
-            //}
-            //}
-            
-          if(speed>0.0f){
-                speed -= 1.0f;
-              }
-            position.x += cos(sprite.getRotation()*M_PI/180)*speed;
-            position.y += sin(sprite.getRotation()*M_PI/180)*speed;
-          }       
-        }
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)==false){
-          int col=(int)sprite.getPosition().x/320;
-          int row=(int)sprite.getPosition().y/320;
-          printf("(%d, %d)", row, col);
-          if(speed>0.0f){
-            speed -= 5.0f;
-          }
-          if(speed<1.0f){
-            speed = 0.0f;
-          }
-          if(speed>5.0f){
-            position.x += cos(sprite.getRotation()*M_PI/180)*speed;
-            position.y += sin(sprite.getRotation()*M_PI/180)*speed;
-          }
-          if(speed==0.0f){
-            position.x -= cos(sprite.getRotation()*M_PI/180)*5.0f;
-            position.y -= sin(sprite.getRotation()*M_PI/180)*5.0f;
-          }
-        }
-      }
-
-      if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
-        if(pista){
-          sprite.setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
-          
-          cir->vaciaMapa();
-          cir=new Circuito();
-          rot=-90.00f;
-          sprite.setRotation(rot);
-        }
-        cir->CrearMapa();
-        cir->montaMapa();
-        pista=true;
-        ene->~ia();
-        ene = new ia(cir,coche);
-        ene->getVehi()->getImagen().setPosition((position.x = 25*320+320/2),(position.y = 25*320+320/2));
-        speed=0;
-      }
-
-      if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){
-        ene->setDibCheck(!ene->getDibCheck());
-      }
-
-      if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
-        ene->setSegCheck(!ene->getSegCheck());
-      }
-
-      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-        window.close();
-      }
-    }
-*/
-/*
-    if(estado==0){
-      window.clear();
-      menu.draw(window);
-      window.display();
-    }
-
-    if(estado==1){
-      window.clear();
-      camara.setCenter(sprite.getPosition().x,sprite.getPosition().y);
-      minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
-
-      window.setView(camara);
-      if(pista){
-        cir->dibujaMapabw(&window);
-        cir->dibujaMapa(&window);
-        ene->dibujaRecorrido(&window);
-      }
-      window.draw(sprite);
-      window.draw(ene->getVehi()->getImagen());
-
-      window.setView(minimapa);
-      if(pista){
-        cir->dibujaMapa(&window);
-        ene->dibujaRecorrido(&window);
-      }
-
-      ene->getVehi()->getImagen().setPosition(previous2 + ((ene->getVehi()->getImagen().getPosition() - previous2) * (accumulator / timestep)));
-
-      sprite.setPosition(previous + ((position - previous) * (accumulator / timestep)));
-      if(sprite.getRotation()<345 && sprite.getRotation()>0){
-        sprite.setRotation(prev +((rot - prev)* (accumulator / timestep)));
-      }
-      
-      window.draw(sprite);
-      window.draw(ene->getVehi()->getImagen());
-      window.display();
-    }
-*/
   }
 
   return 0;

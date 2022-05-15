@@ -364,5 +364,9 @@ Vuelven pingu y el/la zorro/a.
 # 15/05/2022 Joan Pascual Izquierdo(45min)
 Probando los coches e intentando balancear un poco el F1, que sigue siendo el peor con diferencia.
 La reducción de giro ahora es porcentual (como he subido un poco el giro al F1, es la misma para él que si fuera con la forma de antes, pero al kart le afecta algo más, aunque no se note apenas).
+
 # 15/05/2022 Joan Pascual Izquierdo(30min)
 Velocímetro incorporado, necesito un símbolo o alguna palabra mejor que speed para poner delante del la velocidad (está multiplicada por 2 porque la velocidad máxima del F1 es 70 y no puede ser que un F1 corra a su velocidad máxima por debajo de los 140 km/h).
+
+# 15/05/2022 Joan Pascual Izquierdo(45min)
+Ajustes de posición del velocímetro, el kart no tiene ya tanta ventaja porque sufre una mayor penalización en la nieve (un extra de 1.6, ya que con la nueva reducción se quedaba con 9.6), y más ajustes de balanceo.
