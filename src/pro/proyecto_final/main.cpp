@@ -97,6 +97,7 @@ int main()
 #include "Menu/menu.h"
 #include "Menu/menu_final.h"
 #include "Menu/menu_coche.h"
+#include "Menu/menu_dificultad.h"
 #include "Poderes/poderes.h"
 #include "Circuito/circuito.h"
 
@@ -436,9 +437,12 @@ int main() {
   velocimetro.setOutlineColor(sf::Color::White);
   velocimetro.setOutlineThickness(1);
 
+  //creacion de menus
   menu_final menuFinal(window.getSize().x, window.getSize().y);
   Menu menu(window.getSize().x, window.getSize().y);
   menu_coche menuCoche(window.getSize().x, window.getSize().y);
+  menu_dificultad menuDificultad(window.getSize().x, window.getSize().y);
+
   //con el tiempo actual, cuando empieza, y al entrar al bucle se le resta
   sf::Clock *crono = new sf::Clock();
   int segundos=crono->getElapsedTime().asSeconds();
@@ -491,7 +495,7 @@ int main() {
                   switch (menu.GetPressedItem()){
                     case 0:
                       std::cout <<"Has seleccionado empezar" << std::endl;
-                      estado=4;
+                      estado=5;
                       crono->restart();
                       suma=false;
                       minutos=0;
@@ -531,6 +535,90 @@ int main() {
         window.display();
 
       break;
+      //elegir dificultad
+      case 5:
+        if(!ruido)
+        {
+          motor.stop();
+          ruido = true;
+        }
+        while(window.pollEvent(e))
+        {
+          switch (e.type)
+          {
+          case sf::Event::Closed:
+              window.close();
+          break;
+          
+          case sf::Event::KeyReleased:
+            switch (e.key.code)
+            {
+              case sf::Keyboard::Up:
+                menuDificultad.MoveUp();
+              break;
+              
+              case sf::Keyboard::W:
+                menuDificultad.MoveUp();
+              break;
+
+              case sf::Keyboard::Down:
+                menuDificultad.MoveDown();
+              break;
+
+              case sf::Keyboard::S:
+                menuDificultad.MoveDown();
+              break;
+
+              case sf::Keyboard::Key::Enter:
+                switch (menuDificultad.GetPressedItem())
+                {
+                  case 0:
+                    std::cout << "Has seleccionado dificultad fácil" << std::endl;
+                    //asignar velocidad IA
+                    estado = 4;
+                    crono->restart();
+                    suma = false;
+                    minutos = 0;
+                  break;
+                
+                  case 1:
+                    std::cout << "Has seleccionado dificultad media" << std::endl;
+                    //asignar velocidad IA
+                    estado = 4;
+                    crono->restart();
+                    suma = false;
+                    minutos = 0;
+                  break;
+
+                  case 2:
+                    std::cout << "Has seleccionado dificultad difícil" << std::endl;
+                    //asignar velocidad IA
+                    estado = 4;
+                    crono->restart();
+                    suma = false;
+                    minutos = 0;
+                  break;
+
+                  case sf::Keyboard::Escape:
+                    window.close();
+                  break;
+                }
+              break;
+
+              case sf::Keyboard::Escape:
+                window.close();
+              break;            
+            }
+            break;
+          }
+        }
+        camara = sf::View(sf::FloatRect(0, 0, 1080, 720));
+        window.setView(camara);
+        window.clear();
+        window.draw(imgIni);
+        menuDificultad.draw(window);
+        window.display();
+      break;
 
       case 4:
         if(!ruido){
@@ -565,89 +653,91 @@ int main() {
                 case sf::Keyboard::Key::Enter:
                   switch (menuCoche.GetPressedItem()){
                     case 0:
-                      std::cout <<"Has seleccionado el Formula 1" << std::endl;
-                      sprite.setTexture(tex2);
-                      sprite.setOrigin(11, 8);
-                      sprite.setTextureRect(sf::IntRect(0 , 0, 22, 16));
+                        std::cout <<"Has seleccionado el Formula 1" << std::endl;
+                        sprite.setTexture(tex2);
+                        sprite.setOrigin(11, 8);
+                        sprite.setTextureRect(sf::IntRect(0 , 0, 22, 16));
 
-                      music.setBuffer(buffer2);
-                      music.setVolume(40);
-                      music.play();
-                      music.setLoop(true);
+                        music.setBuffer(buffer2);
+                        music.setVolume(40);
+                        music.play();
+                        music.setLoop(true);
 
-                      spr2.setTexture(texalt2);
-                      spr2.setOrigin(11, 8);
-                      spr2.setTextureRect(sf::IntRect(0 , 0, 22, 16));
-                      ene->getVehi()->setImagen(spr2);
+                        spr2.setTexture(texalt2);
+                        spr2.setOrigin(11, 8);
+                        spr2.setTextureRect(sf::IntRect(0 , 0, 22, 16));
+                        ene->getVehi()->setImagen(spr2);
 
-                      maxvel = 70.0f;
-                      acc = 2.2f;
-                      gir = 10.5f;
-                      estado=1;
+                        cocheselec = "";
+                        maxvel = 75.0f;
+                        acc = 2.2f;
+                        gir = 11.0f;
+                        estado=1;
                     break;
 
                     case 1:
-                      std::cout <<"Has seleccionado el Deportivo" << std::endl;
+                        std::cout <<"Has seleccionado el Deportivo" << std::endl;
 
-                      sprite.setTexture(texalt);
-                      sprite.setOrigin(11.5f, 8);
-                      sprite.setTextureRect(sf::IntRect(0 , 0, 23, 16));
-                      music.setBuffer(buffer2);
-                      music.setVolume(40);
-                      music.play();
-                      music.setLoop(true);
-                      spr2.setTexture(tex);
-                      spr2.setOrigin(11.5f, 8);
-                      spr2.setTextureRect(sf::IntRect(0 , 0, 23, 16));
-                      ene->getVehi()->setImagen(spr2);
-                      acc = 1.2f;
-                      maxvel = 55.0f;
-                      gir = 11.5f;
-                      estado=1;
+                        sprite.setTexture(texalt);
+                        sprite.setOrigin(11.5f, 8);
+                        sprite.setTextureRect(sf::IntRect(0 , 0, 23, 16));
+                        music.setBuffer(buffer2);
+                        music.setVolume(40);
+                        music.play();
+                        music.setLoop(true);
+                        spr2.setTexture(tex);
+                        spr2.setOrigin(11.5f, 8);
+                        spr2.setTextureRect(sf::IntRect(0 , 0, 23, 16));
+                        ene->getVehi()->setImagen(spr2);
+                        cocheselec = "";
+                        acc = 1.25f;
+                        maxvel = 60.0f;
+                        gir = 12.0f;
+                        estado=1;
                     break;
 
                     case 2:
-                      std::cout <<"Has seleccionado el 4X4" << std::endl;
+                        std::cout <<"Has seleccionado el 4X4" << std::endl;
 
-                      sprite.setTexture(tex3);
-                      sprite.setOrigin(8, 9);
-                      sprite.setTextureRect(sf::IntRect(0 , 0, 16, 18));
-                      music.setBuffer(buffer2);
-                      music.setVolume(40);
-                      music.play();
-                      music.setLoop(true);
-                      cocheselec = "4x4";
+                        sprite.setTexture(tex3);
+                        sprite.setOrigin(8, 9);
+                        sprite.setTextureRect(sf::IntRect(0 , 0, 16, 18));
+                        music.setBuffer(buffer2);
+                        music.setVolume(40);
+                        music.play();
+                        music.setLoop(true);
+                        cocheselec = "4x4";
 
-                      spr2.setTexture(texalt3);
-                      spr2.setOrigin(8, 9);
-                      spr2.setTextureRect(sf::IntRect(0 , 0, 16, 18));
-                      ene->getVehi()->setImagen(spr2);
+                        spr2.setTexture(texalt3);
+                        spr2.setOrigin(8, 9);
+                        spr2.setTextureRect(sf::IntRect(0 , 0, 16, 18));
+                        ene->getVehi()->setImagen(spr2);
 
-                      maxvel = 42.0f;
-                      acc = 0.85f;
-                      gir = 10.5f;
-                      estado=1;
+                        maxvel = 45.0f;
+                        acc = 0.85f;
+                        gir = 9.2f;
+                        estado=1;
                     break;
 
                     case 3:
-                      std::cout <<"Has seleccionado el Kart" << std::endl;
-                      sprite.setTexture(tex4);
-                      sprite.setOrigin(11, 10);
-                      sprite.setTextureRect(sf::IntRect(0 , 0, 22, 20));
-                      music.setBuffer(buffer2);
-                      music.setVolume(40);
-                      music.play();
-                      music.setLoop(true);
+                        std::cout <<"Has seleccionado el Kart" << std::endl;
+                        sprite.setTexture(tex4);
+                        sprite.setOrigin(11, 10);
+                        sprite.setTextureRect(sf::IntRect(0 , 0, 22, 20));
+                        music.setBuffer(buffer2);
+                        music.setVolume(40);
+                        music.play();
+                        music.setLoop(true);
 
-                      spr2.setTexture(texalt4);
-                      spr2.setOrigin(11, 10);
-                      spr2.setTextureRect(sf::IntRect(0 , 0, 22, 20));
-                      ene->getVehi()->setImagen(spr2);
-
-                      maxvel = 33.0f;
-                      acc = 1.6f;
-                      gir = 15.0f;
-                      estado=1;
+                        spr2.setTexture(texalt4);
+                        spr2.setOrigin(11, 10);
+                        spr2.setTextureRect(sf::IntRect(0 , 0, 22, 20));
+                        ene->getVehi()->setImagen(spr2);
+                        cocheselec = "";
+                        maxvel = 36.0f;
+                        acc = 1.65f;
+                        gir = 16.0f;
+                        estado=1;
                     break;
                   }
                 break;
@@ -677,7 +767,7 @@ int main() {
 
 
       case 1:
-      //crono->restart();
+        //crono->restart();
         while (window.pollEvent(e)){
           switch(e.type){
             case sf::Event::Closed:
@@ -818,7 +908,9 @@ int main() {
           std::vector<std::vector<std::string>> mapbw = cir->getCircuitobw();
           sf::Texture durmp;
           if(row<0||row>49||col<0||col>49){
-            if(speed>40.0f){
+            if(speed>60.0f){
+              speed-=90.0f;
+            }else if(speed>40.0f){
               speed-=65.0f;
             }else if(speed>30.0f){
               speed-=50.0f;
@@ -847,7 +939,9 @@ int main() {
           else{
             string trbw=mapbw.at(row).at(col);
             if(trbw=="0"){
-              if(speed>40.0f){
+              if(speed>60.0f){
+                speed-=90.0f;
+              }else if(speed>40.0f){
                 speed-=65.0f;
               }else if(speed>30.0f){
                 speed-=50.0f;
@@ -1008,9 +1102,13 @@ int main() {
               /*
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
-*/
+              */
               if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4 && cocheselec != "4x4"){
-                sprite.rotate(-gir*0.6);
+                float rt=gir*0.6;
+                if(rt>9){
+                  rt=(gir*0.6)-1.6f;
+                }
+                sprite.rotate(-rt);
                 rot = sprite.getRotation();
               }
               else{
@@ -1046,9 +1144,13 @@ int main() {
               /*
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
-*/
+              */
               if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4 && cocheselec!="4x4"){
-                sprite.rotate(+gir*0.6);
+                float rt=gir*0.6;
+                if(rt>9){
+                  rt=(gir*0.6)-1.6f;
+                }
+                sprite.rotate(+rt);
                 rot = sprite.getRotation();
               }
               else{
@@ -1154,7 +1256,7 @@ int main() {
         layout.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         tiempo.setPosition(sprite.getPosition().x-52,sprite.getPosition().y-360);
-        velocimetro.setPosition(sprite.getPosition().x-450,sprite.getPosition().y+250);
+        velocimetro.setPosition(sprite.getPosition().x-500,sprite.getPosition().y+250);
         //marco.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         //marco.setPosition(sprite.getPosition().x + 500,sprite.getPosition().y - 50);
         //situar el cronometro
