@@ -97,6 +97,7 @@ int main()
 #include "Menu/menu.h"
 #include "Menu/menu_final.h"
 #include "Menu/menu_coche.h"
+#include "Menu/menu_dificultad.h"
 #include "Poderes/poderes.h"
 #include "Circuito/circuito.h"
 
@@ -428,9 +429,12 @@ int main() {
   tiempo.setFillColor(sf::Color::White);
   tiempo.setScale(2.25,2.25);
 
+  //creacion de menus
   menu_final menuFinal(window.getSize().x, window.getSize().y);
   Menu menu(window.getSize().x, window.getSize().y);
   menu_coche menuCoche(window.getSize().x, window.getSize().y);
+  menu_dificultad menuDificultad(window.getSize().x, window.getSize().y);
+
   //con el tiempo actual, cuando empieza, y al entrar al bucle se le resta
   sf::Clock *crono = new sf::Clock();
   int segundos=crono->getElapsedTime().asSeconds();
@@ -483,7 +487,7 @@ int main() {
                   switch (menu.GetPressedItem()){
                     case 0:
                       std::cout <<"Has seleccionado empezar" << std::endl;
-                      estado=4;
+                      estado=5;
                       crono->restart();
                       suma=false;
                       minutos=0;
@@ -522,6 +526,90 @@ int main() {
         
         window.display();
 
+      break;
+      //elegir dificultad
+      case 5:
+        if(!ruido)
+        {
+          motor.stop();
+          ruido = true;
+        }
+        while(window.pollEvent(e))
+        {
+          switch (e.type)
+          {
+          case sf::Event::Closed:
+              window.close();
+          break;
+          
+          case sf::Event::KeyReleased:
+            switch (e.key.code)
+            {
+              case sf::Keyboard::Up:
+                menuDificultad.MoveUp();
+              break;
+              
+              case sf::Keyboard::W:
+                menuDificultad.MoveUp();
+              break;
+
+              case sf::Keyboard::Down:
+                menuDificultad.MoveDown();
+              break;
+
+              case sf::Keyboard::S:
+                menuDificultad.MoveDown();
+              break;
+
+              case sf::Keyboard::Key::Enter:
+                switch (menuDificultad.GetPressedItem())
+                {
+                  case 0:
+                    std::cout << "Has seleccionado dificultad fácil" << std::endl;
+                    //asignar velocidad IA
+                    estado = 4;
+                    crono->restart();
+                    suma = false;
+                    minutos = 0;
+                  break;
+                
+                  case 1:
+                    std::cout << "Has seleccionado dificultad media" << std::endl;
+                    //asignar velocidad IA
+                    estado = 4;
+                    crono->restart();
+                    suma = false;
+                    minutos = 0;
+                  break;
+
+                  case 2:
+                    std::cout << "Has seleccionado dificultad difícil" << std::endl;
+                    //asignar velocidad IA
+                    estado = 4;
+                    crono->restart();
+                    suma = false;
+                    minutos = 0;
+                  break;
+
+                  case sf::Keyboard::Escape:
+                    window.close();
+                  break;
+                }
+              break;
+
+              case sf::Keyboard::Escape:
+                window.close();
+              break;            
+            }
+            break;
+          }
+        }
+        camara = sf::View(sf::FloatRect(0, 0, 1080, 720));
+        window.setView(camara);
+        window.clear();
+        window.draw(imgIni);
+        menuDificultad.draw(window);
+        window.display();
       break;
 
       case 4:
@@ -669,7 +757,7 @@ int main() {
 
 
       case 1:
-      //crono->restart();
+        //crono->restart();
         while (window.pollEvent(e)){
           switch(e.type){
             case sf::Event::Closed:
@@ -994,7 +1082,7 @@ int main() {
               /*
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
-*/
+              */
               if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4 && cocheselec != "4x4"){
                 sprite.rotate(-gir+4.0f);
                 rot = sprite.getRotation();
@@ -1032,7 +1120,7 @@ int main() {
               /*
               int spx= sprite.getPosition().x;
               int spy= sprite.getPosition().y;
-*/
+              */
               if(colisionMapa(dbw, 160, 160, tam[0], tam[1], rot)==4 && cocheselec!="4x4"){
                 sprite.rotate(+gir-4.0f);
                 rot = sprite.getRotation();
