@@ -418,7 +418,9 @@ int main() {
   const float timestep = 1.0f / 15.0f; 
 
   sf::Text tiempo;
+  sf::Text velocimetro;
   string text;
+  string veloc;
   sf::Font fuente;
   if (!fuente.loadFromFile("../resources/MontserratAlternates-Bold.otf")) {
     std::cerr << "Error cargando el tiempo";
@@ -427,6 +429,12 @@ int main() {
   tiempo.setFont(fuente);
   tiempo.setFillColor(sf::Color::White);
   tiempo.setScale(2.25,2.25);
+
+  velocimetro.setFont(fuente);
+  velocimetro.setFillColor(sf::Color::Black);
+  velocimetro.setScale(1.5,1.75);
+  velocimetro.setOutlineColor(sf::Color::White);
+  velocimetro.setOutlineThickness(1);
 
   menu_final menuFinal(window.getSize().x, window.getSize().y);
   Menu menu(window.getSize().x, window.getSize().y);
@@ -574,7 +582,7 @@ int main() {
 
                       maxvel = 70.0f;
                       acc = 2.2f;
-                      gir = 10.0f;
+                      gir = 10.5f;
                       estado=1;
                     break;
 
@@ -615,7 +623,7 @@ int main() {
                       spr2.setTextureRect(sf::IntRect(0 , 0, 16, 18));
                       ene->getVehi()->setImagen(spr2);
 
-                      maxvel = 45.0f;
+                      maxvel = 42.0f;
                       acc = 0.85f;
                       gir = 10.5f;
                       estado=1;
@@ -638,7 +646,7 @@ int main() {
 
                       maxvel = 33.0f;
                       acc = 1.6f;
-                      gir = 14.5f;
+                      gir = 15.0f;
                       estado=1;
                     break;
                   }
@@ -748,7 +756,13 @@ int main() {
           text += ":";
           text += to_string(segundos);
           //cout << text << endl;
+          
           tiempo.setString(text);
+          int spV=((int)(speed)*2);
+          veloc = "Speed: ";
+          veloc += to_string(spV);
+          veloc +=" km/h";
+          velocimetro.setString(veloc);
 
           accumulator -= timestep;
           previous2 = ene->getVehi()->getImagen().getPosition();
@@ -1140,6 +1154,7 @@ int main() {
         layout.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         minimapa.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         tiempo.setPosition(sprite.getPosition().x-52,sprite.getPosition().y-360);
+        velocimetro.setPosition(sprite.getPosition().x-450,sprite.getPosition().y+250);
         //marco.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         //marco.setPosition(sprite.getPosition().x + 500,sprite.getPosition().y - 50);
         //situar el cronometro
@@ -1191,8 +1206,9 @@ int main() {
         window.setView(layout);
         if(pista){
           window.draw(tiempo);
+          
         }
-        
+        window.draw(velocimetro);
        // window.draw(marco2);
         //window.setView(marco);
         window.setView(minimapa);
