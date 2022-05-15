@@ -378,5 +378,5 @@ Arreglo de problemas para hacer un merge.
 # 15/05/2022 Joan Pascual Izquierdo(40min)
 Arreglando y centrando menu_dificultad y poniendo un velocimetro.
 
-# 15/05/2022 Angelica Quaranta Barba/Joan Pascual Izquierdo/Sergio Tortajada Santonja(40min)
-Añadidos más moradores de la grieta.
+# 15/05/2022 Angelica Quaranta Barba/Joan Pascual Izquierdo/Sergio Tortajada Santonja(1h)
+Añadidos más moradores de la grieta, y implementando a ZA WARUDOOOOOOOOOOOOOOOOO.
