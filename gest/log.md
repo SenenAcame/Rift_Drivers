@@ -360,3 +360,6 @@ Implementado layout donde se muestra el cronometro, controles de movimiento con 
 
 # 08/05/2022 Joan Pascual Izquierdo(5min)
 Vuelven pingu y el/la zorro/a.
+
+# 15/05/2022 Angelica Quaranta Barba (1h 35min)
+Creado un menú para elegir la dificultad del juego. Implementado y se muestra. A falta de cambiar la IA según la dificultad escogida.

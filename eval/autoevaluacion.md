@@ -21,7 +21,7 @@ Ha habido ocasiones en los que entre algunos compañeros nos hemos apoyado para 
 Otra parte del grupo cuando no se conseguía algo la solucionaban sin previo aviso, sin participación conjunta en la solución para poder estar implicados por igual en las distintas partes del juego.
 Ha faltado más comunicación entre todos los integrantes del grupo e implicación. Solo una pequeña parte ha conseguido trabajar conjuntamente, cuando el trabajo individual era del primer hito. Lo que ha generado sensación de no poder trabajar más.
 Aunque no ha sido el resultado esperado se ha llegado a sacar la idea principal que tuvimos del juego y lo importante. Estoy satisfecha con el resultado porque se puede jugar de principio a fin y se siente como un juego de carreras de coches al estilo retro que nos gustó.
-Horas trabajadas: 26h 15min
+Horas trabajadas: 27h 50min
 
 
 ## Miembro : Miguel Ángel Ferrer García de la Reina 
