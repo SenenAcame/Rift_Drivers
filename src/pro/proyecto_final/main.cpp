@@ -573,8 +573,8 @@ int main() {
                       ene->getVehi()->setImagen(spr2);
 
                       maxvel = 70.0f;
-                      acc = 2.25f;
-                      gir = 9.0f;
+                      acc = 2.15f;
+                      gir = 9.5f;
                       estado=1;
                     break;
 
