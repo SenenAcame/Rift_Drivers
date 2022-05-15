@@ -1,91 +1,3 @@
-/*
-#include <SFML/Graphics.hpp>
-#include <iostream>
-//#include "include/config.h"
-#include "ej_modulos/mimodulo.h"
-#include <math.h>
-//incluir nuestras carpetas
-#include "IA/ia.h"
-#include "Mejoras/mejora.h"
-#include "Juego/juego.h"
-#include "Menu/menu.h"
-#include "Poderes/poderes.h"
-#include "Juego/Manejador.h"
-#include "Motor/Motor.h"
-
-//#define kVel 5
-/*
-int main() 
-{
-  //creo la ventana
-  //sf::RenderWindow window(sf::VideoMode(640, 680), "VENTANA MENU");
-  Motor * motor = Motor::instance();
-  Menu * Menu = Menu::Instance();
-  Manejador * instancia = Manejador::instancia();
-  instancia->cambiarEstado(Menu);
-  juego * juego = juego::instance();
-
-  while(motor->getOpen())
-
-  //Menu menu(window.getSize().x, window.getSize().y);
-  //creo singletons
-  /*
-  Menu *menu1 = Menu::Instance();
-  Menu *menu2 = menu1->Instance();
-  Menu &ref = * Menu::Instance();
-  */
-/*
-  while(window.isOpen())
-  {
-    sf::RenderWindow* window = motor->getVentana();
-    sf::Event event;
-
-    while(window->pollEvent(event))
-    {
-*/
-      /*
-      switch (event.type)
-      {
-          case sf::Event::EventType::Closed :
-            window->close();
-          break;
-
-        case sf::Keyboard::Key::Enter:
-          switch (menu.GetPressedItem()){
-            case 0:
-              std::cout <<"Has seleccionado emmpezar" << std::endl;
-              //Menu_empezar.draw(window);
-              //dibujo el otro Menu
-                  //window.clear();
-              break;
-            case 1:
-              std::cout <<"Has seleccionado las opciones" << std::endl;
-              break;
-            case 2:
-              std::cout <<"salir" << std::endl;
-              window.close();
-              break;
-          }
-        break;
-        }
-        
-      
-      }
-    }
-    window->display();
-  }
-  
-  
-    //window.clear();
-   // menu.draw(window);
-    //window.display();
-  }
-  //return 0;
-*/
-
-
-
-
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
@@ -188,6 +100,13 @@ int main() {
   sf::Sound music(buffer);
   music.play();
   music.setLoop(true);
+
+  sf::SoundBuffer ZA_WARUDO;
+  if (!ZA_WARUDO.loadFromFile("../resources/ZA_WARUDO.wav")) {
+    std::cerr << "Error cargando los sonidos.png";
+    exit(0);
+  }
+  sf::Sound DIO(ZA_WARUDO);
 
   sf::Texture texfondo;
   if (!texfondo.loadFromFile("../resources/fondo.jpeg")) {
@@ -352,18 +271,34 @@ int main() {
   }
   sf::Sprite zorro(zor);
 
+  sf::Texture lob;
+  if (!lob.loadFromFile("../resources/lobo3.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Texture spooky;
+  if (!spooky.loadFromFile("../resources/fantasma1.png")) {
+    std::cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+  sf::Sprite lobo(lob);
+
   sf::Texture sVel;
-  if (!sVel.loadFromFile("../resources/vel1.png")) {
+  if (!sVel.loadFromFile("../resources/vel4.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   } 
   sf::Sprite sigVel(sVel);
 
   zorro.setOrigin(61.5,49.5);
+  lobo.setOrigin(500,521.5);
+  
   
   float posx,posy=0;
 
   bool nieve=false;
+  bool dio=false;
+  int dioS=0;
   int entra=0;
 
   sf::Sprite spr2(tex);
@@ -797,7 +732,10 @@ int main() {
                 break;
 
                 case sf::Keyboard::P:
-                   ene->setSegCheck(!ene->getSegCheck());
+                if(!dio && crono->getElapsedTime().asSeconds()-dioS>4){
+                  dio=true;
+                  dioS=crono->getElapsedTime().asSeconds();
+                }
                    //estado=2;
                 break;
                 
@@ -901,6 +839,15 @@ int main() {
           }
           if(posy<=-500){
             posy=500;
+          } 
+          
+          if(dio){
+            DIO.play();
+            DIO.setVolume(100);
+            if(crono->getElapsedTime().asSeconds()-dioS>2){
+              ene->setSegCheck(!ene->getSegCheck());
+              dio=false;
+            }
           }
 
           int col=(int)ene->getVehi()->getImagen().getPosition().x/320;
@@ -1269,7 +1216,7 @@ int main() {
         tiempo.setPosition(sprite.getPosition().x-52,sprite.getPosition().y-360);
         velocimetro.setPosition(sprite.getPosition().x-420,sprite.getPosition().y+250);
         sigVel.setScale(0.15, 0.15);
-        sigVel.setPosition(sprite.getPosition().x-510,sprite.getPosition().y+250);
+        sigVel.setPosition(sprite.getPosition().x-510,sprite.getPosition().y+240);
         //marco.setCenter(sprite.getPosition().x,sprite.getPosition().y);
         //marco.setPosition(sprite.getPosition().x + 500,sprite.getPosition().y - 50);
         //situar el cronometro
@@ -1289,15 +1236,30 @@ int main() {
     
         zorro.setPosition(sprite.getPosition().x-posx,sprite.getPosition().y-posy);
         zorro.setRotation(zorro.getRotation()-3);
+        lobo.setPosition(sprite.getPosition().x+posx,sprite.getPosition().y+posy);
+        lobo.setRotation(lobo.getRotation()-3);
+        
         if(nieve&&entra==1){
           zorro.setTexture(pingu);
           zorro.setScale(1,1);
           zorro.setOrigin(31,27.5);
+          lobo.setTexture(spooky);
+          lobo.setScale(0.2, 0.17);
+          lobo.setOrigin(138,152);
+         /*
+          lobo.setTexture(spooky);
+          lobo.setScale(0.03, 0.02);
+          lobo.setOrigin(946.5,1187);
+          */
           entra=0;
         }
         else if(!nieve&&entra==0){
           zorro.setTexture(zor);
           zorro.setScale(0.5,0.5);
+          zorro.setOrigin(61.5,49.5);
+          lobo.setTexture(lob);
+          lobo.setScale(0.06, 0.05);
+          lobo.setOrigin(500,521.5);
           entra=1;
         }
       
@@ -1313,6 +1275,7 @@ int main() {
           cir->dibujaMapa(&window);
           ene->dibujaRecorrido(&window);
           window.draw(zorro);
+          window.draw(lobo);
         }
         window.draw(sprite);
         window.draw(ene->getVehi()->getImagen());
