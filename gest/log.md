@@ -371,5 +371,6 @@ Velocímetro incorporado, necesito un símbolo o alguna palabra mejor que speed 
 # 15/05/2022 Angelica Quaranta Barba (1h 35min)
 Creado un menú para elegir la dificultad del juego. Implementado y se muestra. A falta de cambiar la IA según la dificultad escogida.
 
-# 15/05/2022 Joan Pascual Izquierdo(45min)
+# 15/05/2022 Joan Pascual Izquierdo(1h)
 Ajustes de posición del velocímetro, el kart no tiene ya tanta ventaja porque sufre una mayor penalización en la nieve (un extra de 1.6, ya que con la nueva reducción se quedaba con 9.6), y más ajustes de balanceo.
+Arreglo de problemas para hacer un merge.
