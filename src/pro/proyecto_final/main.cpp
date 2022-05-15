@@ -299,6 +299,7 @@ int main() {
   bool nieve=false;
   bool dio=false;
   bool parado=false;
+  bool parado2=false;
   int dioS=0;
   int entra=0;
 
@@ -843,9 +844,10 @@ int main() {
           } 
           
           if(dio){
-            if(!parado){
+            if(!parado2){
             DIO.setVolume(100);
             DIO.play();
+            parado2=true;
             }
             
             if(crono->getElapsedTime().asSeconds()-dioS>3&&!parado){
@@ -855,6 +857,7 @@ int main() {
             else if(parado&&crono->getElapsedTime().asSeconds()-dioS>13){
               parado=false;
               dio=false;
+              parado2=false;
               ene->setSegCheck(!ene->getSegCheck());
             }
           }
