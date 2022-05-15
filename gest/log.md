@@ -358,5 +358,9 @@ Cronometro con minutos
 # 14/05/2022 Senén Martínez Acame(1h 25min)
 Implementado layout donde se muestra el cronometro, controles de movimiento con WASD ademas de con las flechas. Hay que arreglar un bug que cuando se reseta el mapa el cronometro no se reinicia bien.
 
-# 08/05/2022 Joan Pascual Izquierdo(5min)
+# 14/05/2022 Joan Pascual Izquierdo(5min)
 Vuelven pingu y el/la zorro/a.
+
+# 15/05/2022 Joan Pascual Izquierdo(45min)
+Probando los coches e intentando balancear un poco el F1, que sigue siendo el peor con diferencia.
+La reducción de giro ahora es porcentual (como he subido un poco el giro al F1, es la misma para él que si fuera con la forma de antes, pero al kart le afecta algo más, aunque no se note apenas).
