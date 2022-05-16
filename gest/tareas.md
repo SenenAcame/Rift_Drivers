@@ -81,7 +81,6 @@ Este fichero puede ser un PDF si la herramienta que gastáis lo requiere, pero *
 
 * `7/3/2022 - implementacion del reloj - Miguel Ángel Ferrer García de la Reina`
 * `8/3/2022 - Pruebas con el reloj - Miguel Ángel Ferrer García de la Reina`
-* `8/3/2022 - Pruebas con el reloj - Miguel Ángel Ferrer García de la Reina`
 * `12/3/2022 - movimiento del vehiculo implementado - Miguel Ángel Ferrer García de la Reina`
 * `15/3/2022 - mejoras del movimiento - Miguel Ángel Ferrer García de la Reina`
 * `3/4/2022 - creadas las variables de la clase vehiculo - Miguel Ángel Ferrer García de la Reina`
