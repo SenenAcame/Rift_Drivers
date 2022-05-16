@@ -78,3 +78,16 @@ Este fichero puede ser un PDF si la herramienta que gastáis lo requiere, pero *
 * `13/05/2022 - Borde minimapa - Sergio Tortajada Santonja`
 * `13/05/2022 - Cronómetro con minutos - Sergio Tortajada Santonja`
 * `15/05/2022 - Poder de paralizar al rival - Sergio Tortajada Santonja`
+
+* `7/3/2022 - implementacion del reloj - Miguel Ángel Ferrer García de la Reina`
+* `8/3/2022 - Pruebas con el reloj - Miguel Ángel Ferrer García de la Reina`
+* `8/3/2022 - Pruebas con el reloj - Miguel Ángel Ferrer García de la Reina`
+* `12/3/2022 - movimiento del vehiculo implementado - Miguel Ángel Ferrer García de la Reina`
+* `15/3/2022 - mejoras del movimiento - Miguel Ángel Ferrer García de la Reina`
+* `3/4/2022 - creadas las variables de la clase vehiculo - Miguel Ángel Ferrer García de la Reina`
+* `22/4/2022 - sprites de los vehiculos actualizados - Miguel Ángel Ferrer García de la Reina`
+* `24/4/2022 - creadas las 4 parejas de sprites - Miguel Ángel Ferrer García de la Reina`
+* `22/4/2022 - sprites de los vehiculos implementados - Miguel Ángel Ferrer García de la Reina`
+* `7/5/2022 - cambio en la rotación del vehiculo y actualizada la velocidad de la IA - Miguel Ángel Ferrer García de la Reina`
+* `8/5/2022 - implementado el menú para la selección del coche - Miguel Ángel Ferrer García de la Reina`
+* `8/5/2022 - sprites de los enemigos implementados y estadisticas de cada coche puestas - Miguel Ángel Ferrer García de la Reina`
