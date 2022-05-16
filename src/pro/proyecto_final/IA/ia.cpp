@@ -17,7 +17,7 @@ ia::ia(Circuito *world, vehiculo *car){
     setVehi(car);
     setCont(0);
     setAngulo(0);
-    setSpeed(7);
+    setSpeed(6);
     setDibCheck(false);
     setSegCheck(true);
 }

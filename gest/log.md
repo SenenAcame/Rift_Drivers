@@ -385,3 +385,6 @@ Añadidos más moradores de la grieta, y implementando a ZA WARUDOOOOOOOOOOOOOOO
 (Joan)Arreglado menu_coche, ahora está centrado, como todos los demás menús.
 (Sergio)Arreglando el ZA WARUDO.
 (Angie)Desarrollando más el Ten-sheet.
+
+# 16/05/2022 Senén Martínez Acame(10min)
+Implementado dependiendo de la velocidad la IA va mas o menos rapida.

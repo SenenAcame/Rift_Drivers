@@ -330,6 +330,7 @@ int main() {
   bool pista=true;
   
   ia *ene = new ia(cir,coche);
+  int vel_IA = 6;
   
  //Creamos clase circuito
     //Circuito circuito=Circuito();
@@ -524,6 +525,8 @@ int main() {
                     crono->restart();
                     suma = false;
                     minutos = 0;
+                    vel_IA = 6;
+                    ene->setSpeed(vel_IA);
                   break;
                 
                   case 1:
@@ -533,6 +536,8 @@ int main() {
                     crono->restart();
                     suma = false;
                     minutos = 0;
+                    vel_IA = 8;
+                    ene->setSpeed(vel_IA);
                   break;
 
                   case 2:
@@ -542,6 +547,8 @@ int main() {
                     crono->restart();
                     suma = false;
                     minutos = 0;
+                    vel_IA = 10;
+                    ene->setSpeed(vel_IA);
                   break;
 
                   case sf::Keyboard::Escape:
@@ -774,6 +781,7 @@ int main() {
                   crono->restart();
                   suma=false;
                   minutos=0;
+                  ene->setSpeed(vel_IA);
                 break;
 
                 case sf::Keyboard::Escape:
