@@ -7,18 +7,18 @@ Reflejar tanto el progreso como los problemas encontrados con el grupo, código,
 El desarrollo de los prototipos va bien. El problema que tenia era que no tenia muy claro como empezar el desarrollo de la IA, pero lo he podido resolver sin mucha dificultad. El trabajo en equipo es bueno, conseguimos desarrollar la mayoria de cosas que nos propusimos en los prototipos del hito 1. Para el hito 2 es posible que haga falta mas comunicacion entre nosotros para poder juntar e implementar bien las partes de cada uno. A nivel de codigo no estoy teniendo problemas, las dudas que van saliendo las puedo resolver en clase, investigando por internet o preguntandole a Fidel. Durante el desarrollo del hito 3 hemos podido implementar las cosas basicas del juego, aunque me hubiese gustado haber desarrollado mas el proyecto.
 
 En conclusion me gusta el acabado del juego, con respecto al grupo, no estoy conforme con el desarrollo que hemos tenido, pienso que ha habido gente que: no ha tenido el mismo nivel de compromiso que otros, que ha trabajado menos que otros, y que no han aportado tanto como otros.
-Horas trabajadas: 52h 40min
+Horas trabajadas: 52h 40min (30,17%)
 
 ## Miembro : Sergio Tortajada Santonja
 Al principio iba perdido porque no sabía por donde empezar pero después de ver videos y entender como funcionaba el draw he podido trabajar sin problema.(he trabajado con png porque es como lo hacían todos y no he encontrado mucha información sobre xml).
 
 Una vez hecho el mapa me he dedicado a intentar ayudar a compañeros que iban más perdidos, podría haber hecho más para meter más cosas al juego pero quería tocar lo menos posible la máquina virtual porque me desespera.
-Horas trabajadas: 39h 55min
+Horas trabajadas: 39h 55min (22,89%)
 
 ## Miembro : Joan Pascual Izquierdo
 Al principio, empecé bastante perdido porque hacía varios años que no programaba en c++ o similares, pero ahora ya voy empezando a entender como va todo(salvo en cunado utilizar punteros porque todavía no los he utilizado). Me quedé bastante tiempos sin progresos porque no sabía solucionar ciertos problemas que estaba teniendo con la detección y la implementación del efecto que producía al personaje de las colisiones. En el hito 2, que es donde tendría que haber implementado algo en el proyecto final de las colisiones, seguí desarrollando en el prototipo de colisiones porque quería hacerlo bastante correcto aunque, al final, no conseguí lo que quería y lo implementé en el hito 3. En ese hito, empecé arreglando muchos problemas con la parte de la reacción del coche ante los diferentes tipos de colisión, más tarde, cuando solucionamos "bastantes" problemas (hay millones más de problemas y otros que no he sabido cómo corregirlos porque hay que tener en cuenta el ángulo de entrada a la colisión para que rebote el coche fuera de la colisión con un ángulo algo realista), empecé a arreglar los problemas de cuando entrabas a la meta con la ayuda de Sergio, que más tarde lo solucionó Senén. Después de eso, nos pusimos Sergio y yo a arreglar el cómo se veía los menús y la rección del los textos cuando seleccionabas su opción para que se resaltaran con un color diferente y un tamaño más grande; y todavía más problemas que habían con la reacción del coche ante las colisiones. 
 En definitiva, tenía que haber empezado a trabajar más en equipo antes, porque el no haber trabajado en equipo, me ha ralentizado bastante a mi y a mis compañeros en esos apartados y siento que podriamos haber hecho más cosas de las propuestas al principio si no me hubiera ralentizado tanto en esos apartados, ya que podría haber ayudado en otros apartados mucho antes. Aún así, no he realizado un mal trabajo y, en cierta medida estoy satisfecho, sólo que podría haber sido mejor.
-Horas trabajadas (hay unas cuantas horas más o menos que no habré apuntado o he apuntado mal): 30h 50min
+Horas trabajadas (hay unas cuantas horas más o menos que no habré apuntado o he apuntado mal): 30h 50min (17,68%)
 
 ## Miembro: Angelica Quaranta Barba
 Con el prototipo logré lo que me propuse, previamente buscando información y ejemplos para lo que tenía en mente hacer. Cuando quise hacer que al pulsar una opción cambiara la información que mostraba en la pantalla y querer llamar a los objetos de mis compañeros para empezar a juntarlo fue cuando se me complicó porque no entendía cómo se hacía. Después de ver referencias y leer información entendí cómo funciona teóricamente pero no logré entender porqué no funcionaba lo que probaba y todos los errores que me salían. No he conseguido implementar lo que me había propuesto y he notado que me ha faltado evolución a pesar del tiempo dedicado. Me he sentido algo perdida.
@@ -26,12 +26,12 @@ En el hito 2 no llegué a implementar nada, y seguía en mi prototipo probando a
 Otra parte del grupo cuando no se conseguía algo la solucionaban sin previo aviso, sin participación conjunta en la solución para poder estar implicados por igual en las distintas partes del juego.
 Ha faltado más comunicación entre todos los integrantes del grupo e implicación. Solo una pequeña parte ha conseguido trabajar conjuntamente, cuando el trabajo individual era del primer hito. Lo que ha generado sensación de no poder trabajar más.
 Aunque no ha sido el resultado esperado se ha llegado a sacar la idea principal que tuvimos del juego y lo importante. Estoy satisfecha con el resultado porque se puede jugar de principio a fin y se siente como un juego de carreras de coches al estilo retro que nos gustó.
-Horas trabajadas: 29h 50min
+Horas trabajadas: 29h 50min (17,10%)
 
 
 ## Miembro : Miguel Ángel Ferrer García de la Reina 
 Me costó bastante poco conseguir el movimiento del vehiculo. Donde ya tuve más problemas fue a la hora de hacer interpolación utilizando un reloj, ya que no entendía como hacerlo. Una vez lo conseguí, el movimiento en linea recta funcionaba perfecto, pero el giro seguía sin funcionar bien. Ahora ya he conseguido un giro más o menos como el que esperaba pero no estoy del todo contento con el resultado. En el hito 2 me encargué de implementar los controles en el juego completo junto con todas las partes de mis compañeros. Me costó hacer que funcionara el reloj para la interpolación pero finalmente lo conseguí. Tuve que descartar la interpolación del giro porque iba dando tirones y no quedaba del todo bien, pero creo que ahora está mucho mejor. También ayude a mis compañeros con distintos problemas a la hora de utilizar mi movimiento, como podía ser la IA o las colisiones. Y en el tercer hito me encargué de poner todos los sprites de los distintos coches, también me encargué de hacer el menú de selección de vehiculos y de hacer que cambiase de vehiculo, tanto la IA como el jugador. Como último puse las distintas estadísticas a los coches que manejará el jugador. Estoy más o menos contento con el juego pero si me gustaría haber podido trabajado más y haber ayudado más a mis compañeros, pero en momentos no me ha sido posible por falta de tiempo.
-Horas trabajadas (seguramente haya más horas, pero se me olvidaron aputarlas): 21h 10min
+Horas trabajadas (seguramente haya más horas, pero se me olvidaron aputarlas): 21h 10min (12,16%)
 
 # Autoevaluación general
 6.75/10
