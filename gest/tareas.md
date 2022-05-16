@@ -47,3 +47,18 @@ Este fichero puede ser un PDF si la herramienta que gastáis lo requiere, pero *
 * `08/05/2022 - arreglo menus - Angelica Quaranta Barba`
 * `15/05/2022 - implementacion de menus y estilos en coherencia - Angelica Quaranta Barba`
 * `15/05/2022 - añadiendo y mejorando hud y contenido audiovisual extra - Angelica Quaranta Barba`
+
+* `4/3/2022 - Crear clase Físicas y colisiones - Joan Pascual Izquierdo`
+* `4/3/2022 - Crear clase Poderes - Joan Pascual Izquierdo`
+* `8/3/2022 - Colisiones entre sprites implementadas - Joan Pascual Izquierdo`
+* `5/4/2022 - Colisiones según los mapas de dureza implementadas - Joan Pascual Izquierdo`
+* `19/4/2022 - Colsiones incorporadas en el proyecto final, no funcionando - Joan Pascual Izquierdo`
+* `28/4/2022 - Se crea un trozo del mapa de durezas basandose en el trozo del circuito para hacer las colisiones - Joan Pascual Izquierdo`
+* `3/5/2022-7/5/2022 - Mejorando colisiones - Joan Pascual Izquierdo`
+* `7/5/2022 - Implementando en el juego el menú del final del juego - Joan Pascual Izquierdo`
+* `8/5/2022 - Mejorando el menú del final del juego - Joan Pascual Izquierdo`
+* `9/5/2022 - Mejoras en el menú de selección de coche - Joan Pascual Izquierdo`
+* `9/5/2022 - Implementado que en el sector de nieve todo tenga menos rotación - Joan Pascual Izquierdo`
+* `12/5/2022 - Balanceando los diferentes coches - Joan Pascual Izquierdo`
+* `15/5/2022 - Implementación de un velocímetro, mejoras en el menú de dificultad y balanceo de coches - Joan Pascual Izquierdo`
+* `16/5/2022 - Se ha añadido un sonido a la función de parar el tiempo, más cambios de mejora de experiencia de juego - Joan Pascual Izquierdo`
