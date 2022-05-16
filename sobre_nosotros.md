@@ -16,6 +16,9 @@ Somos Chelys. Un grupo formado por 5 integrantes.
 * sma79@alu.ua.es
 * sma079
 ## Miembro 4
+* Pascual Izquierdo, Joan
+* jpi9@alu.ua.es
+* joanpasc
 ## Miembro 5
 
 

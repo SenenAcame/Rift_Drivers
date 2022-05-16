@@ -34,5 +34,4 @@ Me costó bastante poco conseguir el movimiento del vehiculo. Donde ya tuve más
 Horas trabajadas (seguramente haya más horas, pero se me olvidaron aputarlas): 21h 10min
 
 # Autoevaluación general
-Requiere añadir una propuesta de nota sobre 10
-6.5/10 - 7/10
+6.75/10
