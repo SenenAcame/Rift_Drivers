@@ -641,9 +641,9 @@ int main() {
                         spr2.setTextureRect(sf::IntRect(0 , 0, 23, 16));
                         ene->getVehi()->setImagen(spr2);
                         cocheselec = "";
-                        acc = 1.25f;
-                        maxvel = 60.0f;
-                        gir = 12.0f;
+                        acc = 1.2f;
+                        maxvel = 62.0f;
+                        gir = 12.5f;
                         estado=1;
                     break;
 
