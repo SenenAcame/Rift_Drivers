@@ -62,3 +62,19 @@ Este fichero puede ser un PDF si la herramienta que gastáis lo requiere, pero *
 * `12/5/2022 - Balanceando los diferentes coches - Joan Pascual Izquierdo`
 * `15/5/2022 - Implementación de un velocímetro, mejoras en el menú de dificultad y balanceo de coches - Joan Pascual Izquierdo`
 * `16/5/2022 - Se ha añadido un sonido a la función de parar el tiempo, más cambios de mejora de experiencia de juego - Joan Pascual Izquierdo`
+
+* `11/03/2021 - Dibujar primer trozo del circuito y mover la cámara - Sergio Tortajada Santonja`
+* `13/03/2021 - Mapa procedural - Sergio Tortajada Santonja`
+* `15/03/2021 - Minimapa, segmentos minimos para el procedimiento y cargar y descargar mapa con la l - Sergio Tortajada Santonja`
+* `02/04/2022 - Dibujado del mapa desde la clase circuito - Sergio Tortajada Santonja`
+* `07/04/2022 - Arreglado lo de repetir, vueltoó a poner que al presionar un botón se genere un mapa distinto, arreglado que le pasaba a Senén por parámetro dos mapas cuando repetía, sprite puesto para empezar recto y cuando se crea otro mapa la velocidad aceleración cambia a 0 y vuelve a estar recto. - Sergio Tortajada Santonja`
+* `11/04/2022 - Segmentos de hielo en el mapa. - Sergio Tortajada Santonja`
+* `11/04/2022 - juntar el circuito y la ia con Senén, colisiones con Joan, implementación de salida y meta, relleno de huecos cercanos al recorrido y corrección de fallos - Sergio Tortajada Santonja`
+* `11/04/2022 - rotación en terreno de hielo. - Sergio Tortajada Santonja`
+* `08/05/2022 - La IA puede ganar - Sergio Tortajada Santonja`
+* `08/05/2022 - Imagen de fondo en el circuito y colisión marcha atrás - Sergio Tortajada Santonja`
+* `10/05/2022 - Música de menú y de juego - Sergio Tortajada Santonja`
+* `10/05/2022 - Asteroides y moradores de la grieta - Sergio Tortajada Santonja`
+* `13/05/2022 - Borde minimapa - Sergio Tortajada Santonja`
+* `13/05/2022 - Cronómetro con minutos - Sergio Tortajada Santonja`
+* `15/05/2022 - Poder de paralizar al rival - Sergio Tortajada Santonja`
