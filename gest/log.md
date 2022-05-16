@@ -381,7 +381,7 @@ Arreglando y centrando menu_dificultad y poniendo un velocimetro.
 # 15/05/2022 Angelica Quaranta Barba/Joan Pascual Izquierdo/Sergio Tortajada Santonja(1h)
 Añadidos más moradores de la grieta, y implementando a ZA WARUDOOOOOOOOOOOOOOOOO.
 
-# 15/05/2022 Joan Pascual Izquierdo/Sergio Tortajada Santonja/Angelica Quaranta Barba(50min)
+# 15/05/2022 Joan Pascual Izquierdo/Sergio Tortajada Santonja/Angelica Quaranta Barba(1h)
 (Joan)Arreglado menu_coche, ahora está centrado, como todos los demás menús.
 (Sergio)Arreglando el ZA WARUDO.
 (Angie)Desarrollando más el Ten-sheet.
