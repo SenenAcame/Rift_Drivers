@@ -35,11 +35,11 @@ menu_coche::menu_coche(float width, float heigth)
     //menu[0].setFillColor(sf::Color::Green);
     menu[0].setFillColor(sf::Color::Red);
     menu[0].setString("Supercoche");
-    menu[0].setScale(4, 3);
+    menu[0].setScale(3.5, 2.75);
     menu[0].setOutlineColor(sf::Color::Black);
     menu[0].setOutlineThickness(2);
     //menu[0].setCharacterSize(100);
-    menu[0].setPosition(sf::Vector2f(width/2-285, heigth/(MAX_NUMBER_OF_ITEMS+1)*1+40));
+    menu[0].setPosition(sf::Vector2f(width/2-255, heigth/(MAX_NUMBER_OF_ITEMS+1)*1+40));
  
     menu[1].setFont(font);
     menu[1].setFillColor(sf::Color::White);
@@ -48,7 +48,7 @@ menu_coche::menu_coche(float width, float heigth)
     menu[1].setScale(3, 2);
     menu[1].setOutlineColor(sf::Color::Black);
     menu[1].setOutlineThickness(2);
-    menu[1].setPosition(sf::Vector2f(width/2-285, heigth/(MAX_NUMBER_OF_ITEMS+1)*2+20));
+    menu[1].setPosition(sf::Vector2f(width/2-165, heigth/(MAX_NUMBER_OF_ITEMS+1)*2+20));
 
     menu[2].setFont(font);
     menu[2].setFillColor(sf::Color::White);
@@ -57,7 +57,7 @@ menu_coche::menu_coche(float width, float heigth)
     menu[2].setScale(3, 2);
     menu[2].setOutlineColor(sf::Color::Black);
     menu[2].setOutlineThickness(2);
-    menu[2].setPosition(sf::Vector2f(width/2-285, heigth/(MAX_NUMBER_OF_ITEMS+1)*3+20));
+    menu[2].setPosition(sf::Vector2f(1080/2-225, 720/(MAX_NUMBER_OF_ITEMS+1)*3+5));
 
     menu[3].setFont(font);
     menu[3].setFillColor(sf::Color::White);
@@ -66,7 +66,7 @@ menu_coche::menu_coche(float width, float heigth)
     menu[3].setScale(3, 2);
     menu[3].setOutlineColor(sf::Color::Black);
     menu[3].setOutlineThickness(2);
-    menu[3].setPosition(sf::Vector2f(width/2-285, heigth/(MAX_NUMBER_OF_ITEMS+1)*4+20));
+    menu[3].setPosition(sf::Vector2f(width/2-100, heigth/(MAX_NUMBER_OF_ITEMS+1)*4+10));
     /*
     menu[2].setFont(font);
     menu[2].setFillColor(sf::Color::White);
@@ -94,12 +94,36 @@ void menu_coche::MoveUp()
     if(selectedItemIdex - 1 >= 0)
     {
         menu[selectedItemIdex].setFillColor(sf::Color::White);
+        if(selectedItemIdex==0){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-175, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)+50));
+             menu[selectedItemIdex].setScale(2.5, 2);
+        }else if(selectedItemIdex==1){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-165, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)+10));
+             menu[selectedItemIdex].setScale(2.6, 2);
+        }else if(selectedItemIdex==2){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-225, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)+5));
+             menu[selectedItemIdex].setScale(2.5, 2);
+        }else if(selectedItemIdex==3){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-100, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)));
+             menu[selectedItemIdex].setScale(3, 2);
+        }
 
-        menu[selectedItemIdex].setScale(3, 2);
         selectedItemIdex--;
-        menu[selectedItemIdex].setFillColor(sf::Color::Red);
 
-        menu[selectedItemIdex].setScale(4, 3);
+        menu[selectedItemIdex].setFillColor(sf::Color::Red);
+        if(selectedItemIdex==0){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-255, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)+40));
+             menu[selectedItemIdex].setScale(3.5, 2.75);
+        }else if(selectedItemIdex==1){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-215, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)));
+             menu[selectedItemIdex].setScale(3.6, 2.8);
+        }else if(selectedItemIdex==2){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-285, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)));
+             menu[selectedItemIdex].setScale(3.5, 2.75);
+        }else if(selectedItemIdex==3){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-120, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)));
+             menu[selectedItemIdex].setScale(4, 3);
+        }
        
     }
 }
@@ -109,11 +133,36 @@ void menu_coche::MoveDown()
     if(selectedItemIdex + 1 < MAX_NUMBER_OF_ITEMS)
     {
         menu[selectedItemIdex].setFillColor(sf::Color::White);
-        menu[selectedItemIdex].setScale(3, 2);
+        if(selectedItemIdex==0){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-175, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)+50));
+             menu[selectedItemIdex].setScale(2.5, 2);
+        }else if(selectedItemIdex==1){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-165, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)+10));
+             menu[selectedItemIdex].setScale(2.6, 2);
+        }else if(selectedItemIdex==2){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-225, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)+5));
+             menu[selectedItemIdex].setScale(2.5, 2);
+        }else if(selectedItemIdex==3){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-100, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)+10));
+             menu[selectedItemIdex].setScale(3, 2);
+        }
        
         selectedItemIdex++;
+
         menu[selectedItemIdex].setFillColor(sf::Color::Red);
-        menu[selectedItemIdex].setScale(4, 3);
+        if(selectedItemIdex==0){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-225, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)+40));
+             menu[selectedItemIdex].setScale(3.5, 2.75);
+        }else if(selectedItemIdex==1){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-215, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)));
+             menu[selectedItemIdex].setScale(3.6, 2.8);
+        }else if(selectedItemIdex==2){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-285, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)));
+             menu[selectedItemIdex].setScale(3.5, 2.75);
+        }else if(selectedItemIdex==3){
+            menu[selectedItemIdex].setPosition(sf::Vector2f(1080/2-120, 720/(MAX_NUMBER_OF_ITEMS+1)*(selectedItemIdex+1)));
+             menu[selectedItemIdex].setScale(4, 3);
+        }
         
     }
 }

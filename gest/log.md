@@ -380,3 +380,6 @@ Arreglando y centrando menu_dificultad y poniendo un velocimetro.
 
 # 15/05/2022 Angelica Quaranta Barba/Joan Pascual Izquierdo/Sergio Tortajada Santonja(1h)
 Añadidos más moradores de la grieta, y implementando a ZA WARUDOOOOOOOOOOOOOOOOO.
+
+# 15/05/2022 Joan Pascual Izquierdo(50min)
+Arreglado menu_coche, ahora está centrado, como todos los demás menús.
