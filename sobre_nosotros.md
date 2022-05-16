@@ -20,7 +20,9 @@ Somos Chelys. Un grupo formado por 5 integrantes.
 * jpi9@alu.ua.es
 * joanpasc
 ## Miembro 5
-
+* Ferrer García de la Reina, Miguel Ángel
+* mafg17@alu.ua.es
+* mafg17
 
 # Nombre del juego
 ## Rift Drivers
