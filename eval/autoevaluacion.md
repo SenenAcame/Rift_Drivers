@@ -23,7 +23,7 @@ En el hito 2 no llegué a implementar nada, y seguía en mi prototipo probando a
 Otra parte del grupo cuando no se conseguía algo la solucionaban sin previo aviso, sin participación conjunta en la solución para poder estar implicados por igual en las distintas partes del juego.
 Ha faltado más comunicación entre todos los integrantes del grupo e implicación. Solo una pequeña parte ha conseguido trabajar conjuntamente, cuando el trabajo individual era del primer hito. Lo que ha generado sensación de no poder trabajar más.
 Aunque no ha sido el resultado esperado se ha llegado a sacar la idea principal que tuvimos del juego y lo importante. Estoy satisfecha con el resultado porque se puede jugar de principio a fin y se siente como un juego de carreras de coches al estilo retro que nos gustó.
-Horas trabajadas: 28h 50min
+Horas trabajadas: 29h 50min
 
 
 ## Miembro : Miguel Ángel Ferrer García de la Reina 
@@ -31,3 +31,4 @@ Me costó bastante poco conseguir el movimiento del vehiculo. Donde ya tuve más
 
 # Autoevaluación general
 Requiere añadir una propuesta de nota sobre 10
+6.5/10 - 7/10

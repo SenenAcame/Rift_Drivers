@@ -1,22 +1,25 @@
 # Nombre del grupo
-Debe ser el mismo que figura en el github classroom
-Chelys
+## proyectoabp-grupo-c04
+Somos Chelys. Un grupo formado por 5 integrantes.
 
 # Componentes
-
-## Apellido, Nombre (una entrada por miembro)
-* Apellido, Nombre
-* email_ua
-* usuario_github
-
+## Miembro 1
 * Tortajada Santonja, Sergio
 * sts19@alu.ua.es
 * Tortasts
+## Miembro 2
+* Quaranta Barba, Angelica
+* aqb8@alu.ua.es
+* AngelicaQuaranta
+## Miembro 3
+## Miembro 4
+## Miembro 5
 
 
 # Nombre del juego
-Breve resumen del mismo (10 líneas)
+## Rift Drivers
+Nuestros jugadores han entrado en una grieta que los lleva a un plano que está en constante cambio, por ello el circuito siempre será distinto. Tendrán que ganar a su rival en la carrera. Tienen que llegar al vórtice, meta del circuito, que será la salida de La Grieta. En caso contrario seguirán atrapados.
 
 # Carátula del juego
-
+![](/otros/img/logo.png)
 # Comentarios sobre la práctica que se consideren oportunos
