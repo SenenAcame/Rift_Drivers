@@ -604,9 +604,12 @@ int main() {
                         sprite.setTextureRect(sf::IntRect(0 , 0, 22, 16));
 
                         music.setBuffer(buffer2);
-                        music.setVolume(40);
+                        music.setVolume(30);
                         music.play();
                         music.setLoop(true);
+                        parado=false;
+                        dio=false;
+                        parado2=false;
 
                         spr2.setTexture(texalt2);
                         spr2.setOrigin(11, 8);
@@ -627,9 +630,12 @@ int main() {
                         sprite.setOrigin(11.5f, 8);
                         sprite.setTextureRect(sf::IntRect(0 , 0, 23, 16));
                         music.setBuffer(buffer2);
-                        music.setVolume(40);
+                        music.setVolume(30);
                         music.play();
-                        music.setLoop(true);
+                        music.setLoop(true);parado=false;
+                        dio=false;
+                        parado2=false;
+
                         spr2.setTexture(tex);
                         spr2.setOrigin(11.5f, 8);
                         spr2.setTextureRect(sf::IntRect(0 , 0, 23, 16));
@@ -648,9 +654,12 @@ int main() {
                         sprite.setOrigin(8, 9);
                         sprite.setTextureRect(sf::IntRect(0 , 0, 16, 18));
                         music.setBuffer(buffer2);
-                        music.setVolume(40);
+                        music.setVolume(30);
                         music.play();
                         music.setLoop(true);
+                        parado=false;
+                        dio=false;
+                        parado2=false;                                
                         cocheselec = "4x4";
 
                         spr2.setTexture(texalt3);
@@ -670,9 +679,12 @@ int main() {
                         sprite.setOrigin(11, 10);
                         sprite.setTextureRect(sf::IntRect(0 , 0, 22, 20));
                         music.setBuffer(buffer2);
-                        music.setVolume(40);
+                        music.setVolume(30);
                         music.play();
                         music.setLoop(true);
+                        parado=false;
+                        dio=false;
+                        parado2=false;
 
                         spr2.setTexture(texalt4);
                         spr2.setOrigin(11, 10);
@@ -1394,8 +1406,11 @@ int main() {
                       music.setBuffer(buffer2);
                       music.play();
                       music.setLoop(true);
-                      music.setVolume(50);
+                      music.setVolume(30);
                       crono->restart();
+                      parado=false;
+                      dio=false;
+                      parado2=false;
                       suma=false;
                       minutos=0;
                     break;
