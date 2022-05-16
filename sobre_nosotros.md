@@ -24,7 +24,7 @@ Somos Chelys. Un grupo formado por 5 integrantes.
 
 # Nombre del juego
 ## Rift Drivers
-Nuestros jugadores han entrado en una grieta que los lleva a un plano que está en constante cambio, por ello el circuito siempre será distinto. Tendrán que ganar a su rival en la carrera. Tienen que llegar al vórtice, meta del circuito, que será la salida de La Grieta. En caso contrario seguirán atrapados.
+Nuestros jugadores han entrado en una grieta espacio-temporal que los lleva a un plano caótico, de constante cambio, que por ello el circuito siempre será distinto. Tendrán que ganar a su rival en la carrera para poder salir de La Grieta, que es llegando al vórtice, meta del circuito. En caso contrario seguirán atrapados y corriendo para conseguir su ansiada libertad.
 
 # Carátula del juego
 ![](/otros/img/logo.png)
