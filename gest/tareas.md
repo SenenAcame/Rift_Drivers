@@ -39,3 +39,11 @@ Este fichero puede ser un PDF si la herramienta que gastáis lo requiere, pero *
 * `10/5/2022 - Ruido de motor - Senén Martinez Acame`
 * `13/5/2022 - Rellenar documentacion - Senén Martinez Acame`
 * `14/5/2022 - Integrar layout - Senén Martinez Acame`
+
+* `7/3/2022 - estructura menu creado funcional - Angelica Quaranta Barba`
+* `13/3/2022 - pruebas de integracion de estados - Angelica Quaranta Barba`
+* `27/04/2022 - estructuras de otros menus - Angelica Quaranta Barba`
+* `03/05/2022 - cambio la estructura y el mostrado de menus - Angelica Quaranta Barba`
+* `08/05/2022 - arreglo menus - Angelica Quaranta Barba`
+* `15/05/2022 - implementacion de menus y estilos en coherencia - Angelica Quaranta Barba`
+* `15/05/2022 - añadiendo y mejorando hud y contenido audiovisual extra - Angelica Quaranta Barba`
