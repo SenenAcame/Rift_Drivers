@@ -1,29 +1,23 @@
-# Antes de nada
-Prueba de texto
-Estos son los prerequesitos antes de gastar la plantilla. Debes tener conocimientos básicos de:
+# Rift Drivers
+## Equipo
+Este proyecto ha sido desarrollado en 4 meses por Chelys, un grupo de 5 personas formado por:
+<ul>
+  <li>Sergio Tortajada Santonja (tortasts55@gmail.com)</li>
+  <li>Angelica Quaranta Barba (angelicaqb77@gmail.com)</li>
+  <li>Joan Pasqual Izquierdo (joanpasc27@gmail.com)</li>
+  <li>Miguel Ángel Ferrer García de la Reina (miguelrotes56@gmail.com)</li>
+  <li>Senén Martínez Acame (senen.acame.martinez@gmail.com)</li>
+</ul>
 
-* **git**: conocer como mínimo y estar familiarizado con los comandos commit, add, push, pull, tag, merge y branch. Si no sabes nada de git te recomiendo que le eches un vistazo rápido antes de empezar a : https://david-estevez.gitbooks.io/the-git-the-bad-and-the-ugly/content/es/control-de-versiones.html
+## Resumen
+Rift Drivers es un juego de carreras en el que competirás con otro corredor para ver quien logra escapar antes de La Grieta, una dimensión en la que os habéis quedado atrapados
+y solo uno puede salir.
+En cada partida el mapa se generará aleatoriamente y con diferentes tipos de terreno que afectaran a la conducción, además de poder elegir diferentes tipos de vehículos
+al principio de la partida, cada uno con sus propias características.
 
-* **markdown**: saber escribir un fichero en markdown con formato básico. Saber incluir imágenes en dicho fichero. Es muy sencillo, con la entrada de la wikipedia podéis saber los tags básicos: https://es.wikipedia.org/wiki/Markdown
+## Desarrollo
+El proyecto se ha realizado desde 0 en C++ con SFML, para la plataforma de Linux, y con la ayuda de otros softwares como Tiled y Gimp.
 
-* **vscode**: probar el entorno y leer algún tutorial básico para aprender como usarlo. 
-
-
-## Recomendable
-* **cmake**: tener conocimientos para que sirve y leves de que es el fichero `CMakeLists.txt`. Saber como genera *cmake* un ejecutable y hacer una mini prueba en tu equipo
-
-# Cómo obtener la plantilla
-
-La plantilla se debe obtener desde terminal mediante 
-
-~~~ 
-git clone <url_https_de_tu_repositorio>
-~~~
-La url se obtiene desde el repositorio del grupo así:
-
-![](otros/img/git_u.png)
-
-# Documentación
-
-**Tened en cuenta que las intrucciones de la plantilla están aquí:** 
-[documentación_compilada](doc/plantilla_doc.html). Existen más documentos a leer en la carpeta `doc`. ¡Échales un vistazo!
+## Aclaración
+Este juego se trata de un proyecto académico que contiene assets de terceros, que se ha realizado para la universidad con el objetivo de aprender sobre el desarrollo de un proyecto
+de un videojuego. No se busca ningún tipo de beneficio y cualquier otro tipo de publicación y/o distribución no esta permitido.
