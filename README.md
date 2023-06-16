@@ -1,4 +1,5 @@
 # Antes de nada
+Prueba de texto
 Estos son los prerequesitos antes de gastar la plantilla. Debes tener conocimientos básicos de:
 
 * **git**: conocer como mínimo y estar familiarizado con los comandos commit, add, push, pull, tag, merge y branch. Si no sabes nada de git te recomiendo que le eches un vistazo rápido antes de empezar a : https://david-estevez.gitbooks.io/the-git-the-bad-and-the-ugly/content/es/control-de-versiones.html
